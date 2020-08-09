@@ -1,1 +1,3 @@
-# CSO211-Project-
+# CSO211-Project-  
+MedicDiary  
+A digital medical records system.
