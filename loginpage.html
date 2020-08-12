@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Login</title>
+        <link rel="icon" type="image/png" href="img-03.ico"/>
+
+        <style>
+            #login {
+            /* font-family: Montserrat-Bold;
+            font-size: 15px;
+            line-height: 1.5; */
+            color: rgb(0, 0, 0);
+            text-transform: uppercase;
+            text-align: center;
+
+            /* width: 100%; */
+            height: 50px;
+            border-radius: 25px;
+            background: #66ec44;
+            /* display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex; */
+            justify-content: center;
+            align-items: center;
+            padding: 0 25px;
+
+            /* -webkit-transition: all 0.4s;
+            -o-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            transition: all 0.4s; */
+            }
+
+            #login:hover {
+            background: #919e9e;
+            }
+            form{
+                background-color: transparent;
+                /* rgb(25, 54, 151); */
+                
+            }
+            .outer{
+                /* background-color: rgb(255, 213, 122); */
+                background: rgb(255, 48, 58);
+                background: linear-gradient(45deg, #fa5298, #24b4f7, #b1ec44);
+            }
+            #cardhead{
+                border-radius: 25px;
+                /* vertical-align: middle; */
+                height: 3.5rem;
+                width:fit-content;
+                align-self: center;
+            }
+            #card{
+                background-color: transparent;
+                /* rgb(235, 163, 232); */
+                border-width: 1.25rem;
+                border-color: rgb(25, 54, 151);
+
+            }
+            .txt2{
+                color: darkslategray;
+            }
+        </style>
+    </head>
+    <body >
+        <div class="outer" style="display: table; position: absolute; height: 100%; width: 100%; ">
+            <div class="middle" style="display: table-cell; vertical-align: middle;">
+                <form class="container p-3 " style="border-radius: 10px 40px; width:24rem;  " >
+                    <div id="card" class="card p-3 mx-auto  " style="border-radius: 10px 40px;">
+                        <div id="cardhead" class="card-header bg-warning mb-2">
+                        <div class="card-title text-center h4">Signin</div>
+                        </div>
+
+                        <input type="text" id="username" class="form-control mb-2" placeholder="Username" name="username">
+                        <input type="text" id="password" class="form-control" placeholder="Password" name= "lname">
+                        
+        
+                        <div class="text-center">
+                            <button class="btn my-2 " id="login"type="submit">Login</button>
+                        </div>
+
+                        <div class="text-center p-t-12">
+                            <span class="txt1">
+                                Forgot
+                            </span>
+                            <a class="txt2" href="#">
+                                Username/Password
+                            </a>
+                        </div>
+
+                        <div class="text-center">
+                            <p>or sign up with:</p> 
+                    
+                            <a type="button" class="light-blue-text mx-2">
+                                <i class="fa fa-facebook-f"></i>
+                            </a>
+                            <a type="button" class="light-blue-text mx-2">
+                                <i class="fa fa-google"></i>
+                            </a>
+                            <a type="button" class="light-blue-text mx-2">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            
+                    
+                            <hr> 
+
+                            <div class="text-center p-t-12">
+                                <span class="txt1">
+                                    New User?
+                                </span>
+                                <a class="txt2" href="#">
+                                    Create an account
+                                </a>
+                            </div>
+                    
+                               
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
