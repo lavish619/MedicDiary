@@ -4,4 +4,4 @@ pip install -r requirements.txt
 
 to run the project in the prompt type:
 py manage.py runserver
-then copy the local url and run it on your browser.
+then copy the local url and run it on your browser..
