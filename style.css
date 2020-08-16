@@ -1,0 +1,152 @@
+h1{
+	font-family: Pacifico, monospace;
+}
+
+/*body{
+	background: #DEB887;
+	}*/
+
+	#navstyle{
+		background-color: #24a19c;
+		min-height: 10vh;
+		color: #FFFFF0;
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	.slider{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 120vh;
+		background: #DEB887;
+		z-index: -1;
+	}
+
+	section{
+		display: flex;
+		height: 80vh;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.hero{
+		height: 120%;
+		width: 90%;
+		display: inline-block;
+		position: relative;
+	}
+
+	.hero img{
+		margin-top: 100;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+/*.hero a{
+	position:relative;
+	
+	background-color:#8F0005;
+	color:white;
+	
+	padding:1em 1.5em;
+	
+	}*/
+
+	.headline{
+		position: absolute;
+		top: 65%;
+		left: 15%;
+		font-size: 50px;
+		transform: translate(-20%, -70%);
+		color: black;
+	}
+
+	.nav-bg{
+		background-image: linear-gradient(15deg, #24a19c 0%, #cedebd 100%);
+	}
+	.waves {
+		position: relative;
+		width: 100%;
+		height: 15vh;
+		margin-bottom: -7px;
+		/*Fix for safari gap*/
+		min-height: 100px;
+		max-height: 150px;
+	}
+
+
+	.button{
+		position: relative;
+		bottom:-10em;
+		right:-2em;
+		font-size:1.1em;
+		background: #24a19c;
+		padding: 1em 1.5em;
+		color: white;
+		box-shadow: 0 0 3em -1em rgba(0,0,0,0.75);
+		margin: 0 0.5em 0.5em 0;
+		text-transform:uppercase;
+		border-color:white;
+		border-radius:1.5em;
+		text-decoration: none;
+		transition: 0.4s;
+	}
+	.button:hover{
+		background: #006a71;
+		color: white;
+		text-decoration: none;
+
+	}
+
+/*.popup{
+	background: rgba(0,0,0,0.6);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.popup-content{
+	background: #e4e4e4;
+	height: 300px;
+	width: 500px;
+	padding: 20px;
+	border-radius: 5px;
+	position: relative;
+	}*/
+	.modal-notify .modal-header {
+		border-radius: 3px 3px 0 0;
+	}
+	.modal-notify .modal-content {
+		border-radius: 3px;
+	}
+	.content-box{
+		display:grid;
+		grid-template-columns: 3fr 2fr;
+		grid-auto-rows: minmax(100px,auto);
+		grid-gap:2em;
+		margin: 2em;
+	}
+	.content-box > div{
+		background:#eee;
+		padding:1.5em;
+	}
+	.content-box > div:nth-child(odd){
+		background:#ddd;
+	}
+	.sidebar{
+		background: #e0ece4; 
+		height:70vh;
+		border-radius: 15px;
+		padding: 1em 0em 1em 2em;
+	}
+	
