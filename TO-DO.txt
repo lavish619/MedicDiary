@@ -1,0 +1,2 @@
+1) Make a list of the data we will be requesting form patients and doctors on register pages.. 
+2) Research what exactly comprises a 'health record'.
