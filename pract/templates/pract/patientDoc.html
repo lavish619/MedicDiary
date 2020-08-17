@@ -1,0 +1,20 @@
+<h1>patient doc bitchess</h1>
+
+
+<h3>previous records</h3>
+
+{% for i in reports %}
+<p>doctor : {{i.doctor_name}}</p>
+<p>report: {{i.doctor_notes}}</p>
+<hr>
+<hr>
+{% endfor %}
+
+
+
+
+<form action="/pract/addReport" method ="POST">
+    {% csrf_token %}
+     add a new record<br>
+     <input type="submit" name="" id="">
+</form>

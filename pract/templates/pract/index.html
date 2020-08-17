@@ -1,0 +1,38 @@
+<h1>HOME PAGE</h1>
+
+
+<form action="/pract/register_patients"  method ="POST">
+    {% csrf_token %}
+  <h2>for Patients</h2>  <br>
+username: <input type="text" name="patient_username" id=""><br>
+name    : <input name="patient_name" type="text"><br>
+age     : <input type="text" name="patient_age" id=""><br>
+address : <input type="text" name="patient_address" id=""><br>
+c_number: <input type="text" name="patient_contact" id=""><br>
+
+password: <input name="password" type="text"><br>
+passward_share: <input type="text" name="password_share" id=""><br>
+Signup  : <input type="submit">
+</form>
+<a href="/pract/loginPatient">Login</a>
+
+
+<hr>
+<hr>
+
+<form action="/pract/register_doctors"  method ="POST">
+    {% csrf_token %}
+  <h2>for Doctors</h2>  <br>
+username: <input type="text" name="doctor_username" id=""><br>
+name    : <input name="doctor_name" type="text"><br>
+
+c_number: <input type="text" name="doctor_contact" id=""><br>
+
+password: <input name="password" type="text"><br>
+
+Signup  : <input type="submit">
+</form>
+<a href="/pract/loginDoctor">Login</a>
+
+<hr>
+<hr>

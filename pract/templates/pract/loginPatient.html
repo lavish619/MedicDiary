@@ -1,0 +1,8 @@
+<h1>login page(patient)</h1>
+
+<form action="/pract/logincheckPatient"  method ="POST">
+    {% csrf_token %}
+username : <input name="username" type="text"><br>
+password : <input name="password" type="text"><br>
+ <input type="submit">
+</form>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>yo bitchess doctor here</h1>
+
+    <h2>open a patients profile</h2>
+    <form action="/pract/openPatProfCheck" method ="POST">
+        {% csrf_token %}
+        patient username: <input type="text" name="patient_username" id="">
+        patient security key: <input type="text" name="security" id="">
+        fetch profile: <input type="submit" name="" id="">
+    </form>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<h1>patient here</h1>
+
+
+
+<h3>previous records</h3>
+
+{% for i in reports %}
+<p>doctor : {{i.doctor_name}}</p>
+<p>report: {{i.doctor_notes}}</p>
+<hr>
+<hr>
+{% endfor %}
