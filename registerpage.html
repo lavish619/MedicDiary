@@ -5,198 +5,136 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <title>Signup-Medicdiary</title>
-        <link rel="icon" type="image/png" href="img-03.ico"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Sign up Medicdiary</title>
+        <link rel="icon" type="image/png" href="icon.png"/>
+        <link rel="stylesheet" href="./style.css"/>
 
-        <style>
-            #signup {
-            /* font-family: Montserrat-Bold;
-            font-size: 15px;
-            line-height: 1.5; */
-            color: #fff;
-            text-transform: uppercase;
-            text-align: center;
-
-            /* width: 100%; */
-            height: 50px;
-            border-radius: 25px;
-            background: #2c9ae4;
-            /* display: -webkit-box;
-            display: -webkit-flex;
-            display: -moz-box;
-            display: -ms-flexbox;
-            display: flex; */
-            justify-content: center;
-            align-items: center;
-            padding: 0 25px;
-
-            /* -webkit-transition: all 0.4s;
-            -o-transition: all 0.4s;
-            -moz-transition: all 0.4s;
-            transition: all 0.4s; */
-            }
-
-            #signup:hover {
-            background: #39d32b;
-            }
-            #bgroup{
-                font-size: small;
-            }
-            #age{
-                font-size: small;
-            }
-            #dob{
-                font-size: small;
-            }
-            #mobile{
-                font-size: small;
-            }
-            form{
-                background-color: rgb(207, 67, 241);
-            }
-            body{
-                background-color: rgb(255, 213, 122);
-            }
-            #cardhead{
-                border-radius: 25px;
-                /* vertical-align: middle; */
-                height: 3.5rem;
-            }
-        </style>
     </head>
     <body >
-        <div class="outer" style="display: table; position: absolute; height: 100%; width: 100%; ">
-            <div class="middle" style="display: table-cell; vertical-align: middle;">
-                <form class="container p-3 " style="border-radius: 10px 40px; width: 35rem;  " >
-                    <div class="card p-3 mx-auto  " style="border-radius: 10px 40px;">
-                        <div id="cardhead" class="card-header bg-primary">
-                        <div class="card-title text-center text-white h4">Create An Account</div>
+        <div class="outer">
+            <div class="middle">
+                <div id = "signupcard" class="card">
+                    <!-- <div >
+                        <img src="assets/logoname.png">
+                    </div> -->
+                    
+                    <div id="cardhead" class="card-header bg-warning mb-2">
+                        <div class="card-title text-center  h4">Create An Account</div>
+                    </div>
+                    <strong class="h5">General Information</strong>
+                    <!-- first/last name -->
+                    <div class="form-row mb-2">
+                        <div class="col">
+                            <input type="text" id="fname" class="form-control" placeholder="First name" name="fname">
                         </div>
-                        <!-- <p class="h4 mb-2 "></p> -->
-                        <strong class="h5">General Information</strong>
-                        <div class="form-row mb-2">
-                            <div class="col">
-                                <input type="text" id="fname" class="form-control" placeholder="First name" name="fname">
-                            </div>
-                            <div class="col">
-                                <input type="text" id="lname" class="form-control" placeholder="Last name" name= "lname">
-                            </div>
+                        <div class="col">
+                            <input type="text" id="lname" class="form-control" placeholder="Last name" name= "lname">
                         </div>
-
-                        <div class="form-row mt-2">
-                            <div class="col">
-                                <input type="number"  min="0" id="age" class="form-control mb-2 " placeholder="Age" name="age">
-                            </div>
-                            <div class="col">
-                                <input type="text" id="bgroup" class="form-control text-uppercase mb-2" placeholder="Blood Group" name= "bgroup">
-                            </div>
-                            <div class="col">
-                                <input type="date" id="dob" class="form-control mb-2 " name="dob">
-                            </div>
+                    </div>
+                    <!-- age/bloodgroup/dateof birth -->
+                    <div class="form-row mt-2">
+                        <div class="col">
+                            <input type="number" min="0" id="age" class="form-control mb-2 " placeholder="Age" name="age">
+                        </div>
+                        <div class="col">
+                            <input type="text" id="bgroup" class="form-control text-uppercase mb-2" placeholder="Blood Group" name= "bgroup">
+                        </div>
+                        <div class="col">
+                            <input type="date" id="dob" class="form-control mb-2 " name="dob">
+                        </div>
+                    </div>
+                    
+                    <!-- gender -->
+                    <div class="form-inline mb-2">
+                        <strong>Gender: </strong>
+                        <div class="custom-control custom-radio mx-2">
+                            <input type="radio" class="custom-control-input" id="male" name="gender">
+                            <label class="custom-control-label" for="male">Male</label>
                         </div>
                     
-                        <div class="form-inline mb-2">
-                            <strong>Gender: </strong>
-                            <div class="custom-control custom-radio mx-2">
-                                <input type="radio" class="custom-control-input" id="male" name="gender">
-                                <label class="custom-control-label" for="male">Male</label>
-                            </div>
-                        
-                            <div class="custom-control custom-radio mx-2">
-                                <input type="radio" class="custom-control-input" id="female" name="gender">
-                                <label class="custom-control-label" for="female">Female</label>
-                            </div>
-                        
-                            <div class="custom-control custom-radio mx-2">
-                                <input type="radio" class="custom-control-input" id="others" name="gender">
-                                <label class="custom-control-label" for="others">Others</label>
-                            </div>
+                        <div class="custom-control custom-radio mx-2">
+                            <input type="radio" class="custom-control-input" id="female" name="gender">
+                            <label class="custom-control-label" for="female">Female</label>
                         </div>
-                        
-                        
-                        <input type="text" id="address" class="form-control" placeholder="Complete Address" name= "address">
-
-                        <hr style="border-top: 4px solid rgb(252, 140, 35); border-radius: 8px; ">
-                        
-                        <strong class="h5">Account Information</strong>
-
-                        <div class="form-row">
-                            <div class="col">
-                                <input type="email" id="email" class="form-control " placeholder="E-mail" name="email">
-                            </div>
-                            <div class="col">
-                                <input type="password" id="pwd" class="form-control " placeholder="Password" name="password" aria-describedby="pwdnote">
-                            </div>
+                    
+                        <div class="custom-control custom-radio mx-2">
+                            <input type="radio" class="custom-control-input" id="others" name="gender">
+                            <label class="custom-control-label" for="others">Others</label>
                         </div>
-                        <div class="form-row">
-                            <div class="col"></div>
-                            <div class="col">
-                                <small id="pwdnote" class="form-text text-muted">Minimum 8 characters length</small>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="col">
-                                <input type="text" class="form-control" id="username" placeholder="Username" name="username">
-                            </div>
-                            <div class="col">
-                                <div class="input-group ">
-                                    <div class="input-group-prepend">
-                                    <span class="input-group-text" id="+91">+91</span>
-                                    </div>
-                                    <input type="tel" class="form-control" id="mobile" pattern=[0-9]{10} placeholder="Mobile Number" name="mobile"aria-describedby="phonenote">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="col"></div>
-                            <div class="col">
-                                <small id="phonenote" class="form-text text-muted mb-2">Enter 10 Digit mobile number</small>
-                            </div>
-                        </div>
-
-
-                        
-                        <div class="text-center">
-                            <button class="btn btn-info my-2 " id="signup"type="submit">Sign up</button>
-                        </div>
-
-                        <div class="text-center p-t-12">
-                            <span class="txt1">
-                                Already have an account?
-                            </span>
-                            <a class="txt2" href="#">
-                                Login
-                            </a>
-                        </div>
-                        
-                        
-                            <!-- <div class="text-center">
-                                <p>or sign up with:</p> 
-                        
-                                <a type="button" class="light-blue-text mx-2">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a type="button" class="light-blue-text mx-2">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a type="button" class="light-blue-text mx-2">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a type="button" class="light-blue-text mx-2">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                        
-                                <hr> -->
-                        
-                                <!-- <p>By clicking
-                                    <em>Sign up</em> you agree to our
-                                    <a href="" target="_blank">terms of service</a> and
-                                    <a href="" target="_blank">terms of service</a>.
-                                </p> -->
                     </div>
-                </form>
+                    
+                    <!-- address -->
+                    <input type="text" id="address" class="form-control" placeholder="Complete Address" name= "address">
+
+                    <hr style="border-top: 4px solid rgb(252, 140, 35); border-radius: 8px; ">
+                    
+                    <strong class="h5">Account Information</strong>
+
+                    <!-- Email/password -->
+                    <div class="form-row">
+                        <div class="col">
+                            <input type="email" id="email" class="form-control " placeholder="E-mail" name="email">
+                        </div>
+                        <div class="col">
+                            <input type="password" id="pwd" class="form-control " placeholder="Password" name="password" aria-describedby="pwdnote">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col"></div>
+                        <div class="col">
+                            <small id="pwdnote" class="form-text ">Minimum 8 characters length</small>
+                        </div>
+                    </div>
+
+                    <!-- Username/Mobile -->
+                    <div class="form-row">
+                        <div class="col">
+                            <input type="text" class="form-control" id="username" placeholder="Username" name="username">
+                        </div>
+                        <div class="col">
+                            <div class="input-group ">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text" id="+91">+91</span>
+                                </div>
+                                <input type="tel" class="form-control" id="mobile" pattern=[0-9]{10} placeholder="Mobile Number" name="mobile"aria-describedby="phonenote">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col"></div>
+                        <div class="col">
+                            <small id="phonenote" class="form-text  mb-2">Enter 10 Digit mobile number</small>
+                        </div>
+                    </div>
+
+                    <!-- Signup Button -->
+                    <div class="text-center">
+                        <button class="btn my-2 "id="login" type="submit">Sign up</button>
+                    </div>
+
+                    <!-- Alternate login options -->
+                    <div class="text-center mt-2">
+                        <text>or Sign Up with:</text>
+                
+                        <a type="button" href="#"  class="mx-2">
+                            <i class="fa fa-facebook-official" style="font-size: 30px;color: #3b5998;"></i>
+                        </a>
+                        <a type="button" href="#" class="mx-2">
+                            <img src="assets/google-logo.png" style="position:relative; bottom:5px">
+                        </a>
+                        <a type="button" href="#" class="mx-2 ">
+                            <i class="fa fa-twitter" style="font-size: 30px;color:  #00acee;"></i>
+                        </a>
+                    </div>
+
+                    <hr>
+
+                    <div class="text-center p-t-12">
+                        <span class="txt1">Already have an account?</span><a class="txt2" href="#">Login</a>
+                    </div>
+                </div>
             </div>
         </div>
     </body>

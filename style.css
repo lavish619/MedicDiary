@@ -126,7 +126,7 @@ h1{
 	.modal-notify .modal-header {
 		border-radius: 3px 3px 0 0;
 	}
-	.modal-notify .modal-content {
+	.modal-notify  {
 		border-radius: 3px;
 	}
 	.content-box{
@@ -149,4 +149,69 @@ h1{
 		border-radius: 15px;
 		padding: 1em 0em 1em 2em;
 	}
+
+	.modal-content{
+		background-color:#FFF;
+		/* background: linear-gradient(90deg, #b0b9adda,#24a19c, #b0b9adda); */
+		border-radius: 12px 42px;
+		width:fit-content;
+		top: 2px;
+	}
+	#signincard{
+		background-color: transparent;
+		border-width: 0.75em;
+		border-color: #24a19c;
+		border-radius: 10px 40px; width: 22em;
+		padding-right: 2.5em;
+		padding-left: 2.5em;
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+	#cardhead{
+		border-radius: 25px;
+		/* vertical-align: middle; */
+		height: 3.5em;
+		width:fit-content;
+		align-self: center;
+	}
+	#login{
+		color: rgb(0, 0, 0);
+		text-transform: uppercase;
+		text-align: center;
+		height: 40px;
+		border-radius: 25px;
+		background: #66ec44;
+		align-items: center;
+		padding: 0 25px;
+	}
+	#login:hover {
+		background: #919e9e;
+	}
+	#signupcard{
+		background-color: #FFF;
+		border-radius: 40px;  
+		padding-right: 2.5em;
+		padding-left: 2.5em;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		width: 35rem;
+		margin: auto;
+	}
+	#bgroup{
+		font-size: small;
+	}
+	.outer{
+		/* background: linear-gradient(45deg, #fa5298, #24b4f7, #b1ec44); */
+		background: linear-gradient(90deg, rgb(146, 140, 143), #24b4f7, rgb(146, 140, 143));
+		display: table;
+		position: absolute; 
+		height: 100%; 
+		width: 100%;
+	}
+	.middle{
+		display: table-cell; 
+		vertical-align: middle;
+		
+	}
+	
 	

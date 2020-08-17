@@ -14,87 +14,158 @@
 	<link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Oswald"/>
 	<link rel="stylesheet" href="./style.css"/>
-		<link rel="icon" type="image/png" href="assets/icon.png"/>
+	<link rel="icon" type="image/png" href="assets/icon.png"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<title>MedicDiary</title>
 </head>
 <body>
-	
-		<nav class="navbar navbar-expand-lg navbar-light nav-bg" id="navstyle" >
-			<a class="navbar-brand" href="#" style="font-family: Cinzel; font-size: 40px !important; color: white;" >
-				<img src="assets/icon.png" width="44" height="44" class="d-inline-block align-top" alt="" loading="lazy">
-				MedicDiary
-			</a>
+	<nav class="navbar navbar-expand-lg navbar-light nav-bg" id="navstyle" >
+		<a class="navbar-brand" href="#" style="font-family: Cinzel; font-size: 40px !important; color: white;" >
+			<img src="assets/icon.png" width="44" height="44" class="d-inline-block align-top" alt="" loading="lazy">
+			MedicDiary
+		</a>
 
 
-			<div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-family: Oswald; font-size:20px; ">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="#" style="color: white"> Home <span class="sr-only">(current)</span></a>
-					</li>
-					
-				</ul>
-				<ul class="navbar-nav">
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
-							For you and your family
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">What is a health record</a>
-							<a class="dropdown-item" href="#">What's in your health record </a>
-							<a class="dropdown-item" href="#">How is a digital record better </a>
-						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
-							For healthcare professionals
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">How to use the health record</a>
-							<a class="dropdown-item" href="#">How can the digital record help you </a>
-						</div>
-					</li>
-				</ul>			
-			</div>
-		</nav>
-	
-		<section>
-			<div class="hero container">
-				<a href="#" class="button" id="user" data-toggle="modal" data-target="#usermodal"> For you and your family </a>
-				<a href="#" class="button" id= "doctor" data-toggle="modal" data-target="#doctormodal">For healthcare professionals </a>
-
-				<img src="assets/bg2.jpg">
+		<div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-family: Oswald; font-size:20px; ">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#" style="color: white"> Home <span class="sr-only">(current)</span></a>
+				</li>
 				
-				<h1 class="headline">One place for all <br> your health records. </h1>
-				<p></p>
+			</ul>
+			<ul class="navbar-nav">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
+						For you and your family
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="#">What is a health record</a>
+						<a class="dropdown-item" href="#">What's in your health record </a>
+						<a class="dropdown-item" href="#">How is a digital record better </a>
+					</div>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
+						For healthcare professionals
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">How to use the health record</a>
+						<a class="dropdown-item" href="#">How can the digital record help you </a>
+					</div>
+				</li>
+			</ul>			
+		</div>
+	</nav>
+	
+	<section>
+		<div class="hero img">
+			<a href="#" class="button" id="user" data-toggle="modal" data-target="#usermodal"> For you and your family </a>
+			<a href="#" class="button" id= "doctor" data-toggle="modal" data-target="#doctormodal">For healthcare professionals </a>
+
+			<img src="assets/bg2.jpg">
+			
+			<h1 class="headline">One place for all <br> your health records. </h1>
+			<p></p>
+		</div>
+	</section>
+	<div class="modal fade" id="usermodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    	<div class="modal-dialog modal-notify modal-warning" role="document">
+    		<!--Content-->
+    		<div class="modal-content">
+				<!--Header-->
+				<div id="signincard" class="card" >
+					<div id="cardhead" class="card-header bg-warning mb-2">
+						<div class="card-title text-center h4">Sign In</div>
+					</div>
+
+					<!-- Input Fields -->
+					<input type="text" id="username" class="form-control mb-2" placeholder="Patient's Username" name="username">
+					<input type="text" id="password" class="form-control" placeholder="Password" name= "lname">
+					
+					<div class="text-md-right" >
+						<small>Forgot <a href="#">Username/Password</a></small>
+					</div>
+
+					<!-- Login Button -->
+					<div class="text-center">
+						<button class="btn my-2" id="login" type="submit">Login</button>
+					</div>
+
+					<!-- Alternate login options -->
+					<div class="text-center">
+						<text>or Login with:</text>
+				
+						<a type="button" href="#"  class="mx-2">
+							<i class="fa fa-facebook-official" style="font-size: 30px;color: #3b5998;"></i>
+						</a>
+						<a type="button" href="#" class="mx-2">
+							<img src="assets/google-logo.png" style="position:relative; bottom:5px">
+						</a>
+						<a type="button" href="#" class="mx-2 ">
+							<i class="fa fa-twitter" style="font-size: 30px;color:  #00acee;"></i>
+						</a>
+					</div>
+
+					<hr> 
+
+					<div class="text-center">
+						<span>New User? </span><a href="#">Create an account</a>
+					</div>           
+				</div>
 			</div>
-		</section>
-<div class="modal fade" id="usermodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-notify modal-warning" role="document">
-    <!--Content-->
-    <div class="modal-content">
-      <!--Header-->
-      Hey There !! This is an empty modal field..For the user <br><br><br><br><br>
+    		<!--/.Content-->
+		</div>
+	</div>
+	
+	<div class="modal fade" id="doctormodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  		<div class="modal-dialog modal-notify modal-warning" role="document">
+			<!--Content-->
+    		<div class="modal-content">
+				<!--Header-->
+				<div id="signincard" class="card" >
+					<div id="cardhead" class="card-header bg-warning mb-2">
+						<div class="card-title text-center h4">Sign In</div>
+					</div>
 
-     
-    </div>
-    <!--/.Content-->
-  </div>
-</div>
-<div class="modal fade" id="doctormodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-notify modal-warning" role="document">
-    <!--Content-->
-    <div class="modal-content">
-      <!--Header-->
-      Hey There !! This is an empty modal field... For the doctor<br><br><br><br><br>
+					<!-- Input Fields -->
+					<input type="text" id="username" class="form-control mb-2" placeholder="Doctor's Username" name="username">
+					<input type="text" id="password" class="form-control" placeholder="Password" name= "lname">
+					
+					<div class="text-md-right" >
+						<small>Forgot <a href="#">Username/Password</a></small>
+					</div>
 
-     
+					<!-- Login Button -->
+					<div class="text-center">
+						<button class="btn my-2 " id="login" type="submit">Login</button>
+					</div>
+
+					<!-- Alternate login options -->
+					<div class="text-center">
+						<text>or Login with:</text>
+				
+						<a type="button" href="#"  class="mx-2">
+							<i class="fa fa-facebook-official" style="font-size: 30px;color: #3b5998;"></i>
+						</a>
+						<a type="button" href="#" class="mx-2">
+							<img src="assets/google-logo.png" style="position:relative; bottom:5px">
+						</a>
+						<a type="button" href="#" class="mx-2 ">
+							<i class="fa fa-twitter" style="font-size: 30px;color:  #00acee;"></i>
+						</a>
+					</div>
+
+					<hr> 
+
+					<div class="text-center">
+						<span>New User? </span><a href="#">Create an account</a>
+					</div>           
+				</div>
+			</div>
+    	</div>
+    	<!--/.Content-->
     </div>
-    <!--/.Content-->
-  </div>
-</div>
 <!-- <div class="container" style="position: relative; margin: 1.5em; text-align: center; top: 1em;">
 	<h1>
 		Contact Us
