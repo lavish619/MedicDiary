@@ -104,6 +104,21 @@ h1{
 		text-decoration: none;
 
 	}
+	.button2{
+		position: relative;
+		border-radius: 1.5em;
+		background:#ffaa71;
+		color: white;
+		box-shadow: 0 0 3em -1em rgba(0,0,0,0.75);
+		text-decoration: none;
+		padding: 0.2em;
+		top: 1em;
+	}
+	.button2:hover{
+		background: #ed6663;
+		color: white;
+		text-decoration: none;
+	}
 
 /*.popup{
 	background: rgba(0,0,0,0.6);
@@ -214,4 +229,11 @@ h1{
 		
 	}
 	
-	
+	.useful_links:link {
+		color: black;
+		text-decoration: none;
+	}
+	.useful_links:hover{
+		color: white;
+		text-decoration: none;
+	}
