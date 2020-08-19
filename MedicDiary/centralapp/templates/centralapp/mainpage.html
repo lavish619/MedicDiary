@@ -1,10 +1,338 @@
-{% block body %}
-<h1>mainpage</h1>
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Pacifico" />
+	<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Cinzel" />
+	<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Oswald"/>
+	<link rel="stylesheet" href="{% static 'css_files/style.css' %}">
+	<!-- <link rel="icon" type="image/png" href="assets/icon.png"/>                              !!!!!!!!-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<title>MedicDiary</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light nav-bg" id="navstyle" >
+		<a class="navbar-brand" href="#" style="font-family: Cinzel; font-size: 40px !important; color: white;" >
+			<img src="{% static 'Images/icon.png' %}" width="44" height="44" class="d-inline-block align-top" alt="" loading="lazy">
+			MedicDiary
+		</a>
+
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-family: Oswald; font-size:20px; ">
+
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item dropdown my-2 mx-1">
+					<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
+						For you and<br> your family
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="{% url 'centralapp:Inside_health_records' %}">What's in my health record </a>
+						<a class="dropdown-item" href="{% url 'centralapp:patients_how_to_use' %}">How to use my health record </a>
+					</div>
+				</li>
+
+				<li class="nav-item dropdown my-2 mx-1">
+					<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
+						For healthcare<br>professionals
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="{% url 'centralapp:doc_how_to_use' %}">How to use the health record</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown my-2 mx-1">
+					<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
+						Know more<br>about diseases
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="{% url 'centralapp:Aids' %}">AIDS</a>
+						<a class="dropdown-item" href="{% url 'centralapp:Cancer' %}">Cancer</a>
+						<a class="dropdown-item" href="{% url 'centralapp:Heart_disorder' %}">Heart Disorders</a>
+						<a class="dropdown-item" href="{% url 'centralapp:Hypertension' %}">Hypertension</a>
+						<a class="dropdown-item" href="{% url 'centralapp:Diabetes' %}">Diabetes</a>
+						<a class="dropdown-item" href="{% url 'centralapp:Birth_control' %}">Birth Control Measures</a>
+					</div>
+				</li>
+				<li>
+					<a class="nav-link my-3 mx-1" style="color: white" href="{% url 'centralapp:FAQS' %}"> FAQs</a>
+				</li>
+				<li>
+					<a class="nav-link my-3 mx-1" style="color: white" href="{% url 'centralapp:About_us' %}"> About us</a>
+				</li>
+
+				<li>
+					<a href="{% url 'centralapp:Covid_19' %}" class="button2 mt-7 mx-1"> Covid-19 Checkpoints </a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<section>
+		<div class="hero img">
+			<a href="#" class="button" id="user" data-toggle="modal" data-target="#usermodal"> For you and your family </a>
+			<a href="#" class="button" id= "doctor" data-toggle="modal" data-target="#doctormodal">For healthcare professionals </a>
+
+			<img src="{% static 'Images/bg2.jpg' %}">
+
+			<h1 class="headline">One place for all <br> your health records. </h1>
+			<p></p>
+		</div>
+	</section>
+	<div class="modal fade" id="usermodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    	<div class="modal-dialog modal-notify modal-warning" role="document">
+    		<!--Content-->
+    		<div class="modal-content">
+				<!--Header-->
+				<div id="signincard" class="card" >
+					<div id="cardhead" class="card-header bg-warning mb-2">
+						<div class="card-title text-center h4">Sign In</div>
+					</div>
+
+					<!-- Input Fields -->
+					<input type="text" id="username" class="form-control mb-2" placeholder="Patient's Username" name="username">
+					<input type="text" id="password" class="form-control" placeholder="Password" name= "lname">
+
+					<div class="text-md-right" >
+						<small>Forgot <a href="#">Username/Password</a></small>
+					</div>
+
+					<!-- Login Button -->
+					<div class="text-center">
+						<button class="btn my-2" id="login" type="submit">Login</button>
+					</div>
+
+					<!-- Alternate login options -->
+					<div class="text-center">
+						<text>or Login with:</text>
+
+						<a type="button" href="#"  class="mx-2">
+							<i class="fa fa-facebook-official" style="font-size: 30px;color: #3b5998;"></i>
+						</a>
+						<a type="button" href="#" class="mx-2">
+							<img src="{% static 'Images/google-logo.png' %}" style="position:relative; bottom:5px">
+						</a>
+						<a type="button" href="#" class="mx-2 ">
+							<i class="fa fa-twitter" style="font-size: 30px;color:  #00acee;"></i>
+						</a>
+					</div>
+
+					<hr>
+
+					<div class="text-center">
+						<span>New User? </span><a href="#">Create an account</a>
+					</div>
+				</div>
+			</div>
+    		<!--/.Content-->
+		</div>
+	</div>
+
+	<div class="modal fade" id="doctormodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  		<div class="modal-dialog modal-notify modal-warning" role="document">
+			<!--Content-->
+    		<div class="modal-content">
+				<!--Header-->
+				<div id="signincard" class="card" >
+					<div id="cardhead" class="card-header bg-warning mb-2">
+						<div class="card-title text-center h4">Sign In</div>
+					</div>
+
+					<!-- Input Fields -->
+					<input type="text" id="username" class="form-control mb-2" placeholder="Doctor's Username" name="username">
+					<input type="text" id="password" class="form-control" placeholder="Password" name= "lname">
+
+					<div class="text-md-right" >
+						<small>Forgot <a href="#">Username/Password</a></small>
+					</div>
+
+					<!-- Login Button -->
+					<div class="text-center">
+						<button class="btn my-2 " id="login" type="submit">Login</button>
+					</div>
+
+					<!-- Alternate login options -->
+					<div class="text-center">
+						<text>or Login with:</text>
+
+						<a type="button" href="#"  class="mx-2 ">
+							<i class="fa fa-facebook-official" style="font-size: 30px;color: #3b5998;"></i>
+						</a>
+						<a type="button" href="#" class="mx-2 ">
+							<img src="{% static 'Images/google-logo.png' %}" style="position:relative; bottom:5px">
+						</a>
+						<a type="button" href="#" class="mx-2 ">
+							<i class="fa fa-twitter" style="font-size: 30px;color:  #00acee;"></i>
+						</a>
+					</div>
+
+					<hr>
+
+					<div class="text-center">
+						<span>New User? </span><a href="#">Create an account</a>
+					</div>
+				</div>
+			</div>
+    	</div>
+    	<!--/.Content-->
+    </div>
+<!-- <div class="container" style="position: relative; margin: 1.5em; text-align: center; top: 1em;">
+	<h1>
+		Contact Us
+	</h1>
+	<p style="font-family: Oswald">
+		You can find us at :
+	</p>
+</div> -->
+
+
+	<div class="slider"></div>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<!--<script>
+		document.getElementById("user").addEventListener("click",function()
+		{
+			document.querySelector(".popup").style.display="flex";
+		})
+	</script>-->
 
 
 
+	<footer class="page-footer font-small mdb-color pt-4" style="background:#8fc0a9; ">
 
+		<!-- Footer Links -->
+		<div class="container text-center text-md-left">
 
+			<!-- Footer links -->
+			<div class="row text-center text-md-left mt-3 pb-3">
 
+				<!-- Grid column -->
+				<hr class="w-100 clearfix d-md-none">
+				<div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+					<h6 class="text-uppercase mb-2 font-weight-bold" >Useful links</h6>
+					<p>
+						<a href="#!" class="useful_links">What's in my health record</a><br>
+						<a href="#!" class="useful_links">How to use my health record</a><br>
+						<a href="#!" class="useful_links">FAQs</a>
+					</p>
+				</div>
+				<!-- Grid column -->
 
-{% endblock %}
+				<!-- Grid column -->
+
+				<hr class="w-100 clearfix d-md-none">
+
+				<!-- Grid column -->
+
+				<div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+					<h6 class="text-uppercase mb-2 font-weight-bold">Our Team</h6>
+					<p>
+						Madhav Mittal<br>
+						HarshDeep Singh Kohli<br>
+						Lavish Bansal<br>
+						Shivangi Nayak
+					</p>
+				</div>
+				<!-- Grid column -->
+				<hr class="w-100 clearfix d-md-none">
+
+				<!-- Grid column -->
+				<div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+					<h6 class="text-uppercase mb-2 font-weight-bold">Contact</h6>
+					<p>
+						<i class="fa fa-home mr-3"></i>IIT(BHU), Varanasi, UP, India</p>
+						<p>
+							<i class="fa fa-envelope mr-3 "></i> lavish.bansal.mat19@itbhu.ac.in</p>
+							<p>
+								<i class="fa fa-phone mr-3"></i> +91 9039276236</p>
+
+							</div>
+							<!-- Grid column -->
+
+						</div>
+						<!-- Footer links -->
+
+						<hr>
+
+						<!-- Grid row -->
+						<div class="row d-flex align-items-center">
+
+							<!-- Grid column -->
+							<div class="col-md-11 col-lg-11">
+
+								<!--Copyright-->
+								<p class="text-center">© 2020 Copyright:
+
+									<strong> MedicDiary</strong>
+
+								</p>
+
+							</div>
+							<!-- Grid column -->
+
+							<!-- Grid column -->
+							<!-- <div class="col-md-5 col-lg-4 ml-lg-0">
+
+								<div class="text-center text-md-right">
+									<ul class="list-unstyled list-inline">
+										<li class="list-inline-item">
+											<a class="btn-floating btn-sm rgba-white-slight mx-1">
+												<i class="fab fa-facebook-f"></i>
+											</a>
+										</li>
+										<li class="list-inline-item">
+											<a class="btn-floating btn-sm rgba-white-slight mx-1">
+												<i class="fab fa-twitter"></i>
+											</a>
+										</li>
+										<li class="list-inline-item">
+											<a class="btn-floating btn-sm rgba-white-slight mx-1">
+												<i class="fab fa-google-plus-g"></i>
+											</a>
+										</li>
+										<li class="list-inline-item">
+											<a class="btn-floating btn-sm rgba-white-slight mx-1">
+												<i class="fab fa-linkedin-in"></i>
+											</a>
+										</li>
+									</ul>
+								</div>
+
+							</div> -->
+							<!-- Grid column -->
+
+						</div>
+						<!-- Grid row -->
+
+					</div>
+					<!-- Footer Links -->
+
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js" integrity="sha512-6MCPs9fbSIt6mTpJH2Lbo9Kk71gcgwY85BCqJGP04x+O08W3m/OiKfMiMc4VQKYn+DCtAQwpGumWeD0cACeRsQ==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TimelineMax.min.js" integrity="sha512-MBKN+F1LTtgzsnhh92u6fEklbJbv13vKI/2BZP0LLR8+IMeqlp0h10R6afWaJv2HIJfTOQkjW0LCPrIFEkZVeg==" crossorigin="anonymous"></script>
+	<!-- <script src="app.js"></script> -->
+	<script type="text/javascript">
+		const hero= document.querySelector(".hero")
+		const slider= document.querySelector(".slider")
+		const headline= document.querySelector(".headline")
+
+		const tl= new TimelineMax();
+
+		tl.fromTo(hero, 1, {height: "0%"}, {height: "100%", ease: Power2.easeInOut})
+		.fromTo(hero,1.2, {width:"100%"}, {width:"80%",ease: Power2.easeInOut})
+		.fromTo(slider,1,{x:"-100%"}, {x:"0%", ease: Power2.easeInOut},"-=1");
+
+	</script>
+</body>
+</html>
