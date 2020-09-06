@@ -1,48 +1,194 @@
 {% extends 'centralapp/base.html' %}
 {% block body %}
 
-<div class="container">
-    <div class="row my-4">
-        <div class="col-lg-7 " >
-            <h1> What is a health record</h1>
-            <p>
-                My Health Record lets you control your health information securely, in one place.<br>This means your important health information is available when and where it’s needed, including in an emergency.
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+<div class="container-fluid" >
+    <div class="row my-4" >
+        <div class="col-sm-8 p-2 pr-4 ml-auto" > 
+
+            <!-- Heading HIV/AIDS -->
+            <h1>HIV/AIDS</h1><br>
+
+            <!-- What it is -->
+            <h3>What it is?</h3>
+            <p class="text-justify">
+                HIV/AIDS is a spectrum of conditions caused by infection with HIV. Following initial infection a person may not 
+                notice any symptoms, or may experience a brief period of influenza-like illness. Typically, this is followed by a 
+                prolonged period with no symptoms. If the infection progresses, it interferes more with the immune system, increasing 
+                the risk of developing common infections such as tuberculosis, as well as other opportunistic infections, and tumors 
+                which are otherwise rare in people who have normal immune function.
+            </p>
+        
+            <!-- Signs and symptoms -->
+            <h3>Signs and Symptoms</h3>
+            <text>There are three main stages of HIV infection: acute infection, clinical latency, and AIDS.</text>
+
+            <!-- first stage acute infection -->
+            <h5 class="mt-2">First Stage: Acute Infection</h5>
+            <p class="text-justify">
+                Most people don't know right away when they've been infected with HIV. But they may have symptoms within 
+                2 to 6 weeks after they’ve gotten the virus. This is when your body's immune system puts up a fight. It's called acute 
+                retroviral syndrome or primary HIV infection.
             </p>
 
-            <p>
-                <h2>Start using your My Health Record:</h2>
-                <ul>
-                    <li>Log in to your record for the first time</li>
-
-                    <li>Control your privacy settings</li>
-
-                    <li>Understand what information can go in your record</li>
-
-                    <li>Discuss My Health Record with your healthcare provider</li>
-                </ul>
+            <p class="text-justify">The symptoms are similar to those of other viral illnesses, and they're often compared to the flu. They 
+                typically last a week or two and then go away. Early signs of HIV include:
             </p>
+            <ul class="pl-4">
+                <li>Headache</li>
+                <li>Fatigue</li>
+                <li>Aching muscles</li>
+                <li>Sore throat</li>
+                <li>Swollen lymph nodes</li>
+                <li>A red rash that doesn't itch, usually on your torso</li>
+                <li>Fever</li>
+            </ul>
+            <p class="text-justify">
+                At this stage, levels of HIV in your blood and bodily fluids are very high. This makes it especially contagious. Starting 
+                treatment as soon as possible might help boost your immune system and ease your symptoms.
+            </p>
+            <p class="text-justify">
+                A combination of medications (called HIV drugs, antiretroviral therapy, or ART) can help fight HIV, keep your immune system 
+                healthy, and keep you from spreading the virus. If you take these medications and have healthy habits, your HIV infection 
+                probably won’t get worse.
+            </p>
+
+            <!-- second stage clinical latency -->
+            <h5 class="mt-2">Second Stage: Clinical Latency</h5>
+            <p class="text-justify">
+                After your immune system loses the battle with HIV, the flu-like symptoms will go away. But there’s a lot going on 
+                inside your body. Doctors call this the asymptomatic period or chronic HIV infection.
+            </p>
+            <p class="text-justify">
+                In your body, cells called CD4 T cells coordinate your immune system’s response. During this stage, untreated HIV 
+                will kill CD4 cells and destroy your immune system. Your doctor can check how many of these cells you have with blood 
+                tests. Without treatment, the number of CD4 cells will drop, and you’ll be more likely to get other infections.
+            </p>
+            <p class="text-justify">
+                Most people don't have symptoms they can see or feel. You may not realize that you're infected and can pass HIV 
+                on to others. If you’re taking antiretroviral therapy, you might stay in this phase for decades. You can pass the 
+                virus on to other people, but it’s extremely rare if you take your medicines.
+            </p>
+
+            <!-- third stage AIDS -->
+            <h5 class="mt-2">Third Stage: AIDS</h5>
+            <p class="text-justify">
+                <strong>AIDS is the advanced stage of HIV infection.</strong> This is usually when your<strong> CD4 T-cell</strong> number drops below 200 and your immune 
+                system is badly damaged. You might get an opportunistic infection, an illness that happens more often and is worse in people 
+                who have weakened immune systems. General symptoms are:
+            </p>
+            <ul class="pl-4">
+                <li>Being tired all the time</li>
+                <li>Swollen lymph nodes in your neck or groin</li>
+                <li>Fever that lasts more than 10 days</li>
+                <li>Night sweats</li>
+                <li>Weight loss with no obvious reason</li>
+                <li>Purplish spots on your skin that don't go away</li>
+                <li>Shortness of breath</li>
+                <li>Severe, long-lasting diarrhea</li>
+                <li>Yeast infections in your mouth, throat, or vagina</li>
+                <li>Bruises or bleeding you can't explain</li>
+            </ul>
+            <p class="text-justify">
+                People with AIDS who don't take medication live about 3 years, or less if they get another infection. But HIV can still be 
+                treated at this stage. If you start on HIV drugs, stay on them, follow your doctor’s advice, and keep healthy habits, 
+                you can live a long time.
+            </p>
+
+            <!-- transmission and preventions -->
+            <h3>How Do You Get or Transmit HIV?</h3>
+
+            <p>
+                HIV can only be spread through specific activities.<br>The most common ways are:
+            </p>
+            <ul class="pl-4">
+                <li><strong>Sharing injection drug equipment, such as hypodermic needles, or other sharp object</strong> with someone who has HIV. This is a risk 
+                    mainly for health care workers.</li>
+                <li><strong>Having vaginal or anal or oral sex with someone who has HIV</strong> without using a condom or taking medicines 
+                    to prevent or treat HIV. Anal sex is riskier than vaginal sex. But in general, the chances from oralsex are very low.</li>
+            </ul>
+            <p>Less common ways are:</p>
+            <ul class="pl-4">
+                <li><strong>From mother to child during pregnancy, birth, or breastfeeding. </strong>However, the use of HIV medicines and other strategies have helped lower the risk of mother-to-child transmission of HIV to 1% or less.</li>
+                <li><strong>Receiving blood transfusions, blood products, or organ/tissue transplants</strong> that are contaminated with HIV.Contact between broken skin, wounds, or mucous membranes and HIV-infected blood or blood-contaminated body fluids</li>
+                <li><strong>Being bitten by a person with HIV.</strong> Each of the very small number of documented cases has involved severe trauma with extensive tissue damage and the presence of blood. There is no risk of transmission if the skin is not broken.</li>
+                <li><strong>Eating food that has been pre-chewed by a person with HIV.</strong> The contamination occurs when infected blood from a caregiver’s mouth mixes with food while chewing.</li>
+            </ul>
+            <h5>Ways HIV Cannot Be Spread</h5>
+            <p>HIV <strong>is not</strong> spread by:</p>
+            <ul class="pl-4">
+                <li>Air or water</li>
+                <li>Mosquitoes, ticks or other insects</li>
+                <li>Saliva, tears, or sweat that is not mixed with the blood of a person with HIV</li>
+                <li>Shaking hands, hugging, sharing toilets, sharing dishes, silverware, or drinking glasses, 
+                    or engaging in closed-mouth or “social” kissing with a person with HIV</li>
+                <li>Other sexual activities that don’t involve the exchange of body fluids (touching).</li>
+            </ul>
+            <p>HIV can’t be passed through healthy, unbroken skin.</p>
+            
+            <h3>Precautions</h3>
+            <p>There's no vaccine to prevent HIV infection and no cure for AIDS. But you can protect yourself and others from infection.</p>
+
+            <p>To help prevent the spread of HIV:</p>
+
+            <ul class="pl-4">
+            <li><strong>Use Treatment as Prevention (TasP).</strong> If you're living with HIV, taking HIV medication can keep your partner 
+                from becoming infected with the virus. Using TasP means taking your medication exactly as prescribed and getting regular checkups.</li>
+            <li><strong>Use post-exposure prophylaxis (PEP) if you've been exposed to HIV.</strong> If you think you've been exposed through sex, needles 
+                or in the workplace, contact your doctor or go to the emergency department. Taking PEP as soon as possible within the first 72 hours can 
+                greatly reduce your risk of becoming infected with HIV. You will need to take medication for 28 days.</li>
+            <li><strong>Use a new condom every time you have sex.</strong> Use a new condom every time you have anal or vaginal sex. 
+                Women can use a female condom.</li>
+            <li><strong>Consider preexposure prophylaxis (PrEP).</strong> The combination drugs emtricitabine plus 
+                tenofovir (Truvada) and emtricitabine plus tenofovir alafenamide (Descovy) can reduce the risk of 
+                sexually transmitted HIV infection in people at very high risk. PrEP can reduce your risk of getting 
+                HIV from sex by more than 90% and from injection drug use by more than 70%. Your doctor will prescribe these drugs for 
+                HIV prevention only if you don't already have HIV infection. You will need an HIV test before you start taking PrEP and 
+                then every three months as long as you're taking it.</p>
+            <p>They don't prevent other sexually transmitted infections, so you'll still need to practice safe sex. If you have 
+                hepatitis B, you should be evaluated by an infectious disease or liver specialist before beginning therapy.</p>
+            </li>
+            <li><strong>Tell your sexual partners if you have HIV.</strong> It's important to tell all your current and past sexual 
+                partners that you're HIV-positive. They'll need to be tested.</li>
+            <li><strong>Use a clean needle.</strong> If you use a needle to inject drugs, make sure it's sterile and don't share it. 
+                Take advantage of needle-exchange programs in your community.</li>
+            <li><strong>If you're pregnant, get medical care right away.</strong> If you're HIV-positive, you may pass the infection 
+                to your baby. But if you receive treatment during pregnancy, you can significantly cut your baby's risk.</li>
+            <li><strong>Consider male circumcision.</strong> There's evidence that male circumcision can help reduce the risk of 
+                getting HIV infection.</li>
+            </ul>
         </div>
-        <div class="col-lg-5 sidebar">
-            Lots of content.<br>
-            Lots of content.<br>
-            Lots of content.<br>
-            Lots of content.<br>
-            Lots of content.<br>
-            Lots of content.<br>
-            Lots of content.<br>
-            Lots of content.<br>
-            Lots of content.<br>content too much
-            Lots of content.<br>
-            Lots of content.<br>
-            Lots of content.<br>
-            Lots of content.<br>
-            Lots of content.<br>
-            Lots of content.<br>
+        
+        <div class="col-sm-3 mr-auto sidebar">
+            <ul class="list-group ">
+                <li class="list-group-item  heads">For You And Your Family</li>
+                <ul class="list-group">
+                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Inside_health_records' %}">What's in my health record </a>
+                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:patients_how_to_use' %}">How to use my health record </a>
+                </ul>
+                <li class="list-group-item  heads">For HealthCare Professionals</li>
+                <ul class="list-group">
+                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:doc_how_to_use' %}">How to use my health record </a>
+                </ul>
+                <li class="list-group-item  heads">Know more about diseases</li>
+                <ul class="list-group">
+                    <a class="list-group-item list-group-item-action active" href="{% url 'centralapp:Aids' %}">AIDS</a>
+                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Cancer' %}">Cancer</a>
+                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Heart_disorder' %}">Heart Disorders</a>
+                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Hypertension' %}">Hypertension</a>
+                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Diabetes' %}">Diabetes</a>
+                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Birth_control' %}">Birth control measures</a>
+                </ul>
+                <a class="list-group-item list-group-item-action heads" href="{% url 'centralapp:About_us' %}">About Us</a>
+                <a class="list-group-item list-group-item-action heads" href="{% url 'centralapp:FAQS' %}">FAQs</a>
+                <a class="list-group-item list-group-item-action heads" href="{% url 'centralapp:Covid_19' %}">Covid-19 Checkpoints</a>
+            </ul> 
         </div>
     </div>
 </div>
-
-
-
 
 {% endblock %}
