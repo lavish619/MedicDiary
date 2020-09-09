@@ -39,3 +39,5 @@ def Inside_health_records(request):
     return render(request,'centralapp/inside_health_records.html')
 def Aids(request):
     return render(request,'centralapp/aids.html')
+def Dashboard(request):
+    return render(request, 'centralapp/patient_profile.html')

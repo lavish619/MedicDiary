@@ -1,6 +1,40 @@
 {% extends 'centralapp/base.html' %}
+{% load static %}
 {% block body %}
 
-
-
+<div class = "about_us_headline" data-aos="fade-up" data-aos-duration="2000">
+	<h1 class="display">About medicdiary</h1>
+	<p class="p_display">Providing a hassle-free environment to manage your health records.<br><br> We at MedicDiary believe that maintaining health records should be as simple as clicking a button</p>
+</div>
+<div class="container-fluid">
+<div class="main_container row" data-aos="fade-down" data-aos-duration="1500">
+	
+	<div class="col-lg-5" data-aos="fade-left" data-aos-duration="1000">
+		<img class="bhu_image" src="{% static 'Images/bhu.jpeg' %}">
+	</div>
+	<div class="col-lg-7 paragraph" data-aos="fade-right" data-aos-duration="1000">
+		We are a group of enthusiatic sophomores studying at IIT(BHU), pursuing Mathematics and Computing as our major field of study. We aim to provide a very user friendly platform to manage one's medical records.<br>
+	</div>	
+</div>
+<div style="text-align: center;">
+	<h1 class="display" data-aos="fade-down" data-aos-duration="1000">Our Team</h1>
+	<div class="team" data-aos="fade-down" data-aos-duration="1200">
+		<h2> The Frontend Team</h2>
+		<ul>
+			<li><a href="#"> Lavish Bansal </a></li>
+			<li><a href="#"> Shivangi Nayak </a></li>
+		</ul>
+	</div>
+	
+	<div class="team" data-aos="fade-down" data-aos-duration="1200">
+		<h2> The Backend Team</h2>
+		<ul>
+			<li><a href="#"> Madhav Mittal </a></li>
+			<li><a href="#"> HarshDeep Singh Kohli </a></li>
+		</ul>
+	</div>
+	
+	
+</div>
+</div>
 {% endblock %}

@@ -14,14 +14,29 @@
 	href="https://fonts.googleapis.com/css?family=Cinzel" />
 	<link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Oswald"/>
+	<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Grandstander"/>
+	<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Ubuntu"/>
 
 	<link rel="stylesheet" href="{% static 'css_files/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css_files/static_style.css' %}">
 	<link rel="icon" type="image/png" href="{% static 'Images/icon.png' %}"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script type="text/javascript">
+       AOS.init();
+    </script>
+	<script src="{% static 'js/app.js' %}"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!--<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>-->
 	<title>MedicDiary</title>
 </head>
 <body style="background: #f7f7ee">
-
+<script>
+       AOS.init();
+    </script>
 	<nav class="navbar navbar-expand-lg navbar-light nav-bg" id="navstyle" >
 		<a class="navbar-brand" href="{% url 'centralapp:mainpage' %}" style="font-family: Cinzel; font-size: 40px !important; color: white;" >
 			<img src="{% static 'Images/icon.png' %}" width="50" height="50" class="d-inline-block align-top" alt="" loading="lazy">
@@ -119,5 +134,6 @@
 		</div>
 		<!-- Footer Links -->
 	</footer>
+
 </body>
 </html>

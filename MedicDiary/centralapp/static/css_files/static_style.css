@@ -1,0 +1,147 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: sans-serif;
+}
+#sidebar{
+	position: absolute;
+	top:83px;
+	width: 200px;
+	height: 100%;
+	background: #24a19c;
+	left: -200px;
+	transition: all 400ms linear;
+	
+}
+
+#sidebar ul li{
+	color: rgba(230,230,230,0.9);
+	list-style: none;
+	padding: 20px 15px;
+	border-bottom: 1px solid rgba(100,100,100,0.3);
+}
+#sidebar .toggle-btn{
+	position: absolute;
+	left: 210px;
+	top: 20px;
+}
+#sidebar a{
+	text-decoration: none;
+	color: #f6f5f5;
+}
+#sidebar a:hover{
+	background-color: #cedebd;
+	padding: 20px 30px 20px 25px;
+	color: #1a1a2e;
+}
+#sidebar .btn-close{
+	position: absolute;
+	top: 0;
+	right: 22px;
+	font-size: 30px;
+	margin-left: 50px;
+}
+#sidebar .btn-close:hover{
+	background-color: #cedebd;
+	color: #1a1a2e;
+
+}
+#main-content{
+	transition: margin-left 0.4s linear;
+	padding: 20px;
+	overflow: hidden;
+}
+.team a{
+	text-decoration: none;
+	color: #41444b;
+	font-weight: bold;
+}
+.team ul li{
+	color: rgba(230,230,230,0.9);
+	list-style: none;
+	padding: 20px 15px;
+}
+.paragraph{
+	font-size: 25px;
+	margin:auto;
+	font-family: 'Ubuntu';
+
+}
+.covid-img{
+	height: 400px;
+	max-width: 100%;
+	margin: auto;
+	display: block;
+}
+.corona-subhead{
+	color: #d49a89;
+	margin: 0 auto;
+	font-size: 2em;
+	text-align: center;
+	font-family: 'Pacifico';
+}
+.typewriter{
+	color: #d49a89;
+	position: relative;
+	font-size: 3.5em;
+	width: 12em;
+	margin: 0 auto;
+	border-right: 2px solid rgba(255,255,255,0.75);
+	text-align: center;
+	white-space: nowrap;
+	overflow:hidden;
+	font-family: 'Grandstander',monospace;
+	animation: animated-text 4s steps(30) 200ms 1 normal both,
+             animated-cursor 500ms steps(30) infinite normal;
+}
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 10em;}
+}
+@keyframes animated-cursor{
+  from{border-right-color: rgba(0,0,0,.75);}
+  to{border-right-color: transparent;}
+}
+.cards{
+	margin:30px;
+	border: 2px solid #557571;
+	border-radius: 15px;
+}
+.about_us_headline{
+	padding-top: 4em;
+	padding-bottom:2em;
+	text-align: center;
+	/*color: #9cada4;*/
+}
+.about_us_headline p{
+	font-size:35;
+	
+}
+.display{
+	font-size:4.5rem;
+	font-weight: 300;
+	line-height: 1.2;
+	font-family: Cinzel;
+}
+.p_display{	font-size: 2em;
+	display: block;
+	padding-left:2em;
+	padding-right:2em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.main_container{
+	padding:30px 20px;
+	margin: 50px auto;
+	border: 1px solid #1a1a2e;
+	border-radius: 15px;
+}
+.bhu_image{
+	padding:20px;
+	height:40vh;
+	margin:auto;
+	display: block;
+	
+}
