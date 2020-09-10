@@ -1,3 +1,4 @@
+
 *{
 	margin: 0px;
 	padding: 0px;
@@ -42,9 +43,8 @@
 	margin-left: 50px;
 }
 #sidebar .btn-close:hover{
-	background-color: #cedebd;
-	color: #1a1a2e;
-
+	
+	color: #f6f5f5;
 }
 #main-content{
 	transition: margin-left 0.4s linear;
@@ -144,4 +144,29 @@
 	margin:auto;
 	display: block;
 	
+}
+.bullet-style ul{
+/*	list-style: square url(Images/wear_mask.jpg) inside;
+*/ padding-left:40px;
+ }
+ .bullet-style ul li{
+/*	list-style: square url(Images/wear_mask.jpg) inside;
+*/ padding-top: 10px;
+ }
+
+.health-record-img{
+	height: 50vh;
+	margin: auto;
+	display: block;
+	margin-bottom: 50px;
+	border: solid 0.5px #1a1a2e;
+	border-radius:30px;
+}
+.head-pacifico
+{
+	font-family: 'Pacifico';
+	padding-bottom: 15px;
+}
+.howtodiv {
+	font-size: 18px;
 }

@@ -1,4 +1,4 @@
-
+AOS.init();
 function toggleSideBar(){
 	document.getElementById("sidebar").style.marginLeft='200px';
 	document.getElementById("main-content").style.marginLeft='200px';

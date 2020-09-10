@@ -1,27 +1,45 @@
 {% extends 'centralapp/base.html' %}
 {% block body %}
+{% load static %}
 
 <div class="container-fluid">
-    <div class="row my-4">
-        <div class="col-sm-8 p-2 ml-auto" >
-            <h1> What is a health record</h1>
+    <div class="row my-4 ">
+        <div class="col-sm-8 p-2 ml-auto bullet-style" >
+            <div data-aos="fade-up" data-aos-duration="1000" >
+                <img class="health-record-img" src="{% static 'Images/inside_health_record.jpeg' %}">
+            </div>
+            <div class="howtodiv">
+                 <h1 class="head-pacifico"> What is a health record</h1>
             <p>
-                My Health Record lets you control your health information securely, in one place.<br>This means your important health information is available when and where it’s needed, including in an emergency.
-            </p>
+                An health record or an <strong>electronic health record (EHR)</strong>, as it is commonly called, is a <strong>digital version</strong> of a patient’s paper chart. <br>
+                EHRs are real-time, patient-centered records that make information available instantly and securely to authorized users.<br>
+                 While an EHR does contain the medical and treatment histories of patients, it is built to go beyond standard clinical data collected in a doctor’s office and can be inclusive of a broader view of a patient’s care. EHRs are a vital part of health IT and can:
+<ul>
+<li>Contain a patient’s medical history, diagnoses, medications, treatment plans, immunization dates, allergies, radiology images, and laboratory and test results</li>
+<li>Allow access to evidence-based tools that providers can use to make decisions about a patient’s care</li>
+<li>Automate and streamline provider workflow</li></ul>
 
-            <p>
-                <h2>Start using your My Health Record:</h2>
-                <ul>
-                    <li>Log in to your record for the first time</li>
-
-                    <li>Control your privacy settings</li>
-
-                    <li>Understand what information can go in your record</li>
-
-                    <li>Discuss My Health Record with your healthcare provider</li>
-                </ul>
-            </p>
+One of the key features of an EHR is that health information can be created and managed by authorized providers <strong>in a digital format capable of being shared with other doctors</strong> across more than one health care organization. EHRs are built to share information with other health care providers and organizations – such as laboratories, specialists, medical imaging facilities, pharmacies, emergency facilities, and school and workplace clinics – thus <strong>eliminating the need to maintain paperwork.</strong>
+</p><br>
+<hr style="height:10px;width:70%; margin: auto"><br>
+           
+           
+<div class="bullet-style">
+    <h1 class="head-pacifico"> What's in my health record</h1>
+    <p >
+        <h4>Your health record at MedicDiary holds the following information:</h4>
+         <ul>
+             <li>Basic vitals such as your height, weight, gender and age information </li>
+             <li>The entire history of medication that you have taken.</li>
+             <li>All your lab tests and their respective reports. </li>
+             <li>History of ailments including the current health conditions</li>
+             <li>A summary of the operations and surgeries undergone (if any)</li>
+             
+         </ul>
+    </p>
+</div>   
         </div>
+         </div>
 
         <div class="col-sm-3 mr-auto sidebar">
             <ul class="list-group ">

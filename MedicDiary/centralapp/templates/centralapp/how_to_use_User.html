@@ -1,26 +1,41 @@
 {% extends 'centralapp/base.html' %}
 {% block body %}
-
+{% load static %}
 <div class="container-fluid">
     <div class="row my-4">
         <div class="col-sm-8 p-2 ml-auto" >
-            <h1> What is a health record</h1>
-            <p>
-                My Health Record lets you control your health information securely, in one place.<br>This means your important health information is available when and where it’s needed, including in an emergency.
-            </p>
+            <div data-aos="fade-up" data-aos-duration="1000" >
+                <img class="health-record-img" src="{% static 'Images/howtouser.jpg' %}">
+            </div>
+            <h1 class="head-pacifico"> How to use your health record</h1>
+            <div class="howtodiv">
+                As a patient, you are given access to only view your medical information keeping the security and authenticity aspects in mind.<br><br>
 
-            <p>
-                <h2>Start using your My Health Record:</h2>
-                <ul>
-                    <li>Log in to your record for the first time</li>
+                <h2>Who can make changes to your records ?</h2>
+                Only the doctors <strong>approved by and registered at MedicDiary</strong> can be assigned by you to update your health records.<br><br>
 
-                    <li>Control your privacy settings</li>
+            
 
-                    <li>Understand what information can go in your record</li>
+            
+                <h2>Start using your health record</h2>
+                As a first time user there might be very little or no information in your medical record. Only the basic vitals collected during the registration would be updated in your profile.<br>
+                <div class="bullet-style">
+                    <ul>
+                    <li>Find a doctor already registered on MedicDiary and grant permissions to make changes to your record using add a doctor option in your dashboard.</li>
 
-                    <li>Discuss My Health Record with your healthcare provider</li>
+                    <li>View your medication history in the medication section of your dashboard.</li>
+
+                    <li>View your lab reports in the reports section</li>
+
+                    <li>Edit your profile to let the healthcare provider help you better. You can do this under the Edit Profile section.</li>
+
+                    <li>Manage which doctors have access to your profile under the My Doctors section.</li>
+
+                    <li>View the details of operations/surgeries (if any)</li>
                 </ul>
-            </p>
+                </div>
+               </div> 
+           
         </div>
 
         <div class="col-sm-3 mr-auto sidebar">
