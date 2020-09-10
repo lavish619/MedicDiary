@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang ="en">
+<head>
+    
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald"/>
+    <link rel="stylesheet" href="./style.css"/>
+    <link rel="icon" type="image/png" href="assets/icon.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Sign up Medicdiary</title>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js" integrity="sha512-6MCPs9fbSIt6mTpJH2Lbo9Kk71gcgwY85BCqJGP04x+O08W3m/OiKfMiMc4VQKYn+DCtAQwpGumWeD0cACeRsQ==" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TimelineMax.min.js" integrity="sha512-MBKN+F1LTtgzsnhh92u6fEklbJbv13vKI/2BZP0LLR8+IMeqlp0h10R6afWaJv2HIJfTOQkjW0LCPrIFEkZVeg==" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</head>
+<body >
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light nav-bg" id="navstyle" >
+        <a class="navbar-brand" href="#" style="font-family: Cinzel; font-size: 40px !important; color: white;" >
+            <img src="assets/icon.png" width="44" height="44" class="d-inline-block align-top" alt="" loading="lazy">
+            MedicDiary
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size:20px; ">
+            
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown my-2 mx-1">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
+                        For you and<br> your family
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">What's in my health record </a>
+                        <a class="dropdown-item" href="#">How to use my health record </a>
+                    </div>
+                </li>
+                
+                <li class="nav-item dropdown my-2 mx-1">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
+                        For healthcare<br>professionals
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">How to use the health record</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown my-2 mx-1">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
+                        Know more<br>about diseases
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">AIDS</a>
+                        <a class="dropdown-item" href="#">Cancer</a>
+                        <a class="dropdown-item" href="#">Heart Disorders</a>
+                        <a class="dropdown-item" href="#">Hypertension</a>
+                        <a class="dropdown-item" href="#">Diabetes</a>
+                        <a class="dropdown-item" href="#">Birth Control Measures</a>
+                    </div>
+                </li>
+                <li>
+                    <a class="nav-link my-3 mx-1" style="color: white" href="#"> FAQs</a>
+                </li>
+                <li>
+                    <a class="nav-link my-3 mx-1" style="color: white" href="#"> About us</a>
+                </li>
+                
+                <li>
+                    <a href="#" class="button2 mt-7 mx-1"> Corona Checkpoints </a>
+                </li>
+            </ul>			
+        </div>
+    </nav>
+
+    <div id ="signupcard" class="card" >
+        <div class="imgcontainer" style="margin:auto; "> 
+            <img src="assets/logoname.png" width=400>
+        </div>
+
+        <form class="formbox" >
+
+            <strong class="h5">General Information</strong>
+            <!-- first/last name -->
+            <div class="form-row mb-2">
+                <div class="col">
+                    <input type="text" id="fname" class="form-control" placeholder="First name" name="fname">
+                </div>
+                <div class="col">
+                    <input type="text" id="lname" class="form-control" placeholder="Last name" name= "lname">
+                </div>
+            </div>
+            <!-- age/bloodgroup/dateof birth -->
+            <div class="form-row mt-2">
+                <div class="col">
+                    <input type="number" min="0" id="age" class="form-control mb-2 " placeholder="Age" name="age">
+                </div>
+                <div class="col-4">
+                    <input type="text" id="bgroup" class="form-control text-uppercase mb-2" placeholder="Blood Group" name= "bgroup">
+                </div>
+                <div class="col-5">
+                    <input type="date" id="dob" class="form-control mb-2 " name="dob">
+                </div>
+            </div>
+            
+            <!-- gender -->
+            <div class="form-inline mb-2">
+                <strong>Gender: </strong>
+                <div class="custom-control custom-radio mx-2">
+                    <input type="radio" class="custom-control-input" id="male" name="gender">
+                    <label class="custom-control-label" for="male">Male</label>
+                </div>
+            
+                <div class="custom-control custom-radio mx-2">
+                    <input type="radio" class="custom-control-input" id="female" name="gender">
+                    <label class="custom-control-label" for="female">Female</label>
+                </div>
+            
+                <div class="custom-control custom-radio mx-2">
+                    <input type="radio" class="custom-control-input" id="others" name="gender">
+                    <label class="custom-control-label" for="others">Others</label>
+                </div>
+            </div>
+            
+            <!-- address -->
+            <input type="text" id="address" class="form-control" placeholder="Complete Address" name= "address">
+
+            <hr style="border-top: 4px solid rgb(252, 140, 35); border-radius: 8px; ">
+            
+            <strong class="h5">Account Information</strong>
+
+            <!-- Email/password -->
+            <div class="form-row">
+                <div class="col">
+                    <input type="text" class="form-control" id="username" placeholder="Username" name="username">
+                    
+                </div>
+                <div class="col">
+                    <input type="password" id="pwd" class="form-control " placeholder="Password" name="password" aria-describedby="pwdnote">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col"></div>
+                <div class="col">
+                    <small id="pwdnote" class="form-text ">Minimum 8 characters length</small>
+                </div>
+            </div>
+
+            <!-- Username/Mobile -->
+            <div class="form-row">
+                <div class="col">
+                    <input type="email" id="email" class="form-control " placeholder="E-mail" name="email">
+                </div>
+                <div class="col">
+                    <div class="input-group ">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" id="+91">+91</span>
+                        </div>
+                        <input type="tel" class="form-control" id="mobile" pattern=[0-9]{10} placeholder="Mobile Number" name="mobile"aria-describedby="phonenote">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col"></div>
+                <div class="col">
+                    <small id="phonenote" class="form-text  mb-2">Enter 10 Digit mobile number</small>
+                </div>
+            </div>
+
+            <!-- Signup Button -->
+            <div class="text-center">
+                <button class="btn mt-2" href="#" id="login" type="submit">Sign up</button>
+            </div>
+
+            <hr>
+
+            <div class="text-center">
+                <span>Already have an account?</span><a href="#">Login</a>
+            </div>
+        </form>
+    </div>
+     
+    <!-- Footer -->
+    <footer class="page-footer footer font-small mdb-color" style="background:transparent;">
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left">
+
+            <!-- Footer links -->
+            <div class="row text-center text-md-left mt-3">
+
+                <!-- Grid column -->
+                <hr class="w-100 clearfix d-md-none">
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-2 font-weight-bold" >Useful links</h6>
+                    <p>
+                        <a href="#!" class="useful_links">What's in my health record</a><br>
+                        <a href="#!" class="useful_links">How to use my health record</a><br>
+                        <a href="#!" class="useful_links">FAQs</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+
+                <hr class="w-100 clearfix d-md-none">
+
+                <!-- Grid column -->
+
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-2 font-weight-bold">Our Team</h6>
+                    <p>
+                        Madhav Mittal<br>
+                        HarshDeep Singh Kohli<br>
+                        Lavish Bansal<br>					
+                        Shivangi Nayak
+                    </p>
+                </div>
+                <!-- Grid column -->
+                <hr class="w-100 clearfix d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-2 font-weight-bold">Contact</h6>
+                    <p>
+                        <i class="fa fa-home mr-3"></i>IIT(BHU), Varanasi, UP, India
+                    </p>
+                    <p>
+                        <i class="fa fa-envelope mr-3 "></i> lavish.bansal.mat19@itbhu.ac.in
+                    </p>
+                    <p>
+                        <i class="fa fa-phone mr-3"></i> +91 9039276236
+                    </p>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Footer links -->
+
+            <hr>
+
+            <!-- Grid row -->
+            <div class="row d-flex align-items-center">
+                <!-- Grid column -->
+                <div class="col-md-11 col-lg-11">
+                    <!--Copyright-->
+                    <p class="text-center">© 2020 Copyright:
+                        <strong> MedicDiary</strong>
+                    </p>
+                </div>  
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+    </footer>
+</body>
+</html>

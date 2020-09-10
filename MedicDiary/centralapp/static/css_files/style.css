@@ -244,33 +244,5 @@ body{
 	text-decoration: none;
 }
 
-.sidebar{
-	background: #e0ece4; 
-	height:fit-content;
-	width: min-content;
-	border-radius: 15px;
-	padding: 1em 1em 1em 1em;
-}
 
-.list-group > .list-group > .list-group-item{
-	padding-left: 2.5em;
-}
-.list-group > .list-group > .list-group-item:hover ,a.heads:hover {
-	background-color: #24a19c;
-	color: #FFF;
-}
-.list-group-item{
-	
-	height: fit-content;
-	padding: 6px 10px 6px 10px;
-	overflow: auto;
-}
-.list-group > .list-group-item {
-border-radius: 0px;
-border-width: 0 0 0 0;
-}
-.list-group > .heads{
-border-top-width: 2px;
-font-weight: bold;
-}
 

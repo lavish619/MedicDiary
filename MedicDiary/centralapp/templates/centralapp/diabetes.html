@@ -1,6 +1,436 @@
 {% extends 'centralapp/base.html' %}
 {% block body %}
+{% load static %}
+
+<div class="container-fluid" >
+    <div class="row my-4" >
+        <div class="col-sm-8 p-2 ml-auto" > 
+
+            <h1 style="text-align: center;">Diabetes</h1>
+            <img class="top-images" src="{% static 'Images/diabetes.jpg'%}" width=60% alt="Diabetes."/>
+            <br>
+
+            <!-- What it is? -->
+            <div class="section-divs">
+            <h3 class="h3-heading"> What it is?</h3>
+            <p><b>Diabetes mellitus</b>, commonly known as diabetes, is a metabolic disease that causes high blood sugar. The hormone insulin moves sugar 
+                from the blood into your cells to be stored or used for energy. With diabetes, your body either doesn't make enough insulin 
+                or can't effectively use the insulin it does make. </p>
+            <p>Untreated high blood sugar from diabetes can damage your nerves, eyes, kidneys, and other organs.</p>
+            </div>
+            <br>
+
+            <!-- Diabetes types -->
+            <div class="section-divs">
+            <h3 class="h3-heading"> Diabetes types</h3>
+            <!-- <img class="disease-images" src="{% static 'Images/diabetes.jpg'%}"  alt="Diabetes."/> -->
+            <p>There are a few different types of diabetes:</p>
+            <ul class="pl-4">
+                <li><b>Type 1 diabetes</b> is an autoimmune disease. The immune system attacks and destroys cells in the pancreas, 
+                    where insulin is made. It's unclear what causes this attack. About 10 percent of people with diabetes have this type.</li>
+                <li><b>Type 2 diabetes</b> occurs when your body becomes resistant to insulin, and sugar builds up in your blood. </li>
+                <li><b>Prediabetes</b> occurs when your blood sugar is higher than normal, but it's not high enough for a diagnosis of 
+                    type 2 diabetes.</li>
+                <li><b>Gestational diabetes</b> is high blood sugar during pregnancy. Insulin-blocking hormones produced by the placenta cause 
+                    this type of diabetes. </li>
+            </ul>
+            <p>A rare condition called <b>diabetes insipidus</b> is not related to diabetes mellitus, although it has a similar name. It's a 
+                different condition in which your kidneys remove too much fluid from your body.</p>
+
+            </div>
+            <br>
+
+            <!-- Symptoms of diabetes -->
+            <div class="section-divs">
+            <h3 class="h3-heading"> Symptoms of diabetes</h3>
+            <img class="disease-images" src="{% static 'Images/symptoms-diabetes.jpg'%}" width=65%  alt="Symptoms of Diabetes."/>
+            <p>Diabetes symptoms are caused by rising blood sugar. </p>
+
+            <h5>General symptoms</h5>
+            <p>The general symptoms of diabetes include:</p>
+            <ul class="pl-4">
+                <li>increased hunger</li>
+                <li>increased thirst</li>
+                <li>weight loss</li>
+                <li>frequent urination</li>
+                <li>blurry vision</li>
+                <li>extreme fatigue</li>
+                <li>sores that don't heal</li>
+            </ul>
+            <hr>
+
+            <h5>Symptoms in men</h5>
+            <p>In addition to the general symptoms of diabetes, men with diabetes may have a <b>decreased sex drive, 
+                erectile dysfunction (ED), and poor muscle strength.</b></p><hr>
+
+            <h5>Symptoms in women </h5>
+            <p>Women with diabetes can also have symptoms such as <b>urinary tract infections, yeast infections, and dry, itchy skin.</b></p><hr>
+
+            <h5>Type 1 diabetes</h5>
+            <p>Symptoms of type 1 diabetes can include: </p>
+            <ul class="pl-4">
+                <li>extreme hunger</li>
+                <li>increased thirst</li>
+                <li>unintentional weight loss</li>
+                <li>frequent urination</li>
+                <li>blurry vision</li>
+                <li>tiredness</li>
+            </ul>
+            <p>It may also result in mood changes. </p><hr>
+
+            <h5>Type 2 diabetes</h5>
+            <p>Symptoms of type 2 diabetes can include:</p>
+            <ul class="pl-4">
+                <li>increased hunger </li>
+                <li>increased thirst</li>
+                <li>increased urination</li>
+                <li>blurry vision</li>
+                <li>tiredness</li>
+                <li>sores that are slow to heal </li>
+            </ul>
+            <p>It may also cause <b>recurring infections</b>. This is because elevated glucose levels make it harder for the body to heal.</p><hr>
+
+            <h5>Gestational diabetes </h5>
+            <p>Most women with gestational diabetes don't have any symptoms. The condition is often detected during a routine blood sugar 
+                test or oral glucose tolerance test that is usually performed between the <b>24th and 28th weeks of gestation.</b></p>
+            <p>In rare cases, a woman with gestational diabetes will also experience increased thirst or urination. </p>
+            </div>
+            <br>
+
+            <!-- Causes of diabetes -->
+            <div class="section-divs">
+            <h3 class="h3-heading"> Causes of diabetes</h3>
+            <img class="disease-images" src="{% static 'Images/insulin-diabetes.jpg'%}"  width=70% alt="Cause of Diabetes."/>
+            <p>Different causes are associated with each type of diabetes. </p>
+
+            <h5>Type 1 diabetes</h5>
+            <p>Doctors don't know exactly what causes type 1 diabetes. For some reason, the immune system mistakenly attacks and destroys 
+                insulin-producing beta cells in the <b>pancreas</b>.</p>
+            <p>Genes may play a role in some people. It's also possible that a virus sets off the immune system attack. </p><hr>
+
+            <h5>Type 2 diabetes</h5>
+            <p>Type 2 diabetes stems from a combination of <b>genetics</b> and lifestyle factors. Being overweight or <b>obese</b> increases your 
+                risk too. Carrying extra weight, especially <b>in your belly</b>, makes your cells more resistant to the effects of insulin on your 
+                blood sugar.</p>
+            <p>This condition runs in families. Family members share genes that make them more likely to get type 2 diabetes and to be 
+                <b>overweight</b>.</p><hr>
+
+            <h5>Gestational diabetes</h5>
+            <p>Gestational diabetes is the result of hormonal changes during pregnancy. The <b>placenta produces hormones</b> that make a pregnant woman's 
+                cells less sensitive to the effects of insulin. This can cause high blood sugar during pregnancy. </p>
+            <p>Women who are <b>overweight when they get pregnant</b> or who gain too much weight during their pregnancy are more likely to get 
+                gestational diabetes. </p>
+            </div>
+            <br>
 
 
+            <div class="section-divs">
+            <h3 class="h3-heading">Diabetes risk factors</h3>
+            <p>Certain factors increase your risk for diabetes.</p>
+
+            <h5>Type 1 diabetes</h5>
+            <p>You're more likely to get type 1 diabetes if you're a child or teenager, you have <b>a parent or sibling</b> with the 
+                condition, or you carry certain genes that are linked to the disease.</p><hr>
+
+            <h5>Type 2 diabetes</h5>
+            <p>Your risk for type 2 diabetes increases if you: </p>
+            <ul class="pl-4">
+                <li>are overweight</li>
+                <li>are age 45 or older</li>
+                <li>have a parent or sibling with the condition</li>
+                <li>aren't physically active</li>
+                <li>have had gestational diabetes</li>
+                <li>have prediabetes</li>
+                <li>have <b>high blood pressure</b>, <b>high cholesterol</b>, or high triglycerides</li>
+                <li>have African American, Hispanic or Latino American, Alaska Native, Pacific Islander, American Indian, or Asian American ancestry</li>
+            </ul><hr>
+
+            <h5>Gestational diabetes</h5>
+            <p>Your risk for gestational diabetes increases if you:</p>
+
+            <ul class="pl-4">
+                <li>are overweight</li>
+                <li>are over age 25</li>
+                <li>had gestational diabetes during a past pregnancy</li>
+                <li>have given birth to a baby weighing more than 9 pounds</li>
+                <li>have a family history of type 2 diabetes</li>
+                <li>have polycystic ovary syndrome (PCOS)</li>
+            </ul>
+            </div>
+            <br>
+
+
+            <div class="section-divs">   
+            <h3 class="h3-heading">Diabetes complications</h3>
+            <p>High blood sugar damages organs and tissues throughout your body. The higher your blood sugar is and the longer you live with it, 
+                the greater your risk for complications. </p>
+            <p>Complications associated with diabetes include:</p>
+            <ul class="pl-4">
+                <li>heart disease, heart attack, and stroke</li>
+                <li>neuropathy</li>
+                <li>nephropathy</li>
+                <li>retinopathy and vision loss</li>
+                <li>hearing loss</li>
+                <li>foot damage such as infections and sores that don't heal</li>
+                <li>skin conditions such as bacterial and fungal infections</li>
+                <li>depression</li>
+                <li>dementia</li>
+            </ul><hr>
+
+            <h5>Gestational diabetes</h5>
+            <p>Uncontrolled gestational diabetes can lead to problems that affect both the mother and baby. Complications affecting the baby 
+                can include:</p>
+            <ul class="pl-4">
+                <li>premature birth</li>
+                <li>higher-than-normal weight at birth</li>
+                <li>increased risk for type 2 diabetes later in life</li>
+                <li>low blood sugar</li>
+                <li>jaundice</li>
+                <li>stillbirth</li>
+            </ul>
+            <p>The mother can develop complications such as high blood pressure (<b>preeclampsia</b>) or type 2 diabetes. She may also require 
+                <b>cesarean delivery</b>, commonly referred to as a C-section. </p>
+            <p>The mother's risk of gestational diabetes in future pregnancies also increases. </p>
+            </div>
+            <br>
+
+
+            <div class="section-divs">       
+            <h3 class="h3-heading">Treatment of diabetes</h3>
+            <img class="disease-images" src="{% static 'Images/insulin-diabetes-2.jpg'%}" width=55% alt="Treatment of Diabetes."/>
+            <p>Doctors treat diabetes with a few different medications. Some of these drugs are taken by mouth, while others are available 
+                as injections.</p>
+
+            <h5>Type 1 diabetes</h5>
+            <p><b>Insulin</b> is the main treatment for type 1 diabetes. It replaces the hormone your body isn't able to produce.</p>
+            <p>There are four types of insulin that are most commonly used. They're differentiated by how quickly they start to work, and 
+                how long their effects last:</p>
+            <ul class="pl-4">
+                <li>Rapid-acting insulin starts to work within 15 minutes and its effects last for 3 to 4 hours.</li>
+                <li>Short-acting insulin starts to work within 30 minutes and lasts 6 to 8 hours.</li>
+                <li>Intermediate-acting insulin starts to work within 1 to 2 hours and lasts 12 to 18 hours.</li>
+                <li>Long-acting insulin starts to work a few hours after injection and lasts 24 hours or longer.</li>
+            </ul><hr>
+
+            <h5>Type 2 diabetes</h5>
+            <p>Diet and exercise can help some people manage type 2 diabetes. If lifestyle changes aren't enough to lower your blood sugar, 
+                you'll need to take medication. </p>
+            <p>These drugs lower your blood sugar in a variety of ways:</p>
+
+                <table class="table table-striped table-bordered table-warning">
+                    <thead>
+                        <tr >
+                            <th >Types of drug </td>
+                            <th >How they work</td>
+                            <th >Example(s)</td>
+                        </tr>
+                    </thead>
+    
+                    <tbody>
+                        
+                        <tr>
+                            <td>Alpha-glucosidase inhibitors</td>
+                            <td>Slow your body's breakdown of sugars and starchy foods</td>
+                            <td>Acarbose (Precose) and miglitol (Glyset)</td>
+                        </tr>
+                        <tr>
+                            <td>Biguanides </td>
+                            <td>Reduce the amount of glucose your liver makes</td>
+                            <td>Metformin (Glucophage)</td>
+                        </tr>
+                        <tr>
+                            <td>DPP-4 inhibitors</td>
+                            <td>Improve your blood sugar without making it drop too low</td>
+                            <td>Linagliptin (Tradjenta), saxagliptin (Onglyza), and sitagliptin (Januvia)</td>
+                        </tr>
+                        <tr>
+                            <td>Glucagon-like peptides</td>
+                            <td>Change the way your body produces insulin</td>
+                            <td>Dulaglutide (Trulicity), exenatide (Byetta), and liraglutide (Victoza)</td>
+                        </tr>
+                        <tr>
+                            <td>Meglitinides</td>
+                            <td>Stimulate your pancreas to release more insulin</td>
+                            <td>Nateglinide (Starlix) and repaglinide (Prandin)</td>
+                        </tr>
+                        <tr>
+                            <td>SGLT2 inhibitors</td>
+                            <td>Release more glucose into the urine</td>
+                            <td>Canagliflozin (Invokana) and dapagliflozin (Farxiga)</td>
+                        </tr>
+                        <tr>
+                            <td>Sulfonylureas</td>
+                            <td>Stimulate your pancreas to release more insulin</td>
+                            <td>Glyburide (DiaBeta, Glynase), glipizide (Glucotrol), and glimepiride (Amaryl)</td>
+                        </tr>
+                        <tr>
+                            <td>Thiazolidinediones</td>
+                            <td>Help insulin work better</td>
+                            <td>Pioglitazone (Actos) and rosiglitazone (Avandia)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            <p>You may need to take more than one of these drugs. Some people with type 2 diabetes also take insulin.</p><hr>
+
+            <h5>Gestational diabetes</h5>
+            <p>You'll need to monitor your blood sugar level several times a day during pregnancy. If it's high, dietary 
+                changes and exercise may or may not be enough to bring it down.</p>
+            <p>About 10 to 20 percent of women with gestational diabetes will need insulin to lower their blood sugar. Insulin is safe 
+                for the growing baby.</p>
+            </div>
+            <br>
+
+
+            <div class="section-divs">
+            <h3 class="h3-heading"> Diabetes and diet</h3>
+            <img class="disease-images" src="{% static 'Images/diabetes-fruits.jpg'%}" width=60% alt="Diet management in Diabetes."/>
+            <p>Healthy eating is a central part of managing diabetes. In some cases, changing your diet may be enough to control the disease. </p>
+
+            <h5>Type 1 diabetes</h5>
+            <p>Your blood sugar level rises or falls based on the types of foods you eat. Starchy or sugary foods make blood sugar levels 
+                rise rapidly. Protein and fat cause more gradual increases.</p>
+            <p>Your medical team may recommend that you limit the amount of carbohydrates you eat each day. You'll also need to 
+                balance your carb intake with your insulin doses. </p>
+            <p>Work with a dietitian who can help you design a diabetes meal plan. Getting the right balance of protein, fat, and carbs 
+                can help you control your blood sugar.</p><hr>
+
+            <h5>Type 2 diabetes </h5>
+            <p>Eating the right types of foods can both control your blood sugar and help you lose any excess weight.</p>
+            <p>Carb counting is an important part of eating for type 2 diabetes. A dietitian can help you figure out how many grams of 
+                carbohydrates to eat at each meal.</p>
+            <p>In order to keep your blood sugar levels steady, try to eat small meals throughout the day. Emphasize healthy foods such as:</p>
+
+            <ul class="pl-4">
+                <li>fruits</li>
+                <li>vegetables</li>
+                <li>whole grains</li>
+                <li>lean protein such as poultry and fish</li>
+                <li>healthy fats such as olive oil and nuts</li>
+            </ul>
+
+            <p> Certain other foods can undermine efforts to keep your blood sugar in control.</p><hr>
+
+            <h5>Gestational diabetes</h5>
+            <p>Eating a <b>well-balanced diet</b> is important for both you and your baby during these nine months. Making the right 
+                food choices can also help you avoid diabetes medications.</p>
+            <p>Watch your portion sizes, and limit sugary or salty foods. Although you need some sugar to feed your growing baby, you 
+                should avoid eating too much. </p>
+            <p>Consider making an eating plan with the help of a dietitian or nutritionist. They'll ensure that your diet has the right 
+                mix of macronutrients. </p>
+            </div>
+            <br>
+
+            <div class="section-divs">
+            <h3 class="h3-heading">Diabetes diagnosis</h3>
+            <img class="disease-images" src="{% static 'Images/diabetes-diagnosis.jpg'%}"  width=50% alt="Diagnosis of Diabetes."/>
+            <p>Anyone who has symptoms of diabetes or is at risk for the disease should be tested. Women are routinely tested for gestational 
+                diabetes during their second or third trimesters of pregnancy.</p>
+            <p>Doctors use these <b>blood tests</b> to diagnose prediabetes and diabetes:</p>
+            <ul class="pl-4">
+                <li>The fasting plasma glucose (FPG) test measures your blood sugar after you've fasted for 8 hours. </li>
+                <li>The <b>A1C test</b> provides a snapshot of your blood sugar levels over the previous 3 months.</li>
+            </ul>
+
+            <p>To diagnose gestational diabetes, your doctor will test your blood sugar levels between the <b>24th</b> and <b>28th</b> 
+                weeks of your pregnancy. </p>
+            <ul class="pl-4">
+                <li>During the glucose challenge test, your blood sugar is checked an hour after you drink a sugary liquid.</li>
+                <li>During the 3 hour <b>glucose tolerance test</b>, your blood sugar is checked after you fast overnight and then 
+                    drink a sugary liquid.</li>
+            </ul>
+
+            <p>The earlier you get diagnosed with diabetes, the sooner you can start treatment. 
+            </div>
+            <br>
+                
+
+            <div class="section-divs">
+            <h3 class="h3-heading">Diabetes prevention</h3>
+            <p>Type 1 diabetes isn't preventable because it's caused by a problem with the immune system. Some causes of 
+                type 2 diabetes, such as your genes or age, aren't under your control either. </p>
+            <p>Yet many other diabetes risk factors are controllable. Most diabetes prevention strategies involve making simple adjustments 
+                to your diet and fitness routine.</p>
+            <p>If you've been diagnosed with prediabetes, here are a few things you can do to delay or prevent type 2 diabetes:</p>
+            <ul class="pl-4">
+                <li>Get at least 150 minutes per week of <b>aerobic exercise</b>, such as walking or <b>cycling</b>.</li>
+                <li>Cut <b>saturated</b> and <b>trans</b> fats, along with refined carbohydrates, out of your diet. </li>
+                <li>Eat more fruits, vegetables, and whole grains.</li>
+                <li>Eat smaller portions.</li>
+                <li>Try to lose 7 percent of your body weight if you're overweight or obese. </li>
+            </ul>
+            </div>
+            <br>
+
+            <div class="section-divs">
+            <h3 class="h3-heading"> Diabetes in pregnancy</h3>
+            <img class="disease-images" src="{% static 'Images/diabetes-women.jpg'%}"  alt="Diabetes in women."/>
+            <p>Women who've never had diabetes can suddenly develop gestational diabetes in pregnancy. Hormones produced by the placenta 
+                can make your body more resistant to the effects of insulin. </p>
+            <p>Some women who had diabetes before they conceived carry it with them into pregnancy. This is called pre-gestational diabetes.</p>
+            <p>Gestational diabetes should go away after you deliver, but it does significantly increase your risk for getting diabetes later. </p>
+            <p>About half of women with gestational diabetes will develop type 2 diabetes within 5 to 10 years of delivery, according to the 
+                International Diabetes Federation (IDF). </p>
+            <p>Having diabetes during your pregnancy can also lead to complications for your newborn, such as jaundice or 
+                breathing problems. </p>
+            <p>If you're diagnosed with pre-gestational or gestational diabetes, you'll need special monitoring to prevent 
+                complications. </p>
+            </div>
+            <br>
+                
+
+            <div class="section-divs">    
+            <h3 class="h3-heading">Diabetes in children</h3>
+            <img class="disease-images" src="{% static 'Images/diabetes-children.jpg'%}" width=60% alt="Diabetes in children."/>
+            <p>Children can get both type 1 and type 2 diabetes. Controlling blood sugar is especially important in young people, because the 
+                disease can damage important organs such as the heart and kidneys. </p>
+
+            <h5>Type 1 diabetes </h5>
+            <p>The autoimmune form of diabetes often starts in childhood. One of the main symptoms is <b>increased urination</b>. Kids with 
+                type 1 diabetes may start wetting the bed after they've been toilet trained. </p>
+            <p>Extreme thirst, fatigue, and hunger are also signs of the condition. It's important that children with type 1 diabetes 
+                get treated right away. The disease can cause high blood sugar and <b>dehydration</b>, which can be <b>medical emergencies</b>.</p><hr>
+
+            <h5>Type 2 diabetes</h5>
+            <p>Type 1 diabetes used to be called &ldquo;juvenile diabetes&rdquo; because type 2 was so rare in children. Now that more children 
+                are overweight or <b>obese</b>, type 2 diabetes is becoming more common in this age group.</p>
+            <p>About 40 percent of children with type 2 diabetes don't have symptoms. The disease is often diagnosed during a physical 
+                exam.</p>
+            <p>Untreated type 2 diabetes can cause lifelong complications, including heart disease, kidney disease, and blindness. Healthy 
+                eating and exercise can help your child manage their blood sugar and prevent these problems.</p>
+            <p>Type 2 diabetes is more prevalent than ever in young people.</p>
+            </div>
+            <br>
+
+        </div>
+        
+        <div class="col-sm-3 sidebar">
+            <ul class="list-group ">
+                <li class="list-group-item  heads">For You And Your Family</li>
+                <ul class="list-group">
+                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Inside_health_records' %}">What's in my health record </a>
+                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:patients_how_to_use' %}">How to use my health record </a>
+                </ul>
+                <li class="list-group-item  heads">For HealthCare Professionals</li>
+                <ul class="list-group">
+                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:doc_how_to_use' %}">How to use my health record </a>
+                </ul>
+                <li class="list-group-item  heads">Know more about diseases</li>
+                <ul class="list-group">
+                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Aids' %}">AIDS</a>
+                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Cancer' %}">Cancer</a>
+                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Heart_disorder' %}">Heart Disorders</a>
+                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Hypertension' %}">Hypertension</a>
+                    <a class="list-group-item list-group-item-action active" href="{% url 'centralapp:Diabetes' %}">Diabetes</a>
+                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Birth_control' %}">Birth control measures</a>
+                </ul>
+                <a class="list-group-item list-group-item-action heads" href="{% url 'centralapp:About_us' %}">About Us</a>
+                <a class="list-group-item list-group-item-action heads" href="{% url 'centralapp:FAQS' %}">FAQs</a>
+                <a class="list-group-item list-group-item-action heads" href="{% url 'centralapp:Covid_19' %}">Covid-19 Checkpoints</a>
+            </ul> 
+        </div>
+    </div>
+</div>
 
 {% endblock %}

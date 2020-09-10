@@ -1,36 +1,88 @@
 {% extends 'centralapp/base.html' %}
 
-{% load static %}
 {% block body %}
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+{% load static %}
 
 
 <div class="container-fluid" >
     <div class="row my-4" >
-        <div class="col-sm-8 p-2 pr-4 ml-auto" > 
+        <div class="col-sm-8 p-2 ml-auto" > 
 
             <!-- Heading HIV/AIDS -->
-            <h1>HIV/AIDS</h1><br>
+            <h1 style="text-align: center;">HIV/AIDS</h1>
+            <img class="top-images" src="{% static 'Images/hiv-aids.jpg'%}" width=55% alt="HIV - AIDS."/>
+            <br>
 
             <!-- What it is -->
-            <h3>What it is?</h3>
+            <div class="section-divs">
+            <h3 class="h3-heading">What it is?</h3>
             <p class="text-justify">
                 HIV/AIDS is a spectrum of conditions caused by infection with HIV. Following initial infection a person may not 
                 notice any symptoms, or may experience a brief period of influenza-like illness. Typically, this is followed by a 
                 prolonged period with no symptoms. If the infection progresses, it interferes more with the immune system, increasing 
-                the risk of developing common infections such as tuberculosis, as well as other opportunistic infections, and tumors 
+                the risk of developing common infections such as tuberculosis, as well as other opportunistic infections, and tumors  
                 which are otherwise rare in people who have normal immune function.
 
             </p>
-        
+            </div>
+            <br>
+
             <!-- Signs and symptoms -->
-            <h3>Signs and Symptoms</h3>
-            <text>There are three main stages of HIV infection: acute infection, clinical latency, and AIDS.</text>
+            <div class="section-divs">
+            <h3 class="h3-heading">Signs and Symptoms</h3>
+            <img class="disease-images" src="{% static 'Images/hiv-positive.jpg'%}" width=45% alt="HIV test positive "/>
+
+            <p class="text-justify"><b>Most people infected with HIV experience a short, flu-like illness that occurs 2-6 weeks after infection. After this, 
+                HIV may not cause any symptoms for several years.</b></p>
+            <p class="text-justify">It's estimated up to 80% of people who are infected with HIV experience this flu-like illness. The most common symptoms are:</p>
+            <ul class="pl-4">
+                <li>raised temperature (fever)</li>
+                <li>sore throat</li>
+                <li>body rash</li>
+            </ul>
+            <p class="text-justify">Other symptoms can include:</p>
+            <ul class="pl-4">
+                <li>tiredness</li>
+                <li>joint pain</li>
+                <li>muscle pain</li>
+                <li>swollen glands</li>
+            </ul>
+            <p class="text-justify">The symptoms usually last 1-2 weeks, but can be longer. They're a sign that your immune system is putting up a 
+                fight against the virus. But having these symptoms does not necessarily mean you have the HIV virus. 
+                Remember: they&#x27;re commonly caused by conditions other than HIV. If you have several of these symptoms and 
+                think you've been at risk of HIV infection within the past few weeks, 
+                you should get an HIV test.</p>
+            <p class="text-justify">After the initial symptoms disappear, HIV may not cause any further symptoms for many years. During this time, the virus 
+                continues to be active and causes progressive damage to your immune system. This process can vary from person to person, 
+                but may take up to 10 years, during which you'll feel and appear well.</p>
+
+            <p class="text-justify">Once the immune system becomes severely damaged, symptoms can include:</p>
+            <ul class="pl-4">
+                <li>weight loss</li>
+                <li>chronic diarrhoea</li>
+                <li>night sweats</li>
+                <li>skin problems</li>
+                <li>recurrent infections</li>
+                <li>serious life-threatening illnesses</li>
+            </ul>
+            <p class="text-justify">Earlier diagnosis and treatment of HIV can prevent these problems. You should still take an HIV test if you may have 
+                been at risk at any time in the past, even if you do not experience any symptoms.</p>
+            </div>
+            <br>
+
+
+
+            
+
+            <!-- Stages of HiV -->
+            <div class="section-divs">
+            <h3 class="h3-heading">Stages of HIV</h3>
+            <img class="disease-images" src="{% static 'Images/stages-hiv.jpg'%}" width=45% alt="The 3 stages ih HIV."/>
+
+            <p class="text-justify">There are three main stages of HIV infection: acute infection, clinical latency, and AIDS.</p>
 
             <!-- first stage acute infection -->
-            <h5 class="mt-2">First Stage: Acute Infection</h5>
+            <h5>First Stage: Acute Infection</h5>
             <p class="text-justify">
                 Most people don't know right away when they've been infected with HIV. But they may have symptoms within 
                 2 to 6 weeks after they’ve gotten the virus. This is when your body's immune system puts up a fight. It's called acute 
@@ -58,9 +110,10 @@
                 healthy, and keep you from spreading the virus. If you take these medications and have healthy habits, your HIV infection 
                 probably won’t get worse.
             </p>
+            <br>
 
             <!-- second stage clinical latency -->
-            <h5 class="mt-2">Second Stage: Clinical Latency</h5>
+            <h5>Second Stage: Clinical Latency</h5>
             <p class="text-justify">
                 After your immune system loses the battle with HIV, the flu-like symptoms will go away. But there’s a lot going on 
                 inside your body. Doctors call this the asymptomatic period or chronic HIV infection.
@@ -76,8 +129,9 @@
                 virus on to other people, but it’s extremely rare if you take your medicines.
             </p>
 
+            <br>
             <!-- third stage AIDS -->
-            <h5 class="mt-2">Third Stage: AIDS</h5>
+            <h5>Third Stage: AIDS</h5>
             <p class="text-justify">
                 <strong>AIDS is the advanced stage of HIV infection.</strong> This is usually when your<strong> CD4 T-cell</strong> number drops below 200 and your immune 
                 system is badly damaged. You might get an opportunistic infection, an illness that happens more often and is worse in people 
@@ -101,11 +155,13 @@
                 treated at this stage. If you start on HIV drugs, stay on them, follow your doctor’s advice, and keep healthy habits, 
                 you can live a long time.
             </p>
-
+            </div>
+            <br>
             <!-- transmission and preventions -->
-            <h3>How Do You Get or Transmit HIV?</h3>
+            <div class="section-divs">
+            <h3 class="h3-heading">How Do You Get or Transmit HIV?</h3>
 
-            <p>
+            <p class="text-justify">
                 HIV can only be spread through specific activities.<br>The most common ways are:
             </p>
             <ul class="pl-4">
@@ -114,15 +170,27 @@
                 <li><strong>Having vaginal or anal or oral sex with someone who has HIV</strong> without using a condom or taking medicines 
                     to prevent or treat HIV. Anal sex is riskier than vaginal sex. But in general, the chances from oralsex are very low.</li>
             </ul>
-            <p>Less common ways are:</p>
+            <p class="text-justify">Less common ways are:</p>
             <ul class="pl-4">
-                <li><strong>From mother to child during pregnancy, birth, or breastfeeding. </strong>However, the use of HIV medicines and other strategies have helped lower the risk of mother-to-child transmission of HIV to 1% or less.</li>
-                <li><strong>Receiving blood transfusions, blood products, or organ/tissue transplants</strong> that are contaminated with HIV.Contact between broken skin, wounds, or mucous membranes and HIV-infected blood or blood-contaminated body fluids</li>
-                <li><strong>Being bitten by a person with HIV.</strong> Each of the very small number of documented cases has involved severe trauma with extensive tissue damage and the presence of blood. There is no risk of transmission if the skin is not broken.</li>
-                <li><strong>Eating food that has been pre-chewed by a person with HIV.</strong> The contamination occurs when infected blood from a caregiver’s mouth mixes with food while chewing.</li>
+                <li><strong>From mother to child during pregnancy, birth, or breastfeeding. </strong>However, the use of HIV medicines and 
+                    other strategies have helped lower the risk of mother-to-child transmission of HIV to 1% or less.</li>
+                <li><strong>Receiving blood transfusions, blood products, or organ/tissue transplants</strong> that are contaminated 
+                    with HIV. Contact between broken skin, wounds, or mucous membranes and HIV-infected blood or blood-contaminated 
+                    body fluids</li>
+                <li><strong>Being bitten by a person with HIV.</strong> Each of the very small number of documented cases has involved 
+                    severe trauma with extensive tissue damage and the presence of blood. There is no risk of transmission if the skin 
+                    is not broken.</li>
+                <li><strong>Eating food that has been pre-chewed by a person with HIV.</strong> The contamination occurs when infected 
+                    blood from a caregiver’s mouth mixes with food while chewing.</li>
             </ul>
-            <h5>Ways HIV Cannot Be Spread</h5>
-            <p>HIV <strong>is not</strong> spread by:</p>
+            </div>
+            <br>
+
+            <!-- Ways HIV Cannot Be Spread -->
+            <div class="section-divs">
+            <h3 class="h3-heading">Ways HIV Cannot Be Spread</h3>
+            <img class="disease-images" src="{% static 'Images/no-hiv-transmission.jpg'%}" width=80% alt="Ways in which HIV can't be transmitted"/>
+            <p class="text-justify">HIV <strong>is not</strong> spread by:</p>
             <ul class="pl-4">
                 <li>Air or water</li>
                 <li>Mosquitoes, ticks or other insects</li>
@@ -131,12 +199,17 @@
                     or engaging in closed-mouth or “social” kissing with a person with HIV</li>
                 <li>Other sexual activities that don’t involve the exchange of body fluids (touching).</li>
             </ul>
-            <p>HIV can’t be passed through healthy, unbroken skin.</p>
-            
-            <h3>Precautions</h3>
-            <p>There's no vaccine to prevent HIV infection and no cure for AIDS. But you can protect yourself and others from infection.</p>
+            <p class="text-justify">HIV can’t be passed through healthy, unbroken skin.</p>
+            </div>
+            <br>
 
-            <p>To help prevent the spread of HIV:</p>
+            <!-- precautions -->
+            <div class="section-divs">
+            <h3 class="h3-heading">Precautions</h3>
+            <img class="disease-images" src="{% static 'Images/stop-hiv.jpg'%}" width=50% alt="Stop HIV - AIDS."/>
+            <p class="text-justify">There's no vaccine to prevent HIV infection and no cure for AIDS. But you can protect yourself and others from infection.</p>
+
+            <p class="text-justify">To help prevent the spread of HIV:</p>
 
             <ul class="pl-4">
             <li><strong>Use Treatment as Prevention (TasP).</strong> If you're living with HIV, taking HIV medication can keep your partner 
@@ -152,7 +225,7 @@
                 HIV from sex by more than 90% and from injection drug use by more than 70%. Your doctor will prescribe these drugs for 
                 HIV prevention only if you don't already have HIV infection. You will need an HIV test before you start taking PrEP and 
                 then every three months as long as you're taking it.</p>
-            <p>They don't prevent other sexually transmitted infections, so you'll still need to practice safe sex. If you have 
+            <p class="text-justify">They don't prevent other sexually transmitted infections, so you'll still need to practice safe sex. If you have 
                 hepatitis B, you should be evaluated by an infectious disease or liver specialist before beginning therapy.</p>
             </li>
             <li><strong>Tell your sexual partners if you have HIV.</strong> It's important to tell all your current and past sexual 
@@ -164,12 +237,13 @@
             <li><strong>Consider male circumcision.</strong> There's evidence that male circumcision can help reduce the risk of 
                 getting HIV infection.</li>
             </ul>
+            </div>
         </div>
   
 
 
         
-        <div class="col-sm-3 mr-auto sidebar">
+        <div class="col-sm-3 sidebar">
             <ul class="list-group ">
                 <li class="list-group-item  heads">For You And Your Family</li>
                 <ul class="list-group">

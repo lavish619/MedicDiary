@@ -101,8 +101,10 @@
 					</div>
 
 					<!-- Input Fields -->
+					<form action="{% url 'patient:loginp' %}" method="POST">
+						{% csrf_token %}
 					<input type="text" id="username" class="form-control mb-2" placeholder="Patient's Username" name="username">
-					<input type="text" id="password" class="form-control" placeholder="Password" name= "lname">
+					<input type="text" id="password" class="form-control" placeholder="Password" name= "password">
 
 					<div class="text-md-right" >
 						<small>Forgot <a href="#">Username/Password</a></small>
@@ -112,11 +114,11 @@
 					<div class="text-center">
 						<button class="btn my-2" id="login" type="submit">Login</button>
 					</div>
-
+				</form>
 					<hr>
 
 					<div class="text-center">
-						<span>New User? </span><a href="#">Create an account</a>
+	##					<span>New User? </span><a href="{% url 'patient:registerpage' %}">Create an account</a>
 					</div>
 				</div>
 			</div>
@@ -134,9 +136,11 @@
 						<div class="card-title text-center h4">Sign In</div>
 					</div>
 
-					<!-- Input Fields -->
+					<!-- Input Fields form -->
+					<form action="{% url 'doctor:logind' %}" method="POST">
+						{% csrf_token %}
 					<input type="text" id="username" class="form-control mb-2" placeholder="Doctor's Username" name="username">
-					<input type="text" id="password" class="form-control" placeholder="Password" name= "lname">
+					<input type="text" id="password" class="form-control" placeholder="Password" name= "password">
 
 					<div class="text-md-right" >
 						<small>Forgot <a href="#">Username/Password</a></small>
@@ -146,12 +150,13 @@
 					<div class="text-center">
 						<button class="btn my-2 " id="login" type="submit">Login</button>
 					</div>
-
+				
 					<hr>
 
 					<div class="text-center">
-						<span>New User? </span><a href="#">Create an account</a>
+						<span>New User? </span><a href="{% url 'doctor:registerpage' %}">Create an account</a>
 					</div>
+				</form>
 				</div>
 			</div>
     	</div>

@@ -1,29 +1,430 @@
 {% extends 'centralapp/base.html' %}
 {% block body %}
+{% load static %}
 
 <div class="container-fluid">
     <div class="row my-4">
-        <div class="col-sm-8 p-2 ml-auto" >
-            <h1> What is a health record</h1>
-            <p>
-                My Health Record lets you control your health information securely, in one place.<br>This means your important health information is available when and where it’s needed, including in an emergency.
-            </p>
+        <div class="col-sm-8 p-2 ml-auto">
 
-            <p>
-                <h2>Start using your My Health Record:</h2>
-                <ul>
-                    <li>Log in to your record for the first time</li>
+            <h1 style="text-align: center;">Heart Disorders</h1>
+            <img class="top-images" src="{% static 'Images/heart.jpg'%}" width=60% alt="The Human Heart." />
+            <br>
 
-                    <li>Control your privacy settings</li>
+            <!-- What are Heart Disorders -->
+            <div class="section-divs">
+            <h3 class="h3-heading">What are Heart Disorders</h3>
+            
+            <p>Heart disease describes a range of conditions that affect your heart. Diseases under the heart disease umbrella 
+                include blood vessel diseases, such as coronary artery disease; heart rhythm problems (arrhythmias); and heart defects 
+                you're born with (congenital heart defects), among others.</p>
 
-                    <li>Understand what information can go in your record</li>
+            <p>The term "heart disease" is often used interchangeably with the term "cardiovascular disease." Cardiovascular 
+                disease generally refers to conditions that involve narrowed or blocked blood vessels that can lead to a heart 
+                attack, chest pain (angina) or stroke. Other heart conditions, such as those that affect your heart's muscle, valves 
+                or rhythm, also are considered forms of heart disease.</p>
 
-                    <li>Discuss My Health Record with your healthcare provider</li>
-                </ul>
-            </p>
+            <p>Many forms of heart disease can be prevented or treated with healthy lifestyle choices.</p>
+            </div>
+            <br>
+
+            <!-- Different types of heart disease -->
+            <div class="section-divs">
+            <h3 class="h3-heading">Different types of heart disease</h3>
+            <img class="disease-images" src="{% static 'Images/heart-disorder-types.jpg'%}" width=60% alt="Diseses of Human Heart" />
+            <p>Heart disease encompasses a wide range of cardiovascular problems. Several diseases and conditions fall under 
+                the umbrella of heart disease. Types of heart disease include:</p>
+            <ul class="pl-4">
+                <li><strong>Arrhythmia.</strong> An arrhythmia is a heart rhythm abnormality.</li>
+                <li><strong>Atherosclerosis.</strong> Atherosclerosis is a hardening of the arteries. </li>
+                <li><strong>Cardiomyopathy. </strong>This condition causes the heart's muscles to harden or grow weak.</li>
+                <li><strong>Congenital heart defects.</strong> Congenital heart defects are heart irregularities that are present at birth.</li>
+                <li><strong>Coronary artery disease (CAD).</strong> CAD is caused by the buildup of plaque in the heart's arteries. 
+                    It's sometimes called ischemic heart disease.</li>
+                <li><strong>Heart infections.</strong> Heart infections may be caused by bacteria, viruses, or parasites.</li>
+            </ul>
+            <p>The term cardiovascular disease may be used to refer to heart conditions that specifically affect the blood vessels.</p>
+            </div>
+            <br>
+
+
+            <!-- Signs and Symptoms -->
+            <div class="section-divs">
+            <h3 class="h3-heading"> Signs and Symptoms</h3>
+            <img class="disease-images" src="{% static 'Images/symptoms-heart-disorders.jpg'%}" width=60% alt="Symptoms of Heart Diseases " />
+            <p>Different types of heart disease may result in a variety of different symptoms. </p>
+
+            <h5>Arrhythmias</h5>
+            <p>Arrhythmias are abnormal heart rhythms. The symptoms you experience may depend on the type of arrhythmia 
+                you have &mdash; heartbeats that are too fast</a> or too slow</a>. Symptoms of an arrhythmia include:</p>
+            
+            <ul class="pl-4">
+                <li>lightheadedness</li>
+                <li>fluttering heart or racing heartbeat</li><li>slow pulse</li>
+                <li>fainting spells</li><li>dizziness</li>
+                <li>chest pain</li>
+            </ul>
+            <br>
+
+            <h5>Atherosclerosis </h5>
+            <p>Atherosclerosis reduces blood supply to your extremities. In addition to chest pain and shortness of breath, 
+                symptoms of atherosclerosis include:</p>
+            
+            <ul class="pl-4">
+                <li>coldness, especially in the limbs</li>
+                <li>numbness, especially in the limbs</li>
+                <li>unusual or unexplained pain</li>
+                <li>weakness in your legs and arms </li>
+            </ul>
+            <br>
+
+            <h5>Congenital heart defects</h5>
+            <p>Congenital heart defects are heart problems that develop when a fetus is growing. Some heart defects are never 
+                diagnosed. Others may be found when they cause symptoms, such as:</p>
+            
+            <ul class="pl-4">
+                <li>blue-tinged skin</li>
+                <li>swelling of the extremities</li>
+                <li>shortness of breath or difficulty breathing</li>
+                <li>fatigue and low energy</li>
+                <li>irregular heart rhythm </li>
+            </ul>
+            <br>
+
+            <h5>Coronary artery disease (CAD)</h5>
+            <p>CAD is plaque buildup in the arteries that move oxygen-rich blood through the heart and lungs. 
+                Symptoms of CAD include:</p>
+            <ul class="pl-4">
+                <li>chest pain or discomfort</li>
+                <li>a feeling of pressure or squeezing in the chest</li>
+                <li>shortness of breath</li>
+                <li>nausea</li>
+                <li>feelings of indigestion or gas</li>
+            </ul>
+            <br>
+
+            <h5>Cardiomyopathy</h5>
+            <p>Cardiomyopathy is a disease that causes the muscles of the heart to grow larger and turn rigid, thick, or weak. 
+                Symptoms of this condition include:</p>
+            
+            <ul class="pl-4">
+                <li>fatigue</li>
+                <li>bloating</li>
+                <li>swollen legs, especially ankles and feet</li>
+                <li>shortness of breath</li>
+                <li>pounding or rapid pulse</li>
+            </ul>
+            <br>
+
+            <h5>Heart infections</h5>
+            <p>The term heart infection may be used to describe conditions such as endocarditis or myocarditis. Symptoms of a 
+                heart infection include:</p>
+            
+            <ul class="pl-4">
+                <li>chest pain</li>
+                <li>chest congestion or coughing</li>
+                <li>fever</li>
+                <li>chills</li>
+                <li>skin rash</li>
+            </ul>
+            </div>
+            <br>
+
+            <!-- Symptoms  in women -->
+            <div class="section-divs">   
+            <h3 class="h3-heading">Symptoms in Women</h3>
+            <img class="disease-images" src="{% static 'Images/women-heart-disease.jpg'%}" width=70% alt="Symptoms of heart disease in women" />
+            <p>Women often experience different signs and symptoms of heart disease than men, specifically with regards to CAD and 
+                other cardiovascular diseases. </p>
+
+            <p>In fact, a 2003 study looked at the symptoms most often seen in women who&rsquo;d experienced a heart attack. The top 
+                symptoms didn&rsquo;t include &ldquo;classic&rdquo; heart attack symptoms such as chest pain and tingling. Instead, 
+                the study reported that women were more likely to say they experienced anxiety, sleep disturbances, and unusual or 
+                unexplained fatigue.</p>
+            <p>What&rsquo;s more, 80 percent of the women in the study reported experiencing these symptoms for at least one month 
+                before their heart attack occurred.</p>
+            <p>Symptoms of heart disease in women can also be confused with other conditions, such as depression, menopause, and 
+                anxiety. </p>
+            <p>Common heart disease symptoms in women include:</p>
+            <ul class="pl-4">
+                <li>dizziness</li>
+                <li>paleness</li>
+                <li>shortness of breath or shallow breathing</li>
+                <li>lightheadedness</li>
+                <li>fainting or passing out</li>
+                <li>anxiety</li>
+                <li>nausea</li>
+                <li>vomiting</li>
+                <li>jaw pain</li>
+                <li>neck pain</li>
+                <li>back pain</li>
+                <li>indigestion or gaslike pain in the chest and stomach</li>
+                <li>cold sweats</li>
+            </ul>
+            </div>
+            <br>
+                    
+            <!-- Causes of heart disease -->
+            <div class="section-divs">
+            <h3 class="h3-heading"> Causes of heart disease</h3>
+            <img class="disease-images" src="{% static 'Images/working-heart.jpg'%}" width=45% alt="A working Human Heart" />
+            <p>Heart disease is a collection of diseases and conditions that cause cardiovascular problems. Each type of heart disease 
+                is caused by something entirely unique to that condition. Atherosclerosis and CAD result from plaque buildup in the 
+                arteries. Other causes of heart disease are described below.</p>
+
+            <br>    
+            <h5>Arrhythmia causes</h5>
+            <p>Causes of an abnormal heart rhythm include:</p>
+            <ul class="pl-4">
+                <li>diabetes</li>
+                <li>CAD</li>
+                <li>heart defects, including congenital heart defects</li>
+                <li>medications, supplements, and herbal remedies</li>
+                <li>high blood pressure (hypertension)</li>
+                <li>excessive alcohol or caffeine use</li>
+                <li>substance use disorders</li>
+                <li>stress and anxiety</li>
+                <li>existing heart damage or disease</li>
+            </ul>
+            <br>
+
+            <h5>Congenital heart defect causes</h5>
+            <p>This heart disease occurs while a baby is still developing in the womb. Some heart defects may be serious and diagnosed and 
+                treated early. Some may also go undiagnosed for many years.</p>
+            <p>Your heart&rsquo;s structure can also change as you age. This can create a heart defect that may lead to complications 
+                and problems.</p><h5>Cardiomyopathy causes</h5>
+                <p>Several types of cardiomyopathy exist. Each type is the result of a separate condition.</p>
+            <ul class="pl-4">
+                <li><strong>Dilated cardiomyopathy.</strong> It&rsquo;s unclear what causes this most common type of cardiomyopathy, which 
+                    leads to a weakened heart. It may be the result of previous damage to the heart, such as the kind caused by drugs, 
+                    infections, and heart attack. It may also be an inherited condition or the result of uncontrolled blood pressure.</li>
+                <li><strong>Hypertrophic cardiomyopathy. </strong>This type of heart disease leads to a thicker heart muscle. 
+                    It&rsquo;s usually inherited.</li>
+                <li><strong>Restrictive cardiomyopathy.</strong> It&rsquo;s often unclear what leads to this type of cardiomyopathy, 
+                    which results in rigid heart walls. Possible causes may include scar tissue buildup and a type of abnormal protein 
+                    buildup known as amyloidosis. </li>
+            </ul>
+            <br>
+            <h5>Heart infection causes</h5>
+            <p>Bacteria, parasites, and viruses are the most common causes of heart infections. Uncontrolled infections in the body can 
+                also harm the heart if they&rsquo;re not properly treated.</p>
+            </div> 
+            <br>   
+                
+                
+            <!-- Risk factors    -->
+            <div class="section-divs">
+            <h3 class="h3-heading"> Risk Factors </h3>
+            <img class="disease-images" src="{% static 'Images/risk-factors.jpg'%}" width=60% alt="Factors for heart diseases" />
+            <p>There are many risk factors for heart disease. Some are controllable, and others aren&rsquo;t. The CDC says that 
+                    around 47 percent of Americans have at least one risk factor for heart disease. Some of these risk factors include:</p>
+            <ul class="pl-4">
+                <li>high blood pressure</li>
+                <li>high cholesterol and low levels of high-density lipoprotein (HDL), the &ldquo;good&rdquo; cholesterol</li>
+                <li>smoking</li>
+                <li>obesity</li>
+                <li>physical inactivity</li>
+            </ul>
+                    
+            <p>Smoking, for example, is a controllable risk factor. People who smoke double their risk of developing heart disease, according to the 
+                    National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK).</p>
+            <p>People with diabetes may also be at higher risk for heart disease because high 
+                blood glucose levels increase the risk of:</p>
+            <ul class="pl-4">
+                <li>angina</li>
+                <li>heart attack</li>
+                <li>stroke</li>
+                <li>CAD</li>
+            </ul>
+                    
+            <p>If you have diabetes, it&rsquo;s essential to control your glucose to limit your risk for developing heart disease. The 
+                American Heart Association (AHA) reports that people who have both high blood pressure and diabetes double their risk for 
+                cardiovascular disease.</p>
+            <br>
+
+            <h5>Risk factors you can&rsquo;t control</h5>
+            <p>Other risk factors for heart disease include:</p>
+            <ul class="pl-4">
+                <li>family history</li>
+                <li>ethnicity</li>
+                <li>sex </li>
+                <li>age</li>
+            </ul>
+                    
+            <p>Although these risk factors aren&rsquo;t controllable, you may be able to monitor their effects. A family history of CAD is 
+                especially concerning if it involved a:</p>
+            <ul class="pl-4">
+                <li>male relative under 55 years old, such as a father or brother</li>
+                <li>female relative under 65 years old, such as a mother or sister</li>
+            </ul>
+            
+            <p>Finally, your age can increase your risk for heart disease. From ages 20 to 59, men and women are at a similar risk for 
+                CAD. After age 60, however, the percentage of men affected rises to between 19.9 and 32.2 percent. Only 9.7 to 18.8 percent 
+                of women that age are affected.</p>
+            </div>
+            <br>
+
+            <!-- How are heart diseases diagnosed? -->
+            <div class="section-divs">
+            <h3 class="h3-heading"> How are heart diseases Diagnosed?</h3>
+            <img class="disease-images" src="{% static 'Images/heart-diagnosis.jpg'%}" width=60% alt="Diagnosing Heart disease" />
+            <p>Your doctor may order several types of tests and evaluations to make a heart disease diagnosis. Some of these tests can 
+                be performed before you ever show signs of heart disease. Others may be used to look for possible causes of symptoms 
+                when they develop.</p>
+            <h5>Physical exams and blood tests </h5>
+            <p>The first thing your doctor will do is perform a physical exam and take an account of the symptoms you&rsquo;ve been 
+                experiencing. Then they&rsquo;ll want to know your family and personal medical history. Genetics can play a role in 
+                some heart diseases. If you have a close family member with heart disease, share this information with your doctor.</p>
+            <p>Blood tests are frequently ordered. This is because they can help your doctor see your cholesterol levels and look for 
+                signs of inflammation.</p>
+            <br>
+            
+            <h5>Noninvasive tests </h5>
+            <p>A variety of noninvasive tests may be used to diagnose heart disease.</p>
+            <ul class="pl-4">
+                <li><strong>Electrocardiogram (ECG or EKG).</strong> This test can monitor your heart&rsquo;s electrical activity and 
+                    help your doctor spot any irregularities.</li>
+                <li><strong>Echocardiogram. </strong>This ultrasound test can give your doctor a close picture of your heart&rsquo;s 
+                    structure.</li>
+                <li><strong>Stress test. </strong>This exam is performed while you complete a strenuous activity, such as walking, 
+                    running, or riding a stationary bike. During the test, your doctor can monitor your heart&rsquo;s activity in response
+                     to changes in physical exertion.</li>
+                <li><strong>Carotid ultrasound. </strong>To get a detailed ultrasound of your 
+                    carotid arteries, your doctor may order this ultrasound test.</li>
+                <li><strong>Holter monitor. </strong>Your doctor may ask you to wear this heart rate monitor for 24 to 48 hours. It allows 
+                    them to get an extended view of your heart&rsquo;s activity.</li>
+                <li><strong>Tilt table test.</strong> If you&rsquo;ve recently experienced fainting or lightheadedness when standing 
+                    up or sitting down, your doctor may order this test. During it, you&rsquo;re strapped to a table and slowly raised 
+                    or lowered while they monitor your heart rate, blood pressure, and oxygen levels.</li>
+                <li><strong>CT scan.</strong> This imaging test gives your doctor a highly-detailed X-ray image of your heart.</li>
+                <li><strong>Heart MRI.</strong> Like a CT scan, a heart MRI can provide a very detailed image of your heart and blood 
+                    vessels.</li>
+            </ul>
+            <br>
+
+            <h5>Invasive tests </h5>
+            <p>If a physical exam, blood tests, and noninvasive tests aren&rsquo;t conclusive, your doctor may want to look inside your 
+                body to determine what&rsquo;s causing any unusual symptoms. Invasive tests may include:</p>
+
+            <ul class="pl-4">
+                <li><strong>Cardiac catheterization and coronary angiography.</strong> Your doctor may insert a catheter into your heart 
+                    through the groin and arteries. The catheter will help them perform tests involving the heart and blood vessels. 
+                    Once this catheter is in your heart, your doctor can perform a coronary angiography. During a coronary angiography, 
+                    a dye is injected into the delicate arteries and capillaries surrounding the heart. The dye helps produce a highly 
+                    detailed X-ray image.</li>
+                <li><strong>Electrophysiology study. </strong>During this test, your doctor may attach electrodes to your heart through a 
+                    catheter. When the electrodes are in place, your doctor can send electric pulses through and record how the heart 
+                    responds.</li>
+            </ul>
+            <br>
+
+            <h5>Surgery or invasive procedures</h5>
+            <p>In some cases of heart disease, surgery</a> or a medical procedure is necessary to treat the condition and prevent 
+                worsening symptoms. </p>
+            <p>For example, if you have arteries that are blocked entirely or almost completely by plaque buildup, your doctor may 
+                insert a stent in your artery to return regular blood flow. The procedure your doctor will perform depends on the 
+                type of heart disease you have and the extent of damage to your heart.</p>
+            </div>
+            <br>
+
+            <!-- Preventions -->
+            <div class="section-divs">
+            <h3 class="h3-heading"> Preventions</h3>
+            <p>Some risk factors for heart disease can&rsquo;t be controlled, like your family history, for example. But it&rsquo;s 
+                still important to lower your chance of developing heart disease by decreasing the risk factors that you can control.</p>
+
+            <h5>Aim for healthy blood pressure and cholesterol numbers</h5>
+            <p>Having healthy blood pressure and cholesterol ranges are some of the first steps you can take for a healthy heart. 
+                Blood pressure is measured in millimeters of mercury (mm Hg). A healthy blood pressure is considered less than 120 
+                systolic and 80 diastolic, which is often expressed as &ldquo;120 over 80&rdquo; or &ldquo;120/80 mm Hg.&rdquo; Systolic 
+                is the measurement of pressure while the heart is contracting. Diastolic is the measurement when the heart is resting. 
+                Higher numbers indicate that the heart is working too hard to pump blood.</p>
+            <p>Your ideal cholesterol level will depend on your risk factors and heart health history. If you&rsquo;re at a high risk of 
+                heart disease, have diabetes, or have already had a heart attack, your target levels will be below those of people with 
+                low or average risk.</p>
+
+            <h5>Find ways to manage stress</h5>
+            <p>As simple as it sounds, managing stress can also lower your risk for heart disease. Don&rsquo;t underestimate chronic 
+                stress as a contributor to heart disease. Speak with your doctor if you&rsquo;re frequently overwhelmed, anxious, or 
+                are coping with stressful life events, such as moving, changing jobs, or going through a divorce.</p>
+
+            <h5>Embrace a healthier lifestyle</h5>
+            <p>Eating healthy foods and exercising regularly are also important. Make sure to avoid foods high in saturated fat and salt. 
+                Doctors recommend 30 to 60 minutes of exercise on most days for a total of 2 hours and 30 minutes each week. 
+                Check with your doctor to make sure you can safely meet these guidelines, especially if you already have a heart condition.</p>
+            <p>If you smoke, stop. The nicotine in cigarettes causes blood vessels to constrict, making it harder for oxygenated blood to 
+                circulate. This can lead to atherosclerosis.</p>
+            <p>Learn more about ways you can lower your risk for and possibly prevent heart disease.</p>
+            </div>
+            <br>
+
+            <!-- Lifestyle Changes that are required -->
+            <div class="section-divs">
+            <h3 class="h3-heading"> Lifestyle Changes that are Required</h3>
+            <img class="disease-images" src="{% static 'Images/running-heart-disease.jpg'%}" width=50% alt="Physical activities for heart diseases" />
+            <p>If you&rsquo;ve recently received a heart disease diagnosis, talk to your doctor about steps you can take to stay as healthy 
+                as possible. You can prepare for your appointment by creating a detailed list of your everyday habits. Possible topics 
+                include:</p>
+            <ul class="pl-4">
+                <li>medications you take</li>
+                <li>your regular exercise routine</li>
+                <li>your typical diet</li>
+                <li>any family history of heart disease or stroke</li>
+                <li>personal history of high blood pressure or diabetes</li>
+                <li>any symptoms you&rsquo;re experiencing, such as a racing heart, dizziness, or lack of energy</li>
+            </ul>
+                    
+            <p>Seeing your doctor regularly is just one lifestyle habit you can take up. If you do, any potential issues can be caught 
+                as early as possible. Certain risk factors, such as high blood pressure, may be addressed with medications to lower your 
+                risk of heart disease.</p><p>Your doctor may also provide tips for:</p>
+            <ul class="pl-4">
+                <li>quitting smoking</li>
+                <li>controlling blood pressure </li>
+                <li>exercising regularly </li>
+                <li>maintaining healthy cholesterol levels</li>
+                <li>losing weight if you&rsquo;re overweight</li>
+                <li>eating healthy</li>
+            </ul>
+            <p>Making these changes all at once might not be possible. Discuss with your healthcare provider which lifestyle changes will 
+                have the biggest impact. Even small steps toward these goals will help keep you at your healthiest.</p>
+            </div>
+            <br>
+                
+            <!-- Connection with hypertension -->
+            <div class="section-divs">
+            <h3 class="h3-heading">Connection with Hypertension</h3>
+            <img class="disease-images" src="{% static 'Images/heart-hypertension.jpg'%}" width=90% alt="Connection with Hypertension" />
+            <p>Hypertensive heart disease is a condition caused by chronic high blood pressure. Hypertension requires your heart to pump 
+                harder in order to circulate your blood through your body. This increased pressure can lead to several types of heart 
+                problems, including a thick, enlarged heart muscle and narrowed arteries.</p>
+            <p>The extra force your heart must use to pump blood can make your heart muscles harder and thicker. This can impact how well 
+                your heart pumps. Hypertensive heart disease can make arteries less elastic and more rigid. That can slow blood 
+                circulation and prevent your body from getting the oxygen-rich blood it needs.</p>
+            <p>Hypertensive heart disease is the top cause of death for people with high blood pressure, so it&rsquo;s important you 
+                begin to treat high blood pressure as soon as you can. Treatment can stop complications and possibly prevent 
+                additional damage.</p>
+            </div>
+            <br>
+
+            <!-- Is there a cure for heart disease? -->
+            <div class="section-divs">
+                <h3 class="h3-heading"> Is there a cure for heart disease?</h3>
+                <p>Heart disease can't be cured or reversed. It requires a lifetime of treatment and careful monitoring. Many of 
+                    the symptoms of heart disease can be relieved with medications, procedures, and lifestyle changes. When these 
+                    methods fail, coronary intervention or bypass surgery might be used.</p>
+    
+                <p>If you believe you may be experiencing symptoms of heart disease or if you have risk factors for heart disease, 
+                    make an appointment to see your doctor. Together, the two of you can weigh your risks, conduct a few screening tests, 
+                    and make a plan for staying healthy.</p>
+    
+                <p>It's important to take charge of your overall health now, before a diagnosis may be made. This is especially true if 
+                    you have a family history of heart disease or conditions that increase your risk for heart disease. Taking care of your 
+                    body and your heart can pay off for many years to come.</p>
+                </div>
+                <br>
+
         </div>
 
-        <div class="col-sm-3 mr-auto sidebar">
+        <div class="col-sm-3 sidebar">
             <ul class="list-group ">
                 <li class="list-group-item  heads">For You And Your Family</li>
                 <ul class="list-group">
