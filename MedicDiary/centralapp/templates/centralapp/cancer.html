@@ -1,28 +1,377 @@
 {% extends 'centralapp/base.html' %}
 {% block body %}
+{% load static %}
 
 <div class="container-fluid">
     <div class="row my-4">
         <div class="col-sm-8 p-2 ml-auto" >
-            <h1> What is a health record</h1>
-            <p>
-                My Health Record lets you control your health information securely, in one place.<br>This means your important health information is available when and where it’s needed, including in an emergency.
+
+            
+            <h1 style="text-align: center;">Cancer</h1>
+
+            <img class="top-images" src="{% static 'Images/Cancer-Cell.jpg'%}" alt="An illustration of Cancer Cells." /> 
+            <br>
+            <!-- what it is -->
+            <div class="section-divs">
+            <h3 class="h3-heading">What it is?</h3>
+            <p class="text-justify">In the most basic terms, cancer refers to cells that grow out-of-control and invade other tissues. Cells 
+                may become cancerous due to the accumulation of defects, or mutations, in their DNA. Certain inherited 
+                genetic defects (for example, BRCA1 and BRCA2 mutations) and infections can increase the risk of cancer. 
+                Environmental factors (for example, air pollution) and poor lifestyle choices—such as smoking and heavy 
+                alcohol use—can also damage DNA and lead to cancer.
+            </p>
+            <p class="text-justify">
+                Most of the time, cells are able to detect and repair DNA damage. If a cell is severely damaged and cannot 
+                repair itself, it usually undergoes so-called programmed cell death or apoptosis. Cancer occurs when damaged 
+                cells grow, divide, and spread abnormally instead of self-destructing as they should.
+            </p>
+            </div>
+            <br>
+
+            <!-- Malignant Tumors Vs. Benign Tumors -->
+            <div class="section-divs">
+            <h3 class="h3-heading">Malignant Tumors Vs. Benign Tumors</h3>
+            <img class="disease-images" src="{% static 'Images/malignant-benign.jpg'%}" width=60% alt="Benign (not cancer) vs. malignant (cancer) tumors. " />    
+            <p>A tumor is an abnormal mass of cells. Tumors can either be benign (non-cancerous) or malignant (cancerous).</p>
+            
+            <h5>Benign Tumors</h5>
+            <p class="text-justify">Benign tumors grow locally and do not spread. As a result, benign tumors are not considered cancer. They can 
+                still be dangerous, especially if they press against vital organs like the brain.
+            </p>
+            
+            <h5>Malignant Tumors</h5>
+            <p class="text-justify">Malignant tumors have the ability to spread and invade other tissues. This process, known as metastasis, is 
+                a key feature of cancer. There are many different types of malignancy based on where a cancer tumor originates.
+            </p>  
+            </div>
+            <br>  
+
+            <!-- Cancer Metastasis  -->
+            <div class="section-divs">
+            <h3 class="h3-heading">Cancer Metastasis</h3>
+            {% load static %}
+            <img class="disease-images" src="{% static 'Images/Cancer-Metastasis.jpg' %}" alt="Flow Diagram showing steps of cancer matastasis" />            
+            <p class="text-justify">Metastasis is the process whereby cancer cells break free from a malignant tumor and travel to and invade other 
+                tissues in the body. Cancer cells metastasize to other sites via the lymphatic system and the bloodstream. Cancer 
+                cells from the original&mdash;or primary&mdash;tumor can travel to other sites such as the lungs, bones, liver, 
+                brain, and other areas. These metastatic tumors are "secondary cancers" because they arise from the primary tumor.
+            </p> 
+            
+            <h5>What Is Metastasized Cancer?</h5>
+            <p class="text-justify">Metastatic cancer retains the name of the primary cancer. For example, bladder cancer that metastasizes to the 
+                liver is not liver cancer. It is called metastatic bladder cancer. Metastasis is significant because it helps 
+                determine the staging and treatment. Some types of metastatic cancer are curable, but many are not.
+            </p>
+            </div>
+            <br>
+
+            <!-- Causes of Cancer?   -->
+            <div class="section-divs">
+            <h3 class="h3-heading">Causes of Cancer? </h3>
+            <img class="disease-images" width=55% src="{% static 'Images/cancer-causes.jpg'%}" alt="Key causes of cancer." />
+            <p class="text-justify">Certain genes control the life cycle&mdash;the growth, function, division, and death&mdash;of a cell. When these 
+                genes are damaged, the balance between normal cell growth and death is lost. Cancer cells are caused by DNA damage 
+                and out-of-control cell growth. The following is a partial list of factors known to damage DNA and increase the risk 
+                of cancer:
+            </p>
+            
+            <h5>Mutations Cause</h5>
+            <p class="text-justify">Genetic mutations may cause cancer. For example, mutations of genes BRCA1 and BRCA2 (linked to an increased risk of breast 
+                and ovarian cancers) can inhibit the body&rsquo;s ability to safe-guard and repair DNA. Copies of these mutated genes can 
+                be passed on genetically to future generations, leading to a genetically-inherited increased risk of cancer.
+            </p>
+            
+            <h5>Environment Cause</h5>
+            <p class="text-justify">Cancer may be caused by environmental exposure. Sunlight can cause cancer through ultraviolet radiation. So can air 
+                pollutants like soot, wood dust, asbestos, and arsenic, to name just a few.
+            </p>
+            
+            <h5>Microbes Cause</h5>
+            <p class="text-justify">Some microbes are known to increase cancer risks. These include bacteria like H. pylori, which causes stomach ulcers 
+                and has been linked to gastric cancer. Viral infections (including Epstein-Barr, HPV, and hepatitis B and C) have 
+                also been linked to cancer.
+            </p>
+            
+            <h5>Lifestyle and Diet Causes</h5>
+            <p class="text-justify">Lifestyle choices can lead to cancer as well. Eating a poor diet, inactivity, obesity, heavy alcohol use, tobacco use 
+                including smoking, and exposure to chemicals and toxins are all associated with greater cancer risk.
+            </p>
+            
+            <h5>Causes of Cancer: Treatment</h5>
+            <p class="text-justify">Medical treatment with chemotherapy, radiation, targeted treatments (drugs designed to target a specific type of cancer 
+                cell) or immunosuppressive drugs used to decrease the spread of cancer throughout the body can also cause damage to 
+                healthy cells. Some &ldquo;second cancers&rdquo;, completely separate from the initial cancer, have been known to occur 
+                following aggressive cancer treatments; however, researchers are producing drugs that cause less damage to healthy cells 
+                (for example, targeted therapy).
+            </p>
+            </div>
+            <br>
+
+            <!-- Cancer Symptoms and Signs  -->
+            <div class="section-divs">
+            <h3 class="h3-heading">Cancer Signs and Symptoms</h3>
+            <img class="disease-images" src="{% static 'Images/cancer-signs-symptoms.jpg' %}" alt="Doctors examining different tools to help diagnose cancer." />    
+            <p class="text-justify">There are more than 100 different types of cancer. Every cancer and every individual is unique. Cancer symptoms and signs 
+                depend on the size and location of the cancer as well as the presence or absence of metastasis.
+            </p> 
+            
+            <h5>Common Cancer Symptoms and Signs</h5>
+            Symptoms and signs of cancer may include:
+            <ul class="pl-4">
+                <li>Fever </li>
+                <li>Pain</li>
+                <li>Fatigue</li> 
+                <li>Skin changes (redness, sores that won't heal, jaundice, darkening)</li> 
+                <li>Unintended weight loss or weight gain</li>
+            </ul>
+            
+            
+            Other more obvious signs of cancer may include:
+            <ul class="pl-4">
+                <li>Lumps or tumors (mass)</li>
+                <li>Difficulty swallowing</li>
+                <li>Changes or difficulties with bowel or bladder function</li>
+                <li>Persistent cough or hoarseness</li>
+                <li>Short of breath</li>
+                <li>Chest pain</li>
+                <li>Unexplained bleeding or discharge</li>
+            </ul>
+            </div>
+            <br>
+
+            <!-- Some Common Cancers -->
+            <div class="section-divs">
+            <h3 class="h3-heading">Some Common Cancers</h3>
+            <img class="disease-images" src="{% static 'Images/common-cancers.jpg'%}" alt="Most common cancer types." />    
+            <p class="text-justify">The most common cancers diagnosed are those of the breast, prostate, lung, colon and rectum, and bladder. Cancers of the lung, 
+                colon and rectum, breast, and pancreas 
+                are responsible for the most deaths. The prognosis of different cancers is highly variable. Many cancers are curable with 
+                early detection and treatment. Cancers that are aggressive or diagnosed at a later stage may be more difficult to treat, 
+                and can even be life threatening.
             </p>
 
-            <p>
-                <h2>Start using your My Health Record:</h2>
-                <ul>
-                    <li>Log in to your record for the first time</li>
+            <ul class="pl-4">
+                <li><strong>Breast Cancer</strong> is the most common cancer, and one of the deadliest. About one in eight women will 
+                    develop invasive breast cancer at some point in her life. 
+                </li>
+                
+                <li><strong>Lung Cancer</strong> is the second-most-common cancer, and it is the deadliest for both men and women. Worldwide, lung cancers 
+                    are the most common cancers.
+                </li>
+                
+                <li><strong>Prostate Cancer</strong> is the most common cancer found in men.
+                </li>
+                
+                <li><strong>Colorectal Cancer</strong> &ndash; Of the cancers that can impact both men and women, colorectal cancer is the second-greatest killer.
+                </li>
+                
+                <li><strong>Liver Cancer</strong> develops in about 20,000 men and 8,000 women each year. Hepatitis B and C and heavy drinking increase one's risk of developing liver cancer.
+                </li>
+                
+                <li><strong>Ovarian Cancer</strong> &ndash; For women, ovarian cancer is the eighth most common cancer and the fifth leading cause of cancer death.
+                </li>
+        
+                <li><strong>Pancreatic Cancer</strong> has the highest mortality rate of all major cancers.
+                </li>
+            </ul>
+            </div>
+            <br>
 
-                    <li>Control your privacy settings</li>
+            <!-- How Stages of Cancer Are Determined -->
+            <div class="section-divs">
+            <h3 class="h3-heading">How Stages of Cancer Are Determined</h3>
+            <img class="disease-images" src="{% static 'Images/cancer-staging.jpg'%}" alt="Tumor, Node, Metastasis (TNM) staging for breast cancer." />    
+            <p class="text-justify">Doctors use the stages of cancer to classify cancer according to its size, location, and extent of spread. Staging helps 
+                doctors determine the prognosis and treatment for cancer. The TNM staging system classifies cancers according to:
 
-                    <li>Understand what information can go in your record</li>
+                <ul class="pl-4">
+                    <li>Tumor (T): Primary tumor size and/or extent</li>
+                    <li>Nodes (N): Spread of cancer to lymph nodes in the regional area of the primary tumor</li>
+                    <li>Metastasis (M): Spread of cancer to distant sites away from the primary tumor</li>
+                </ul>
 
-                    <li>Discuss My Health Record with your healthcare provider</li>
+            Some cancers, including those of the brain, spinal cord, bone marrow (lymphoma), blood (leukemia), and female reproductive 
+                system, do not receive a TNM classification. Instead, these cancers are classified according to a different staging systems.
+            </p>
+            </div>
+            <br>
+            
+            <!-- What Are The Stages of Cancer? -->
+            <div class="section-divs">
+            <h3 class="h3-heading">What Are The Stages of Cancer? </h3>
+            <img class="disease-images" src="{% static 'Images/cancer-stages.jpg'%}" alt="Chart illustrating the 5 stages of cancer." />    
+            <p class="text-justify">The TNM classification of a cancer usually correlates to one of the following five stages.</p>
+            
+            <ul class="pl-4">
+                <li>Stage 0: This refers to cancer that is "in situ," meaning that cancerous cells are confined to their site of origin. 
+                    This type of cancer has not spread and is not invading other tissues.</li>
+                <li>Stage I &ndash; Stage III: These higher stages of cancer correspond to larger tumors and/or greater extent of disease. 
+                    Cancers in these stages may have spread beyond the site of origin to invade regional lymph nodes, tissues, or organs.</li>
+                <li>Stage IV: This type of cancer has spread to distant lymph nodes, tissues, or organs in the body far away from the site 
+                    of origin.</li>
+            </ul>
+            </div>
+            <br>
+
+            <!-- Diagnosing Cancer -->
+            <div class="section-divs">
+            <h3 class="h3-heading">Diagnosing Cancer</h3>
+            <img class="disease-images" src="{% static 'Images/cancer-diagnosis.jpg'%}" alt="Illustration shows the location of lymph nodes in the body. " />    
+            <p class="text-justify">Various tests may be performed in order to confirm a cancer diagnosis. Positron Emission Tomography and Computed Tomography 
+                (PET-CT) Scans and other similar tests can highlight &ldquo;hot spots&rdquo; of cancer cells with high metabolic rates.
+            </p> 
+        
+            <p class="text-justify">The most common test and procedures used to diagnose cancer include:
+                <ul class="pl-4">
+                    <li>Mammogram</li>
+                    <li>Pap Test</li>
+                    <li>Tumor Marker Test</li>
+                    <li>Bone Scan</li>
+                    <li>MRI</li>
+                    <li>Tissue Biopsy</li>
+                    <li>PET-CT Scan</li>
                 </ul>
             </p>
+            <br>
+            
+            <h5>The Role of Lymph Nodes in Cancer Diagnosis</h5>
+            <p class="text-justify">Cancer that originates in the lymph nodes or other area of the lymphatic system is called lymphoma. Cancer that originates 
+                elsewhere in the body can spread to lymph nodes. The presence of metastasized cancer in the lymph nodes is may mean the 
+                cancer is growing quickly and/or is more likely to spread to other sites. The presence of cancer in lymph nodes often 
+                affects prognosis and treatment decisions. Many diagnostic tests look at the lymph nodes as an indicator. 
+            </p>
+            </div>
+            <br>
+
+            <!-- What Are Treatment Options? -->
+            <div class="section-divs">
+            <h3 class="h3-heading">What Are Treatment Options?</h3>
+            <img class="disease-images" src="{% static 'Images/cancer-treatment.jpg'%}" width=60% alt="A doctor explains cancer treatment options to a couple in the hospital." />    
+            <p class="text-justify">The treatment is highly variable depending on the type and stage of a cancer as well as the overall health of the patient. 
+                The most common treatments are surgery, radiation, and chemotherapy. Other treatments include targeted/biological therapies, 
+                hematopoietic stem cell transplants, angiogenesis inhibitors, cryosurgery, and photodynamic therapy.
+            </p>
+        
+            <p class="text-justify">Every treatment has potential risks, benefits, and side effects. The patient and his or her care team, which may include 
+                an internist or other specialist, surgeon, oncologist, radiation oncologist, and others, will help determine the best and 
+                most appropriate course of treatment.
+            </p>
+            <br>
+            
+            <h5>Is There a Cure for Cancer?</h5>
+            <p class="text-justify">Despite enormous effort and funding, no one cure has been found yet to eliminate cancer. Until a cure 
+                can be found, prevention through a healthy lifestyle is the best way to stop cancer. Some ways to help protect
+                 yourself from cancer include eating plenty of fruits and vegetables, maintaining a healthy weight, abstaining from tobacco, 
+                 drinking only in moderation, exercising, avoiding sun damage, getting immunizations, and getting regular health screenings.
+            </p>
+            </div>
+            <br>
+
+            <!-- Surgery  -->
+            <div class="section-divs">
+            <h3 class="h3-heading">Surgery</h3>
+            <img class="disease-images" src="{% static 'Images/cancer-surgery.jpg'%}" alt="A doctor performs surgery to treat cancer. " />    
+            <p class="text-justify">Surgery is often performed to remove malignant tumors. Surgery allows for the determination of the exact size of the tumor as 
+                well as the extent of spread and invasion into other nearby structures or lymph nodes &ndash; all-important factors in 
+                prognosis and treatment. Surgery is often combined with other cancer treatments, such as chemotherapy and/or radiation.
+            </p>
+            
+            <p class="text-justify">Sometimes, cancer cannot be entirely surgically removed because doing so would damage critical organs or tissues. In this case, 
+                debulking surgery is performed to remove as much of the tumor as is safely possible. Similarly, palliative surgery is 
+                performed in the cases of advanced cancer to reduce the effects (for example, pain or discomfort) of a cancerous tumor. 
+                Debulking and palliative surgeries are not curative, but they seek to minimize the effects of the cancer.
+            </p>
+            
+            <p class="text-justify">Reconstructive surgery can be performed to restore the look or function of part of the body after cancer surgery. Breast 
+                reconstruction after a mastectomy is an example of this kind of surgery.
+            </p>
+            </div>
+            <br>
+         
+               <!-- Radiation Therapy  -->
+            <div class="section-divs">
+            <h3 class="h3-heading">Radiation Therapy</h3>
+            <img class="disease-images" src="{% static 'Images/radiation-therapy.jpg'%}" alt="A radiation therapist prepares a patient for radiation treatment." />    
+            <p class="text-justify">Radiation is a very common cancer treatment. About 50% of all cancer patients will receive radiation treatment, which may 
+                be delivered before, during, or after surgery and/or chemotherapy. Radiation can be delivered externally -- where X-rays, 
+                gamma rays, or other high-energy particles are delivered to the affected area from outside the body -- or it can be delivered 
+                internally. Internal radiation therapy involves the placement of radioactive material inside the body near cancer cells. 
+                This is called brachytherapy.
+            </p>
+            
+            <p class="text-justify">Systemic radiation involves the administration of radioactive medication by mouth or intravenously. The radioactive material 
+                travels directly to the cancerous tissue. Radioactive iodine (I-131 for thyroid cancer) and strontium-89 (for bone cancer) 
+                are two examples of systemic radiation treatments.</p>
+            
+            <p class="text-justify">Typically, external radiation is delivered 5 days a week over the course of 5 to 8 weeks. Other treatment regimens are 
+                sometimes used.</p>
+            </div>
+            <br>
+            
+            <!-- Chemotherapy Procedure -->
+            <div class="section-divs">
+            <h3 class="h3-heading">Chemotherapy Procedure</h3>
+            <img class="disease-images" src="{% static 'Images/chemotherapy.jpg'%}" alt="A nurse administers chemotherapy through a catheter to a cancer patient." />    
+            <p class="text-justify">Chemotherapy, or "chemo," refers to more than 100 different medications used to treat cancer and other conditions. If 
+                eliminating all cancer cells is not possible, the goals of treatment may be to slow the growth of the cancer, keep the 
+                cancer from spreading, and/or relieve cancer-associated symptoms (such as pain).
+            </p>
+            
+            <p class="text-justify">Depending on the type of chemotherapy prescribed, the medications may be given by mouth, injection, intravenously (IV), 
+                or topically. IV chemotherapy may be delivered via a catheter or port, which is usually implanted in a blood vessel of 
+                the chest for the duration of the therapy. Sometimes chemotherapy is delivered regionally, directly to the area that needs 
+                treatment. For example, intravesical therapy is used to infuse chemotherapy directly into the bladder for the treatment of 
+                bladder cancer.
+            </p>
+            
+            <p class="text-justify">The chemotherapy regimen a patient receives depends upon the type and stage of the cancer, any prior cancer treatment, and 
+                the overall health of the patient. Chemotherapy is usually administered in cycles over the course of days, weeks, or months, 
+                with rest periods in between.
+            </p>
+            </div>
+            <br>
+            
+            <!-- Other Treatments    -->
+            <div class="section-divs">
+            <h3 class="h3-heading">Other Treatments</h3>
+            <img class="disease-images" src="{% static 'Images/cancer-other-treatments.jpg'%}" alt="Cancer research scientists working in a lab, discovering new cancer treatments." />    
+            <p class="text-justify">In addition to surgery, radiation, and chemotherapy, other therapies are used to treat cancer. These include:</p>
+
+            <h4>Targeted or Biological Therapies</h4>
+            <p class="text-justify">Targeted or biological therapies seek to treat cancer and boost the body's immune system while minimizing damage to normal, 
+                healthy cells. Monoclonal antibodies, immunomodulating drugs, vaccines, and cytokines are examples of targeted or biological 
+                therapies.
+            </p>
+           
+            <h4>Hematopoietic Stem Cell Transplants</h4>
+            <p class="text-justify">Hematopoietic stem cell transplants involve the infusion of stem cells into a cancer patient after the bone marrow has been 
+                destroyed by high-dose chemo and/or radiation.
+            </p>
+            
+            <h4>Angiogenesis Inhibitors</h4>
+            <p class="text-justify">Angiogenesis inhibitors are medications that inhibit the growth of new blood vessels that cancerous tumors need in 
+                order to grow.
+            </p>
+            
+            <h4>Cryosurgery</h4>
+            <p class="text-justify">Cryosurgery involves the application of extreme cold to kill precancerous and cancerous cells.</p>
+            
+            <h4>Photodynamic Therapy</h4>
+            <p class="text-justify">Photodynamic therapy (PDT) involves the application of laser energy of a specific wavelength to tissue that has been 
+                treated with a photosensitizing agent, a medication that makes cancerous tissue susceptible to destruction with laser 
+                treatment. Photodynamic therapy selectively destroys cancer cells while minimizing the damage to normal, healthy 
+                tissues nearby.
+            </p>
+            
+            <h4>Ongoing Research</h4>
+            <p class="text-justify">Ongoing cancer research continues to identify newer, less toxic, and more effective cancer treatments. Visit the 
+                National Cancer Institute (NCI) to see a list of ongoing clinical trials.
+            </p>
+            </div>
+           
+           
         </div>
-        <div class="col-sm-3 mr-auto sidebar">
+        <div class="col-sm-3 sidebar">
             <ul class="list-group ">
                 <li class="list-group-item  heads">For You And Your Family</li>
                 <ul class="list-group">
