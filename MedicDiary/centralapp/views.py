@@ -17,8 +17,6 @@ def mainpage(request):
 
 def About_us(request):
     return render(request,'centralapp/about_us.html')
-def Birth_control(request):
-    return render(request,'centralapp/birth_control.html')
 def Cancer(request):
     return render(request,'centralapp/cancer.html')
 def Covid_19(request):

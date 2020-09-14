@@ -7,7 +7,6 @@ urlpatterns = [
     path('',views.mainpage,name='mainpage'),
     path('About_us/',views.About_us,name ='About_us'),
     path('Aids/',views.Aids,name ='Aids'),
-    path('Birth_control/',views.Birth_control,name ='Birth_control'),
     path('Cancer/',views.Cancer,name ='Cancer'),
     path('Covid-19/',views.Covid_19,name ='Covid_19'),
     path('Diabetes/',views.Diabetes,name ='Diabetes'),

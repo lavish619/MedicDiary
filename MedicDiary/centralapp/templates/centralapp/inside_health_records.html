@@ -10,65 +10,34 @@
             </div>
             <div class="howtodiv">
                  <h1 class="head-pacifico"> What is a health record</h1>
-            <p>
-                An health record or an <strong>electronic health record (EHR)</strong>, as it is commonly called, is a <strong>digital version</strong> of a patient’s paper chart. <br>
-                EHRs are real-time, patient-centered records that make information available instantly and securely to authorized users.<br>
-                 While an EHR does contain the medical and treatment histories of patients, it is built to go beyond standard clinical data collected in a doctor’s office and can be inclusive of a broader view of a patient’s care. EHRs are a vital part of health IT and can:
-<ul>
-<li>Contain a patient’s medical history, diagnoses, medications, treatment plans, immunization dates, allergies, radiology images, and laboratory and test results</li>
-<li>Allow access to evidence-based tools that providers can use to make decisions about a patient’s care</li>
-<li>Automate and streamline provider workflow</li></ul>
+                <p>
+                    An health record or an <strong>electronic health record (EHR)</strong>, as it is commonly called, is a <strong>digital version</strong> of a patient’s paper chart. <br>
+                    EHRs are real-time, patient-centered records that make information available instantly and securely to authorized users.<br>
+                    While an EHR does contain the medical and treatment histories of patients, it is built to go beyond standard clinical data collected in a doctor’s office and can be inclusive of a broader view of a patient’s care. EHRs are a vital part of health IT and can:
+                <ul>
+                <li>Contain a patient’s medical history, diagnoses, medications, treatment plans, immunization dates, allergies, radiology images, and laboratory and test results</li>
+                <li>Allow access to evidence-based tools that providers can use to make decisions about a patient’s care</li>
+                <li>Automate and streamline provider workflow</li></ul>
 
-One of the key features of an EHR is that health information can be created and managed by authorized providers <strong>in a digital format capable of being shared with other doctors</strong> across more than one health care organization. EHRs are built to share information with other health care providers and organizations – such as laboratories, specialists, medical imaging facilities, pharmacies, emergency facilities, and school and workplace clinics – thus <strong>eliminating the need to maintain paperwork.</strong>
-</p><br>
-<hr style="height:10px;width:70%; margin: auto"><br>
-           
-           
-<div class="bullet-style">
-    <h1 class="head-pacifico"> What's in my health record</h1>
-    <p >
-        <h4>Your health record at MedicDiary holds the following information:</h4>
-         <ul>
-             <li>Basic vitals such as your height, weight, gender and age information </li>
-             <li>The entire history of medication that you have taken.</li>
-             <li>All your lab tests and their respective reports. </li>
-             <li>History of ailments including the current health conditions</li>
-             <li>A summary of the operations and surgeries undergone (if any)</li>
-             
-         </ul>
-    </p>
-</div>   
+                One of the key features of an EHR is that health information can be created and managed by authorized providers <strong>in a digital format capable of being shared with other doctors</strong> across more than one health care organization. EHRs are built to share information with other health care providers and organizations – such as laboratories, specialists, medical imaging facilities, pharmacies, emergency facilities, and school and workplace clinics – thus <strong>eliminating the need to maintain paperwork.</strong>
+                </p><br>
+                <hr style="height:10px;width:70%; margin: auto"><br>
+                        
+                        
+                <div class="bullet-style">
+                    <h1 class="head-pacifico"> What's in my health record</h1>
+                    <p >
+                        <h4>Your health record at MedicDiary holds the following information:</h4>
+                        <ul>
+                            <li>Basic vitals such as your height, weight, gender and age information </li>
+                            <li>The entire history of medication that you have taken.</li>
+                            <li>All your lab tests and their respective reports. </li>
+                            <li>History of ailments including the current health conditions</li>
+                            <li>A summary of the operations and surgeries undergone (if any)</li>
+                        </ul>
+                    </p>
+                </div>   
+            </div>
         </div>
-         </div>
-
-        <div class="col-sm-3 mr-auto sidebar">
-            <ul class="list-group ">
-                <li class="list-group-item  heads">For You And Your Family</li>
-                <ul class="list-group">
-                    <a class="list-group-item list-group-item-action active" href="{% url 'centralapp:Inside_health_records' %}">What's in my health record </a>
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:patients_how_to_use' %}">How to use my health record </a>
-                </ul>
-                <li class="list-group-item  heads">For HealthCare Professionals</li>
-                <ul class="list-group">
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:doc_how_to_use' %}">How to use my health record </a>
-                </ul>
-                <li class="list-group-item  heads">Know more about diseases</li>
-                <ul class="list-group">
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Aids' %}">AIDS</a>
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Cancer' %}">Cancer</a>
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Heart_disorder' %}">Heart Disorders</a>
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Hypertension' %}">Hypertension</a>
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Diabetes' %}">Diabetes</a>
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Birth_control' %}">Birth control measures</a>
-                </ul>
-                <a class="list-group-item list-group-item-action heads" href="{% url 'centralapp:About_us' %}">About Us</a>
-                <a class="list-group-item list-group-item-action heads" href="{% url 'centralapp:FAQS' %}">FAQs</a>
-                <a class="list-group-item list-group-item-action heads" href="{% url 'centralapp:Covid_19' %}">Covid-19 Checkpoints</a>
-            </ul> 
-        </div>
-
-    </div>
-</div>
-
 
 {% endblock %}

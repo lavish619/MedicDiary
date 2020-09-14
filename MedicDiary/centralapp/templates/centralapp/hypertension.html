@@ -1,6 +1,331 @@
 {% extends 'centralapp/base.html' %}
 {% block body %}
+{% load static %}
+
+<div class="container-fluid">
+    <div class="row my-4">
+        <div class="col-sm-8 p-2 ml-auto" >
+
+            <h1 style="text-align: center;">Hypertension</h1>
+            <img class="top-images" src="{% static 'Images/hypertension.jpg'%}" width=70% alt="Hypertension" /> <br>
+
+            <!-- What it is? -->
+            <div class="section-divs">
+            <h3 class="h3-heading"> What it is?</h3>
+            <p class="text-justify"><b>High blood pressure</b>, or <b>hypertension</b>, occurs when your blood pressure increases to unhealthy levels. 
+                Your blood pressure measurement takes into account how much blood is passing through your blood vessels and the amount of 
+                resistance the blood meets while the heart is pumping. Narrow arteries increase resistance. The narrower your arteries are, 
+                the higher your blood pressure will be. Over the long term, increased pressure can cause health issues, including heart disease.</p>
+           
+            <p class="text-justify">Hypertension typically develops over the course of several years. Usually, you don't 
+                notice any symptoms. But even without symptoms, high blood pressure can cause damage to your blood vessels and organs, 
+                especially the brain, heart, eyes, and kidneys.</p>
+            <p class="text-justify">Early detection is important. Regular blood pressure readings can help you and your doctor notice 
+                any changes. If your blood pressure is elevated, your doctor may have you check your blood pressure over a few weeks to 
+                see if the number stays elevated or falls back to normal levels.</p>
+            <p class="text-justify">Treatment for hypertension includes both prescription medication and healthy lifestyle changes. 
+                If the condition isn't treated, it could lead to health issues, including heart attack and stroke.</p>
+            </div><br>
+
+            <!-- causes -->
+            <div class="section-divs">
+            <h3 class="h3-heading">Causes</h3>
+            <img class="disease-images" src="{% static 'Images/causes-hypertension.png'%}" width=50% alt="Hypertension causes" /> 
+            <p class="text-justify">There are two types of hypertension. Each type has a different cause.</p>
+
+            <h5>Primary hypertension</h5>
+            <p class="text-justify">Primary hypertension is also called essential hypertension. This kind of hypertension develops over time with 
+                no identifiable cause. Most people have this type of high blood pressure.</p>
+            <p class="text-justify">A combination of factors may play a role which cause hypertension. These factors include:</p>
+            <ul class="pl-4">
+                <li><strong>Genes</strong>: Some people are genetically predisposed to hypertension. This may be from gene mutations or 
+                    genetic abnormalities inherited from your parents.</li>
+                <li><strong>Physical changes</strong>: If something in your body changes, you may begin experiencing issues throughout 
+                    your body. High blood pressure may be one of those issues. For example, it's thought that changes in your kidney 
+                    function due to aging may upset the body's natural balance of salts and fluid. This change may cause your 
+                    body's blood pressure to increase.</li>
+                <li><strong>Environment</strong>: Over time, unhealthy lifestyle choices like lack of physical activity and poor 
+                    diet can take their toll on your body. Lifestyle choices can lead to weight problems. Being overweight or obese 
+                    can increase your risk for hypertension.</li>
+            </ul>
+
+            <hr>
+            <h5>Secondary hypertension</h5>
+            <p class="text-justify">Secondary hypertension often occurs quickly and can become <b>more severe</b> than primary hypertension. Several conditions that 
+                may cause secondary hypertension include:</p>
+            <ul class="pl-4">
+                <li>kidney disease</li>
+                <li>obstructive sleep apnea</li>
+                <li>congenital heart defects</li>
+                <li>problems with your thyroid</li>
+                <li>side effects of medications</li>
+                <li>use of illegal drugs</li>
+                <li>alcohol abuse or chronic use</li>
+                <li>adrenal gland problems</li>
+                <li>certain endocrine tumors</li>
+            </ul>
+            </div><br>
 
 
+            <!-- Symptoms of Hypertension -->
+            <div class="section-divs">
+            <h3 class="h3-heading">Symptoms of Hypertension</h3>
+            
+            <p class="text-justify">Hypertension is generally a silent condition. Many people won't experience any symptoms. It may take years or even 
+                decades for the condition to reach levels severe enough that symptoms become obvious. Even then, these symptoms may be 
+                attributed to other issues.</p>
+
+            <p class="text-justify">Symptoms of severe hypertension can include:</p>
+            <ul class="pl-4">
+                <li>headaches</li>
+                <li>shortness of breath</li>
+                <li>nosebleeds</li>
+                <li>flushing</li>
+                <li>dizziness</li>
+                <li>chest pain</li>
+                <li>visual changes</li>
+                <li>blood in the urine</li>
+            </ul>
+            <p class="text-justify">These symptoms require immediate medical attention. They don't occur in everyone with hypertension, but waiting 
+                for a symptom of this condition to appear could be fatal. The best way to know if you have hypertension is to get regular blood 
+                pressure readings. </p>
+            <p class="text-justify">For example, if you have a family history of heart disease or have risk factors for developing the condition, your 
+                doctor may recommend that you have your blood pressure checked twice a year. This helps you and your doctor stay on 
+                top of any possible issues before they become problematic.</p>
+            </div><br>
+
+            <!-- Diagnosing high blood pressure -->
+            <div class="section-divs">
+            <h3 class="h3-heading">Diagnosing high blood pressure</h3>
+            <img class="disease-images" src="{% static 'Images/hypertension-measurebp.jpg'%}" width=50% alt="Hypertension Diagnosis" /> 
+            <p class="text-justify">Diagnosing hypertension is as simple as taking a blood pressure reading. Most doctors' offices check blood pressure 
+                as part of a routine visit.</p>
+            <p class="text-justify">If your blood pressure is elevated, your doctor may request you have more readings over the course of a few days or 
+                weeks. A hypertension diagnosis is rarely given after just one reading. Your doctor needs to see evidence of a 
+                sustained problem. That's because your environment can contribute to increased blood pressure. 
+                Also, blood pressure levels change throughout the day.</p>
+            <p class="text-justify">If your blood pressure remains high, your doctor will likely conduct more tests to rule out underlying conditions. 
+                These tests can include:</p>
+            <ul class="pl-4">
+                <li><b>urine test</b></li>
+                <li><b>cholesterol screening</b> and other blood tests</li>
+                <li>test of your heart's electrical activity with an <b>electrocardiogram</b> (EKG, sometimes referred to as an ECG)</li>
+                <li><b>ultrasound</b> of your heart or kidneys</li>
+            </ul>
+            <p class="text-justify">These tests can help your doctor identify any secondary issues causing your elevated blood pressure. They can also look at 
+                the effects high blood pressure may have had on your organs. During this time, your doctor may begin treating your hypertension. 
+                Early treatment may reduce your risk of lasting damage.</p>
+            </div><br>
+
+            <!-- How to understand high blood pressure readings -->
+            <div class="section-divs">
+            <h3 class="h3-heading">How to understand high blood pressure readings</h3>
+            <img class="disease-images" src="{% static 'Images/hypertension-meter.jpg'%}" width=35% alt="Hypertension measurement" /> 
+            <p class="text-justify">Two numbers create a <b>blood pressure reading</b>:</p>
+            <ul class="pl-4">
+                <li><strong>Systolic pressure</strong>: This is the first, or top, number. It indicates the pressure in your arteries when 
+                    your heart beats and pumps out blood.</li>
+                <li><strong>Diastolic pressure</strong>: This is the second, or bottom, number. It's the reading of the pressure in 
+                    your arteries between beats of your heart.</li>
+            </ul>
+            <p class="text-justify">Five categories define blood pressure readings for adults:</p>
+            <ul class="pl-4">
+                <li><strong>Healthy:</strong><strong></strong>A healthy blood pressure reading is less than 120/80 millimeters of mercury 
+                    (mm Hg).</li>
+                <li><strong>Elevated:</strong><strong></strong>The systolic number is between 120 and 129 mm Hg, and the diastolic number is 
+                    less than 80 mm Hg. Doctors usually don't treat elevated blood pressure with medication. Instead, your doctor may 
+                    encourage lifestyle changes to help lower your numbers.</li>
+                <li><strong>Stage 1 hypertension: </strong>The systolic number is between 130 and 139 mm Hg, or the diastolic number is 
+                    between 80 and 89 mm Hg.</li>
+                <li><strong>Stage 2 hypertension:</strong> The systolic number is 140 mm Hg or higher, or the diastolic number is 90 mm 
+                    Hg or higher.</li>
+                <li><strong>Hypertensive crisis:</strong> The systolic number is over 180 mm Hg, or the diastolic number is over 120 mm Hg. 
+                    Blood pressure in this range requires urgent medical attention. If any symptoms such as chest pain, headache, shortness 
+                    of breath, or visual changes occur when blood pressure is this high, medical care in the emergency room is needed.</li>
+            </ul><p class="text-justify">A blood pressure reading is taken with a pressure cuff. For an accurate reading, it's important you have a cuff 
+                that fits. An ill-fitting cuff may deliver inaccurate readings.</p>
+            <p class="text-justify">Blood pressure readings are different for children and teenagers. Ask your child's doctor for the healthy ranges for 
+                your child if you're asked to monitor their blood pressure.</p>
+            </div><br>
+
+            <!-- Treatment and medications -->
+            <div class="section-divs">
+            <h3 class="h3-heading"> Treatment and Medications</h3>
+
+            <h5>Treatment</h5>
+            <ul class="pl-4">
+                <li><b>Primary hypertension treatment options</b>
+                <p class="text-justify">If your doctor diagnoses you with primary hypertension, lifestyle changes may help reduce your high blood pressure. If 
+                    lifestyle changes alone aren't enough, or if they stop being effective, your doctor may prescribe medication.</p>
+                </li>
+
+                <li><b>Secondary hypertension treatment options</b>
+                <p class="text-justify">If your doctor discovers an underlying issue causing your hypertension, treatment will focus on that other condition. For 
+                    example, if a medicine you've started taking is causing increased blood pressure, your doctor will try other medicines 
+                    that don't have this side effect.</p>
+                <p class="text-justify">Sometimes, hypertension is persistent despite treatment for the underlying cause and treatment plans for hypertension 
+                    often evolve. In this case, your doctor may work with you to develop lifestyle changes and prescribe medications to help reduce your 
+                    blood pressure.</p></li>
+            </ul>
+
+            <hr>
+            
+            <h5>Medications</h5>
+            <p class="text-justify">Many people go through a trial-and-error phase with blood pressure medications. You may need to try different medicines until 
+                you find one or a combination of medications that work for you.</p>
+            <p class="text-justify">Some of the medications used to treat hypertension include:</p>
+            <ul class="pl-4">
+                <li><strong>Beta-blockers</strong>: Beta-blockers make your heart beat slower and with less force. This reduces 
+                    the amount of blood pumped through your arteries with each beat, which lowers blood pressure. It also blocks certain 
+                    hormones in your body that can raise your blood pressure.</li>
+                <li><strong>Diuretics</strong>: High sodium levels and excess fluid in your body can increase blood pressure. 
+                    <b>Diuretics</b>, also called water pills, help your kidneys remove excess sodium from your body. As the 
+                    sodium leaves, extra fluid in your bloodstream moves into your urine, which helps lower your blood pressure.</li>
+                <li><strong>ACE inhibitors</strong>: Angiotensin is a chemical that causes blood vessels and artery walls to tighten 
+                    and narrow. <b>ACE (angiotensin converting enzyme) inhibitors</b> prevent the body from producing as much of this 
+                    chemical. This helps blood vessels relax and reduces blood pressure.</li>
+                <li><strong>Angiotensin II receptor blockers (ARBs)</strong>: While ACE inhibitors aim to stop the creation of angiotensin, 
+                    <b>ARBs</b> block angiotensin from binding with receptors. Without the chemical, blood vessels won't tighten. 
+                    That helps relax vessels and lower blood pressure.</li>
+                <li><strong>Calcium channel blockers:</strong> <b>These medications</b> block some of the calcium from entering the cardiac 
+                    muscles of your heart. This leads to less forceful heartbeats and a lower blood pressure. These medicines also work 
+                    in the blood vessels, causing them to relax and further lowering blood pressure.</li>
+                <li><strong>Alpha-2 agonists:</strong> This type of medication changes the nerve impulses that cause blood vessels to 
+                    tighten. This helps blood vessels to relax, which reduces blood pressure.</li>
+            </ul>
+            </div><br>
+
+            <!-- Home remedies for high blood pressure -->
+            <div class="section-divs">
+            <h3 class="h3-heading">Home remedies for high blood pressure</h3>
+            <img class="disease-images" src="{% static 'Images/homeremedy-hypertension.jpg'%}" width=45% alt="Hypertension home remedies" /> 
+            <p class="text-justify">Healthy lifestyle changes can help you control the factors that cause hypertension. Here are some of the most 
+                common home remedies.</p>
+            <ul class="pl-4">
+                <li><b>Developing a healthy diet</b><p>A heart-healthy diet is vital for helping to reduce high blood pressure. The 
+                    complications include heart 
+                    disease, stroke, and heart attack.</p> A heart-healthy diet emphasizes foods that includes 
+                fruits, vegetables, whole grains,  lean proteins like fish.
+                </li>
+
+                <hr>
+                <li><b>Increasing physical activity</b>
+                <p class="text-justify">Reaching a healthy weight should include being more physically active. In addition to helping you shed pounds, exercise can help 
+                    reduce stress, lower blood pressure naturally, and strengthen your cardiovascular system.</p>
+                <p class="text-justify">Aim to get 150 minutes of moderate physical activity each week. That's about 30 minutes five times per week.</p>
+                </li>
+
+                <hr>
+                <li><b>Reaching a healthy weight</b>
+                <p class="text-justify">If you are overweight or obese, losing weight through a heart-healthy diet and increased physical activity can help lower 
+                    your blood pressure.</p>
+                </li>
+
+                <hr>
+                <li><b>Managing stress</b><br>
+                Exercise is a great way to manage stress. These are all proven stress-reducing techniques. Getting adequate sleep can also 
+                help reduce stress levels. Other activities can also be helpful. These include:
+                <ul class="pl-4">
+                    <li>meditation</li>
+                    <li>deep breathing</li>
+                    <li>massage</li>
+                    <li>muscle relaxation</li>
+                    <li>yoga or tai chi</li>
+                </ul>
+                </li>
+
+                <hr>
+                <li><b>Adopting a cleaner lifestyle</b>
+                <p class="text-justify">If you're a smoker, try to quit. The chemicals in tobacco smoke damage the body's tissues and harden 
+                    blood vessel walls. If you regularly consume too much alcohol or have an alcohol dependency, seek help to reduce 
+                    the amount you drink or stop altogether. Alcohol can raise blood pressure.</p>
+                </li>
+                <hr>
+                
+                <li><b>Improving Diet plan</b>
+
+                <ul class="pl-4">
+                    <li><b>Eat less meat, more plants</b>
+                    <p class="text-justify">A plant-based diet is an easy way to increase fiber and reduce the amount of sodium and unhealthy saturated and trans 
+                        fat you take in from dairy foods and meat. Increase the number of fruits, vegetables, leafy greens, and whole grains 
+                        you're eating. Instead of red meat, opt for healthier lean proteins like fish, poultry, or tofu.</p></li>
+
+                    <li><b>Reduce dietary sodium</b>
+                    <p class="text-justify">People with hypertension and those with an increased risk for heart disease may need to keep their daily sodium intake between 
+                        1,500 milligrams and 2,300 milligrams per day. The best way to reduce sodium is to cook fresh foods more often. Avoid eating 
+                        restaurant food or prepackaged foods, which are often very high in sodium.</p></li>
+
+                    <li><b>Cut back on sweets</b>
+                    <p class="text-justify">Sugary foods and beverages contain empty calories but don't have nutritional content. If you want something sweet, 
+                        try eating fresh fruit or small amounts of dark chocolate that haven't been sweetened as much with sugar. 
+                        Studies suggest regularly eating dark chocolate may reduce blood pressure.</p></li>
+                </ul> 
+                </li>   
+            </ul>
+            </div>
+            <br>
+
+            <!-- High blood pressure during pregnancy -->
+            <div class="section-divs">
+            <h3 class="h3-heading">High blood pressure during pregnancy</h3>
+            <img class="disease-images" src="{% static 'Images/pregnancy-hypertension.jpg'%}" width=70% alt="Hypertension in pregnancy" /> 
+            <p class="text-justify">Women with hypertension can deliver healthy babies despite having the condition. But it can be dangerous to both mother 
+                and baby if it's not monitored closely and managed during the pregnancy.</p>
+            <p class="text-justify">Women with high blood pressure are more likely to develop complications. For example, pregnant women with hypertension 
+                may experience decreased kidney function. Babies born to mothers with hypertension may have a low birth weight or be 
+                born prematurely.</p>
+            <p class="text-justify">Some women may develop hypertension during their pregnancies. Several types of high blood pressure problems can develop. 
+                The condition often reverses itself once the baby is born. Developing hypertension during pregnancy may increase your 
+                risk for developing hypertension later in life.</p>
+
+            <hr>
+            <h5>Preeclampsia</h5>
+            <p class="text-justify">In some cases, pregnant women with hypertension may develop <b>preeclampsia</b> during their pregnancy. This condition 
+                of increased blood pressure can cause kidney and other organ complications. This can result in high protein levels in 
+                the urine, problems with liver function, fluid in the lungs, or visual problems.</p>
+            <p class="text-justify">As this condition worsens, the risks increase for the mother and baby. Preeclampsia can lead to <b>eclampsia</b>, 
+                which causes seizures. High blood pressure problems in pregnancy remain an important cause of maternal death 
+                in the United States. Complications for the baby include low birth weight, early birth, and stillbirth.</p>
+            <p class="text-justify">There is no known way to prevent preeclampsia, and the only way to treat the condition is to deliver the baby. 
+                If you develop this condition during your pregnancy, your doctor will closely monitor you for complications.</p>
+
+            </div><br>
+
+            <!-- Effects of high blood pressure on the body? -->
+            <div class="section-divs">
+            <h3 class="h3-heading">Effects of high blood pressure on the body</h3>
+            <p class="text-justify">Complications of hypertension include the following.</p>
+
+            <h5>Damaged arteries</h5>
+            <p class="text-justify">Healthy arteries are flexible and strong. Blood flows freely and unobstructed through healthy arteries and vessels. </p>
+            <p class="text-justify">Hypertension makes arteries tougher, tighter, and less elastic. This damage makes it easier for dietary fats to deposit 
+                in your arteries and restrict blood flow. This damage can lead to increased blood pressure, blockages, and, eventually, 
+                heart attack and stroke.</p>
+
+            <hr>
+            <h5>Damaged heart</h5>
+            <p class="text-justify">Hypertension makes your heart work too hard. The increased pressure in your blood vessels forces your heart's muscles 
+                to pump more frequently and with more force than a healthy heart should have to.</p>
+            <p class="text-justify">This may cause an enlarged heart. An enlarged heart increases your risk for the following:</p>
+            <ul class="pl-4">
+                <li>heart failure</li>
+                <li>arrhythmias</li>
+                <li>sudden cardiac death</li>
+                <li>heart attack</li>
+            </ul>
+
+            <hr>
+            <h5>Damaged brain</h5>
+            <p class="text-justify">Your brain relies on a healthy supply of oxygen-rich blood to work properly. High blood pressure can reduce your brain's 
+                supply of blood:</p>
+            <ul class="pl-4">
+                <li>Temporary blockages of blood flow to the brain are called <b>transient ischemic attacks (TIAs)</b>. </li>
+                <li>Significant blockages of blood flow cause brain cells to die. This is known as a stroke. </li>
+            </ul>
+            <p class="text-justify">Uncontrolled hypertension may also affect your memory and ability to learn, recall, speak, and reason. Treating hypertension 
+                often doesn't erase or reverse the effects of uncontrolled hypertension. It does, however, lower the risks for future problems.</p>
+            </div><br>
+
+        </div>
 
 {% endblock %}

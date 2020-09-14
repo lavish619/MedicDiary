@@ -21,19 +21,22 @@
 	<title>MedicDiary</title>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light nav-bg" id="navstyle" >
+	<nav class="navbar navbar-expand-lg navbar-light sticky-top" id="navstyle" >
 		<a class="navbar-brand" href="{% url 'centralapp:mainpage' %}" style="font-family: Cinzel; font-size: 40px !important; color: white;" >
-			<img src="{% static 'Images/icon.png' %}" width="44" height="44" class="d-inline-block align-top" alt="" loading="lazy">
+			<img src="{% static 'Images/icon.png' %}" width="44" height="44" class="d-inline-block align-top" alt="Logo" loading="lazy">
 			MedicDiary
 		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"  aria-expanded="true" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
 
-		<div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size:20px; ">
+		<div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size:18px;width: 60em; ">
 
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item dropdown my-2 mx-1">
-					<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
-						For you and<br> your family
+			<ul class="navbar-nav ml-auto" id="navbar-list-items">
+				<li class="nav-item dropdown ">
+					<a class="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+						For you and <br>your family &#x25BC;
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="{% url 'centralapp:Inside_health_records' %}">What's in my health record </a>
@@ -41,17 +44,17 @@
 					</div>
 				</li>
 
-				<li class="nav-item dropdown my-2 mx-1">
-					<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
-						For healthcare<br>professionals
+				<li class="nav-item dropdown ">
+					<a class="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+						For healthcare <br>professionals &#x25BC;
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="{% url 'centralapp:doc_how_to_use' %}">How to use the health record</a>
 					</div>
 				</li>
-				<li class="nav-item dropdown my-2 mx-1">
-					<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">
-						Know more<br>about diseases
+				<li class="nav-item dropdown ">
+					<a class="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+						Know more <br>about diseases &#x25BC;
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="{% url 'centralapp:Aids' %}">AIDS</a>
@@ -59,21 +62,32 @@
 						<a class="dropdown-item" href="{% url 'centralapp:Heart_disorder' %}">Heart Disorders</a>
 						<a class="dropdown-item" href="{% url 'centralapp:Hypertension' %}">Hypertension</a>
 						<a class="dropdown-item" href="{% url 'centralapp:Diabetes' %}">Diabetes</a>
-						<a class="dropdown-item" href="{% url 'centralapp:Birth_control' %}">Birth Control Measures</a>
 						<a class="dropdown-item" href="{% url 'centralapp:Dashboard' %}">Dashboard</a>
 						<a class="dropdown-item" href="{% url 'centralapp:doctor_dashboard' %}">Doctor Dashboard</a>
 
 					</div>
 				</li>
-				<li>
-					<a class="nav-link my-3 mx-1" style="color: white" href="{% url 'centralapp:FAQS' %}"> FAQs</a>
+				<li class="nav-item">
+					<a class="nav-link "  href="{% url 'centralapp:FAQS' %}">FAQs</a>
 				</li>
-				<li>
-					<a class="nav-link my-3 mx-1" style="color: white" href="{% url 'centralapp:About_us' %}"> About us</a>
+				<li class="nav-item">
+					<a class="nav-link"  href="{% url 'centralapp:About_us' %}">About us</a>
 				</li>
-
-				<li>
-					<a href="{% url 'centralapp:Covid_19' %}" class="button2 mt-7 mx-1"> Covid-19 Checkpoints </a>
+				<li class="nav-item button2">
+					<a class="nav-link " href="{% url 'centralapp:Covid_19' %}" >Covid-19 Checkpoints </a>
+				</li>
+				
+				<li class="nav-item dropdown">
+					<a class="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+						Sign Up 
+					</a>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="{% url 'centralapp:Inside_health_records' %}">Patient</a>
+						<a class="dropdown-item" href="{% url 'centralapp:patients_how_to_use' %}">Doctors</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#" data-toggle="modal" data-target="#usermodal">Login</a>
 				</li>
 			</ul>
 		</div>
@@ -81,7 +95,7 @@
 
 	<section>
 		<div class="hero img">
-			<a href="#" class="button" id="user" data-toggle="modal" data-target="#usermodal"> For you and your family </a>
+			<a href="{% url 'centralapp:Inside_health_records' %}" class="button" id="user" data-toggle="modal" data-target="#usermodal"> For you and your family </a>
 			<a href="#" class="button" id= "doctor" data-toggle="modal" data-target="#doctormodal">For healthcare professionals </a>
 
 			<img src="{% static 'Images/bg2.jpg' %}">
