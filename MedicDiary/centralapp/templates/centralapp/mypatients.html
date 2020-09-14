@@ -1,0 +1,72 @@
+{% extends 'centralapp/doctor_base.html' %}
+{% load static %}
+{% block doctor_base %}
+<div id="main-content">
+<div>
+    <h1 style="text-align: center;">Patient's List</h2>
+        <button class="edit-option-buttons" >
+            <a href="#" data-toggle="modal" data-target="#accessmodal"> Add a new patient </a>
+        </button>
+</div>
+<div class="container" style="margin: auto;">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Access Code</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">12efc8%2</th>
+                <td>Harshdeep</td>
+                <td>Singh</td>
+                <td><button class="edit-option-buttons"><a href="{% url 'centralapp:doctorRecords' %}">Edit</a></button></td>
+            </tr>
+            <tr>
+                <th scope="row">1lefc8%2</th>
+                <td>Lavish</td>
+                <td>Bansal</td>
+                <td><button class="edit-option-buttons"><a href="{% url 'centralapp:doctorRecords' %}">Edit</a></button></td>
+            </tr>
+            <tr>
+                <th scope="row">02efc8%2</th>
+                <td>Madhav</td>
+                <td>Mittal</td>
+                <td><button class="edit-option-buttons"><a href="{% url 'centralapp:doctorRecords' %}">Edit</a></button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="modal fade" id="accessmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-warning" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div id="signincard" class="card">
+                <div id="cardhead" class="card-header bg-warning mb-2">
+                    <div class="card-title text-center h4">Add a Patient</div>
+                </div>
+
+                <!-- Input Fields -->
+                <form action="{% url 'patient:loginp' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="text" id="accessCode" class="form-control mb-2" placeholder="Enter the access code"
+                        name="username">
+                    <!-- Login Button -->
+                    <div class="text-center">
+                        <button class="btn my-2" id="login" type="submit">Submit</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+</div>
+
+
+{% endblock %}

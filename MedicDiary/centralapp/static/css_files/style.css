@@ -244,5 +244,16 @@ body{
 	text-decoration: none;
 }
 
+.footer-style h6{
+	
+	font-weight: 700;
+	font-size: 1.2em;
+	color: rgb(20, 20, 20);
+}
+.footer-style a{
+	padding: 10px 0;
+	font-weight: 500;
+	color: rgb(26, 25, 25);
+}
 
 

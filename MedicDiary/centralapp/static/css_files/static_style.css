@@ -51,6 +51,7 @@
 	transition: margin-left 0.4s linear;
 	padding: 20px;
 	overflow: hidden;
+	
 }
 .team a{
 	text-decoration: none;
@@ -94,6 +95,24 @@
 	font-family: 'Grandstander',monospace;
 	animation: animated-text 4s steps(30) 200ms 1 normal both,
              animated-cursor 500ms steps(30) infinite normal;
+}
+.typewriter-2{
+	color: #c0745d;
+	position: relative;
+	font-size: 4em;
+	width: 12em;
+	margin: 0 auto;
+	border-right: 2px solid rgba(255,255,255,0.75);
+	text-align: center;
+	white-space: nowrap;
+	overflow:hidden;
+	font-family: 'Grandstander',monospace;
+	animation: animated-text-2 1s steps(10) 200ms 1 normal both,
+             animated-cursor 500ms steps(10) infinite normal;
+}
+@keyframes animated-text-2{
+  from{width: 0;}
+  to{width: 3em;}
 }
 @keyframes animated-text{
   from{width: 0;}
@@ -231,4 +250,106 @@ hr{
     color: rgb(35, 143, 98);
     border-color: rgb(35, 143, 98);
 }
+.no-bullet-list ul li{
+	list-style: none;
+	/*padding-left: 8px;*/
+}
+.two-column-list ul{
+	list-style-type: none;
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
+#scrollDown{
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+	font-size: 30px;
+	width: 80px;
+	height: 80px;
+	border-radius: 50px;
+	background: #5eaaa8;
+	border:none;
+	cursor: pointer;
+	pointer-events: auto;
+	z-index: -1;
+}
 
+
+
+.accordion {
+	font-weight: bold;
+	background-color: #d49a89;
+	color: rgb(8, 8, 8);
+	cursor: pointer;
+	padding: 25px;
+	width: 100%;
+	border: none;
+	border-radius: 10px;
+	text-align: left;
+	outline: none;
+	font-size: 18px;
+	transition: 0.2s;
+	margin: 0.5em;
+  }
+  
+  .active-2, .accordion:hover {
+	background-color: #fd835e;
+  }
+  
+  .accordion:after {
+
+	content: '\002B';
+	color: rgb(8, 8, 8);
+	font-weight: bold;
+	float: right;
+	margin-left: 5px;
+	border: none;
+  }
+  
+  .active-2:after {
+	content: "\2212";
+  }
+  
+  .panel {
+	  
+	  margin:5px;
+	padding:0 18px;
+	background-color: #f7d1ba;
+	max-height: 0;
+	overflow: hidden;
+	border-radius: 10px;
+	transition: max-height 0.2s ease-out;
+  }
+  .panel-content{
+	  padding: 22px;
+	  font-weight: 500;
+  }
+  .dashboard-content{
+	  padding: 20px;
+	border: 2px solid #03668d;
+	border-radius: 15px;
+	background: #e9d1b1;
+	margin: 30px auto;
+  }
+  .edit-option-buttons{
+	  padding: 5px;
+	  background: cornflowerblue;
+	  border: 1px solid rgb(32, 136, 221);
+	  border-radius: 10px;
+	  float: right;
+	  margin-bottom: 20px;
+  }
+  .edit-option-buttons a{
+	  text-decoration: none;
+	  color: black;
+  }
+  .edit-option-buttons a:hover{
+	  text-decoration: none;
+	  color: white;
+  }
+  .edit-option-buttons:hover{
+	  text-decoration: none;
+	  background:rgb(14, 44, 100);
+	  color: rgb(231, 224, 224);
+  }

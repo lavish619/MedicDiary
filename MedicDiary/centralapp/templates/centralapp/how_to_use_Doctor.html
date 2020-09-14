@@ -1,26 +1,43 @@
 {% extends 'centralapp/base.html' %}
 {% block body %}
-
+{% load static %}
 <div class="container-fluid">
     <div class="row my-4">
         <div class="col-sm-8 p-2 ml-auto" >
-            <h1> What is a health record</h1>
-            <p>
-                <br>This means your important health information is available when and where it’s needed, including in an emergency.
-            </p>
-
-            <p>
-                <h2>Start using your My Health Record:</h2>
-                <ul>
-                    <li>Log in to your record for the first time</li>
-
-                    <li>Control your privacy settings</li>
-
-                    <li>Understand what information can go in your record</li>
-
-                    <li>Discuss My Health Record with your healthcare provider</li>
-                </ul>
-            </p>
+            <div data-aos="fade-up" data-aos-duration="1000" >
+                <img class="health-record-img" src="{% static 'Images/howto_Doctor.webp' %}">
+            </div>
+            <h1 class="head-pacifico">How to work with health records at MedicDiary</h1>
+            <div class="howtodiv">
+                
+                <h2>Register</h2>
+                    <p>The first step when beginning to use MedicDiary as a healthcare professional is to create an account at our website. 
+                        While registering you will need to provide some educational and professional details which might be required for authentication purposes.
+                    Once this step is completed, you can go on to manage your patients' records.  </p>
+                    <br>
+    
+                    <h2>Enter the access code</h2>
+                    <p>In order to access the health record of any of your patients, you are required to enter a verification
+                        cum access code which is unique to every patient. On successful verification of the access code, you will be
+                        given access to edit the health records of your patient(s).<br>
+                        You can view and manage all your patients under the "My Patients" section.
+                    </p>
+                    <br>
+                    <h2>Maintain your profile as a healthcare professional</h2>
+                    <p>Under the "My Profile" section, you can edit and maintain your profile, add new qualifications or delete some 
+                        previously entered data. Additionally you can also specify your availability timings and the corresponding hospitals.  
+                    </p>
+                    <br>
+                    <h2>Security and Privacy</h2>
+                    <p> At MedicDiary, we place a lot of trust in our healthcare providers, which is eventually essential for the right 
+                        diagnosis and for the proper maintainence of a health record. Alongside, we also expect the healthcare providers to 
+                        follow a general code of conduct for the maintainence of records available at MedicDiary, infringement of which
+                        may lead to cancellation of your membership at MedicDiary.   
+                    </p>
+                
+                
+                
+            </div>
         </div>
 
 

@@ -39,7 +39,13 @@ def Inside_health_records(request):
     return render(request,'centralapp/inside_health_records.html')
 def Aids(request):
     return render(request,'centralapp/aids.html')
-def Dashboard(request):
+def patientProfile(request):
     return render(request, 'centralapp/patient_profile.html')
-def doctor_dashboard(request):
+def doctorProfile(request):
     return render(request, 'centralapp/doctor_profile.html')
+def myPatients(request):
+    return render(request, 'centralapp/mypatients.html')
+def patientRecords(request):
+    return render(request, 'centralapp/patient_records.html')
+def doctorRecords(request):
+    return render(request, 'centralapp/doctor_records.html')
