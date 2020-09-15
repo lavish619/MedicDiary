@@ -14,8 +14,8 @@
 	href="https://fonts.googleapis.com/css?family=Cinzel" />
 	<link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Oswald"/>
-	<link rel="stylesheet" href="{% static 'css_files/style.css' %}">
-	<link rel="icon" type="image/png" href="{% static 'Images/icon.png' %}"/>                            
+	<link rel="stylesheet" href="{% static 'centralapp/css_files/style.css' %}">
+	<link rel="icon" type="image/png" href="{% static 'centralapp/Images/icon.png' %}"/>                            
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<title>MedicDiary</title>
@@ -23,7 +23,7 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light sticky-top" id="navstyle" >
 		<a class="navbar-brand" href="{% url 'centralapp:mainpage' %}" style="font-family: Cinzel; font-size: 40px !important; color: white;" >
-			<img src="{% static 'Images/icon.png' %}" width="44" height="44" class="d-inline-block align-top" alt="Logo" loading="lazy">
+			<img src="{% static 'centralapp/Images/icon.png' %}" width="44" height="44" class="d-inline-block align-top" alt="Logo" loading="lazy">
 			MedicDiary
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"  aria-expanded="true" aria-label="Toggle navigation">
@@ -62,8 +62,8 @@
 						<a class="dropdown-item" href="{% url 'centralapp:Heart_disorder' %}">Heart Disorders</a>
 						<a class="dropdown-item" href="{% url 'centralapp:Hypertension' %}">Hypertension</a>
 						<a class="dropdown-item" href="{% url 'centralapp:Diabetes' %}">Diabetes</a>
-						<a class="dropdown-item" href="{% url 'centralapp:Dashboard' %}">Dashboard</a>
-						<a class="dropdown-item" href="{% url 'centralapp:doctor_dashboard' %}">Doctor Dashboard</a>
+						<a class="dropdown-item" href="{% url 'patient:patientProfile' %}">Dashboard</a>
+						<a class="dropdown-item" href="{% url 'doctor:doctor_profile' %}">Doctor Dashboard</a>
 
 					</div>
 				</li>
@@ -98,7 +98,7 @@
 			<a href="{% url 'centralapp:Inside_health_records' %}" class="button" id="user" data-toggle="modal" data-target="#usermodal"> For you and your family </a>
 			<a href="#" class="button" id= "doctor" data-toggle="modal" data-target="#doctormodal">For healthcare professionals </a>
 
-			<img src="{% static 'Images/bg2.jpg' %}">
+			<img src="{% static 'centralapp/Images/bg2.jpg' %}">
 
 			<h1 class="headline">One place for all <br> your health records. </h1>
 			<p></p>
@@ -126,13 +126,13 @@
 
 					<!-- Login Button -->
 					<div class="text-center">
-						<button class="btn my-2" id="login" type="submit">Login</button>
+						<button class="btn my-2" id="submit-btn" type="submit">Login</button>
 					</div>
 				</form>
 					<hr>
 
 					<div class="text-center">
-	##					<span>New User? </span><a href="{% url 'patient:registerpage' %}">Create an account</a>
+						<span>New User? </span><a href="{% url 'patient:registerpage' %}">Create an account</a>
 					</div>
 				</div>
 			</div>
@@ -162,7 +162,7 @@
 
 					<!-- Login Button -->
 					<div class="text-center">
-						<button class="btn my-2 " id="login" type="submit">Login</button>
+						<button class="btn my-2 " id="submit-btn" type="submit">Login</button>
 					</div>
 				
 					<hr>

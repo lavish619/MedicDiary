@@ -16,6 +16,6 @@ urlpatterns = [
     path('friends-and-family/How_to_use',views.patients_how_to_use,name ='patients_how_to_use'),
     path('Hypertension/',views.Hypertension,name ='Hypertension'),
     path('Inside_health_records/',views.Inside_health_records,name ='Inside_health_records'),
-    path('Dashboard/', views.Dashboard,name='Dashboard'),
-    path('doctor_dashboard/', views.doctor_dashboard,name='doctor_dashboard'),
+    
+    
 ]

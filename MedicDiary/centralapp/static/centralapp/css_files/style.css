@@ -140,13 +140,6 @@ position: relative;
 .content-box > div:nth-child(odd){
 	background:#ddd;
 }
-
-.sidebar{
-	background: #faf3dd; 
-	height:70vh;
-	border-radius: 15px;
-	padding: 1em 0em 1em 2em;
-}
 .modal-content{
 	background-color:#FFF;
 	border-radius: 12px 42px;
@@ -179,17 +172,15 @@ position: relative;
 	background-color: rgb(14, 192, 59);
 }
 
-#login{
+#submit-btn{
 	color: rgb(0, 0, 0);
 	text-transform: uppercase;
-	text-align: center;
-	
 	border-radius: 1em;
 	background: #66ec44;
 	align-items: center;
 	padding: 0.25em 0.75em;
 }
-#login:hover {
+#submit-btn:hover {
 	background: #919e9e;
 }
 body{
@@ -235,6 +226,14 @@ body{
 	text-decoration: none;
 }
 
-
-
-
+.footer-style h6{
+	
+	font-weight: 700;
+	font-size: 1.2em;
+	color: rgb(20, 20, 20);
+}
+.footer-style a{
+	padding: 10px 0;
+	font-weight: 500;
+	color: rgb(26, 25, 25);
+}

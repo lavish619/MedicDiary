@@ -15,7 +15,7 @@
 	<link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Oswald"/>
 	<link rel="stylesheet" href="{% static 'css_files/style.css' %}">
-	<link rel="icon" type="image/png" href="{% static 'Images/icon.png' %}"/>                            
+	<link rel="icon" type="image/png" href="{% static 'centralapp/Images/icon.png' %}"/>                            
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<title>MedicDiary</title>
@@ -23,7 +23,7 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light nav-bg" id="navstyle" >
 		<a class="navbar-brand" href="{% url 'centralapp:mainpage' %}" style="font-family: Cinzel; font-size: 40px !important; color: white;" >
-			<img src="{% static 'Images/icon.png' %}" width="44" height="44" class="d-inline-block align-top" alt="" loading="lazy">
+			<img src="{% static 'centralapp/Images/icon.png' %}" width="44" height="44" class="d-inline-block align-top" alt="" loading="lazy">
 			MedicDiary
 		</a>
 
@@ -81,7 +81,7 @@
 			<a href="#" class="button" id="user" data-toggle="modal" data-target="#usermodal"> For you and your family </a>
 			<a href="#" class="button" id= "doctor" data-toggle="modal" data-target="#doctormodal">For healthcare professionals </a>
 
-			<img src="{% static 'Images/bg2.jpg' %}">
+			<img src="{% static 'centralapp/Images/bg2.jpg' %}">
 
 			<h1 class="headline">One place for all <br> your health records. </h1>
 			<p></p>

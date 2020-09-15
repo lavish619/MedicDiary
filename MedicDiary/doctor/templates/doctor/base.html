@@ -24,14 +24,12 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/032a738741.js" crossorigin="anonymous"></script>
 
-	<link rel="stylesheet" href="{% static 'centralapp/css_files/style.css' %}">
-	<link rel="stylesheet" href="{% static 'centralapp/css_files/static_style.css' %}">
-	<link rel="icon" type="image/png" href="{% static 'centralapp/Images/icon.png' %}"/>
+	<link rel="stylesheet" href="{% static 'doctor/css_files/style.css' %}">
+	<link rel="icon" type="image/png" href="{% static 'doctor/Images/icon.png' %}"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-	<script src="{% static 'centralapp/js/app.js' %}"></script>
-    <!-- <script type="text/javascript" src="js/mdb.min.js"></script> -->
+	<script src="{% static 'doctor/js/app.js' %}"></script>
     <!--<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>-->
 	<title>MedicDiary</title>
 </head>
@@ -41,7 +39,7 @@
     </script>
 	<nav class="navbar navbar-expand-lg navbar-light nav-bg" id="navstyle" >
 		<a class="navbar-brand" href="{% url 'centralapp:mainpage' %}" style="font-family: Cinzel; font-size: 40px !important; color: white;" >
-			<img src="{% static 'centralapp/Images/icon.png' %}" width="50" height="50" class="d-inline-block align-top" alt="" loading="lazy">
+			<img src="{% static 'doctor/Images/icon.png' %}" width="50" height="50" class="d-inline-block align-top" alt="" loading="lazy">
 			MedicDiary
 		</a>
 
@@ -56,40 +54,25 @@
 			</ul>
 		</div>
 	</nav>
-	<button id="scrollDown"><i class="fas fa-chevron-down"></i></button>
+    <button id="scrollDown"><i class="fas fa-chevron-down"></i></button>
+    
+    <div id="sidebar">
+        <div class="toggle-btn" onclick="toggleSideBar()">
+            <span style='font-size:20px;'>&#9776;</span>
+        </div>
+    
+        <ul>
+            <a href="{% url 'doctor:myPatients' %}"><li>My Patients</li></a>
+            <a href="{% url 'doctor:doctor_profile' %}"><li>My Profile</li></a>
+            <a href="#"><li>Back to homepage</li></a>
+        </ul>
+    
+    </div>
 
-  {% block body %}
+  {% block doctor_base %}
 
   {% endblock %}
 
-		{% if not request.resolver_match.url_name == "About_us" and not request.resolver_match.url_name == "Covid_19" %}
-			<div class="col-sm-3 sidebar">
-				<ul class="list-group ">
-					<li class="list-group-item  heads">For You And Your Family</li>
-					<ul class="list-group">
-						<a class='list-group-item list-group-item-action {% if request.resolver_match.url_name == "Inside_health_records" %}active{% endif %} ' href="{% url 'centralapp:Inside_health_records' %}">What's in my health record </a>
-						<a class='list-group-item list-group-item-action {% if request.resolver_match.url_name == "patients_how_to_use" %}active{% endif %} ' href="{% url 'centralapp:patients_how_to_use' %}">How to use my health record </a>
-					</ul>
-					<li class="list-group-item  heads">For HealthCare Professionals</li>
-					<ul class="list-group">
-						<a class='list-group-item list-group-item-action {% if request.resolver_match.url_name == "doc_how_to_use" %}active{% endif %} ' href="{% url 'centralapp:doc_how_to_use' %}">How to use my health record </a>
-					</ul>
-					<li class="list-group-item  heads">Know more about diseases</li>
-					<ul class="list-group">
-						<a class='list-group-item list-group-item-action {% if request.resolver_match.url_name == "Aids" %}active{% endif %} ' href="{% url 'centralapp:Aids' %}">AIDS</a>
-						<a class='list-group-item list-group-item-action {% if request.resolver_match.url_name == "Cancer" %}active{% endif %} ' href="{% url 'centralapp:Cancer' %}">Cancer</a>
-						<a class='list-group-item list-group-item-action {% if request.resolver_match.url_name == "Heart_disorder" %}active{% endif %} ' href="{% url 'centralapp:Heart_disorder' %}">Heart Disorders</a>
-						<a class='list-group-item list-group-item-action {% if request.resolver_match.url_name == "Hypertension" %}active{% endif %} ' href="{% url 'centralapp:Hypertension' %}">Hypertension</a>
-						<a class='list-group-item list-group-item-action {% if request.resolver_match.url_name == "Diabetes" %}active{% endif %} ' href="{% url 'centralapp:Diabetes' %}">Diabetes</a>
-					</ul>
-					<a class='list-group-item list-group-item-action heads {% if request.resolver_match.url_name == "About_us" %}active{% endif %} ' href="{% url 'centralapp:About_us' %}">About Us</a>
-					<a class='list-group-item list-group-item-action heads {% if request.resolver_match.url_name == "FAQS" %}active{% endif %} ' href="{% url 'centralapp:FAQS' %}">FAQs</a>
-					<a class='list-group-item list-group-item-action heads {% if request.resolver_match.url_name == "Covid_19" %}active{% endif %} ' href="{% url 'centralapp:Covid_19' %}">Covid-19 Checkpoints</a>
-				</ul> 
-			</div>
-		</div>
-	</div>
-	{% endif%}
 
 	<!-- Footer -->
 	<footer class="page-footer footer font-small mdb-color" style="background:linear-gradient(90deg, #24a19c,#cedebd);">
