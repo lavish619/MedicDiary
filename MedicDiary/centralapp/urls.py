@@ -18,8 +18,8 @@ urlpatterns = [
     path('Hypertension/',views.Hypertension,name ='Hypertension'),
     path('Inside_health_records/',views.Inside_health_records,name ='Inside_health_records'),
     path('patientProfile/', views.patientProfile, name='patientProfile'),
-    path('doctorProfile/', views.doctorProfile, name='doctorProfile'),
-    path('myPatients/', views.myPatients, name='myPatients'),
+    
+
     path('patientRecords/', views.patientRecords, name='patientRecords'),
-    path('doctorRecords/', views.doctorRecords, name='doctorRecords'),
+    
 ]

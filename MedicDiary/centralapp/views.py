@@ -47,5 +47,4 @@ def myPatients(request):
     return render(request, 'centralapp/mypatients.html')
 def patientRecords(request):
     return render(request, 'centralapp/patient_records.html')
-def doctorRecords(request):
-    return render(request, 'centralapp/doctor_records.html')
+

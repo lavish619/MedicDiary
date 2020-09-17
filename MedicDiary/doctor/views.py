@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
+from .models import doc_details,patient_doc_config,records
+from django.contrib.sessions.models import Session
+from patient.models import patient_details
 
 # Create your views here.
 
@@ -14,46 +17,29 @@ def signup(request):
     if request.method=="POST":
         fname=request.POST['fname']
         lname=request.POST['lname']
-        # age=request.POST['age']
-        # bgroup=request.POST['bgroup']
-        # dob=request.POST['dob']
-        # gender=request.POST['gender']
-        # address=request.POST['address']
+        
         username=request.POST['username']
         password=request.POST['password']
         email=request.POST['email']
-        # mobile=request.POST['mobile']
-        # usertype="patient"
+       
 
 
         if len(username)>15:
             messages.error(request,'length of username should be less than15')
             return redirect('patient:registerpage')
         
-        # new_patient=patient_details()
-        # new_patient.fname=fname
-        # new_patient.lame=lname
-        # new_patient.age=age
-        # new_patient.bgroup=bgroup
-        # new_patient.dob=dob
-        # new_patient.gender=gender
-        # new_patient.address=address
-        # new_patient.username=username
-        # new_patient.email=email
-        # new_patient.mobile=mobile
-
-        # new_patient.save()
+        
 
         myuser=User.objects.create_user(username,email,password)
         myuser.first_name=fname
         myuser.last_name=lname
-        # myuser.age=age
-        # myuser.bgroup=bgroup
-        # myuser.dob=dob
-        # myuser.gender=gender
-        # myuser.address=address
-        # myuser.mobile=mobile
        
+        new_doc=doc_details()
+        new_doc.lname=lname
+        new_doc.fname=fname
+        new_doc.username=username
+        new_doc.email=email
+        new_doc.save()
         
         myuser.save()
 
@@ -73,7 +59,8 @@ def loginn(request):
         if user is not None:
             login(request,user)
             print("innn")
-            return HttpResponse('loggedin as doctor') 
+            request.session["username_d"]=username
+            return render(request,'doctor/doctor_base.html',{"username":username}) 
 
         else :
             print("invalid credentials")
@@ -87,3 +74,72 @@ def loginn(request):
     else:
         return HttpResponse('404-not found')
 
+def myPatients(request):
+    username=request.session["username_d"]
+    if len(patient_doc_config.objects.filter(doctor_username=username))!=0:
+        pat=patient_doc_config.objects.filter(doctor_username=username)
+        return render(request, 'doctor/mypatients.html',{"patients":pat})
+
+    else :
+        return render(request, 'doctor/mypatients.html',{"patients":"add patients"})
+
+    
+    return render(request, 'doctor/mypatients.html',{"username":username})
+
+def doctorProfile(request):
+    return render(request, 'doctor/doctor_profile.html')
+
+def addpatient(request):
+    if request.method=="POST":
+        p_username=request.POST['username']
+        accesscode=request.POST['accesscode']
+
+        if len(patient_details.objects.filter(username=p_username))!=0:
+            pat=patient_details.objects.get(username=p_username)
+            if  pat.auth_key==accesscode:
+
+                newPatient=patient_doc_config()
+                newPatient.patient_username=p_username
+                newPatient.doctor_username=request.session["username_d"]
+                newPatient.auth_key=accesscode
+                newPatient.save()
+                redirect('doctor:myPatients')
+            else :
+                redirect('doctor:myPatients')
+                messages.error(request,'access code did not match')
+        else:
+             redirect('doctor:myPatients')
+             messages.error(request,'username does not exist')
+
+
+
+
+        return redirect('doctor:myPatients')
+
+
+    else:
+         return HttpResponse('404-not found')
+
+def doctorRecords(request,p_username):
+    request.session["username_p"]=p_username
+    return render(request, 'doctor/doctor_records.html')
+    
+
+
+def addRecord(request):
+    return render(request,'doctor/report.html')
+
+def newReport(request):
+    diagnosis=request.POST['diagnosis']
+    doctor_notes=request.POST['doctor_notes']
+    medications=request.POST['medications']
+
+    new_record=records()
+    new_record.diagnosis=diagnosis
+    new_record.doctor_notes=doctor_notes
+    new_record.medications=medications
+    new_record.doctor_username=request.session["username_d"]
+    new_record.patient_username=request.session["username_p"]
+    new_record.save()
+
+    return redirect('doctor:doctorRecords', p_username=request.session["username_p"])

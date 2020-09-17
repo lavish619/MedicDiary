@@ -1,0 +1,70 @@
+{% extends 'doctor/doctor_base.html' %}
+{% load static %}
+{% block doctor_base %}
+<div id="main-content">
+<div>
+    <h1 style="text-align: center;">Patient's List</h2>
+        <button class="edit-option-buttons" >
+            <a href="#" data-toggle="modal" data-target="#accessmodal"> Add a new patient </a>
+        </button>
+</div>
+<div class="container" style="margin: auto;">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                
+                <th scope="col">Patient Username</th>
+             
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for i in patients%}
+            <tr>
+                <td>{{i.patient_username}}</td>
+                <td><button class="edit-option-buttons"><a href="{% url 'doctor:doctorRecords' p_username=i.patient_username%}">Edit</a></button></td>
+            </tr>
+           {%endfor%}
+          
+        </tbody>
+    </table>
+    <div>
+        {% for message in messages%}
+        <h3>{{message}}</h3>
+        {% endfor %}
+    </div>
+
+</div>
+<div class="modal fade" id="accessmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-notify modal-warning" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div id="signincard" class="card">
+                <div id="cardhead" class="card-header bg-warning mb-2">
+                    <div class="card-title text-center h4">Add a Patient</div>
+                </div>
+
+                <!-- Input Fields -->
+                <form action="{% url 'doctor:addpatient' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="text" id="accessCode" class="form-control mb-2" placeholder="patient_username"
+                        name="username">
+                 <input type="text" id="accessCode" class="form-control mb-2" placeholder="Enter the access code"
+                        name="accesscode">
+                    <!-- Login Button -->
+                    <div class="text-center">
+                        <button class="btn my-2" id="login" type="submit">Submit</button>
+                    </div>
+                </form>
+               
+            </div>
+            
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+</div>
+
+
+{% endblock %}
