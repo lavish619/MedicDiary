@@ -3,8 +3,10 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
-from .models import patient_details
-from .models import patient_details
+# from .models import patient_details
+from .forms import RegisterForm, ProfileForm
+from .models import Profile
+from django.contrib.auth.decorators import login_required
 
 def registerpage(request):
     return render(request,'patient/register.html')
@@ -28,7 +30,7 @@ def signup(request):
         if len(username)>15:
             messages.error(request,'length of username should be less than15')
             return redirect('patient:registerpage')
-        
+
         # new_patient=patient_details()
         # new_patient.fname=fname
         # new_patient.lame=lname
@@ -52,13 +54,13 @@ def signup(request):
         # myuser.gender=gender
         # myuser.address=address
         # myuser.mobile=mobile
-       
-        
+
+
         myuser.save()
 
         messages.success(request, 'Form submission successful')
         return redirect('/')
-       
+
 
     else :
         return HttpResponse('404-not found')
@@ -74,22 +76,58 @@ def loginn(request):
         if user is not None:
             login(request,user)
             print("innn")
-            return HttpResponse('loggedin as patient') 
-
+            return HttpResponse('loggedin as patient')
         else :
             print("invalid credentials")
             return render(request,'centralapp/mainpage.html')
-
-
         return HttpResponse('login')
-
-
-
     else:
         return HttpResponse('404-not found')
 
 def logout(request):
     if request.method=="POST":
         logout(request)
-        return render(request,'patient/mainpage.html') 
+        return render(request,'patient/mainpage.html')
     return HttpResponse('logout')
+
+def patientregister(request):
+    if request.method =='POST':
+        #after pressing the submit button this function runs again..
+        #this is checking if the function has been run once.. because
+        #that way the metod will become POST..
+        form = RegisterForm(request.POST)
+        #this makes the info of the previously filled form be stored in
+        #the variable form..
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=password)
+            messages.success(request,f"Welcome {username}, account successfully created")
+            # login(request, user)
+            return redirect('patientlogin')
+    else:
+        form = RegisterForm()
+    return render(request,'patient/patientregister.html',{'form':form})
+
+
+def makeprofilepage(request):
+    if request.method =='POST':
+        #after pressing the submit button this function runs again..
+        #this is checking if the function has been run once.. because
+        #that way the metod will become POST..
+        form = ProfileForm(request.POST)
+        #this makes the info of the previously filled form be stored in
+        #the variable form..
+        if form.is_valid():
+            form.save()
+            # messages.success(request,f"Welcome {username}, account successfully created")
+            # login(request, user)
+            return redirect('profile')
+    else:
+        form = ProfileForm()
+    return render(request,'patient/makeprofilepage.html',{'form':form})
+
+@login_required
+def profile(request):
+    return render(request,'users/profile.html')

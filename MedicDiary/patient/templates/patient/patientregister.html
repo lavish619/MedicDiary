@@ -1,0 +1,49 @@
+{% load crispy_forms_tags %}
+<!-- <div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 offset-md-4">
+        <div class="card">
+          <div class="card-header text-white bg-info">
+            <div class="card-title">
+              Signup
+            </div>
+          </div>
+          <div class="card-body"> -->
+            <form method="POST">
+              {% csrf_token %}
+
+              <!-- Version 1 -->
+              <!-- {% for field in form %}
+                <div class="form-group">
+                  {{field.name}}<br>
+                  {{field}}
+                </div>
+              {% endfor %} -->
+
+              <!-- Version 2 -->
+              <!-- {{ form|crispy }} -->
+
+              <!-- Version 3                                       ** BEST YET **   -->
+              {% for field in form %}
+                <p>
+                  {{ field.label_tag }}<br>
+                  {{ field }}
+                  {% if field.help_text %}
+                    <br>
+                    <small style="color: grey">{{ field.help_text }}</small>
+                  {% endif %}
+                  {% for error in field.errors %}
+                    <p style="color: red">{{ error }}</p>
+                  {% endfor %}
+                </p>
+              {% endfor %}
+
+              <button class="btn-info" type="submit">SignUp</button>
+            </form>
+          <!-- </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

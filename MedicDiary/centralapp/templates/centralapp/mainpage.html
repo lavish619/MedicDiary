@@ -15,7 +15,7 @@
 	<link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Oswald"/>
 	<link rel="stylesheet" href="{% static 'css_files/style.css' %}">
-	<link rel="icon" type="image/png" href="{% static 'Images/icon.png' %}"/>                            
+	<link rel="icon" type="image/png" href="{% static 'Images/icon.png' %}"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<title>MedicDiary</title>
@@ -75,9 +75,19 @@
 				<li>
 					<a href="{% url 'centralapp:Covid_19' %}" class="button2 mt-7 mx-1"> Covid-19 Checkpoints </a>
 				</li>
+				<li>
+					<a href="{% url 'patient:patientregister' %}" class="button2 mt-7 mx-1"> patientregister </a>
+				</li>
 			</ul>
 		</div>
 	</nav>
+	{% if messages %}                                    <!-- checks for any messages in the message directory -->
+		{% for message in messages %}
+			<div class="alert alert-{{ message.tags }}">       <!--fancifies the message..-->
+				{{ message }}
+			</div>
+		{% endfor %}
+	{% endif %}
 
 	<section>
 		<div class="hero img">
@@ -104,7 +114,7 @@
 					<form action="{% url 'patient:loginp' %}" method="POST">
 						{% csrf_token %}
 					<input type="text" id="username" class="form-control mb-2" placeholder="Patient's Username" name="username">
-					<input type="text" id="password" class="form-control" placeholder="Password" name= "password">
+					<input type="password" id="password" class="form-control" placeholder="Password" name= "password">
 
 					<div class="text-md-right" >
 						<small>Forgot <a href="#">Username/Password</a></small>
@@ -150,7 +160,7 @@
 					<div class="text-center">
 						<button class="btn my-2 " id="login" type="submit">Login</button>
 					</div>
-				
+
 					<hr>
 
 					<div class="text-center">

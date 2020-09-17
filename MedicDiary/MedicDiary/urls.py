@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.contrib.auth import views as authentication_views
+from patient import views as patient_views
 
 urlpatterns = [
 
@@ -22,4 +24,6 @@ urlpatterns = [
     path('', include('centralapp.urls')),
     path('', include('doctor.urls')),
     path('', include('patient.urls')),
+    path('login/',authentication_views.LoginView.as_view(template_name='patient/patientlogin.html'),name='patientlogin'),
+    # path('logout/',authentication_views.LogoutView.as_view(template_name='patient/patientlogout.html'),name='patientlogout'),
 ]
