@@ -1,0 +1,166 @@
+{% extends 'doctor/base.html' %}
+
+{% block doctor_base %}
+{% load static %}
+
+<!--THIS IS THE MYPROFILE PAGE-->
+{% block doctormainpage %}
+{% endblock %}
+<div class="container" id="main-content">
+    <div class="tabcontent" id="myProfile" style="display:block;">
+        <h1 style="font-family:'Ubuntu';font-size: 3rem;text-align: center; color: rgb(92, 46, 13); ">My Profile </h1>
+        <div class="container">
+            <button class="edit-option-buttons" style="font-size: 18px; float: right;">
+                <a href="#"> Edit your profile </a>
+            </button>
+        </div>
+        <div style="display: flex;justify-content: center;">
+            <div class="row my-4 profile-box-info justify-content-around" style="width: fit-content">
+                <div class="col-sm-2 p-2 col-lg-2 p-2" style="margin-right: 20px;">
+                    <img src="{% static 'doctor/Images/profile_pic.png'%}" max-width="80%" alt="">
+                </div>
+                <div class="col-sm-6 col-lg-6 p-2 " style="margin-left: 50px;">
+                    <div class="profile-content">
+                        <h3>General Info</h3>
+                        <b>Name:</b> Dr. Randeep Guleria <br>
+                        <b>Username:</b> whatever <br>
+                        <b>Email Address:</b> xyz@gmail.com
+                    </div>
+                    <button class="edit-option-buttons" style="margin-top: 30px;">Edit Profile Picture</button>
+                </div>
+            </div>
+        </div>
+        <div class="row my-10">
+            <div class="col-sm-5 col-lg-5 p-2 ml-auto mr-auto">
+                <div class="profile-box-info">
+                    <div class="profile-content">
+                        <h3>Educational Qualifications</h3>
+                        <p>
+                            <b>Graduation College: </b> AIIMS Delhi <br>
+                            <b>Specialisation:</b> XYZ <br>
+                            <b>Super Specialisation:</b> ABC <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 p-2 col-lg-5 ml-auto mr-auto">
+                <div class="profile-box-info ">
+                    <div class="profile-content">
+                        <h3>Experience</h3>
+                        <p>
+                            Apollo, Sarita Vihar<br>
+                            Max Super Speciality hospital, Vaishali<br>
+                            Some other hospital<br>
+                            And some other
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-sm-5 p-2 col-lg-5 ml-auto mr-auto">
+                <div class="profile-box-info ">
+                    <div class="profile-content">
+                        <h3>Availability</h3>
+                        <p>
+                            <b>XYZ clinic: </b> 7-8pm Sundays <br>
+                            <b>ABC hospital:</b> 11am-12pm Wed Fri <br>
+                            <b>PQR hospital:</b> 4-5pm Mon Thurs <br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5 p-2 col-lg-5 ml-auto mr-auto my-4">
+                <div class="profile-box-info ">
+                    <div class="profile-content">
+                        <h3>Speciality</h3>
+                        <p>
+                            If the doctor is a surgeon, then he could mention what kind of surgeries he specialises in.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--This is the beginning of the myPatients Page-->
+
+
+    <div class="tabcontent" id="myPatients">
+        <div>
+            <h1 style="text-align: center;">Patient's List</h2>
+                <button class="edit-option-buttons" style="float:right">
+                    <a href="#" data-toggle="modal" data-target="#accessmodal"> Add a new patient </a>
+                </button>
+        </div>
+        <div class="container" style="margin: auto;">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Access Code</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">12efc8%2</th>
+                        <td>Harshdeep</td>
+                        <td>Singh</td>
+                        <td><button class="edit-option-buttons"><a
+                                    href="{% url 'doctor:doctorRecords' %}">Edit</a></button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1lefc8%2</th>
+                        <td>Lavish</td>
+                        <td>Bansal</td>
+                        <td><button class="edit-option-buttons"><a
+                                    href="{% url 'doctor:doctorRecords' %}">Edit</a></button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">02efc8%2</th>
+                        <td>Madhav</td>
+                        <td>Mittal</td>
+                        <td><button class="edit-option-buttons"><a
+                                    href="{% url 'doctor:doctorRecords' %}">Edit</a></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="modal fade" id="accessmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-notify modal-warning" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <!--Header-->
+                    <div id="signincard" class="card">
+                        <div id="cardhead" class="card-header bg-warning mb-2">
+                            <div class="card-title text-center h4">Add a Patient</div>
+                        </div>
+
+                        <!-- Input Fields -->
+                        <form action="{% url 'patient:loginp' %}" method="POST">
+                            {% csrf_token %}
+                            <input type="text" id="accessCode" class="form-control mb-2"
+                                placeholder="Enter the access code" name="accessCode">
+                            <!-- Login Button -->
+                            <div class="text-center">
+                                <button class="btn my-2" id="submit-btn" type="submit">Submit</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                <!--/.Content-->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

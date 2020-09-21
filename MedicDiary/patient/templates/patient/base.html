@@ -54,7 +54,7 @@
 			</ul>
 		</div>
 	</nav>
-    <button id="scrollDown"><i class="fas fa-chevron-down"></i></button>
+    
     
     <div id="sidebar" > 
         <div class="toggle-btn" onclick="toggleSideBar()">
@@ -62,11 +62,11 @@
         </div>
     
         <ul>
-            <a href="{% url 'patient:patientRecords' %}"><li>Medication</li></a>
+            <a href="#"><li>Medication</li></a>
             <a href="#"><li>Lab Reports</li></a>
-            <a href="#"><li>Personal notes</li></a>
+            <a href="{% url 'patient:personalNotes' %}"><li>Personal notes</li></a>
             <a href="{% url 'patient:patientProfile' %}"><li>Edit your profile</li></a>
-            <a href="#"><li>Back to homepage</li></a>
+            <a href="{% url 'patient:patientRecords' %}"><li>Back to homepage</li></a>
         </ul>
     
     </div>

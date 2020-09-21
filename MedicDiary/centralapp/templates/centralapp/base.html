@@ -38,6 +38,9 @@
 <body style="background: #f7f7ee">
 	<script>
        AOS.init();
+	   $(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+		})
     </script>
 	<nav class="navbar navbar-expand-lg navbar-light nav-bg" id="navstyle" >
 		<a class="navbar-brand" href="{% url 'centralapp:mainpage' %}" style="font-family: Cinzel; font-size: 40px !important; color: white;" >
@@ -56,7 +59,10 @@
 			</ul>
 		</div>
 	</nav>
-	<button id="scrollDown"><i class="fas fa-chevron-down"></i></button>
+	<div id="startOfPage"></div>
+	<!-- <button id="scrollDown" onclick="topFunction()"><i class="fas fa-chevron-down"></i></button> -->
+	<a href="#startOfPage" data-toggle="tooltip" data-placement="left" title="Scroll Up" id="scrollUp"><span><i class="fas fa-chevron-up"></i></span></a>
+	<a href="#endOfPage" data-toggle="tooltip" data-placement="left" title="Scroll Down" id="scrollDown"><span><i class="fas fa-chevron-down"></i></span></a>
 
   {% block body %}
 
@@ -92,7 +98,7 @@
 	{% endif%}
 
 	<!-- Footer -->
-	<footer class="page-footer footer font-small mdb-color" style="background:linear-gradient(90deg, #24a19c,#cedebd);">
+	<footer class="page-footer footer font-small mdb-color" id="endOfPage" style="background:linear-gradient(90deg, #24a19c,#cedebd);">
 
 		<!-- Footer Links -->
 		
@@ -186,6 +192,6 @@
 		
 		<!-- Footer Links -->
 	</footer>
-
+	
 </body>
 </html>

@@ -41,6 +41,7 @@
 #sidebar ul a{
 	color: rgba(230,230,230,0.9);
 	list-style: none;
+	cursor: pointer;
 }
 #sidebar ul li{
 	color: rgba(230,230,230,0.9);
@@ -73,7 +74,7 @@
 
 
 #main-content{
-	/* transition: margin-left 0.4s linear; */
+	transition: margin-left 0.4s linear;
 	padding: 20px;
     overflow: hidden;
     margin: auto 100px auto 3fr;
@@ -81,10 +82,11 @@
 
 .dashboard-content{
     padding: 20px;
-    border: 2px solid #03668d;
-    border-radius: 15px;
-    background-color: #e9d1b1;
-    margin: 50px auto;
+	border-radius: 15px;
+	border: solid 4px #838383;
+	background-color: #f5f1da;
+	margin: 50px auto;
+	box-shadow: 0.5em 0.5em 1em -0.5em;
 }
 
 /* footer classes and ids */
@@ -116,4 +118,61 @@
 .useful_links:hover{
 	color: rgb(255, 255, 255);
 	text-decoration: none;
+}
+
+.profile-box-info{
+	margin:-20px;
+	text-align: center;
+	padding: 30px 20px;
+	border-radius: 10px;
+	border: solid 4px #838383;
+	background-color: #f5f1da;
+	box-shadow:  1em 1em 2em -1em rgba(0,0,0,0.75);
+}
+.profile-content p{
+	line-height: 150%;
+	font-size: 18px;
+}
+.profile-content h3{
+	font-size: 2em;
+	font-family: 'Grandstander';
+	margin: 20px 10px;
+}
+.profile-content ul{
+	list-style: none;
+}
+.head-grand{
+	font-family: 'Grandstander';
+	margin: 20px 10px;
+}
+.head-pacifico{
+	font-family: 'Pacifico';
+	margin: 20px 10px;
+}
+.edit-option-buttons{
+	padding: 7px;
+	background: #757474;
+	color: white;
+	border-radius: 10px;
+	margin-bottom: 20px;
+}
+.edit-option-buttons:focus{
+	outline: 0;
+}
+.edit-option-buttons a{
+	text-decoration: none;
+	color: white;
+}
+.edit-option-buttons a:hover{
+	text-decoration: none;
+	color: white;
+}
+.edit-option-buttons:hover{
+	text-decoration: none;
+	background:#575656;
+}
+textarea{
+	background-color: #f5f1da;
+	border: solid 4px #838383;
+	border-radius: 10px;
 }
