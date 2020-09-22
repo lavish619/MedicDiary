@@ -86,7 +86,7 @@
 }
 .about_us_headline p{
 	font-size:35;
-	
+
 }
 .display{
 	font-size:4.5rem;
@@ -114,7 +114,7 @@
 	height:40vh;
 	margin:auto;
 	display: block;
-	
+
 }
 .bullet-style ul{
 /*	list-style: square url(Images/wear_mask.jpg) inside;
@@ -144,7 +144,7 @@
 
 /* static page sidebar */
 .sidebar{
-	background: #e0ece4; 
+	background: #e0ece4;
 	height:fit-content;
 	width: fit-content;
 	border-radius: 15px;
@@ -161,7 +161,7 @@
 	color: #FFF;
 }
 .list-group-item{
-	
+
 	height: fit-content;
 	padding: 6px 10px 6px 10px;
 	overflow: auto;
@@ -189,7 +189,7 @@ font-weight: bold;
     animation: image-appear 0.6s ease-out;
 }
 .top-images:hover{
-    transform: scale(1.07);  
+    transform: scale(1.07);
 }
 .disease-images{
     display: block;
@@ -206,7 +206,7 @@ font-weight: bold;
     border-color: rgb(35, 143, 98);
     padding: 0.4em 1em 0em 1em;
     background-color: rgb(255, 225, 197);
-   
+
 }
 hr{
     border-style: solid;
@@ -223,20 +223,7 @@ hr{
     -webkit-columns: 2;
     -moz-columns: 2;
 }
-#scrollDown{
-	position: fixed;
-	bottom: 40px;
-	right: 40px;
-	font-size: 30px;
-	width: 80px;
-	height: 80px;
-	border-radius: 50px;
-	background: #5eaaa8;
-	border:none;
-	cursor: pointer;
-	pointer-events: auto;
-	z-index: -1;
-}
+
 
 @keyframes image-appear{
     from{opacity: 0; transform: scale(0.5);}
@@ -258,11 +245,11 @@ hr{
 	transition: 0.2s;
 	margin: 0.5em;
   }
-  
+
   .active-2, .accordion:hover {
 	background-color: #fd835e;
   }
-  
+
   .accordion:after {
 
 	content: '\002B';
@@ -272,13 +259,13 @@ hr{
 	margin-left: 5px;
 	border: none;
   }
-  
+
   .active-2:after {
 	content: "\2212";
   }
-  
+
   .panel {
-	  
+
 	  margin:5px;
 	padding:0 18px;
 	background-color: #f7d1ba;
@@ -291,4 +278,3 @@ hr{
 	  padding: 22px;
 	  font-weight: 500;
   }
-  

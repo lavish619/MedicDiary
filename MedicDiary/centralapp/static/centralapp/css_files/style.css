@@ -1,4 +1,6 @@
-
+html{
+	scroll-behavior: smooth;
+}
 
 #navstyle{
 	background-color: #24a19c;
@@ -67,7 +69,7 @@ padding:1em 1.5em;
 }
 #navbar-list-items > li:hover{
 	background-color:  #ed6663;
-} 
+}
 .waves {
 	position: relative;
 	width: 100%;
@@ -92,6 +94,7 @@ padding:1em 1.5em;
 	border-radius:1.5em;
 	text-decoration: none;
 	transition: 0.4s;
+	white-space: normal;
 }
 .button:hover{
 	background: #006a71;
@@ -199,7 +202,7 @@ body{
 	display:grid;
 	grid-template-columns: 40% 60%;
 	background-color: #FFF;
-	border-radius: 2em;  
+	border-radius: 2em;
 	padding: 0em 2em 0em 2em;
 	width: 60em;
 	margin: auto;
@@ -227,7 +230,7 @@ body{
 }
 
 .footer-style h6{
-	
+
 	font-weight: 700;
 	font-size: 1.2em;
 	color: rgb(20, 20, 20);
@@ -236,4 +239,52 @@ body{
 	padding: 10px 0;
 	font-weight: 500;
 	color: rgb(26, 25, 25);
+}
+#scrollDown{
+	color: black;
+	position: fixed;
+	bottom: 80px;
+	right: 30px;
+	font-size: 30px;
+	width: 60px;
+	height: 60px;
+	border-radius: 50px;
+	background: #5eaaa8;
+	border:none;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 99;
+}
+#scrollDown:focus{
+	outline: 0;
+}
+#scrollUp{
+	color: black;
+	position: fixed;
+	bottom: 140px;
+	right: 30px;
+	font-size: 30px;
+	width: 60px;
+	height: 60px;
+	border-radius: 50px;
+	background: #5eaaa8;
+	border:none;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 99;
+}
+#scrollUp:focus{
+	outline: 0;
+}
+.parallax {
+  background-image: url('/static/centralapp/Images/bhu.jpeg');
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

@@ -38,6 +38,9 @@
 <body style="background: #f7f7ee">
 	<script>
        AOS.init();
+	   $(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+		})
     </script>
 	<nav class="navbar navbar-expand-lg navbar-light nav-bg" id="navstyle" >
 		<a class="navbar-brand" href="{% url 'centralapp:mainpage' %}" style="font-family: Cinzel; font-size: 40px !important; color: white;" >
@@ -56,7 +59,10 @@
 			</ul>
 		</div>
 	</nav>
-	<button id="scrollDown"><i class="fas fa-chevron-down"></i></button>
+	<div id="startOfPage"></div>
+	<!-- <button id="scrollDown" onclick="topFunction()"><i class="fas fa-chevron-down"></i></button> -->
+	<a href="#startOfPage" data-toggle="tooltip" data-placement="left" title="Scroll Up" id="scrollUp"><span><i class="fas fa-chevron-up"></i></span></a>
+	<a href="#endOfPage" data-toggle="tooltip" data-placement="left" title="Scroll Down" id="scrollDown"><span><i class="fas fa-chevron-down"></i></span></a>
 
   {% block body %}
 
@@ -85,17 +91,17 @@
 					<a class='list-group-item list-group-item-action heads {% if request.resolver_match.url_name == "About_us" %}active{% endif %} ' href="{% url 'centralapp:About_us' %}">About Us</a>
 					<a class='list-group-item list-group-item-action heads {% if request.resolver_match.url_name == "FAQS" %}active{% endif %} ' href="{% url 'centralapp:FAQS' %}">FAQs</a>
 					<a class='list-group-item list-group-item-action heads {% if request.resolver_match.url_name == "Covid_19" %}active{% endif %} ' href="{% url 'centralapp:Covid_19' %}">Covid-19 Checkpoints</a>
-				</ul> 
+				</ul>
 			</div>
 		</div>
 	</div>
 	{% endif%}
 
 	<!-- Footer -->
-	<footer class="page-footer footer font-small mdb-color" style="background:linear-gradient(90deg, #24a19c,#cedebd);">
+	<footer class="page-footer footer font-small mdb-color" id="endOfPage" style="background:linear-gradient(90deg, #24a19c,#cedebd);">
 
 		<!-- Footer Links -->
-		
+
 
 			<!-- Footer links -->
 			<div class="row text-center ml-5 text-md-left mt-3">
@@ -116,7 +122,7 @@
 					<h6 class="text-uppercase mb-2 font-weight-bold" > Other useful links</h6>
 					<div class="no-bullet-list two-column-list">
 						<a href="{% url 'centralapp:Covid_19' %}" class="useful_links">Covid-19 checkpoints</a><br>
-						
+
 						<h6 class="mt-2 font-weight-bold">Learn about diseases</h6>
 
 						<ul>
@@ -128,7 +134,7 @@
 
 						</ul>
 						</div>
-					
+
 				</div>
 				<!-- Grid column -->
 
@@ -145,7 +151,7 @@
 						<li>Shivangi Nayak</li>
 						</ul>
 						<a href="{% url 'centralapp:About_us' %}" class="useful_links" style="font-weight:bold">More about us</a>
-					
+
 				</div>
 				<!-- Grid column -->
 				<hr class="w-100 clearfix d-md-none ">
@@ -183,7 +189,7 @@
 			</div>
 			<!-- Grid row -->
 
-		
+
 		<!-- Footer Links -->
 	</footer>
 

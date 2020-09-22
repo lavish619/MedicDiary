@@ -55,20 +55,20 @@
 		</div>
 	</nav>
     <button id="scrollDown"><i class="fas fa-chevron-down"></i></button>
-    
-    <div id="sidebar" > 
+
+    <div id="sidebar" >
         <div class="toggle-btn" onclick="toggleSideBar()">
             <span style='font-size:20px;'>&#9776;</span>
         </div>
-    
+
         <ul>
-            <a href="{% url 'patient:patientRecords' %}"><li>Medication</li></a>
+            <a href="#"><li>Medication</li></a>
             <a href="#"><li>Lab Reports</li></a>
-            <a href="#"><li>Personal notes</li></a>
+            <a href="{% url 'patient:personalNotes' %}"><li>Personal notes</li></a>
             <a href="{% url 'patient:patientProfile' %}"><li>Edit your profile</li></a>
-            <a href="#"><li>Back to homepage</li></a>
+            <a href="{% url 'patient:patientRecords' %}"><li>Back to homepage</li></a>
         </ul>
-    
+
     </div>
 
   {% block patient_base %}
@@ -80,7 +80,7 @@
 	<footer class="page-footer footer font-small mdb-color" style="background:linear-gradient(90deg, #24a19c,#cedebd);">
 
 		<!-- Footer Links -->
-		
+
 
 			<!-- Footer links -->
 			<div class="row text-center ml-5 text-md-left mt-3">
@@ -101,7 +101,7 @@
 					<h6 class="text-uppercase mb-2 font-weight-bold" > Other useful links</h6>
 					<div class="no-bullet-list two-column-list">
 						<a href="{% url 'centralapp:Covid_19' %}" class="useful_links">Covid-19 checkpoints</a><br>
-						
+
 						<h6 class="mt-2 font-weight-bold">Learn about diseases</h6>
 
 						<ul>
@@ -113,7 +113,7 @@
 
 						</ul>
 						</div>
-					
+
 				</div>
 				<!-- Grid column -->
 
@@ -130,7 +130,7 @@
 						<li>Shivangi Nayak</li>
 						</ul>
 						<a href="{% url 'centralapp:About_us' %}" class="useful_links" style="font-weight:bold">More about us</a>
-					
+
 				</div>
 				<!-- Grid column -->
 				<hr class="w-100 clearfix d-md-none ">
@@ -168,7 +168,7 @@
 			</div>
 			<!-- Grid row -->
 
-		
+
 		<!-- Footer Links -->
 	</footer>
 

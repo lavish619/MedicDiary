@@ -3,37 +3,72 @@
 {% block patient_base %}
 
 <div class="container" id="main-content">
-  <div class="row dashboard-content">
-    <h2>This is the patient Profile page </h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-    <a href="#">View more</a>
+
+  <h1 style="font-family:'Ubuntu';font-size: 3rem;text-align: center; color: rgb(92, 46, 13); ">My Profile </h1>
+  <div class="container">
+    <button class="edit-option-buttons" style="font-size: 18px; float: right;">
+      <a href="#"> Edit your profile </a>
+    </button>
+  </div>
+  <div style="display: flex;justify-content: center;">
+  <div class="row my-4 profile-box-info justify-content-around" style="width: fit-content">
+    <div class="col-sm-2 p-2 col-lg-2 p-2" style="margin-right: 20px;">
+      <img src="{% static 'doctor/Images/profile_pic.png'%}" max-width="80%" alt="">
+    </div>
+    <div class="col-sm-6 col-lg-6 p-2 " style="margin-left: 50px;">
+      <div class="profile-content">
+      <h3 >General Info</h3>
+        <b>Name:</b> Some Name <br>
+        <b>Username:</b> whatever <br>
+        <b>Email Address:</b> abc@gmail.com
+      </div>
+      <button class="edit-option-buttons" style="margin-top: 30px;">Edit Profile Picture</button>
+    </div>
+  </div>
+  </div>
+  <div class="row my-4">
+    <div class="col-sm-5 col-lg-5 p-2 ml-auto mr-auto">
+      <div class="profile-box-info">
+        <div class="profile-content">
+          <h3 >Vitals</h3>
+          <p>
+            <b>Age: </b> 45 <br>
+            <b>Gender: </b> Male <br>
+            <b>Height:</b> 170cm <br>
+            <b>Weight:</b> something <br>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 p-2 col-lg-5 ml-auto mr-auto">
+      <div class="profile-box-info ">
+        <div class="profile-content">
+          <h3 >Basic health details</h3>
+          <b>Asthmatic</b> <br>
+          <b>Early stage of Diabetes</b> <br>
+          <b>Allergies:</b>
+          <ul>
+            <li>-- Allergic to dust.</li>
+            <li>-- Irritating people</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row my-4">
+    <div class="col-sm-4 p-2 col-lg-5 ml-auto mr-auto">
+      <div class="profile-box-info ">
+        <div class="profile-content">
+          <h3>Other social info</h3>
+          <b>Smoker:</b> No<br>
+          <b>Teetotaller:</b> Yes<br>
+          <b>Profession:</b> Unemployed as of now
+        </div>
+      </div>
+    </div>
 
   </div>
-  <div class="row dashboard-content">
-    <h2>NAME</h2>
-    <p>
-      ABC XYZ
-    </p>
-    <a href="#">View more</a>
-
-  </div>
-  <div class="row dashboard-content">
-    <h2>General Info </h2>
-    <p>
-      Height: something;
-      Weight: Not something to be publicly diplayed.
-    </p>
-    <a href="#">Edit info</a>
-
   </div>
 
-</div>
 
 {% endblock %}
