@@ -7,7 +7,7 @@
         <div class="col-sm-8 p-2 ml-auto" > 
 
             <h1 style="text-align: center;">Diabetes</h1>
-            <img class="top-images" src="{% static 'Images/diabetes.jpg'%}" width=60% alt="Diabetes."/>
+            <img class="top-images" src="{% static 'centralapp/Images/diabetes.jpg'%}" width=60% alt="Diabetes."/>
             <br>
 
             <!-- What it is? -->
@@ -23,7 +23,7 @@
             <!-- Diabetes types -->
             <div class="section-divs">
             <h3 class="h3-heading"> Diabetes types</h3>
-            <!-- <img class="disease-images" src="{% static 'Images/diabetes.jpg'%}"  alt="Diabetes."/> -->
+            <!-- <img class="disease-images" src="{% static 'centralapp/Images/diabetes.jpg'%}"  alt="Diabetes."/> -->
             <p>There are a few different types of diabetes:</p>
             <ul class="pl-4">
                 <li><b>Type 1 diabetes</b> is an autoimmune disease. The immune system attacks and destroys cells in the pancreas, 
@@ -43,7 +43,7 @@
             <!-- Symptoms of diabetes -->
             <div class="section-divs">
             <h3 class="h3-heading"> Symptoms of diabetes</h3>
-            <img class="disease-images" src="{% static 'Images/symptoms-diabetes.jpg'%}" width=65%  alt="Symptoms of Diabetes."/>
+            <img class="disease-images" src="{% static 'centralapp/Images/symptoms-diabetes.jpg'%}" width=65%  alt="Symptoms of Diabetes."/>
             <p>Diabetes symptoms are caused by rising blood sugar. </p>
 
             <h5>General symptoms</h5>
@@ -100,7 +100,7 @@
             <!-- Causes of diabetes -->
             <div class="section-divs">
             <h3 class="h3-heading"> Causes of diabetes</h3>
-            <img class="disease-images" src="{% static 'Images/insulin-diabetes.jpg'%}"  width=70% alt="Cause of Diabetes."/>
+            <img class="disease-images" src="{% static 'centralapp/Images/insulin-diabetes.jpg'%}"  width=70% alt="Cause of Diabetes."/>
             <p>Different causes are associated with each type of diabetes. </p>
 
             <h5>Type 1 diabetes</h5>
@@ -197,7 +197,7 @@
 
             <div class="section-divs">       
             <h3 class="h3-heading">Treatment of diabetes</h3>
-            <img class="disease-images" src="{% static 'Images/insulin-diabetes-2.jpg'%}" width=55% alt="Treatment of Diabetes."/>
+            <img class="disease-images" src="{% static 'centralapp/Images/insulin-diabetes-2.jpg'%}" width=55% alt="Treatment of Diabetes."/>
             <p>Doctors treat diabetes with a few different medications. Some of these drugs are taken by mouth, while others are available 
                 as injections.</p>
 
@@ -285,7 +285,7 @@
 
             <div class="section-divs">
             <h3 class="h3-heading"> Diabetes and diet</h3>
-            <img class="disease-images" src="{% static 'Images/diabetes-fruits.jpg'%}" width=60% alt="Diet management in Diabetes."/>
+            <img class="disease-images" src="{% static 'centralapp/Images/diabetes-fruits.jpg'%}" width=60% alt="Diet management in Diabetes."/>
             <p>Healthy eating is a central part of managing diabetes. In some cases, changing your diet may be enough to control the disease. </p>
 
             <h5>Type 1 diabetes</h5>
@@ -324,7 +324,7 @@
 
             <div class="section-divs">
             <h3 class="h3-heading">Diabetes diagnosis</h3>
-            <img class="disease-images" src="{% static 'Images/diabetes-diagnosis.jpg'%}"  width=50% alt="Diagnosis of Diabetes."/>
+            <img class="disease-images" src="{% static 'centralapp/Images/diabetes-diagnosis.jpg'%}"  width=50% alt="Diagnosis of Diabetes."/>
             <p>Anyone who has symptoms of diabetes or is at risk for the disease should be tested. Women are routinely tested for gestational 
                 diabetes during their second or third trimesters of pregnancy.</p>
             <p>Doctors use these <b>blood tests</b> to diagnose prediabetes and diabetes:</p>
@@ -365,7 +365,7 @@
 
             <div class="section-divs">
             <h3 class="h3-heading"> Diabetes in pregnancy</h3>
-            <img class="disease-images" src="{% static 'Images/diabetes-women.jpg'%}"  alt="Diabetes in women."/>
+            <img class="disease-images" src="{% static 'centralapp/Images/diabetes-women.jpg'%}"  alt="Diabetes in women."/>
             <p>Women who've never had diabetes can suddenly develop gestational diabetes in pregnancy. Hormones produced by the placenta 
                 can make your body more resistant to the effects of insulin. </p>
             <p>Some women who had diabetes before they conceived carry it with them into pregnancy. This is called pre-gestational diabetes.</p>
@@ -382,7 +382,7 @@
 
             <div class="section-divs">    
             <h3 class="h3-heading">Diabetes in children</h3>
-            <img class="disease-images" src="{% static 'Images/diabetes-children.jpg'%}" width=60% alt="Diabetes in children."/>
+            <img class="disease-images" src="{% static 'centralapp/Images/diabetes-children.jpg'%}" width=60% alt="Diabetes in children."/>
             <p>Children can get both type 1 and type 2 diabetes. Controlling blood sugar is especially important in young people, because the 
                 disease can damage important organs such as the heart and kidneys. </p>
 
@@ -405,32 +405,5 @@
 
         </div>
         
-        <div class="col-sm-3 sidebar">
-            <ul class="list-group ">
-                <li class="list-group-item  heads">For You And Your Family</li>
-                <ul class="list-group">
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Inside_health_records' %}">What's in my health record </a>
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:patients_how_to_use' %}">How to use my health record </a>
-                </ul>
-                <li class="list-group-item  heads">For HealthCare Professionals</li>
-                <ul class="list-group">
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:doc_how_to_use' %}">How to use my health record </a>
-                </ul>
-                <li class="list-group-item  heads">Know more about diseases</li>
-                <ul class="list-group">
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Aids' %}">AIDS</a>
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Cancer' %}">Cancer</a>
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Heart_disorder' %}">Heart Disorders</a>
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Hypertension' %}">Hypertension</a>
-                    <a class="list-group-item list-group-item-action active" href="{% url 'centralapp:Diabetes' %}">Diabetes</a>
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Birth_control' %}">Birth control measures</a>
-                </ul>
-                <a class="list-group-item list-group-item-action heads" href="{% url 'centralapp:About_us' %}">About Us</a>
-                <a class="list-group-item list-group-item-action heads" href="{% url 'centralapp:FAQS' %}">FAQs</a>
-                <a class="list-group-item list-group-item-action heads" href="{% url 'centralapp:Covid_19' %}">Covid-19 Checkpoints</a>
-            </ul> 
-        </div>
-    </div>
-</div>
+        {% endblock %}
 
-{% endblock %}

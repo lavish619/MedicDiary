@@ -1,6 +1,134 @@
 {% extends 'centralapp/base.html' %}
 {% block body %}
+{% load static %}
+<div class="container-fluid">
+    <div class="typewriter-2">FAQS..</div>
+    <div class="row my-4">
+        <div class="col-sm-4 p-2 ml-auto">
+            <h2 style="text-align: center; font-family: 'Grandstander';font-size: 2.5em;">For Patients</h2>
 
+            <button class="accordion">Who can access my health record?</button>
+            <div class="panel">
+                <div class="panel-content">
+                    <p>Only <strong>verified healthcare professionals</strong> registered at MedicDiary can access your health record.</p>
+                </div>
+                
+            </div>
 
+            <button class="accordion">Can I not change any data in my health record?</button>
+            <div class="panel">
+                <div class="panel-content">
+                    <p><strong>No.</strong> At MedicDiary, we give the privilege to edit the information on your health
+                        record only to registered medical professionals whom you choose.
+                    </p>
+                </div>
+                
+            </div>
+
+            <button class="accordion">How do I give access to a doctor?</button>
+            <div class="panel">
+                <div class="panel-content">
+                    <p>Login to MedicDiary and navigate to the "My Doctors" section on your dashboard.
+                        You will find an access code on top of the section that opens. This access code is
+                        <strong>unique</strong>
+                        to you
+                        and is <strong>highly confidential</strong>. This code <strong>shall not be shared</strong>
+                        with any individual save the doctor whom you wish to grant access.
+                    </p>
+                </div>
+                
+            </div>
+            <button class="accordion">What if I take certain medications
+                without<br> medical supervision? How do I add it to my health record?</button>
+            <div class="panel">
+                <div class="panel-content">
+                    <p>There is a separate section of your health record which you can edit.
+                        This includes information about any <strong>medication/supplements</strong> that you are taking without medical
+                        supervision. You can add the medicines as well as any <strong>notes about general well-being</strong>
+                        that you wish to be displayed to the doctor managing your health records.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="col-sm-4 p-2 ml-auto ">
+            <h2 style="text-align: center; font-family: 'Grandstander';font-size: 2.5em;">For Doctors</h2>
+
+            <button class="accordion">What all information is needed to create<br> an account
+                at MedicDiary?
+            </button>
+            <div class="panel">
+                <div class="panel-content">
+                    <p>We would like to have the following details:
+                    <ul>
+                        <li>Your registration number (issued by the Govt. of India)</li><br>
+                        <strong>The following details are optional:</strong><br>
+                        <li>Educational qualifications</li>
+                        <li>Work experience and/or specialisations</li>
+                    </ul>
+                    </p>
+                </div>
+                
+            </div>
+
+            <button class="accordion">How do I access a patient's record?</button>
+            <div class="panel">
+                <div class="panel-content">
+                    <p>Login to MedicDiary and navigate to the <strong>"My Patients"</strong> section in the dashboard.
+                        Click on <strong>"Add a patient"</strong> option. You will be prompted to enter an access code.
+                        This code is unique to every patient. Your patient will provide this code to you
+                        after which you shall be able to edit his/her health record. </p>
+                </div>
+                
+            </div>
+
+            <button class="accordion">Is some minimum experience required to be able to
+                register at MedicDiary?</button>
+            <div class="panel">
+                <div class="panel-content">
+                    <p>No. The only compulsory requirement is the presence of a registration number issued by the
+                        <strong>Medical Council of India (MCI).</strong> </p>
+                </div>
+                
+            </div>
+            <button class="accordion">Do I need the access code everytime I access my patient's
+                record?</button>
+            <div class="panel">
+                <div class="panel-content">
+                    <p><strong>No.</strong> Once you add a patient to your patients list, you will be able to access his/her record
+                        until the former changes the access code. </p>
+                </div>
+                
+            </div>
+            <button class="accordion">I will need Lab test reports as well for proper diagnosis. Is
+                there
+                some provision for this as well?</button>
+            <div class="panel">
+                <div class="panel-content">
+                    <p><strong>Yes.</strong> There is a separate section of the health record that includes the test reports of
+                        all the tests the patient has undergone.
+                    </p>
+                </div>
+                
+            </div>
+            <script>
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+                for (i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click",function(){
+                    this.classList.toggle("active-2");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                    
+                    });
+                }
+            </script>
+
+        </div>
 
 {% endblock %}

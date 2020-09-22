@@ -1,0 +1,187 @@
+
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: sans-serif;
+}
+/* scrolldown button */
+#scrollDown{
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+	font-size: 30px;
+	width: 80px;
+	height: 80px;
+	border-radius: 50px;
+	background: #5eaaa8;
+	border:none;
+	cursor: pointer;
+	pointer-events: auto;
+	z-index: -1;
+}
+
+
+/* navbar */
+#navstyle{
+	background-color: #24a19c;
+	color: #FFFFF0;
+	background-image: linear-gradient(90deg, #24a19c 0%, #cedebd 100%);
+
+}
+
+
+/* sidebar (moving) of left  */
+#sidebar{
+	position: absolute;
+	top:88px;
+	width: 200px;
+	height: 100%;
+	background: #24a19c;
+	left: -200px;
+	transition: all 300ms linear;
+}
+#sidebar ul a{
+	color: rgba(230,230,230,0.9);
+	list-style: none;
+}
+#sidebar ul li{
+	color: rgba(230,230,230,0.9);
+	list-style: none;
+	padding: 20px 15px;
+    border-bottom: 1px solid rgba(100,100,100,0.3);
+}
+#sidebar ul li:hover{
+	background-color: #cedebd;
+	border-radius: 0px 40px 40px 0px;
+	font-weight: bold;
+	color: black;
+}
+#sidebar .toggle-btn{
+	position: absolute;
+	left: 210px;
+    top: 20px;
+    cursor: pointer;
+    padding: 5px 12px;
+}
+#sidebar .toggle-btn:hover{
+    background-color: #cedebd;
+    padding: 5px 12px;
+    border-radius: 30%;
+}
+#sidebar a{
+	text-decoration: none;
+	color: #f6f5f5;
+}
+
+#main-content{
+	/* transition: margin-left 0.4s linear; */
+	padding: 20px;
+    overflow: hidden;
+    margin: auto 200px auto 3fr;
+}
+
+.dashboard-content{
+	padding: 20px;
+	border: 2px solid #03668d;
+	border-radius: 15px;
+	background: #e9d1b1;
+	margin: 50px auto;
+}
+
+
+.edit-option-buttons{
+	padding: 5px;
+	background: cornflowerblue;
+	border: 1px solid rgb(32, 136, 221);
+	border-radius: 10px;
+	float: right;
+	margin-bottom: 20px;
+}
+.edit-option-buttons a{
+	text-decoration: none;
+	color: black;
+}
+.edit-option-buttons a:hover{
+	text-decoration: none;
+	color: white;
+}
+.edit-option-buttons:hover{
+	text-decoration: none;
+	background:rgb(14, 44, 100);
+	color: rgb(231, 224, 224);
+}
+
+
+
+.modal-notify .modal-header {
+	border-radius: 3px 3px 0 0;
+}
+.modal-notify  {
+	border-radius: 3px;
+}
+.modal-content{
+	background-color:#FFF;
+	border-radius: 12px 42px;
+	width:fit-content;
+	top: 2px;
+}
+
+#signincard{
+	background-color: transparent;
+	border-width: 0.75em;
+	border-color: #24a19c;
+	border-radius: 10px 40px; width: 22em;
+	padding-right: 2.5em;
+	padding-left: 2.5em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+#cardhead{
+	border-radius: 1em;
+	width: fit-content;
+	align-self: center;
+	height: 2.5em;
+	padding: 0.25em 0.75em 0.25em 0.75em;
+}
+#submit-btn{
+	color: rgb(0, 0, 0);
+	text-transform: uppercase;
+	border-radius: 1em;
+	background: #66ec44;
+	align-items: center;
+	padding: 0.25em 0.75em;
+}
+#submit-btn:hover {
+	background: #919e9e;
+}
+
+/* footer classes and ids */
+.footer-style h6{
+	
+	font-weight: 700;
+	font-size: 1.2em;
+	color: rgb(20, 20, 20);
+}
+.footer-style a{
+	padding: 10px 0;
+	font-weight: 500;
+	color: rgb(26, 25, 25);
+}
+.no-bullet-list ul li{
+	list-style: none;
+	/*padding-left: 8px;*/
+}
+.two-column-list ul{
+	list-style-type: none;
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
+.useful_links{
+	color: rgb(59, 59, 59);
+	text-decoration: none;
+}
+.useful_links:hover{
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}

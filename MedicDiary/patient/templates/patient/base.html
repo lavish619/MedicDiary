@@ -1,0 +1,176 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Pacifico" />
+	<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Cinzel" />
+	<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Oswald"/>
+	<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Grandstander"/>
+	<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Ubuntu"/>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/032a738741.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'patient/css_files/style.css' %}">
+	<link rel="icon" type="image/png" href="{% static 'patient/Images/icon.png' %}"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script src="{% static 'patient/js/app.js' %}"></script>
+    <!--<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>-->
+	<title>MedicDiary</title>
+</head>
+<body style="background: #f7f7ee">
+	<script>
+       AOS.init();
+    </script>
+	<nav class="navbar navbar-expand-lg navbar-light nav-bg" id="navstyle" >
+		<a class="navbar-brand" href="{% url 'centralapp:mainpage' %}" style="font-family: Cinzel; font-size: 40px !important; color: white;" >
+			<img src="{% static 'patient/Images/icon.png' %}" width="50" height="50" class="d-inline-block align-top" alt="" loading="lazy">
+			MedicDiary
+		</a>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size:20px; ">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#" style="color: rgb(0, 0, 0)"> Sign In </a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#" style="color: rgb(0, 0, 0)"> Sign Up </a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+    <button id="scrollDown"><i class="fas fa-chevron-down"></i></button>
+    
+    <div id="sidebar" > 
+        <div class="toggle-btn" onclick="toggleSideBar()">
+            <span style='font-size:20px;'>&#9776;</span>
+        </div>
+    
+        <ul>
+            <a href="{% url 'patient:patientRecords' %}"><li>Medication</li></a>
+            <a href="#"><li>Lab Reports</li></a>
+            <a href="#"><li>Personal notes</li></a>
+            <a href="{% url 'patient:patientProfile' %}"><li>Edit your profile</li></a>
+            <a href="#"><li>Back to homepage</li></a>
+        </ul>
+    
+    </div>
+
+  {% block patient_base %}
+
+  {% endblock %}
+
+
+	<!-- Footer -->
+	<footer class="page-footer footer font-small mdb-color" style="background:linear-gradient(90deg, #24a19c,#cedebd);">
+
+		<!-- Footer Links -->
+		
+
+			<!-- Footer links -->
+			<div class="row text-center ml-5 text-md-left mt-3">
+
+				<!-- Grid column -->
+				<hr class="w-100 clearfix d-md-none">
+				<div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 footer-style">
+					<h6 class="text-uppercase mb-2 " >Know-hows</h6>
+					<p>
+						<a href="{% url 'centralapp:Inside_health_records' %}" class="useful_links">What's in my health record</a><br>
+						<a href="{% url 'centralapp:patients_how_to_use' %}" class="useful_links">How to use my health record</a><br>
+						<a href="{% url 'centralapp:doc_how_to_use' %}" class="useful_links">How to use the health record (for doctors)</a><br>
+						<a href="{% url 'centralapp:FAQS' %}" class="useful_links">FAQs</a><br>
+					</p>
+				</div>
+				<!-- Grid column -->
+				<div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 footer-style">
+					<h6 class="text-uppercase mb-2 font-weight-bold" > Other useful links</h6>
+					<div class="no-bullet-list two-column-list">
+						<a href="{% url 'centralapp:Covid_19' %}" class="useful_links">Covid-19 checkpoints</a><br>
+						
+						<h6 class="mt-2 font-weight-bold">Learn about diseases</h6>
+
+						<ul>
+						<li><a href="{% url 'centralapp:Cancer' %}" class="useful_links">Cancer</a><br></li>
+						<li><a href="{% url 'centralapp:Aids' %}" class="useful_links">AIDS</a><br></li>
+						<li><a href="{% url 'centralapp:Diabetes' %}" class="useful_links">Diabetes</a><br></li>
+						<li><a href="{% url 'centralapp:Heart_disorder' %}" class="useful_links">Heart Disorders</a><br></li>
+						<li><a href="{% url 'centralapp:Hypertension' %}" class="useful_links">Hypertension</a><br></li>
+
+						</ul>
+						</div>
+					
+				</div>
+				<!-- Grid column -->
+
+				<hr class="w-100 clearfix d-md-none">
+
+				<!-- Grid column -->
+
+				<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 no-bullet-list footer-style">
+					<h6 class="text-uppercase mb-2 font-weight-bold">Our Team</h6>
+					<ul>
+						<li>Madhav Mittal<br></li>
+						<li>HarshDeep Singh Kohli<br></li>
+						<li>Lavish Bansal<br></li>
+						<li>Shivangi Nayak</li>
+						</ul>
+						<a href="{% url 'centralapp:About_us' %}" class="useful_links" style="font-weight:bold">More about us</a>
+					
+				</div>
+				<!-- Grid column -->
+				<hr class="w-100 clearfix d-md-none ">
+
+				<!-- Grid column -->
+				<div class="col-md-3 col-lg-3 col-xl-3 mr-5 mt-3 footer-style">
+					<h6 class="text-uppercase mb-2 font-weight-bold ">Contact</h6>
+                    <p>
+                        <i class="fa fa-home mr-3"></i>IIT(BHU), Varanasi, UP, India
+                    </p>
+                    <p>
+                        <i class="fa fa-envelope mr-3 "></i> madhav.mittal.mat19@itbhu.ac.in
+                    </p>
+                    <p>
+                        <i class="fa fa-phone mr-3"></i> +91 9039276236
+                    </p>
+
+				</div>
+				<!-- Grid column -->
+
+			</div>
+			<!-- Footer links -->
+
+			<hr>
+
+			<!-- Grid row -->
+			<div class="row d-flex align-items-center footer-style">
+				<!-- Grid column -->
+				<div class="col-md-11 col-lg-11">
+					<!--Copyright-->
+					<p class="text-center">© 2020 Copyright:
+						<strong> MedicDiary</strong>
+					</p>
+				</div>
+			</div>
+			<!-- Grid row -->
+
+		
+		<!-- Footer Links -->
+	</footer>
+
+</body>
+</html>

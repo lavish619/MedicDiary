@@ -5,7 +5,13 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 
 # Create your views here.
-
+def doctor_profile(request):
+    return render(request,'doctor/doctor_profile.html')
+def myPatients(request):
+    return render(request, 'doctor/mypatients.html')
+def doctorRecords(request):
+    return render(request, 'doctor/doctor_records.html')
+    
 def registerpage(request):
     return render(request,'doctor/register.html')
 
