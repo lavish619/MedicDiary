@@ -200,6 +200,15 @@ font-weight: bold;
     border-radius: 10px;
     border: solid tomato;
 }
+.disease-images{
+    display: block;
+    padding: .75em;
+    margin-right: auto;
+    margin-left: auto;
+    transition: transform 0.4s;
+    border-radius: 10px;
+    border: solid tomato;
+}
 .section-divs{
     border-radius: 1.25em;
     border-style: solid;

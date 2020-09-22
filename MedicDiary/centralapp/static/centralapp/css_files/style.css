@@ -70,6 +70,9 @@ padding:1em 1.5em;
 #navbar-list-items > li:hover{
 	background-color:  #ed6663;
 }
+#navbar-list-items > li:hover{
+	background-color:  #ed6663;
+}
 .waves {
 	position: relative;
 	width: 100%;

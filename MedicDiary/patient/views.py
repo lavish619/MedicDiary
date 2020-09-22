@@ -22,6 +22,15 @@ def patientRecords(request):
 def personalNotes(request):
     return render(request, 'patient/personalNotes.html')
 
+def patientProfile(request):
+    return render(request, 'patient/patient_profile.html')
+def patientRecords(request):
+    return render(request, 'patient/patient_records.html')
+
+
+def personalNotes(request):
+    return render(request, 'patient/personalNotes.html')
+
 def registerpage(request):
     return render(request,'patient/register.html')
 
