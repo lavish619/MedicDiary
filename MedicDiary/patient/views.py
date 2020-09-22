@@ -15,6 +15,11 @@ def get_random_string(length):
     print("Random string is:", result_str)
 
 
+def patientProfile(request):
+    return render(request, 'patient/patient_profile.html')
+def patientRecords(request):
+    return render(request, 'patient/patient_records.html')
+
 def registerpage(request):
     return render(request,'patient/register.html')
 

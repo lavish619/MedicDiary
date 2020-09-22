@@ -8,7 +8,12 @@ from django.contrib.sessions.models import Session
 from patient.models import patient_details
 
 # Create your views here.
+def doctor_profile(request):
+    return render(request,'doctor/doctor_profile.html')
 
+def doctorRecords(request):
+    return render(request, 'doctor/doctor_records.html')
+    
 def registerpage(request):
     return render(request,'doctor/register.html')
 
@@ -60,7 +65,7 @@ def loginn(request):
             login(request,user)
             print("innn")
             request.session["username_d"]=username
-            return render(request,'doctor/doctor_base.html',{"username":username}) 
+            return render(request,'doctor/doctor_profile.html',{"username":username}) 
 
         else :
             print("invalid credentials")

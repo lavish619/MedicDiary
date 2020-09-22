@@ -5,29 +5,17 @@ $(document).ready(function(){
 	});
 });
 function toggleSideBar(){
-	document.getElementById("sidebar").style.marginLeft='200px';
-	document.getElementById("main-content").style.marginLeft='200px';
+	var x = document.getElementById("sidebar").style.marginLeft;
+	if(x=="200px"){
+		document.getElementById("sidebar").style.marginLeft='0';
+		// document.getElementById("main-content").style.marginLeft='80px';	
+	}
+	else{
+		document.getElementById("sidebar").style.marginLeft='200px';
+		// document.getElementById("main-content").style.marginLeft='200px';
+	}
 }
-function closeSideBar(){
-	document.getElementById("sidebar").style.marginLeft='0';
-	document.getElementById("main-content").style.marginLeft='80px';
-}
-function expand(){
-  var acc = document.getElementsByClassName("accordion");
-  var i;
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click",function(){
-      this.classList.toggle("active-2");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
-    
-    });
-  }
-}
+
     // acc[i].classList.toggle("active");
     //   var panel = sectionName.nextElementSibling;
     //   if (panel.style.maxHeight) {

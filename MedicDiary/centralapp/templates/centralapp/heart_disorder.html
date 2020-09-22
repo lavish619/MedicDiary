@@ -7,7 +7,7 @@
         <div class="col-sm-8 p-2 ml-auto">
 
             <h1 style="text-align: center;">Heart Disorders</h1>
-            <img class="top-images" src="{% static 'Images/heart.jpg'%}" width=60% alt="The Human Heart." />
+            <img class="top-images" src="{% static 'centralapp/Images/heart.jpg'%}" width=60% alt="The Human Heart." />
             <br>
 
             <!-- What are Heart Disorders -->
@@ -30,7 +30,7 @@
             <!-- Different types of heart disease -->
             <div class="section-divs">
             <h3 class="h3-heading">Different types of heart disease</h3>
-            <img class="disease-images" src="{% static 'Images/heart-disorder-types.jpg'%}" width=60% alt="Diseses of Human Heart" />
+            <img class="disease-images" src="{% static 'centralapp/Images/heart-disorder-types.jpg'%}" width=60% alt="Diseses of Human Heart" />
             <p>Heart disease encompasses a wide range of cardiovascular problems. Several diseases and conditions fall under 
                 the umbrella of heart disease. Types of heart disease include:</p>
             <ul class="pl-4">
@@ -50,7 +50,7 @@
             <!-- Signs and Symptoms -->
             <div class="section-divs">
             <h3 class="h3-heading"> Signs and Symptoms</h3>
-            <img class="disease-images" src="{% static 'Images/symptoms-heart-disorders.jpg'%}" width=60% alt="Symptoms of Heart Diseases " />
+            <img class="disease-images" src="{% static 'centralapp/Images/symptoms-heart-disorders.jpg'%}" width=60% alt="Symptoms of Heart Diseases " />
             <p>Different types of heart disease may result in a variety of different symptoms. </p>
 
             <h5>Arrhythmias</h5>
@@ -132,7 +132,7 @@
             <!-- Symptoms  in women -->
             <div class="section-divs">   
             <h3 class="h3-heading">Symptoms in Women</h3>
-            <img class="disease-images" src="{% static 'Images/women-heart-disease.jpg'%}" width=70% alt="Symptoms of heart disease in women" />
+            <img class="disease-images" src="{% static 'centralapp/Images/women-heart-disease.jpg'%}" width=70% alt="Symptoms of heart disease in women" />
             <p>Women often experience different signs and symptoms of heart disease than men, specifically with regards to CAD and 
                 other cardiovascular diseases. </p>
 
@@ -166,7 +166,7 @@
             <!-- Causes of heart disease -->
             <div class="section-divs">
             <h3 class="h3-heading"> Causes of heart disease</h3>
-            <img class="disease-images" src="{% static 'Images/working-heart.jpg'%}" width=45% alt="A working Human Heart" />
+            <img class="disease-images" src="{% static 'centralapp/Images/working-heart.jpg'%}" width=45% alt="A working Human Heart" />
             <p>Heart disease is a collection of diseases and conditions that cause cardiovascular problems. Each type of heart disease 
                 is caused by something entirely unique to that condition. Atherosclerosis and CAD result from plaque buildup in the 
                 arteries. Other causes of heart disease are described below.</p>
@@ -214,7 +214,7 @@
             <!-- Risk factors    -->
             <div class="section-divs">
             <h3 class="h3-heading"> Risk Factors </h3>
-            <img class="disease-images" src="{% static 'Images/risk-factors.jpg'%}" width=60% alt="Factors for heart diseases" />
+            <img class="disease-images" src="{% static 'centralapp/Images/risk-factors.jpg'%}" width=60% alt="Factors for heart diseases" />
             <p>There are many risk factors for heart disease. Some are controllable, and others aren&rsquo;t. The CDC says that 
                     around 47 percent of Americans have at least one risk factor for heart disease. Some of these risk factors include:</p>
             <ul class="pl-4">
@@ -266,7 +266,7 @@
             <!-- How are heart diseases diagnosed? -->
             <div class="section-divs">
             <h3 class="h3-heading"> How are heart diseases Diagnosed?</h3>
-            <img class="disease-images" src="{% static 'Images/heart-diagnosis.jpg'%}" width=60% alt="Diagnosing Heart disease" />
+            <img class="disease-images" src="{% static 'centralapp/Images/heart-diagnosis.jpg'%}" width=60% alt="Diagnosing Heart disease" />
             <p>Your doctor may order several types of tests and evaluations to make a heart disease diagnosis. Some of these tests can 
                 be performed before you ever show signs of heart disease. Others may be used to look for possible causes of symptoms 
                 when they develop.</p>
@@ -360,7 +360,7 @@
             <!-- Lifestyle Changes that are required -->
             <div class="section-divs">
             <h3 class="h3-heading"> Lifestyle Changes that are Required</h3>
-            <img class="disease-images" src="{% static 'Images/running-heart-disease.jpg'%}" width=50% alt="Physical activities for heart diseases" />
+            <img class="disease-images" src="{% static 'centralapp/Images/running-heart-disease.jpg'%}" width=50% alt="Physical activities for heart diseases" />
             <p>If you&rsquo;ve recently received a heart disease diagnosis, talk to your doctor about steps you can take to stay as healthy 
                 as possible. You can prepare for your appointment by creating a detailed list of your everyday habits. Possible topics 
                 include:</p>
@@ -392,7 +392,7 @@
             <!-- Connection with hypertension -->
             <div class="section-divs">
             <h3 class="h3-heading">Connection with Hypertension</h3>
-            <img class="disease-images" src="{% static 'Images/heart-hypertension.jpg'%}" width=90% alt="Connection with Hypertension" />
+            <img class="disease-images" src="{% static 'centralapp/Images/heart-hypertension.jpg'%}" width=90% alt="Connection with Hypertension" />
             <p>Hypertensive heart disease is a condition caused by chronic high blood pressure. Hypertension requires your heart to pump 
                 harder in order to circulate your blood through your body. This increased pressure can lead to several types of heart 
                 problems, including a thick, enlarged heart muscle and narrowed arteries.</p>
@@ -423,35 +423,5 @@
                 <br>
 
         </div>
-
-        <div class="col-sm-3 sidebar">
-            <ul class="list-group ">
-                <li class="list-group-item  heads">For You And Your Family</li>
-                <ul class="list-group">
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Inside_health_records' %}">What's in my health record </a>
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:patients_how_to_use' %}">How to use my health record </a>
-                </ul>
-                <li class="list-group-item  heads">For HealthCare Professionals</li>
-                <ul class="list-group">
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:doc_how_to_use' %}">How to use my health record </a>
-                </ul>
-                <li class="list-group-item  heads">Know more about diseases</li>
-                <ul class="list-group">
-                    <a class="list-group-item list-group-item-action " href="{% url 'centralapp:Aids' %}">AIDS</a>
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Cancer' %}">Cancer</a>
-                    <a class="list-group-item list-group-item-action active" href="{% url 'centralapp:Heart_disorder' %}">Heart Disorders</a>
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Hypertension' %}">Hypertension</a>
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Diabetes' %}">Diabetes</a>
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Birth_control' %}">Birth control measures</a>
-                </ul>
-                <a class="list-group-item list-group-item-action heads" href="{% url 'centralapp:About_us' %}">About Us</a>
-                <a class="list-group-item list-group-item-action heads" href="{% url 'centralapp:FAQS' %}">FAQs</a>
-                <a class="list-group-item list-group-item-action heads" href="{% url 'centralapp:Covid_19' %}">Covid-19 Checkpoints</a>
-            </ul> 
-        </div>
-
-    </div>
-</div>
-
 
 {% endblock %}

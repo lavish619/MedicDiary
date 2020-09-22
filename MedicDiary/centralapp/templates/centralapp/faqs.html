@@ -7,7 +7,7 @@
         <div class="col-sm-4 p-2 ml-auto">
             <h2 style="text-align: center; font-family: 'Grandstander';font-size: 2.5em;">For Patients</h2>
 
-            <button class="accordion" onclick="expand()">Who can access my health record?</button>
+            <button class="accordion">Who can access my health record?</button>
             <div class="panel">
                 <div class="panel-content">
                     <p>Only <strong>verified healthcare professionals</strong> registered at MedicDiary can access your health record.</p>
@@ -15,7 +15,7 @@
                 
             </div>
 
-            <button class="accordion" onclick="expand()">Can I not change any data in my health record?</button>
+            <button class="accordion">Can I not change any data in my health record?</button>
             <div class="panel">
                 <div class="panel-content">
                     <p><strong>No.</strong> At MedicDiary, we give the privilege to edit the information on your health
@@ -25,7 +25,7 @@
                 
             </div>
 
-            <button class="accordion" onclick="expand()">How do I give access to a doctor?</button>
+            <button class="accordion">How do I give access to a doctor?</button>
             <div class="panel">
                 <div class="panel-content">
                     <p>Login to MedicDiary and navigate to the "My Doctors" section on your dashboard.
@@ -38,7 +38,7 @@
                 </div>
                 
             </div>
-            <button class="accordion" onclick="expand()">What if I take certain medications
+            <button class="accordion">What if I take certain medications
                 without<br> medical supervision? How do I add it to my health record?</button>
             <div class="panel">
                 <div class="panel-content">
@@ -55,7 +55,7 @@
         <div class="col-sm-4 p-2 ml-auto ">
             <h2 style="text-align: center; font-family: 'Grandstander';font-size: 2.5em;">For Doctors</h2>
 
-            <button class="accordion" onclick="expand()">What all information is needed to create<br> an account
+            <button class="accordion">What all information is needed to create<br> an account
                 at MedicDiary?
             </button>
             <div class="panel">
@@ -72,7 +72,7 @@
                 
             </div>
 
-            <button class="accordion" onclick="expand()">How do I access a patient's record?</button>
+            <button class="accordion">How do I access a patient's record?</button>
             <div class="panel">
                 <div class="panel-content">
                     <p>Login to MedicDiary and navigate to the <strong>"My Patients"</strong> section in the dashboard.
@@ -83,7 +83,7 @@
                 
             </div>
 
-            <button class="accordion" onclick="expand()">Is some minimum experience required to be able to
+            <button class="accordion">Is some minimum experience required to be able to
                 register at MedicDiary?</button>
             <div class="panel">
                 <div class="panel-content">
@@ -92,7 +92,7 @@
                 </div>
                 
             </div>
-            <button class="accordion" onclick="expand()">Do I need the access code everytime I access my patient's
+            <button class="accordion">Do I need the access code everytime I access my patient's
                 record?</button>
             <div class="panel">
                 <div class="panel-content">
@@ -101,7 +101,7 @@
                 </div>
                 
             </div>
-            <button class="accordion" onclick="expand()">I will need Lab test reports as well for proper diagnosis. Is
+            <button class="accordion">I will need Lab test reports as well for proper diagnosis. Is
                 there
                 some provision for this as well?</button>
             <div class="panel">
@@ -112,52 +112,23 @@
                 </div>
                 
             </div>
+            <script>
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+                for (i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click",function(){
+                    this.classList.toggle("active-2");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                    
+                    });
+                }
+            </script>
 
         </div>
-
-
-
-
-
-
-        <div class="col-sm-3 mr-auto sidebar">
-            <ul class="list-group ">
-                <li class="list-group-item  heads">For You And Your Family</li>
-                <ul class="list-group">
-                    <a class="list-group-item list-group-item-action"
-                        href="{% url 'centralapp:Inside_health_records' %}">What's in my health record </a>
-                    <a class="list-group-item list-group-item-action"
-                        href="{% url 'centralapp:patients_how_to_use' %}">How to use my health record </a>
-                </ul>
-                <li class="list-group-item  heads">For HealthCare Professionals</li>
-                <ul class="list-group">
-                    <a class="list-group-item list-group-item-action " href="{% url 'centralapp:doc_how_to_use' %}">How
-                        to use my health record </a>
-                </ul>
-                <li class="list-group-item  heads">Know more about diseases</li>
-                <ul class="list-group">
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Aids' %}">AIDS</a>
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Cancer' %}">Cancer</a>
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Heart_disorder' %}">Heart
-                        Disorders</a>
-                    <a class="list-group-item list-group-item-action"
-                        href="{% url 'centralapp:Hypertension' %}">Hypertension</a>
-                    <a class="list-group-item list-group-item-action"
-                        href="{% url 'centralapp:Diabetes' %}">Diabetes</a>
-                    <a class="list-group-item list-group-item-action" href="{% url 'centralapp:Birth_control' %}">Birth
-                        control measures</a>
-                </ul>
-                <a class="list-group-item list-group-item-action heads" href="{% url 'centralapp:About_us' %}">About
-                    Us</a>
-                <a class="list-group-item list-group-item-action heads active"
-                    href="{% url 'centralapp:FAQS' %}">FAQs</a>
-                <a class="list-group-item list-group-item-action heads" href="{% url 'centralapp:Covid_19' %}">Covid-19
-                    Checkpoints</a>
-            </ul>
-        </div>
-
-    </div>
-</div>
-
 
 {% endblock %}

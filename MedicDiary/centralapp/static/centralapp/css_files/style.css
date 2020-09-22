@@ -2,8 +2,9 @@
 
 #navstyle{
 	background-color: #24a19c;
-	min-height: 10vh;
 	color: #FFFFF0;
+	background-image: linear-gradient(90deg, #24a19c 0%, #cedebd 100%);
+
 }
 * {
 	margin: 0;
@@ -55,10 +56,18 @@ padding:1em 1.5em;
 	transform: translate(-20%, -70%);
 	color: black;
 }
-
-.nav-bg{
-	background-image: linear-gradient(90deg, #24a19c 0%, #cedebd 100%);
+#navbar-list-items > li > a{
+	color:white;
 }
+#navbar-list-items > li{
+	padding: auto;
+	border-radius: 0.7em;
+	margin: auto 2px;
+	height: fit-content;
+}
+#navbar-list-items > li:hover{
+	background-color:  #ed6663;
+} 
 .waves {
 	position: relative;
 	width: 100%;
@@ -68,8 +77,6 @@ padding:1em 1.5em;
 	min-height: 100px;
 	max-height: 150px;
 }
-
-
 .button{
 	position: relative;
 	bottom:-10em;
@@ -89,26 +96,10 @@ padding:1em 1.5em;
 .button:hover{
 	background: #006a71;
 	color: white;
-	text-decoration: none;
-
 }
 .button2{
-	position: relative;
-	top: 1.25em;
-	border-radius: 0.7em;
 	background:#ffaa71;
-	color: white;
 	box-shadow: 0 0 3em -1em rgba(0,0,0,0.75);
-	text-decoration: none;
-	padding: 0.2em 0.5em;
-	
-}
-.button2:hover{
-	background: #ed6663;
-	color: white;
-	text-decoration: none;
-	
-	
 }
 
 /*.popup{
@@ -149,13 +140,6 @@ position: relative;
 .content-box > div:nth-child(odd){
 	background:#ddd;
 }
-
-.sidebar{
-	background: #faf3dd; 
-	height:70vh;
-	border-radius: 15px;
-	padding: 1em 0em 1em 2em;
-}
 .modal-content{
 	background-color:#FFF;
 	border-radius: 12px 42px;
@@ -188,17 +172,15 @@ position: relative;
 	background-color: rgb(14, 192, 59);
 }
 
-#login{
+#submit-btn{
 	color: rgb(0, 0, 0);
 	text-transform: uppercase;
-	text-align: center;
-	
 	border-radius: 1em;
 	background: #66ec44;
 	align-items: center;
 	padding: 0.25em 0.75em;
 }
-#login:hover {
+#submit-btn:hover {
 	background: #919e9e;
 }
 body{
@@ -255,5 +237,3 @@ body{
 	font-weight: 500;
 	color: rgb(26, 25, 25);
 }
-
-

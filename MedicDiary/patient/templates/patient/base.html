@@ -24,12 +24,12 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/032a738741.js" crossorigin="anonymous"></script>
 
-	<link rel="stylesheet" href="{% static 'doctor/css_files/style.css' %}">
-	<link rel="icon" type="image/png" href="{% static 'doctor/Images/icon.png' %}"/>
+    <link rel="stylesheet" href="{% static 'patient/css_files/style.css' %}">
+	<link rel="icon" type="image/png" href="{% static 'patient/Images/icon.png' %}"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-	<script src="{% static 'doctor/js/app.js' %}"></script>
+	<script src="{% static 'patient/js/app.js' %}"></script>
     <!--<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>-->
 	<title>MedicDiary</title>
 </head>
@@ -39,7 +39,7 @@
     </script>
 	<nav class="navbar navbar-expand-lg navbar-light nav-bg" id="navstyle" >
 		<a class="navbar-brand" href="{% url 'centralapp:mainpage' %}" style="font-family: Cinzel; font-size: 40px !important; color: white;" >
-			<img src="{% static 'doctor/Images/icon.png' %}" width="50" height="50" class="d-inline-block align-top" alt="" loading="lazy">
+			<img src="{% static 'patient/Images/icon.png' %}" width="50" height="50" class="d-inline-block align-top" alt="" loading="lazy">
 			MedicDiary
 		</a>
 
@@ -56,20 +56,22 @@
 	</nav>
     <button id="scrollDown"><i class="fas fa-chevron-down"></i></button>
     
-    <div id="sidebar">
+    <div id="sidebar" > 
         <div class="toggle-btn" onclick="toggleSideBar()">
             <span style='font-size:20px;'>&#9776;</span>
         </div>
     
         <ul>
-            <a href="{% url 'doctor:myPatients' %}"><li>My Patients</li></a>
-            <a href="{% url 'doctor:doctor_profile' %}"><li>My Profile</li></a>
+            <a href="{% url 'patient:patientRecords' %}"><li>Medication</li></a>
+            <a href="#"><li>Lab Reports</li></a>
+            <a href="#"><li>Personal notes</li></a>
+            <a href="{% url 'patient:patientProfile' %}"><li>Edit your profile</li></a>
             <a href="#"><li>Back to homepage</li></a>
         </ul>
     
     </div>
 
-  {% block doctor_base %}
+  {% block patient_base %}
 
   {% endblock %}
 

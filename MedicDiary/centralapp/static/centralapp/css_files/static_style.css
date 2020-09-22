@@ -1,57 +1,8 @@
 
-
 *{
 	margin: 0px;
 	padding: 0px;
 	font-family: sans-serif;
-}
-#sidebar{
-	position: absolute;
-	top:83px;
-	width: 200px;
-	height: 100%;
-	background: #24a19c;
-	left: -200px;
-	transition: all 400ms linear;
-	
-}
-
-#sidebar ul li{
-	color: rgba(230,230,230,0.9);
-	list-style: none;
-	padding: 20px 15px;
-	border-bottom: 1px solid rgba(100,100,100,0.3);
-}
-#sidebar .toggle-btn{
-	position: absolute;
-	left: 210px;
-	top: 20px;
-}
-#sidebar a{
-	text-decoration: none;
-	color: #f6f5f5;
-}
-#sidebar a:hover{
-	background-color: #cedebd;
-	padding: 20px 30px 20px 25px;
-	color: #1a1a2e;
-}
-#sidebar .btn-close{
-	position: absolute;
-	top: 0;
-	right: 22px;
-	font-size: 30px;
-	margin-left: 50px;
-}
-#sidebar .btn-close:hover{
-	
-	color: #f6f5f5;
-}
-#main-content{
-	transition: margin-left 0.4s linear;
-	padding: 20px;
-	overflow: hidden;
-	
 }
 .team a{
 	text-decoration: none;
@@ -191,6 +142,7 @@
 	font-size: 18px;
 }
 
+/* static page sidebar */
 .sidebar{
 	background: #e0ece4; 
 	height:fit-content;
@@ -225,7 +177,7 @@ font-weight: bold;
 .h3-heading{
     text-align: center;
 }
-.top-images, .disease-images{
+.top-images{
     display: block;
     padding: .75em;
     margin-right: auto;
@@ -233,9 +185,20 @@ font-weight: bold;
     transition: transform 0.4s;
     border-radius: 10px;
     border: solid tomato;
+
+    animation: image-appear 0.6s ease-out;
 }
 .top-images:hover{
     transform: scale(1.07);  
+}
+.disease-images{
+    display: block;
+    padding: .75em;
+    margin-right: auto;
+    margin-left: auto;
+    transition: transform 0.4s;
+    border-radius: 10px;
+    border: solid tomato;
 }
 .section-divs{
     border-radius: 1.25em;
@@ -275,7 +238,10 @@ hr{
 	z-index: -1;
 }
 
-
+@keyframes image-appear{
+    from{opacity: 0; transform: scale(0.5);}
+    to{opacity: 1; transform: scale(1);}
+}
 
 .accordion {
 	font-weight: bold;
@@ -325,31 +291,4 @@ hr{
 	  padding: 22px;
 	  font-weight: 500;
   }
-  .dashboard-content{
-	  padding: 20px;
-	border: 2px solid #03668d;
-	border-radius: 15px;
-	background: #e9d1b1;
-	margin: 30px auto;
-  }
-  .edit-option-buttons{
-	  padding: 5px;
-	  background: cornflowerblue;
-	  border: 1px solid rgb(32, 136, 221);
-	  border-radius: 10px;
-	  float: right;
-	  margin-bottom: 20px;
-  }
-  .edit-option-buttons a{
-	  text-decoration: none;
-	  color: black;
-  }
-  .edit-option-buttons a:hover{
-	  text-decoration: none;
-	  color: white;
-  }
-  .edit-option-buttons:hover{
-	  text-decoration: none;
-	  background:rgb(14, 44, 100);
-	  color: rgb(231, 224, 224);
-  }
+  
