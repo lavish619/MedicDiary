@@ -32,6 +32,11 @@ def personalNotes(request):
         return render(request, 'patient/personalNotes.html',{"des":note.description})
         
 
+def labreports(request):
+    return render(request, 'patient/labreports.html')
+def medications(request):
+    return render(request, 'patient/medications.html')
+
 def registerpage(request):
     return render(request,'patient/register.html')
 

@@ -99,6 +99,7 @@ padding:1em 1.5em;
 .button:hover{
 	background: #006a71;
 	color: white;
+	text-decoration: none;
 }
 .button2{
 	background:#ffaa71;
