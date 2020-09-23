@@ -1,0 +1,23 @@
+{% extends 'patient/base.html' %}
+{% load static %}
+{% block patient_base %}
+<div class="container" id="main-content">
+<h1 style="font-family:'Ubuntu';font-size: 3rem;text-align: center; color: rgb(92, 46, 13); ">Personal Notes </h1>
+<div style="display: flex; justify-content: center; text-align: center; color: rgb(184, 53, 53); font-size: 19px; ">
+   
+        Use this space to keep track some medicines or supplements you take without medical supervision. <br>
+        Note that this information would be visible to the doctor maintaining your health record, however he won't be able to edit it.
+    
+</div>
+<div style="display: flex; justify-content: center;">
+    <form style="text-align: center;" action="{% url 'patient:addnotes' %}" method="POST">
+        {% csrf_token %}
+        <br>
+        <textarea style="padding: 20px ;font-family: 'Grandstander';font-size: 20px;text-align: left;" rows="10" cols="80" name="description">
+               {{des}}
+             </textarea><br>
+            <input style=" font-size: 18px;" class="edit-option-buttons" type="submit" value="Submit" />
+    </form>
+</div>
+</div>
+{% endblock %}

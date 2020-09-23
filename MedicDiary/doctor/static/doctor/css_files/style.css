@@ -1,4 +1,6 @@
-
+html{
+	scroll-behavior: smooth;
+}
 *{
 	margin: 0px;
 	padding: 0px;
@@ -43,7 +45,9 @@
 #sidebar ul a{
 	color: rgba(230,230,230,0.9);
 	list-style: none;
+	cursor: pointer;
 }
+
 #sidebar ul li{
 	color: rgba(230,230,230,0.9);
 	list-style: none;
@@ -56,6 +60,18 @@
 	font-weight: bold;
 	color: black;
 }
+/* #sidebar .tablinks{
+	color: rgba(230,230,230,0.9);
+	list-style: none;
+	padding: 20px 15px;
+    border-bottom: 1px solid rgba(100,100,100,0.3);
+}
+#sidebar .tablinks:hover{
+	background-color: #cedebd;
+	border-radius: 0px 40px 40px 0px;
+	font-weight: bold;
+	color: black;
+} */
 #sidebar .toggle-btn{
 	position: absolute;
 	left: 210px;
@@ -74,32 +90,33 @@
 }
 
 #main-content{
-	/* transition: margin-left 0.4s linear; */
+	transition: margin-left 0.4s linear;
 	padding: 20px;
     overflow: hidden;
-    margin: auto 200px auto 3fr;
+    margin: 200px 200px auto 3fr;
 }
 
 .dashboard-content{
 	padding: 20px;
-	border: 2px solid #03668d;
 	border-radius: 15px;
-	background: #e9d1b1;
+	border: solid 4px #838383;
+	background-color: #f5f1da;
 	margin: 50px auto;
+	box-shadow: 0.5em 0.5em 1em -0.5em;
 }
-
-
 .edit-option-buttons{
-	padding: 5px;
-	background: cornflowerblue;
-	border: 1px solid rgb(32, 136, 221);
+	padding: 7px;
+	background: #757474;
+	color: white;
 	border-radius: 10px;
-	float: right;
 	margin-bottom: 20px;
+}
+.edit-option-buttons:focus{
+	outline: 0;
 }
 .edit-option-buttons a{
 	text-decoration: none;
-	color: black;
+	color: white;
 }
 .edit-option-buttons a:hover{
 	text-decoration: none;
@@ -107,12 +124,8 @@
 }
 .edit-option-buttons:hover{
 	text-decoration: none;
-	background:rgb(14, 44, 100);
-	color: rgb(231, 224, 224);
+	background:#575656;
 }
-
-
-
 .modal-notify .modal-header {
 	border-radius: 3px 3px 0 0;
 }
@@ -185,3 +198,34 @@
 	color: rgb(255, 255, 255);
 	text-decoration: none;
 }
+.profile-box-info{
+	margin:-20px;
+	text-align: center;
+	padding: 30px 20px;
+	border-radius: 10px;
+	border: solid 4px #838383;
+	background-color: #f5f1da;
+	box-shadow:  1em 1em 2em -1em rgba(0,0,0,0.75);
+}
+.profile-content p{
+	line-height: 150%;
+	font-size: 18px;
+}
+.profile-content h3{
+	font-size: 2em;
+	font-family: 'Grandstander';
+	margin: 20px 10px;
+}
+.profile-content ul{
+	list-style: none;
+}
+.head-grand{
+	font-family: 'Grandstander';
+	margin: 20px 10px;
+}
+.head-pacifico{
+	font-family: 'Pacifico';
+	margin: 20px 10px;
+}
+
+

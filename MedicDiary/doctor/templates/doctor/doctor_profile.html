@@ -1,34 +1,86 @@
 {% extends 'doctor/base.html' %}
-
-{% block doctor_base %}
 {% load static %}
+{% block doctorbase %}
 
-<div class="container" id="main-content">
-  <div class="row dashboard-content">
-    <h2>Name </h2>
-    <p>
-      Dr. Randeep Guleria
-    </p>
-    <a href="#">View more</a>
+<div class="tabcontent" id="myProfile">
 
-  </div>
-  <div class="row dashboard-content">
-    <h2>Positon</h2>
-    <p>
-      Director of AIIMS (All India Institute of Medical Sciences).
-    </p>
-    <a href="#">View more</a>
+  <div class="container" id="main-content">
 
+    <h1 style="font-family:'Ubuntu';font-size: 3rem;text-align: center; color: rgb(92, 46, 13); ">My Profile </h1>
+    <div class="container">
+      <button class="edit-option-buttons" style="font-size: 18px; float: right;">
+        <a href="#"> Edit your profile </a>
+      </button>
+    </div>
+    <div style="display: flex;justify-content: center;">
+      <div class="row my-4 profile-box-info justify-content-around" style="width: fit-content">
+        <div class="col-sm-2 p-2 col-lg-2 p-2" style="margin-right: 40px;">
+          <img src="{% static 'doctor/Images/doctor_profile.jpg'%}" max-width="80%" alt="">
+        </div>
+        <div class="col-sm-6 col-lg-6 p-2 " style="margin-left: 50px;">
+          <div class="profile-content">
+            <h3>General Info</h3>
+            <b>Name:</b> Dr. Randeep Guleria <br>
+            <b>Username:</b> whatever <br>
+            <b>Email Address:</b> xyz@gmail.com
+          </div>
+          <button class="edit-option-buttons" style="margin-top: 30px;">Edit Profile Picture</button>
+        </div>
+      </div>
+    </div>
+    <div class="row my-10">
+      <div class="col-sm-5 col-lg-5 p-2 ml-auto mr-auto">
+        <div class="profile-box-info">
+          <div class="profile-content">
+            <h3>Educational Qualifications</h3>
+            <p>
+              <b>Graduation College: </b> AIIMS Delhi <br>
+              <b>Specialisation:</b> XYZ <br>
+              <b>Super Specialisation:</b> ABC <br>
+
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 p-2 col-lg-5 ml-auto mr-auto">
+        <div class="profile-box-info ">
+          <div class="profile-content">
+            <h3>Experience</h3>
+            <p>
+              Apollo, Sarita Vihar<br>
+              Max Super Speciality hospital, Vaishali<br>
+              Some other hospital<br>
+              And some other
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-sm-5 p-2 col-lg-5 ml-auto mr-auto">
+        <div class="profile-box-info ">
+          <div class="profile-content">
+            <h3>Availability</h3>
+            <p>
+              <b>XYZ clinic: </b> 7-8pm Sundays <br>
+              <b>ABC hospital:</b> 11am-12pm Wed Fri <br>
+              <b>PQR hospital:</b> 4-5pm Mon Thurs <br>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-5 p-2 col-lg-5 ml-auto mr-auto">
+        <div class="profile-box-info ">
+          <div class="profile-content">
+            <h3>Speciality</h3>
+            <p>
+              If the doctor is a surgeon, then he could mention what kind of surgeries he specialises in.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="row dashboard-content">
-    <h2>Educational Qualifications</h2>
-    <p>
-      Tujhse zyada.
-    </p>
-    <a href="#">Edit info</a><br><br>
-    
-  </div>
-  
 </div>
-
 {% endblock %}

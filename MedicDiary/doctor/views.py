@@ -18,6 +18,8 @@ def registerpage(request):
     return render(request,'doctor/register.html')
 
 
+
+
 def signup(request):
     if request.method=="POST":
         fname=request.POST['fname']

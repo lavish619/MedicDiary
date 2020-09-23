@@ -3,8 +3,10 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
+from django.middleware.csrf import get_token
 
-from .models import patient_details
+
+from .models import patient_details,notes
 import random
 import string
 
@@ -19,6 +21,16 @@ def patientProfile(request):
     return render(request, 'patient/patient_profile.html')
 def patientRecords(request):
     return render(request, 'patient/patient_records.html')
+
+
+def personalNotes(request):
+    csrf_token = get_token(request)
+    csrf_token_html = '<input type="hidden" name="csrfmiddlewaretoken" value="{}" />'.format(csrf_token)
+    if request.user.is_authenticated:
+        user=request.user
+        note=notes.objects.get(username_p=user.username)
+        return render(request, 'patient/personalNotes.html',{"des":note.description})
+        
 
 def registerpage(request):
     return render(request,'patient/register.html')
@@ -72,6 +84,7 @@ def loginn(request):
         if user is not None:
             login(request,user)
             print("innn")
+            request.session["username_p"]=username
             return render(request,'patient/patient_profile.html')
 
         else :
@@ -91,3 +104,30 @@ def logout(request):
         logout(request)
         return render(request,'patient/mainpage.html') 
     return HttpResponse('logout')
+
+
+def addnotes(request):
+    if request.user.is_authenticated:
+        user=request.user
+        description=request.POST['description']
+        username= user.username
+        if len(notes.objects.filter(username_p=username))!=0:
+            notes.objects.filter(username_p=username).delete()
+            new_note=notes()
+            new_note.username_p=username
+            new_note.description=description
+            new_note.save()
+        else:
+            new_note=notes()
+            new_note.username_p=username
+            new_note.description=description
+            new_note.save()
+
+
+        return redirect('patient:personalNotes')
+        
+       
+
+
+    
+

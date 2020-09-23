@@ -9,3 +9,8 @@ class patient_details(models.Model):
     email=models.CharField(max_length=100)
   
     auth_key=models.CharField(max_length=100,default="123")
+
+
+class notes(models.Model):
+    username_p=models.CharField(max_length=100)
+    description=models.TextField(max_length=10000)
