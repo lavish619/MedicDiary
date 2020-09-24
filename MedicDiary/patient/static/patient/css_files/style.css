@@ -72,12 +72,12 @@
 	color: #f6f5f5;
 }
 
-
 #main-content{
-	transition: margin-left 0.4s linear;
-	padding: 20px;
+	transition: all 0.4s linear;
+	/* padding: 20px; */
     overflow: hidden;
-    margin: auto 100px auto 3fr;
+	/* margin: auto; */
+	width: "100%";
 }
 
 .dashboard-content{
@@ -136,7 +136,8 @@
 .profile-content h3{
 	font-size: 2em;
 	font-family: 'Grandstander';
-	margin: 20px 10px;
+	margin: 20px auto;
+	padding: 10px;
 }
 .profile-content ul{
 	list-style: none;
@@ -154,7 +155,7 @@
 	background: #757474;
 	color: white;
 	border-radius: 10px;
-	margin-bottom: 20px;
+	/* margin-bottom: 20px; */
 }
 .edit-option-buttons:focus{
 	outline: 0;
@@ -175,4 +176,15 @@ textarea{
 	background-color: #f5f1da;
 	border: solid 4px #838383;
 	border-radius: 10px;
+}
+.prev-download-btn{
+	padding: 7px;
+	background:  #24a19c;
+	color:white;
+	border-radius: 8px;
+}
+.prev-download-btn:hover{
+	background: #a3a3a3;
+	color: black;
+	text-decoration: none;;
 }

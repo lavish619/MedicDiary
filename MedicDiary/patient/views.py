@@ -3,15 +3,22 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
-# from .models import patient_details
+from django.middleware.csrf import get_token
 from .forms import RegisterForm, ProfileForm
 from .models import Profile
 from django.contrib.auth.decorators import login_required
 
-def patientProfile(request):
-    return render(request, 'patient/patient_profile.html')
-def patientRecords(request):
-    return render(request, 'patient/patient_records.html')
+
+from .models import patient_details,notes
+import random
+import string
+
+def get_random_string(length):
+    # Random string with the combination of lower and upper case
+    letters = string.ascii_letters
+    result_str = ''.join(random.choice(letters) for i in range(length))
+    print("Random string is:", result_str)
+
 
 def patientProfile(request):
     return render(request, 'patient/patient_profile.html')
@@ -20,16 +27,18 @@ def patientRecords(request):
 
 
 def personalNotes(request):
-    return render(request, 'patient/personalNotes.html')
+    csrf_token = get_token(request)
+    csrf_token_html = '<input type="hidden" name="csrfmiddlewaretoken" value="{}" />'.format(csrf_token)
+    if request.user.is_authenticated:
+        user=request.user
+        note=notes.objects.get(username_p=user.username)
+        return render(request, 'patient/personalNotes.html',{"des":note.description})
 
-def patientProfile(request):
-    return render(request, 'patient/patient_profile.html')
-def patientRecords(request):
-    return render(request, 'patient/patient_records.html')
 
-
-def personalNotes(request):
-    return render(request, 'patient/personalNotes.html')
+def labreports(request):
+    return render(request, 'patient/labreports.html')
+def medications(request):
+    return render(request, 'patient/medications.html')
 
 def registerpage(request):
     return render(request,'patient/register.html')
@@ -38,49 +47,33 @@ def signup(request):
     if request.method=="POST":
         fname=request.POST['fname']
         lname=request.POST['lname']
-        # age=request.POST['age']
-        # bgroup=request.POST['bgroup']
-        # dob=request.POST['dob']
-        # gender=request.POST['gender']
-        # address=request.POST['address']
+
         username=request.POST['username']
         password=request.POST['password']
         email=request.POST['email']
-        # mobile=request.POST['mobile']
-        # usertype="patient"
 
 
         if len(username)>15:
             messages.error(request,'length of username should be less than15')
             return redirect('patient:registerpage')
 
-        # new_patient=patient_details()
-        # new_patient.fname=fname
-        # new_patient.lame=lname
-        # new_patient.age=age
-        # new_patient.bgroup=bgroup
-        # new_patient.dob=dob
-        # new_patient.gender=gender
-        # new_patient.address=address
-        # new_patient.username=username
-        # new_patient.email=email
-        # new_patient.mobile=mobile
-
-        # new_patient.save()
-
         myuser=User.objects.create_user(username,email,password)
         myuser.first_name=fname
         myuser.last_name=lname
-        # myuser.age=age
-        # myuser.bgroup=bgroup
-        # myuser.dob=dob
-        # myuser.gender=gender
-        # myuser.address=address
-        # myuser.mobile=mobile
 
 
         myuser.save()
+        print("1")
 
+        patient=patient_details()
+        patient.fname=fname
+        patient.lname=lname
+        patient.username=username
+        patient.auth_key=get_random_string(8)
+        patient.email=email
+        patient.save()
+
+        print('2')
         messages.success(request, 'Form submission successful')
         return redirect('/')
 
@@ -99,7 +92,9 @@ def loginn(request):
         if user is not None:
             login(request,user)
             print("innn")
-            return HttpResponse('loggedin as patient')
+            request.session["username_p"]=username
+            return render(request,'patient/patient_profile.html')
+
         else :
             print("invalid credentials")
             return render(request,'centralapp/mainpage.html')
@@ -112,6 +107,7 @@ def logout(request):
         logout(request)
         return render(request,'patient/mainpage.html')
     return HttpResponse('logout')
+
 
 def patientregister(request):
     if request.method =='POST':
@@ -154,3 +150,23 @@ def makeprofilepage(request):
 @login_required
 def profile(request):
     return render(request,'users/profile.html')
+
+def addnotes(request):
+    if request.user.is_authenticated:
+        user=request.user
+        description=request.POST['description']
+        username= user.username
+        if len(notes.objects.filter(username_p=username))!=0:
+            notes.objects.filter(username_p=username).delete()
+            new_note=notes()
+            new_note.username_p=username
+            new_note.description=description
+            new_note.save()
+        else:
+            new_note=notes()
+            new_note.username_p=username
+            new_note.description=description
+            new_note.save()
+
+
+        return redirect('patient:personalNotes')

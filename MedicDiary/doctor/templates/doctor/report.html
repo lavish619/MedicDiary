@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form  action="{% url 'doctor:newReport' %}" method="POST">
+      {% csrf_token %}
+      <label for="">diagnosis:</label>
+      <input type="text" name="diagnosis" value=""><br>
+      <label for="">doctor notes:</label>
+      <input type="text" name="doctor_notes" id=""><br>
+      <label for="">medications:</label>
+      <input type="text" name="medications" id=""><br>
+      <label for="">submit:</label>
+      <input type="submit" name="" id="">
+    </form>
+  </body>
+</html>

@@ -38,4 +38,3 @@ def Inside_health_records(request):
 def Aids(request):
     return render(request,'centralapp/aids.html')
 
-

@@ -1,0 +1,24 @@
+{% extends 'doctor/base.html' %}
+
+{% block body %}
+{% load static %}
+<div id="sidebar">
+    <div class="toggle-btn" onclick="toggleSideBar()">
+        <span style='font-size:20px;'>&#9776;</span>
+    </div>
+    <a href="#" class="btn-close" onclick="closeSideBar()">&times;</a>
+
+    <ul>
+        <li><a href="{% url 'doctor:myPatients' %}">My Patients</a></li>
+        <li><a href="{% url 'doctor:doctorProfile' %}">My Profile</a></li>
+        <li><a href="#">Back to homepage</a></li>
+
+    </ul>
+
+</div>
+
+{% block doctor_base %}
+{% endblock %}
+
+
+{% endblock %}
