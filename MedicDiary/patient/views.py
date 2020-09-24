@@ -4,9 +4,12 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.middleware.csrf import get_token
+<<<<<<< HEAD
 from .forms import RegisterForm, ProfileForm
 from .models import Profile
 from django.contrib.auth.decorators import login_required
+=======
+>>>>>>> 013d2ff62e716a5aa6143761197615ef3dfc3a13
 
 
 from .models import patient_details,notes
@@ -33,7 +36,11 @@ def personalNotes(request):
         user=request.user
         note=notes.objects.get(username_p=user.username)
         return render(request, 'patient/personalNotes.html',{"des":note.description})
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> 013d2ff62e716a5aa6143761197615ef3dfc3a13
 
 def labreports(request):
     return render(request, 'patient/labreports.html')
@@ -47,21 +54,38 @@ def signup(request):
     if request.method=="POST":
         fname=request.POST['fname']
         lname=request.POST['lname']
+<<<<<<< HEAD
 
         username=request.POST['username']
         password=request.POST['password']
         email=request.POST['email']
 
+=======
+
+        username=request.POST['username']
+        password=request.POST['password']
+        email=request.POST['email']
+
+>>>>>>> 013d2ff62e716a5aa6143761197615ef3dfc3a13
 
         if len(username)>15:
             messages.error(request,'length of username should be less than15')
             return redirect('patient:registerpage')
+<<<<<<< HEAD
 
         myuser=User.objects.create_user(username,email,password)
         myuser.first_name=fname
         myuser.last_name=lname
 
 
+=======
+
+        myuser=User.objects.create_user(username,email,password)
+        myuser.first_name=fname
+        myuser.last_name=lname
+
+
+>>>>>>> 013d2ff62e716a5aa6143761197615ef3dfc3a13
         myuser.save()
         print("1")
 
@@ -72,7 +96,11 @@ def signup(request):
         patient.auth_key=get_random_string(8)
         patient.email=email
         patient.save()
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> 013d2ff62e716a5aa6143761197615ef3dfc3a13
         print('2')
         messages.success(request, 'Form submission successful')
         return redirect('/')
