@@ -13,7 +13,7 @@ def doctor_profile(request):
 
 def doctorRecords(request):
     return render(request, 'doctor/doctor_records.html')
-    
+
 def registerpage(request):
     return render(request,'doctor/register.html')
 
@@ -24,35 +24,41 @@ def signup(request):
     if request.method=="POST":
         fname=request.POST['fname']
         lname=request.POST['lname']
-        
+
         username=request.POST['username']
         password=request.POST['password']
         email=request.POST['email']
-       
+
 
 
         if len(username)>15:
             messages.error(request,'length of username should be less than15')
             return redirect('patient:registerpage')
-        
-        
+
+
 
         myuser=User.objects.create_user(username,email,password)
         myuser.first_name=fname
         myuser.last_name=lname
-       
+
         new_doc=doc_details()
         new_doc.lname=lname
         new_doc.fname=fname
         new_doc.username=username
         new_doc.email=email
         new_doc.save()
-        
+
         myuser.save()
+
+        newPatient=patient_doc_config()
+        newPatient.patient_username="sample_pusername"
+        newPatient.doctor_username=username
+        newPatient.auth_key=123
+        newPatient.save()
 
         messages.success(request, 'Form submission successful')
         return redirect('/')
-       
+
 
     else :
         return HttpResponse('404-not found')
@@ -67,7 +73,7 @@ def loginn(request):
             login(request,user)
             print("innn")
             request.session["username_d"]=username
-            return render(request,'doctor/doctor_profile.html',{"username":username}) 
+            return render(request,'doctor/doctor_profile.html',{"username":username})
 
         else :
             print("invalid credentials")
@@ -90,7 +96,7 @@ def myPatients(request):
     else :
         return render(request, 'doctor/mypatients.html',{"patients":"add patients"})
 
-    
+
     return render(request, 'doctor/mypatients.html',{"username":username})
 
 def doctorProfile(request):
@@ -130,7 +136,7 @@ def addpatient(request):
 def doctorRecords(request,p_username):
     request.session["username_p"]=p_username
     return render(request, 'doctor/doctor_records.html')
-    
+
 
 
 def addRecord(request):

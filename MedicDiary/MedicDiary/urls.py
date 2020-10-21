@@ -24,5 +24,4 @@ urlpatterns = [
     path('', include('centralapp.urls')),
     path('', include('doctor.urls')),
     path('', include('patient.urls')),
-    path('',include('Users.urls')),
 ]

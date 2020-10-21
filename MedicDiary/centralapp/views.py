@@ -1,8 +1,31 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
+from .forms import PatientProfileForm, DoctorProfileForm, PatientVitalsForm
 # import requests
 # from bs4 import BeautifulSoup
 # Create your views here.
+
+
+def create_patientprofile(request):
+    form = PatientProfileForm(request.POST or None)  #class created in forms.py
+    if form.is_valid():
+        form.save()
+        return redirect('centralapp:mainpage')
+    return render(request,'centralapp/patient-profile-create.html',{'form':form})
+
+def create_doctorprofile(request):
+    form = DoctorProfileForm(request.POST or None)  #class created in forms.py
+    if form.is_valid():
+        form.save()
+        return redirect('centralapp:mainpage')
+    return render(request,'centralapp/doctor-profile-create.html',{'form':form})
+
+def patientvitals_input(request):
+    form = PatientVitalsForm(request.POST or None)  #class created in forms.py
+    if form.is_valid():
+        form.save()
+        return redirect('centralapp:mainpage')
+    return render(request,'centralapp/patientvital_info.html',{'form':form})
 
 def mainpage(request):
     # page = request.get('')
@@ -37,4 +60,3 @@ def Inside_health_records(request):
     return render(request,'centralapp/inside_health_records.html')
 def Aids(request):
     return render(request,'centralapp/aids.html')
-

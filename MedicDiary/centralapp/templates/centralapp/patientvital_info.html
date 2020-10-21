@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+{% load crispy_forms_tags %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form class="" action="" method="POST">
+      {% csrf_token %}
+
+
+      <div class="">
+        {{ form.Height_in_Centimeters|as_crispy_field }}
+      </div>
+
+      <div class="">
+        {{ form.Weight_in_kilograms|as_crispy_field }}
+      </div>
+
+      <div class="">
+        {{ form.Allergies|as_crispy_field }}
+      </div>
+
+      <div class="">
+        {{ form.Smoker_or_not|as_crispy_field }}
+      </div>
+
+      <div class="">
+        {{ form.Chronic_conditions|as_crispy_field }}
+      </div>
+
+      <button type="submit">Save</button>
+
+    </form>
+  </body>
+</html>
