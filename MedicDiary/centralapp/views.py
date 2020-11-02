@@ -4,6 +4,8 @@ from django.http import HttpResponse
 # from bs4 import BeautifulSoup
 # Create your views here.
 
+
+
 def mainpage(request):
     # page = request.get('')
     # soup = BeautifulSoup(page.text,'html.parser')
@@ -37,4 +39,3 @@ def Inside_health_records(request):
     return render(request,'centralapp/inside_health_records.html')
 def Aids(request):
     return render(request,'centralapp/aids.html')
-

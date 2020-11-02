@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+{% load crispy_forms_tags %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Profile Edit</h1>
+    <form class="" action="" method="POST">
+      {% csrf_token %}
+
+
+      <div class="">
+        {{ form.name|as_crispy_field }}
+      </div>
+
+      <div class="">
+        {{ form.age|as_crispy_field }}
+      </div>
+
+      <div class="">
+        {{ form.phone|as_crispy_field }}
+      </div>
+
+      <div class="">
+        {{ form.address|as_crispy_field }}
+      </div>
+
+      <div class="">
+        {{ form.emergency_contact|as_crispy_field }}
+      </div>
+
+      <div class="">
+        {{ form.profession|as_crispy_field }}
+      </div>
+      <div class="">
+        {{ form.gender|as_crispy_field }}
+      </div>
+      <div class="">
+        {{ form.Aadhar_Number|as_crispy_field }}
+      </div>
+      <div class="">
+        {{ form.profile_pic|as_crispy_field }}
+      </div>
+
+
+      <button type="submit">Save</button>
+
+    </form>
+  </body>
+</html>

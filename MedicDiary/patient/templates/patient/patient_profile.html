@@ -7,7 +7,7 @@
   <h1 style="font-family:'Ubuntu';font-size: 3rem;text-align: center; color: rgb(92, 46, 13); ">My Profile </h1>
   <div class="container">
     <button class="edit-option-buttons" style="font-size: 18px; float: right;">
-      <a href="#"> Edit your profile </a>
+      <a href="{% url 'patient:editPatient' %}"> Edit your profile </a>
     </button>
   </div>
   <div style="display: flex;justify-content: center;">
@@ -18,11 +18,11 @@
     <div class="col-sm-6 col-lg-6 p-2 " style="margin-left: 50px;">
       <div class="profile-content">
       <h3 >General Info</h3>
-        <b>Name:</b> Some Name <br>
+        <b>Name:</b> {{profile.name }} <br>
         <b>Username:</b> whatever <br>
         <b>Email Address:</b> abc@gmail.com
       </div>
-      <button class="edit-option-buttons" style="margin-top: 30px;">Edit Profile Picture</button>
+      <!-- <button class="edit-option-buttons" style="margin-top: 30px;">Edit Profile Picture</button> -->
     </div>
   </div>
   </div>
@@ -69,6 +69,15 @@
 
   </div>
   </div>
+name :     {{profile.name}}<br>
+age :     {{profile.age}}<br>
+address :     {{profile.address}}<br>
+phone :     {{profile.phone}}<br>
+emergency_contact :     {{profile.emergency_contact}}<br>
+Profession :     {{profile.profession}}<br>
+gender :     {{profile.gender}}<br>
+profile pic :     <img height="200px" width = "150px" src="{{ profile.profile_pic.url }}" alt=""><br>
+aadhar :     {{profile.Aadhar_Number}}<br>
 
 
 {% endblock %}

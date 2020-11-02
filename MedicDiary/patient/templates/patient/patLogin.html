@@ -1,0 +1,27 @@
+<!-- <div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 offset-md-4">
+        <div class="card">
+          <div class="card-header text-white bg-info">
+            <div class="card-title">
+              Login
+            </div>
+          </div>
+          <div class="card-body"> -->
+            <form method="POST">
+              {% csrf_token %}
+              {% for field in form %}
+                <!-- <div class="form-group"> -->
+                  {{field.name}}
+                  {{field}}
+                <!-- </div> -->
+              {% endfor %}
+              <button class="btn-info" type="submit">Log in</button>
+            </form>
+          <!-- </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

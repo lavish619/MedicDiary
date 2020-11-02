@@ -31,19 +31,18 @@
 
     </div>
     <div class="row dashboard-content">
-        <h2>General Info </h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <h2>General Vitals </h2>
+        <p><br><br>
+height :      {{vitals.Height_in_Centimeters}}<br>
+Weight :      {{vitals.Weight_in_kilograms}}<br>
+Allergies :      {{vitals.Allergies}}<br>
+smoker or not :      {{vitals.Smoker_or_not}}<br>
+Chronic_conditions :      {{vitals.Chronic_conditions}}<br>
         </p>
-        <a href="#">Edit info</a><br><br>
+        <a href="{% url 'patient:editPatientVitals' %}">Edit info</a><br><br>
 
     </div>
-    
+
 
 </div>
 
