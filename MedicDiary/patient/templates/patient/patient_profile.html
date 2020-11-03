@@ -13,71 +13,49 @@
   <div style="display: flex;justify-content: center;">
   <div class="row my-4 profile-box-info justify-content-around" style="width: fit-content">
     <div class="col-sm-2 p-2 col-lg-2 p-2" style="margin-right: 20px;">
-      <img src="{% static 'doctor/Images/profile_pic.png'%}" max-width="80%" alt="">
+      <img height="200px" width = "150px" src="{{ profile.profile_pic.url }}" alt="">
     </div>
     <div class="col-sm-6 col-lg-6 p-2 " style="margin-left: 50px;">
       <div class="profile-content">
       <h3 >General Info</h3>
         <b>Name:</b> {{profile.name }} <br>
         <b>Username:</b> whatever <br>
-        <b>Email Address:</b> abc@gmail.com
+        <b>Email:</b> abc@gmail.com <br>
+        <b>Age: </b>{{profile.age}} <br>
+        <b>Gender: </b> {{profile.gender}} <br>
       </div>
       <!-- <button class="edit-option-buttons" style="margin-top: 30px;">Edit Profile Picture</button> -->
     </div>
   </div>
   </div>
+
   <div class="row my-4">
     <div class="col-sm-5 col-lg-5 p-2 ml-auto mr-auto">
       <div class="profile-box-info">
         <div class="profile-content">
-          <h3 >Vitals</h3>
+          <h3 >Contact Info</h3>
           <p>
-            <b>Age: </b> 45 <br>
-            <b>Gender: </b> Male <br>
-            <b>Height:</b> 170cm <br>
-            <b>Weight:</b> something <br>
+            <b>Address:</b> {{profile.address}} <br>
+            <b>Phone :</b> {{profile.phone}} <br>
+            <b>Emergency_contact :</b> {{profile.emergency_contact}}<br>
           </p>
         </div>
       </div>
     </div>
-    <div class="col-sm-4 p-2 col-lg-5 ml-auto mr-auto">
-      <div class="profile-box-info ">
-        <div class="profile-content">
-          <h3 >Basic health details</h3>
-          <b>Asthmatic</b> <br>
-          <b>Early stage of Diabetes</b> <br>
-          <b>Allergies:</b>
-          <ul>
-            <li>-- Allergic to dust.</li>
-            <li>-- Irritating people</li>
-          </ul>
-        </div>
-      </div>
-    </div>
   </div>
+
   <div class="row my-4">
     <div class="col-sm-4 p-2 col-lg-5 ml-auto mr-auto">
       <div class="profile-box-info ">
         <div class="profile-content">
           <h3>Other social info</h3>
-          <b>Smoker:</b> No<br>
-          <b>Teetotaller:</b> Yes<br>
-          <b>Profession:</b> Unemployed as of now
+          <b>Profession:</b> {{profile.profession}}<br>
+          <b>Aadhar Number:</b> {{profile.Aadhar_Number}}<br>
         </div>
       </div>
     </div>
 
   </div>
-  </div>
-name :     {{profile.name}}<br>
-age :     {{profile.age}}<br>
-address :     {{profile.address}}<br>
-phone :     {{profile.phone}}<br>
-emergency_contact :     {{profile.emergency_contact}}<br>
-Profession :     {{profile.profession}}<br>
-gender :     {{profile.gender}}<br>
-profile pic :     <img height="200px" width = "150px" src="{{ profile.profile_pic.url }}" alt=""><br>
-aadhar :     {{profile.Aadhar_Number}}<br>
-
+  </div>   
 
 {% endblock %}

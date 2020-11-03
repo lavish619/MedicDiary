@@ -1,54 +1,143 @@
-<!DOCTYPE html>
-
+{% extends 'patient/base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
-  <h1>patients information</h1>
+{% block patient_base %}
+<div class="formclass">
+    <h1 style="font-family: Itim,cursive;" class="mb-3">Enter Personal Information</h1>
 
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <form class="" action="" method="POST">
-      {% csrf_token %}
+        <form class="" action="" method="POST">
+        {% csrf_token %}
+
+        <!-- name -->
+        <div class="form-group row">
+            <div class="col-sm-4">
+                {{ form.name.label }}
+            </div>
+            <div class="col-sm">
+                {{ form.name }}
+            </div>
+        </div>
+
+        <!-- age -->
+        <div class="form-group row">
+            <div class="col-sm-4">
+                {{ form.age.label }}
+            </div>
+            <div class="col-sm">
+                {{ form.age }}
+            </div>
+        </div>
+        <!-- gender -->
+        <div class="form-group row">
+            <div class="col-sm-4">
+                {{ form.gender.label }}
+            </div>
+            <div class="col-sm">
+                {{ form.gender }}
+            </div>
+        </div>
+        <!-- phone -->
+        <div class="form-group row">
+            <div class="col-sm-4">
+                {{ form.phone.label }}
+            </div>
+            <div class="col-sm">
+                {{ form.phone }}
+            </div>
+        </div>
+        <!-- address -->
+        <div class="form-group row">
+            <div class="col-sm-4">
+                {{ form.address.label }}
+            </div>
+            <div class="col-sm">
+                {{ form.address }}
+            </div>
+        </div>
+        <!-- emergency_contact -->
+        <div class="form-group row">
+            <div class="col-sm-4">
+                {{ form.emergency_contact.label }}
+            </div>
+            <div class="col-sm">
+                {{ form.emergency_contact }}
+            </div>
+        </div>
+        <!-- profession -->
+        <div class="form-group row">
+            <div class="col-sm-4">
+                {{ form.profession.label }}
+            </div>
+            <div class="col-sm">
+                {{ form.profession }}
+            </div>
+        </div>
+        <!-- Aadhar_Number -->
+        <div class="form-group row">
+            <div class="col-sm-4">
+                {{ form.Aadhar_Number.label }}
+            </div>
+            <div class="col-sm">
+                {{ form.Aadhar_Number }}
+            </div>
+        </div>
+        <!-- profile_pic -->
+        <div class="form-group row">
+            <div class="col-sm-4">
+                {{ form.profile_pic.label }}
+            </div>
+            <div class="col-sm">
+                {{ form.profile_pic }}
+            </div>
+        </div>
 
 
-      <div class="">
-        {{ form.name|as_crispy_field }}
-      </div>
+        <button class="btn btn-success" type="submit">Save</button>
 
-      <div class="">
-        {{ form.age|as_crispy_field }}
-      </div>
+        </form>
+    </div>
+ {% endblock %}
 
-      <div class="">
-        {{ form.phone|as_crispy_field }}
-      </div>
+<!-- 
+ <h1 style="font-family: Itim,cursive;" class="mb-3">Enter Personal Information</h1>
 
-      <div class="">
-        {{ form.address|as_crispy_field }}
-      </div>
+        <form class="" action="" method="POST">
+        {% csrf_token %}
 
-      <div class="">
-        {{ form.emergency_contact|as_crispy_field }}
-      </div>
+            <div class="">
+                {{ form.name|as_crispy_field }}
+            </div>
 
-      <div class="">
-        {{ form.profession|as_crispy_field }}
-      </div>
-      <div class="">
-        {{ form.gender|as_crispy_field }}
-      </div>
-      <div class="">
-        {{ form.Aadhar_Number|as_crispy_field }}
-      </div>
-      <div class="">
-        {{ form.profile_pic|as_crispy_field }}
-      </div>
+            <div class="">
+                {{ form.age|as_crispy_field}}
+            </div>
+
+            <div class="">
+                {{ form.phone|as_crispy_field }}
+            </div>
+
+            <div class="">
+                {{ form.address|as_crispy_field }}
+            </div>
+
+            <div class="">
+                {{ form.emergency_contact|as_crispy_field }}
+            </div>
+
+            <div class="">
+                {{ form.profession|as_crispy_field }}
+            </div>
+            <div class="">
+                {{ form.gender|as_crispy_field }}
+            </div>
+            <div class="">
+                {{ form.Aadhar_Number|as_crispy_field }}
+            </div>
+            <div class="">
+                {{ form.profile_pic|as_crispy_field }}
+            </div>
 
 
-      <button type="submit">Save</button>
+            <button type="submit">Save</button>
 
-    </form>
-  </body>
-</html>
+        </form> -->

@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-
+{% extends 'patient/base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
-
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+{% block patient_base %}
 
 <h1>Patients vitals edit</h1>
 
@@ -38,5 +32,5 @@
       <button type="submit">Save</button>
 
     </form>
-  </body>
-</html>
+
+{% endblock %}

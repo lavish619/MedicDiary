@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-
+{% extends 'patient/base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
+{% block patient_base %}
 
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
     <h1>Profile Edit</h1>
     <form class="" action="" method="POST">
       {% csrf_token %}
-
 
       <div class="">
         {{ form.name|as_crispy_field }}
@@ -50,5 +44,5 @@
       <button type="submit">Save</button>
 
     </form>
-  </body>
-</html>
+
+{% endblock %}

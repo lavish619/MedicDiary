@@ -18,6 +18,8 @@
 	href="https://fonts.googleapis.com/css?family=Grandstander"/>
 	<link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Ubuntu"/>
+	<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Itim" >
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
@@ -55,7 +57,7 @@
 		</div>
 	</nav>
 
-
+	{% if not request.resolver_match.url_name == "patientRegister" and not request.resolver_match.url_name == "create_patientprofile" and not request.resolver_match.url_name == "patientvitals_input" %}
     <div id="sidebar" >
         <div class="toggle-btn" onclick="toggleSideBar()">
             <span style='font-size:20px;'>&#9776;</span>
@@ -69,7 +71,8 @@
             <a href="{% url 'patient:patientRecords' %}"><li>Back to homepage</li></a>
         </ul>
 
-    </div>
+	</div>
+	{% endif%}
 
   {% block patient_base %}
 

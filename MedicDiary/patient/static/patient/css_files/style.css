@@ -188,3 +188,13 @@ textarea{
 	color: black;
 	text-decoration: none;;
 }
+
+.formclass{
+	background-color: rgb(255, 225, 197); 
+	padding: 30px; 
+	margin: 20px auto; 
+	width: fit-content;
+	border: solid 5px rgb(3, 121, 111);
+	border-radius: 15px;
+	box-shadow: 0 0 3em -0.5em  rgb(3, 121, 111);
+}

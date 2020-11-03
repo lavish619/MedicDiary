@@ -1,50 +1,53 @@
+{% extends 'patient/base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
-<h1>patient register</h1>
-<!-- <div class="jumbotron">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 offset-md-4">
-        <div class="card">
-          <div class="card-header text-white bg-info">
-            <div class="card-title">
-              Signup
-            </div>
-          </div>
-          <div class="card-body"> -->
-            <form method="POST">
-              {% csrf_token %}
+{% block patient_base %}
 
-              <!-- Version 1 -->
-              <!-- {% for field in form %}
-                <div class="form-group">
-                  {{field.name}}<br>
-                  {{field}}
-                </div>
-              {% endfor %} -->
+<div class="formclass">
+<h1 style="font-family: Itim,cursive;" class="mb-3">Create Your Account</h1>
 
-              <!-- Version 2 -->
-              <!-- {{ form|crispy }} -->
+  <form method="POST">
+    {% csrf_token %}
 
-              <!-- Version 3                                       ** BEST YET **   -->
-              {% for field in form %}
-                <p>
-                  {{ field.label_tag }}<br>
-                  {{ field }}
-                  {% if field.help_text %}
-                    <br>
-                    <small style="color: grey">{{ field.help_text }}</small>
-                  {% endif %}
-                  {% for error in field.errors %}
-                    <p style="color: red">{{ error }}</p>
-                  {% endfor %}
-                </p>
-              {% endfor %}
-
-              <button class="btn-info" type="submit">SignUp</button>
-            </form>
-          <!-- </div>
-        </div>
+    <!-- Version 1 -->
+    <!-- {% for field in form %}
+      <div class="form-group">
+        {{field.name}}<br>
+        {{field}}
       </div>
-    </div>
-  </div>
-</div> -->
+    {% endfor %} -->
+
+    <!-- Version 2 -->
+    <!-- {{ form|crispy }} -->
+
+    <!-- Version 3                                       ** BEST YET **   -->
+    {% for field in form %}
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-5">
+                    {{ field.label_tag }}
+                </div>
+                <div class="col-sm">
+                    {{ field }}
+                </div>
+            </div>
+            <div class="row pl-4">
+                
+                {% if field.help_text %}
+                <br>
+                <small style="color: grey">{{ field.help_text }}</small>
+                {% endif %}
+               
+            </div>
+            {% for error in field.errors %}
+            <p style="color: red">{{ error }}</p>
+            {% endfor %}
+        </div>
+    {% endfor %}
+
+    <button class="btn btn-success ml-4" type="submit">SignUp</button>
+  </form>
+</div>
+
+
+{% endblock %}
