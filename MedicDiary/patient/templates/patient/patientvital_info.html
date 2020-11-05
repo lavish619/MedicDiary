@@ -1,40 +1,87 @@
-<!DOCTYPE html>
-
+{% extends 'patient/base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
-
-<h1>patient Vitals</h1>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <form class="" action="" method="POST">
-      {% csrf_token %}
+{% block patient_base %}
 
 
-      <div class="">
-        {{ form.Height_in_Centimeters|as_crispy_field }}
-      </div>
+<div class="container-fluid py-4"  style="background-image: url('{% static 'patient/Images/medical-backgrnd.jpg'%}');
+            background-size: 100%">
+    <div class="card mx-auto " style="width:fit-content">
+        <div class="card-body" >
 
-      <div class="">
-        {{ form.Weight_in_kilograms|as_crispy_field }}
-      </div>
+            <h1 style="font-family: Itim,cursive; text-align: center;" class="mb-3 mx-auto">Enter Vitals Info</h1>
 
-      <div class="">
-        {{ form.Allergies|as_crispy_field }}
-      </div>
+                <form class="" action="" method="POST">
+                {% csrf_token %}
+                
+                            
+                <div class="form-group row">
+                    <!-- Height_in_Centimeters -->
+                    <div class="col-sm-5 my-2 mx-auto">
+                        <div class="input-group">
+                            <input type="number" class="form-control"  placeholder="Height" name="Height_in_Centimeters">
+                        </div>
+                        <small>{{ form.Height_in_Centimeters.help_text }}</small>
+                    </div>
+                    <!-- Weight_in_kilograms -->
+                    <div class="col-sm-5 my-2 mx-auto">
+                        <div class="input-group">
+                            <input type="number" class="form-control"  placeholder="Weight" name="Weight_in_kilograms">
+                        </div>
+                        <small>{{ form.Weight_in_kilograms.help_text }}</small>
+                    </div>
+                </div>
 
-      <div class="">
-        {{ form.Smoker_or_not|as_crispy_field }}
-      </div>
+                <!-- Smoker_or_not -->
+                <div class="form-group row ">
+                    <div class="col-sm-5 my-2">
+                        <select class="form-control" name="Smoker_or_not" >
+                            <option selected disabled>Smoker Or Not</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            <option value="Less than or Twice a Week">Less than or Twice a Week</option>
+                            <option value="Once in a day">Once in a day</option>
+                            <option value="Twice a dayTwice a day">Twice a day</option>
+                            <option value="More than twice a day">More than twice a day</option>
+                        </select>
+                    </div>
+                </div>
 
-      <div class="">
-        {{ form.Chronic_conditions|as_crispy_field }}
-      </div>
+                <!-- Allergies -->
+                <div class="form-group row">
+                    <div class="col-sm my-2 mx-auto">
+                        <div class="input-group">
+                            <input type="text" class="form-control"  placeholder="Allergies" name="Allergies">
+                        </div>
+                    </div>
+				</div>
 
-      <button type="submit">Save</button>
+				<!-- Chronic_conditions -->
+                <div class="form-group row">
+                    <div class="col-sm my-2">
+                        <div class="input-group">
+                            <input type="text" class="form-control"  placeholder="Chronic Conditions" name="Chronic_conditions">
+                        </div>
+                        <small>{{ form.Chronic_conditions.help_text |safe }}</small>
+                    </div>
+                </div>
 
-    </form>
-  </body>
-</html>
+                <button class="btn btn-success" type="submit">Save</button>
+                <button class="btn btn-success" type="reset">Reset</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+  {% endblock %}
+
+
+  <!-- <div class="form-group row">
+    <div class="col-sm-4">
+        {{ form.Weight_in_kilograms.label }}
+    </div>
+    <div class="col-sm">
+        {{ form.Weight_in_kilograms }}
+    </div>
+</div> -->

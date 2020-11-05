@@ -1,50 +1,127 @@
+{% extends 'patient/base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
-<h1>patient register</h1>
-<!-- <div class="jumbotron">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 offset-md-4">
-        <div class="card">
-          <div class="card-header text-white bg-info">
-            <div class="card-title">
-              Signup
-            </div>
-          </div>
-          <div class="card-body"> -->
-            <form method="POST">
-              {% csrf_token %}
+{% block patient_base %}
 
-              <!-- Version 1 -->
-              <!-- {% for field in form %}
-                <div class="form-group">
-                  {{field.name}}<br>
-                  {{field}}
+<div class="container-fluid py-4" style="background-image: url('{% static 'patient/Images/medical-backgrnd.jpg'%}');
+background-size: 100%">
+    <div class="card mx-auto" style="width:fit-content">
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <img src="{% static 'patient/Images/signup-img.jpg' %}" alt="" width=100% style="margin: auto;" >
                 </div>
-              {% endfor %} -->
+                <div class="col-sm-5">
+                    <h1 style="font-family: Itim,cursive;" class="mb-3 card-title">Create Your Account</h1>
 
-              <!-- Version 2 -->
-              <!-- {{ form|crispy }} -->
+                    <form method="POST" >
+                        {% csrf_token %}
 
-              <!-- Version 3                                       ** BEST YET **   -->
-              {% for field in form %}
-                <p>
-                  {{ field.label_tag }}<br>
-                  {{ field }}
-                  {% if field.help_text %}
-                    <br>
-                    <small style="color: grey">{{ field.help_text }}</small>
-                  {% endif %}
-                  {% for error in field.errors %}
-                    <p style="color: red">{{ error }}</p>
-                  {% endfor %}
-                </p>
-              {% endfor %}
+                        <!-- username -->
+                        <div class="form-group row">
+                            <div class="col-8">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="fa fa-user icon"></i>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control"  placeholder="Username" name="username">
+                                </div>
+                            </div>
+                        </div>
+                        {% for error in form.username.errors %}
+                            <p style="color: red">{{ error }}</p>
+                        {% endfor %}
 
-              <button class="btn-info" type="submit">SignUp</button>
-            </form>
-          <!-- </div>
+                        <!-- email -->
+                        <div class="form-group row">
+                            <div class="col-8">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="fa fa-envelope icon"></i>
+                                        </div>
+                                    </div>
+                                    <input type="email" class="form-control"  placeholder="Email" name="email">
+                                </div>
+                            </div>
+                        </div>
+                        {% for error in form.email.errors %}
+                            <p style="color: red">{{ error }}</p>
+                        {% endfor %}
+
+                        <!-- password1 -->
+                        <div class="form-group row">
+                            <div class="col-8">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="fa fa-key icon"></i>
+                                        </div>
+                                    </div>
+                                    <input type="password" class="form-control"  placeholder="Password" name="password1">
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                {% if form.password1.help_text %}
+                                <small style="color: grey">{{ form.password1.help_text|safe }}</small>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        {% for error in form.password1.errors %}
+                            <p style="color: red">{{ error }}</p>
+                        {% endfor %}
+
+                        <!-- password2 -->
+                        <div class="form-group row">
+                            <div class="col-8">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="fa fa-key icon"></i>
+                                        </div>
+                                    </div>
+                                    <input type="password" class="form-control"  placeholder="Confirm Password" name="password2">
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                {% if form.password2.help_text %}
+                                <small style="color: grey">{{ form.password2.help_text|safe }}</small>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% for error in form.password2.errors %}
+                            <p style="color: red">{{ error }}</p>
+                        {% endfor %}
+                    
+
+                            <!-- {% for field in form %}
+                            <div class="form-group">
+                                <div class="row" >
+                                    {{ field }}
+                                </div>
+                                <div class="row">
+                                    
+                                    {% if field.help_text %}
+                                    <br>
+                                    <small style="color: grey">{{ field.help_text|safe }}</small>
+                                    {% endif %}
+                                
+                                </div>
+                                {% for error in field.errors %}
+                                <p style="color: red">{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endfor %} -->
+
+                        <button class="btn btn-success ml-4" type="submit">SignUp</button>
+                    </form>
         </div>
-      </div>
+        </div>
+        </div> 
     </div>
-  </div>
-</div> -->
+</div>
+  
+{% endblock %}

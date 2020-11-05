@@ -1,54 +1,136 @@
-<!DOCTYPE html>
-
+{% extends 'patient/base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
-  <h1>patients information</h1>
+{% block patient_base %}
 
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <form class="" action="" method="POST">
-      {% csrf_token %}
+<div class="container-fluid py-4"  style="background-image: url('{% static 'patient/Images/medical-backgrnd.jpg'%}');
+            background-size: 100%">
+    <div class="card mx-auto " style="width:fit-content">
+        <div class="card-body" >
+
+            <h1 style="font-family: Itim,cursive; text-align: center;" class="mb-3 mx-auto">Enter Personal Information</h1>
+
+                <form class="" action="" method="POST">
+                {% csrf_token %}
+
+                <!-- name -->
+                <div class="form-group row" >
+                    <div class="col-sm my-2 ">
+                        <div class="input-group" >
+                            <input type="text" class="form-control"  placeholder="Name" name="name">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- age -->
+                <div class="form-group row ">
+                    <!-- age -->
+                    <div class="col-sm-5 my-2 mx-auto ">
+                        <div class="input-group">
+                            <input type="number" class="form-control" min="0" placeholder="Age" name="age">
+                        </div>
+                    </div>
+                    <!-- gender -->
+                    <div class="col-sm-5 my-2 mx-auto ">
+						<select class="form-control" id="exampleFormControlSelect1" name="gender" placeholder="Gender">
+							<option selected disabled>Gender</option>
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+							<option value="Others">Others</option>
+						</select>
+				
+                        <!-- <div class="input-group">
+                            <input type="text" class="form-control"  placeholder="Gender" name="gender">
+                        </div> -->
+                    </div>
+                </div>
+                            
+                <div class="form-group row">
+                    <!-- phone -->
+                    <div class="col-sm-5 my-2 mx-auto">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">+91</div>
+                            </div>
+                            <input type="tel" class="form-control" pattern="[1-9]{1}[0-9]{9}" placeholder="Phone Number" name="phone">
+                        </div>
+                        <small>{{ form.phone.help_text }}</small>
+                    </div>
+                    <!-- aadhar number -->
+                    <div class="col-sm-5 my-2 mx-auto">
+                        <div class="input-group">
+                            <input type="tel" class="form-control" pattern="[0-9]{12}" placeholder="Aadhar Number" name="Aadhar_Number">
+                        </div>
+                        <small>{{ form.Aadhar_Number.help_text }}</small>
+                    </div>
+                </div>
+
+                <!-- address -->
+                <div class="form-group row">
+                    <div class="col-sm my-2 mx-auto">
+                        <div class="input-group">
+                            <input type="text" class="form-control"  placeholder="Address" name="address">
+                        </div>
+                    </div>
+				</div>
+				
+				<!-- emergency_contact -->
+                <div class="form-group row">
+                    <div class="col-sm-6 my-2">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">+91</div>
+                            </div>
+                            <input type="tel" class="form-control" pattern="[1-9]{1}[0-9]{9}" placeholder="Emergency Contact" name="emergency_contact">
+                        </div>
+                    </div>
+				</div>
+
+				<!-- profession -->
+                <div class="form-group row">
+                    <div class="col-sm-6 my-2">
+                        <div class="input-group">
+                            <input type="text" class="form-control"  placeholder="Profession" name="profession">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- profile_pic -->
+                <div class="form-group row">
+                    <div class="col-sm my-2">
+                        <div class="custom-file mb-3">
+                        <input type="file" class="custom-file-input" id="profilepicinput" name="profile_pic" >
+                        <label class="custom-file-label" for="profilepicinput">Profile Picture</label>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    // Add the following code if you want the name of the file appear on select
+                    $(".custom-file-input").on("change", function() {
+                    var fileName = $(this).val().split("\\").pop();
+                    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+                    });
+                </script>
+               
+
+                <button class="btn btn-success" type="submit">Save</button>
+                <button class="btn btn-success" type="reset">Reset</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
 
 
-      <div class="">
-        {{ form.name|as_crispy_field }}
-      </div>
-
-      <div class="">
-        {{ form.age|as_crispy_field }}
-      </div>
-
-      <div class="">
-        {{ form.phone|as_crispy_field }}
-      </div>
-
-      <div class="">
-        {{ form.address|as_crispy_field }}
-      </div>
-
-      <div class="">
-        {{ form.emergency_contact|as_crispy_field }}
-      </div>
-
-      <div class="">
-        {{ form.profession|as_crispy_field }}
-      </div>
-      <div class="">
-        {{ form.gender|as_crispy_field }}
-      </div>
-      <div class="">
-        {{ form.Aadhar_Number|as_crispy_field }}
-      </div>
-      <div class="">
-        {{ form.profile_pic|as_crispy_field }}
-      </div>
 
 
-      <button type="submit">Save</button>
-
-    </form>
-  </body>
-</html>
+<!-- Aadhar_Number -->
+<!-- <div class="form-group row">
+	<div class="col-sm-4">
+		{{ form.Aadhar_Number.label }}
+	</div>
+	<div class="col-sm">
+		{{ form.Aadhar_Number }}
+	</div>
+</div> -->

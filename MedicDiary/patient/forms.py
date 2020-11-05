@@ -1,13 +1,14 @@
 from django import forms
 from django.contrib.auth.models import User                    #its a model that defines the parameters of a user
 from django.contrib.auth.forms import UserCreationForm
-from .models import PatientProfile,PatientVitals
+from .models import PatientProfile, PatientVitals
 
 
 
 class PatientRegisterForm(UserCreationForm):                         # the form created by us is in a form of a class
-    email = forms.EmailField()
-    # usertype = forms.IntegerField()
+    email = forms.EmailField(max_length=64)
+    password1 = forms.CharField(help_text='Password must contain atleast 8 characters.<br>Password should not be similar to username.<br>Password should not be entirely numeric.<br>Should not be too common.')
+    password2 = forms.CharField(help_text="Enter the same password as above, for verification.")
 
     class Meta:                                               # a meta class defines/builds upon the current class..
         model = User
@@ -18,7 +19,7 @@ class PatientRegisterForm(UserCreationForm):                         # the form 
 class PatientProfileForm(forms.ModelForm):
     class Meta:
         model = PatientProfile
-        fields = ('name','age','address','phone','emergency_contact','profession','gender','profile_pic','Aadhar_Number')
+        fields = ('name','age','gender','address','phone','emergency_contact','profession','profile_pic','Aadhar_Number')
 
 
 class PatientVitalsForm(forms.ModelForm):

@@ -126,7 +126,7 @@ def editPatient(request):
 
 @login_required
 def editPatientVitals(request):
-    patient = get_object_or_404(PatientVitals, patientv=request.user)
+    patientv = get_object_or_404(PatientVitals, patientv=request.user)
     # if request.method == 'POST':
     form = PatientVitalsForm(request.POST, request.FILES, instance=patientv)
     if form.is_valid():
