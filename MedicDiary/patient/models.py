@@ -7,7 +7,9 @@ from django.conf import settings
 
 
 
+
 class PatientProfile(models.Model):
+
 
     # patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     patient = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete= models.CASCADE)
@@ -21,6 +23,7 @@ class PatientProfile(models.Model):
     profile_pic = models.ImageField(default = 'patients_profile_pictures/defaultprofilepic.jpg', upload_to = 'patients_profile_pictures')
     Aadhar_Number= models.IntegerField(blank=False, help_text='12 digit unique Aadhar Number')
     usertype = models.IntegerField(default = 1)
+    # AccessCode = models.CharField(max_length=500)
 
     def __str__(self):
         return self.name

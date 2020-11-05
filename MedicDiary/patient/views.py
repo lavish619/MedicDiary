@@ -6,6 +6,10 @@ from django.contrib import messages
 from .forms import PatientRegisterForm,PatientProfileForm,PatientVitalsForm
 from django.contrib.auth.decorators import login_required
 from .models import PatientProfile,PatientVitals
+from django.contrib.auth import logout
+#
+# def auth(str):
+#     return(hash(str))
 
 # def create_profile(request):
 #     form = ProfileForm(request.POST or None)  #class created in forms.py
@@ -23,8 +27,11 @@ def patientRegister(request):
             # email = form.cleaned_data.get('email')
             # return redirect('login')
             user = form.save(commit=False)
+            user.usertype= 1
             username = form.cleaned_data['username']
             password = form.cleaned_data['password1']
+            # email = form.cleaned_data['email']
+            # user.AccessCode = hash(email)
             user.set_password(password)
             user.save()
             user = authenticate(username=username, password=password)
@@ -54,7 +61,10 @@ def create_patientprofile(request):
     if request.method =='POST':
         form = PatientProfileForm(request.POST)
         if form.is_valid():
+
             patient = form.save(commit=False)
+            # name = form.cleaned_data['name']
+            # patient.AccessCode = hash(name)
             patient.patient = request.user
             patient.save()
             # form.patient = request.user
@@ -129,7 +139,12 @@ def editPatientVitals(request):
     return render(request,'patient/patient-vitals-edit.html',{'form':form})
 
 
-
+# 
+# def logout_view(request):
+#     logout(request)
+#     return render(r'^logout/$', 'django.contrib.auth.views.logout',
+#                           {'next_page': '/successfully_logged_out/'})
+#
 
 
 

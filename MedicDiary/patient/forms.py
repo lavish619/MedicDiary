@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import PatientProfile, PatientVitals
 
 
+
 class PatientRegisterForm(UserCreationForm):                         # the form created by us is in a form of a class
     email = forms.EmailField(max_length=64)
     password1 = forms.CharField(help_text='Password must contain atleast 8 characters.<br>Password should not be similar to username.<br>Password should not be entirely numeric.<br>Should not be too common.')
@@ -11,7 +12,9 @@ class PatientRegisterForm(UserCreationForm):                         # the form 
 
     class Meta:                                               # a meta class defines/builds upon the current class..
         model = User
+        # widgets = {'usertype': forms.HiddenInput()}
         fields = ['username','email','password1','password2']
+        # exclude = ['usertype']
 
 class PatientProfileForm(forms.ModelForm):
     class Meta:

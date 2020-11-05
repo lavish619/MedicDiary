@@ -90,11 +90,11 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="{% url 'patient:patientRegister' %}">Patient</a>
-						<a class="dropdown-item" href="{% url 'centralapp:patients_how_to_use' %}">Doctors</a>
+						<a class="dropdown-item" href="{% url 'doctor:doctorRegister' %}">Doctors</a>
 					</div>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#" data-toggle="modal" data-target="#usermodal">Login</a>
+					<a class="nav-link" href="{% url 'centralapp:login' %}">Login</a>
 				</li>
 			</ul>
 		</div>
@@ -139,7 +139,7 @@
 	<section class="section section-light" id="about_us">
 		<h1 class="display" data-aos="fade-down" data-aos-duration="1000">About Us</h1>
 		<div class="main_container row" data-aos="fade-down" data-aos-duration="1500">
-		
+
 			<div class="col-lg-5" data-aos="fade-left" data-aos-duration="1000">
 				<img class="bhu_image" src="{% static 'centralapp/Images/bhu.jpeg' %}">
 			</div>
@@ -168,7 +168,7 @@
 						<li><img class="team_img" src="{% static 'centralapp/Images/ShivangiNayak.jpeg' %}" alt=""><a href="#"> Shivangi Nayak </a></li>
 					</ul>
 				</div>
-				
+
 				<div class="team col-lg-6" data-aos="fade-down" data-aos-duration="1200">
 					<h2> The Backend Team</h2>
 					<ul>

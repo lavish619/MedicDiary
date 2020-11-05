@@ -135,3 +135,4 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'userUploads')
 MEDIA_URL = '/userUploads/'
 LOGIN_URL = 'login'
+LOGOUT_REDIRECT_URL = 'centralapp:mainpage'
