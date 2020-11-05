@@ -4,12 +4,16 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import PatientProfile,PatientVitals
 
 
+
 class PatientRegisterForm(UserCreationForm):                         # the form created by us is in a form of a class
     email = forms.EmailField()
+    # usertype = forms.IntegerField()
 
     class Meta:                                               # a meta class defines/builds upon the current class..
         model = User
+        # widgets = {'usertype': forms.HiddenInput()}
         fields = ['username','email','password1','password2']
+        # exclude = ['usertype']
 
 class PatientProfileForm(forms.ModelForm):
     class Meta:

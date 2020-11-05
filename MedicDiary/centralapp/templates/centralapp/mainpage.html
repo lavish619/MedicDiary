@@ -82,11 +82,11 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="{% url 'patient:patientRegister' %}">Patient</a>
-						<a class="dropdown-item" href="{% url 'centralapp:patients_how_to_use' %}">Doctors</a>
+						<a class="dropdown-item" href="{% url 'doctor:doctorRegister' %}">Doctors</a>
 					</div>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#" data-toggle="modal" data-target="#usermodal">Login</a>
+					<a class="nav-link" href="{% url 'centralapp:login' %}">Login</a>
 				</li>
 			</ul>
 		</div>

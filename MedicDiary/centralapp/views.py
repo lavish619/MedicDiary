@@ -1,10 +1,13 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .forms import PatientProfileForm, DoctorProfileForm, PatientVitalsForm
+from django.contrib.auth.models import auth
+from django.contrib.auth import authenticate,login,logout
+from django.contrib import messages
+from patient.models import PatientProfile
+from doctor.models import DoctorProfile
+# from patient.models import PatientProfile
 # import requests
 # from bs4 import BeautifulSoup
-# Create your views here.
-
 
 
 def mainpage(request):
@@ -14,9 +17,45 @@ def mainpage(request):
     # https://www.cdc.gov/diseasesconditions/index.html
     # https://www.pinehurstmedical.com/internalmedicine/internal-medicine-diseases-disorders-a-syndromes/
     # https://familydoctor.org/diseases-and-conditions/
-
-
     return render(request,'centralapp/mainpage.html')
+
+
+def login(request):
+    if request.method=='POST':
+        username=request.POST['username']
+        password=request.POST['password']
+        user=auth.authenticate(username=username,password=password)
+        if user is not None:
+            auth.login(request, user)
+            # if request.user.patient.usertype=="1":
+            if PatientProfile.objects.filter(patient = request.user):
+                isuser = PatientProfile.objects.filter(patient = request.user)
+            elif DoctorProfile.objects.filter(doctor=request.user):
+                isuser = DoctorProfile.objects.filter(doctor=request.user)
+            usertype = [int(each.usertype) for each in isuser][0]
+
+            if usertype==1:
+                return redirect('patient:patientProfile')
+            elif usertype==2:
+                return redirect('doctor:doctorProfile')
+            # return render(request,'centralapp/temp.html', {'isuser':isuser,'usertype':usertype})
+        # elif request.user.doctor.usertype=="2":
+        else:
+            messages.info(request,"Invalid Credentials!")
+            return redirect('login')
+    return render(request,'centralapp/login.html')
+
+# uniquetogether
+
+
+
+
+
+
+
+
+
+
 
 def About_us(request):
     return render(request,'centralapp/about_us.html')

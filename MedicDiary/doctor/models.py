@@ -1,8 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
+from patient.models import PatientProfile
 
 class DoctorProfile(models.Model):
+
+
+
     doctor = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete= models.CASCADE)
     name = models.CharField(max_length=30, blank=False)
     Gender = models.CharField(max_length=30)
@@ -16,12 +20,21 @@ class DoctorProfile(models.Model):
     College = models.CharField(max_length=100, blank=False)
     Year_of_completion = models.IntegerField()
     Profile_pic = models.ImageField(default = 'doctors_profile_pictures/defaultprofilepic.jpg', upload_to = 'doctors_profile_pictures')
-    Medical_registration_proof = models.FileField(upload_to = 'DoctorRegProofs')
+    Medical_registration_proof = models.FileField(upload_to = 'DoctorRegProofs',blank = True)
     Current_place_of_work = models.CharField(max_length=30)
     Aadhar_Number= models.IntegerField(blank=False)
     usertype = models.IntegerField(default = 2)
 
+    def __str__(self):
+        return self.name
 
+# class Mypatients(models.Model):
+#
+#     doctorp = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete= models.CASCADE)
+#     # mypatientlist = models.ManyToManyField(PatientProfile)
+#     # patient.objecs.getall()
+#
+#
 
 
 

@@ -45,11 +45,12 @@
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size:20px; ">
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item active">
+
+				<!-- <li class="nav-item active">
 					<a class="nav-link" href="#" style="color: rgb(0, 0, 0)"> Sign In </a>
-				</li>
+				</li> -->
 				<li class="nav-item active">
-					<a class="nav-link" href="#" style="color: rgb(0, 0, 0)"> Sign Up </a>
+					<a class="nav-link" href="{% url 'patient:logout' %}" style="color: rgb(0, 0, 0)"> Logout </a>
 				</li>
 			</ul>
 		</div>

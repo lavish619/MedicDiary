@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+{% load crispy_forms_tags %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form class="" action="" method="POST">
+      {% csrf_token %}
+
+
+      <div class="">
+        {{ form.name|as_crispy_field }}
+      </div>
+
+      <div class="">
+        {{ form.Gender|as_crispy_field }}
+      </div>
+
+      <div class="">
+        {{ form.phone|as_crispy_field }}
+      </div>
+
+      <div class="">
+        {{ form.Specialisation|as_crispy_field }}
+      </div>
+
+      <div class="">
+        {{ form.City|as_crispy_field }}
+      </div>
+
+      <div class="">
+        {{ form.Registration_Number|as_crispy_field }}
+      </div>
+      <div class="">
+        {{ form.Registration_Council|as_crispy_field }}
+      </div>
+      <div class="">
+        {{ form.Registration_year|as_crispy_field }}
+      </div>
+      <div class="">
+        {{ form.Degree|as_crispy_field }}
+      </div>
+      <div class="">
+        {{ form.College|as_crispy_field }}
+      </div>
+      <div class="">
+        {{ form.Current_place_of_work|as_crispy_field }}
+      </div>
+      <div class="">
+        {{ form.Aadhar_Number|as_crispy_field }}
+      </div>
+      <div class="">
+        {{ form.Year_of_completion|as_crispy_field }}
+      </div>
+      <div class="">
+        {{ form.Medical_registration_proof|as_crispy_field }}
+      </div>
+      <div class="">
+        {{ form.Profile_pic|as_crispy_field }}
+      </div>
+
+
+      <button type="submit">Save</button>
+
+    </form>
+  </body>
+</html>
