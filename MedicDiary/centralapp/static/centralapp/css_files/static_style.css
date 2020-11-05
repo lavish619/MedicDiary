@@ -4,22 +4,8 @@
 	padding: 0px;
 	font-family: sans-serif;
 }
-.team a{
-	text-decoration: none;
-	color: #41444b;
-	font-weight: bold;
-}
-.team ul li{
-	color: rgba(230,230,230,0.9);
-	list-style: none;
-	padding: 20px 15px;
-}
-.paragraph{
-	font-size: 25px;
-	margin:auto;
-	font-family: 'Ubuntu';
 
-}
+
 .covid-img{
 	height: 400px;
 	max-width: 100%;
@@ -88,12 +74,7 @@
 	font-size:35;
 
 }
-.display{
-	font-size:4.5rem;
-	font-weight: 300;
-	line-height: 1.2;
-	font-family: Cinzel;
-}
+
 .p_display{	font-size: 2em;
 	display: block;
 	padding-left:2em;
@@ -103,19 +84,7 @@
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
-.main_container{
-	padding:30px 20px;
-	margin: 50px auto;
-	border: 1px solid #1a1a2e;
-	border-radius: 15px;
-}
-.bhu_image{
-	padding:20px;
-	height:40vh;
-	margin:auto;
-	display: block;
 
-}
 .bullet-style ul{
 /*	list-style: square url(Images/wear_mask.jpg) inside;
 */ padding-left:40px;
