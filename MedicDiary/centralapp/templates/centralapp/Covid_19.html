@@ -3,38 +3,100 @@
 {% block body %}
 <div class="typewriter">Corona Checkpoints.</div>
 <div class="corona-subhead" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1800">Keep the following things in mind.<br></div>
+<div class="row my-4">
+<div class="col-lg-8">
 <div class="row cards" style="background: #faf3dd" data-aos="flip-up" data-aos-duration="1500">
-	<div class="col-lg-5">
-       <img class="covid-img" src="{% static 'centralapp/Images/wear_mask.jpg' %}">		
+	<div class="col-lg-5 d-flex justify-content-center">
+		<img class="covid-img" src="{% static 'centralapp/Images/wear_mask.jpg' %}">
 	</div>
 	<div class="col-lg-7 paragraph">
-		<h3 style="color: #c26565; font-weight: bold">A mask is a must.</h3><br>
-		Always remember to wear a mask. Also ensure your mouth and nose are properly covered by the mask.
+		<h3 style="color: #c26565; font-weight: bold">A mask is a must.</h3>
+		Wear a fabric mask unless you’re in a particular risk group. This is especially important when you can’t stay physically
+		distanced, particularly in crowded and poorly ventilated indoor settings.
+		Wear a medical/surgical mask if you:
+		<div class="row paragraph">
+			<div class="col-6">
+				<ul>
+					<li>Are over 60</li>
+					<li>Have underlying medical conditions</li>
+				</ul>
+			</div>
+			<div class="col-6">
+				<ul>
+					<li>Are feeling unwell</li>
+					<li>Are looking after an ill family member</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>
 <div class="row cards" style="background: #d2f6c5" data-aos="flip-up" data-aos-duration="1500">
 	<div class="col-lg-7 paragraph">
-		<h3 style="color: #206a5d; font-weight: bold" >Wash, wash and wash again..</h3><br>
-       	Keep washing your hands at regular intervals. Spend at least 20 seconds rubbing to ensure that you cover all the nooks and corners.
+		<h3 style="color: #206a5d; font-weight: bold">Wash your hands often</h3>
+		Wash your hands often with soap and water for at least 20 seconds especially after you have been in a public place, or
+		after blowing your nose, coughing, or sneezing. 
+		It’s especially important to wash:
+		<div class="row paragraph">
+			<div class="col-6">
+				<ul>
+					<li>Before eating or preparing food</li>
+					<li>Before touching your face</li>
+					<li>After leaving a public place</li>
+					<li>After blowing your nose, coughing, or sneezing</li>
+					</ul>
+			</div>
+			<div class="col-6">
+				<ul>
+				<li>After handling your mask</li>
+				<li>After changing a diaper</li>
+				<li>After caring for someone sick</li>
+				<li>After touching animals or pets</li>
+				</ul>
+			</div>
+		</div>			
 	</div>
-	<div class="col-lg-5">
+	<div class="col-lg-5 d-flex justify-content-center">
 		<img class="covid-img" src="{% static 'centralapp/Images/wash_hands.jpg' %}">
 	</div>
 </div>
 <div class="row cards" style="background: #faf3dd" data-aos="flip-up" data-aos-duration="1500">
 	<div class="col-lg-5">
-       <img class="covid-img" src="{% static 'centralapp/Images/social_distance.jpeg' %}">		
+		<img class="covid-img" src="{% static 'centralapp/Images/social_distance.jpeg' %}">
 	</div>
 	<div class="col-lg-7 paragraph">
-		<h3 style="color: #c26565; font-weight: bold">Remember the 6 Feet Rule.</h3> <br>
+		<h3 style="color: #c26565; font-weight: bold">Remember the 6 Feet Rule.</h3> 
 		Always ensure a minimum gap of 2 meters (or 6 feet) between you and others.
-		This ensures that the droplet spread of this disease is minimised.
+		This ensures that the droplet spread of this disease is minimised. Keeping distance from others is especially important for people who are at higher risk of getting very sick.
+	</div>
+</div>
+<div class="row cards" style="background: #d2f6c5" data-aos="flip-up" data-aos-duration="1500">
+	<div class="col-lg-7 paragraph">
+		<h3 style="color: #206a5d; font-weight: bold">Avoid the 3Cs: spaces that are closed, crowded or involve close contact.</h3>
+		The risks of getting COVID-19 are higher in crowded and inadequately ventilated spaces where infected people spend long
+		periods of time together in close proximity. <br> These environments are where the virus appears to spreads by respiratory
+		droplets or aerosols more efficiently, so taking precautions is even more important.
+	</div>
+	<div class="col-lg-5">
+		<img class="covid-img" src="{% static 'centralapp/Images/crowded.jpg' %}">
+	</div>
+</div>
+<div class="row cards" style="background: #faf3dd" data-aos="flip-up" data-aos-duration="1500">
+	<div class="col-lg-5">
+		<img class="covid-img" src="{% static 'centralapp/Images/sanitiser.PNG' %}">
+	</div>
+	<div class="col-lg-7 paragraph">
+		<h3 style="color: #c26565; font-weight: bold">Always keep a sanitiser handy</h3>
+		If soap and water are not readily available, use a hand sanitizer that contains <strong>at least 60% alcohol</strong>. Cover all surfaces
+		of your hands and rub them together until they feel dry.
+		<br> The picture on the left shows how to use a sanitiser correctly.
 	</div>
 </div>
 <div class="row cards" style="background: #d2f6c5" data-aos="flip-up" data-aos-duration="1500">
 	<div class="col-lg-7  paragraph">
-		<h3 style="color: #206a5d; font-weight: bold">Sneeze... But ensure your mouth is covered</h3><br>
-       	Follow the right etiquettes while coughing and sneezing. Always use a tissue or a cloth to cover your mouth while sneezing. If a tissue is not available, use your elbow to cover your mouth.
+		<h3 style="color: #206a5d; font-weight: bold">Cover cough and sneezes</h3>
+		Follow the right etiquettes while coughing and sneezing. Always use a tissue or a cloth to cover your mouth
+		while sneezing. If a tissue is not available, use your elbow to cover your mouth. Never spit.
+		<br>Throw used tissues in the trash only.
 	</div>
 	<div class="col-lg-5">
 		<img class="covid-img" src="{% static 'centralapp/Images/sneeze.png' %}">
@@ -42,23 +104,50 @@
 </div>
 <div class="row cards" style="background: #faf3dd" data-aos="flip-up" data-aos-duration="1500">
 	<div class="col-lg-5">
-       <img class="covid-img" src="{% static 'centralapp/Images/sanitiser.PNG' %}">		
+		<img class="covid-img" src="{% static 'centralapp/Images/disinfect.png' %}">
 	</div>
 	<div class="col-lg-7 paragraph">
-		<h3 style="color: #c26565; font-weight: bold">Always keep a sanitiser handy</h3> <br>
-		Remember to thoroughly sanitise your hands after you touch any surface.
-		The picture on the left shows how to use a sanitiser correctly.
+		<h3 style="color: #c26565; font-weight: bold">Disinfect regularly</h3>
+		Clean AND disinfect frequently touched surfaces daily. This includes tables, doorknobs, light switches, countertops,
+		handles, desks, phones, keyboards, toilets, faucets, and sinks.
+		<br>Use soap and water prior to disinfection if the surfaces are dirty.
 	</div>
 </div>
 <div class="row cards" style="background: #d2f6c5" data-aos="flip-up" data-aos-duration="1500">
 	<div class="col-lg-7  paragraph">
-		<h3 style="color: #206a5d; font-weight: bold">Watch out for symptoms</h3><br>
-       	Check if you or your family members have any of the following symptoms. If you suspect chances of having come in contact with a Coronavirus patient, seek medical help immediately. 
+		<h3 style="color: #206a5d; font-weight: bold">Watch out for symptoms</h3>
+		Check if you or your family members have any of the following symptoms.
+			<div class="row paragraph">
+				<div class="col-6">
+					<ul>
+						<li>Fever or chills</li>
+						<li>Cough</li>
+						<li>Shortness of breath </li>
+						<li>Fatique</li>
+						<li>New loss of taste or smell</li>
+						
+					</ul>
+				</div>
+				<div class="col-6">
+					<ul>
+						<li>Muscle or body ache</li>
+						<li>Diarrhea</li>
+						<li>Congestion or runny nose</li>
+						<li>Nausea or vomiting</li>
+						<li>Headache</li>
+					</ul>
+				</div>
+			</div>
+
+		 If you suspect chances of having come in
+		contact with a Coronavirus patient, seek medical help immediately.
 	</div>
 	<div class="col-lg-5">
 		<img class="covid-img" src="{% static 'centralapp/Images/covid_symptoms.jpg' %}">
 	</div>
 </div>
+</div>
+
 
 
 {% endblock %}

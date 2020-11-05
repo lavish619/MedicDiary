@@ -67,7 +67,7 @@
   {% block body %}
 
   {% endblock %}
-	{% with 'About_us Covid_19 create_patientprofile patientvitals_input patientRegister' as list%}
+	{% with 'About_us create_patientprofile patientvitals_input patientRegister' as list%}
 		{% if request.resolver_match.url_name not in list.split %}
 			<div class="col-sm-3 sidebar">
 				<ul class="list-group ">

@@ -45,6 +45,9 @@ html{
 	background-color: #373a40;
 	color: white;
 }
+.features ul li{
+	list-style: none;
+}
 .mainpage-text{
 	position: absolute;
 	top: 50%;
@@ -109,6 +112,7 @@ html{
 .search-field{
 	font-size: 25px;
 	margin: 25px;
+	width: 400px;
 	padding: 20px;
 	font-family: 'Georgia';
 	border: 2px solid black;

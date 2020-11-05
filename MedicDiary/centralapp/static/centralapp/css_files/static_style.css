@@ -7,7 +7,7 @@
 
 
 .covid-img{
-	height: 400px;
+	height: 250px;
 	max-width: 100%;
 	margin: auto;
 	display: block;
@@ -60,19 +60,18 @@
   to{border-right-color: transparent;}
 }
 .cards{
-	margin:30px;
+	margin:20px;
+	margin-right: -10px;
 	border: 2px solid #557571;
 	border-radius: 15px;
 }
-.about_us_headline{
-	padding-top: 4em;
-	padding-bottom:2em;
-	text-align: center;
-	/*color: #9cada4;*/
+.paragraph{
+	font-size: 20px;
+	margin-top:20px;
+	font-family: 'Ubuntu';
 }
-.about_us_headline p{
-	font-size:35;
-
+.paragraph ul li{
+	font-family: 'Ubuntu';
 }
 
 .p_display{	font-size: 2em;
@@ -118,8 +117,8 @@
 	width: fit-content;
 	border-radius: 15px;
     padding: 1em 1em 1em 1em;
-    margin-right: auto;
-    margin-left: auto;
+     margin-right: auto;
+    margin-left: auto; 
 }
 
 .list-group > .list-group > .list-group-item{
