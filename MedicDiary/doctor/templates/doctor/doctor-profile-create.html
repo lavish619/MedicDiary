@@ -1,71 +1,186 @@
-<!DOCTYPE html>
-
+{% extends 'doctor/base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
+{% block doctorbase %}
 
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <form class="" action="" method="POST">
-      {% csrf_token %}
+<div class="container-fluid py-4"  style="background-image: url('{% static 'patient/Images/medical-backgrnd.jpg'%}');
+            background-size: 100%">
+    <div class="card mx-auto " style="width:fit-content">
+        <div class="card-body" >
 
+            <h1 style="font-family: Itim,cursive; text-align: center;" class="mb-3 mx-auto">Enter Personal Information</h1>
 
-      <div class="">
-        {{ form.name|as_crispy_field }}
-      </div>
+                <form class="" action="" method="POST">
+                {% csrf_token %}
 
-      <div class="">
-        {{ form.Gender|as_crispy_field }}
-      </div>
+                <!-- name -->
+                <div class="form-group row" >
+                    <div class="col-sm my-2 ">
+                        <div class="input-group" >
+                            <input type="text" class="form-control"  placeholder="Name" name="name">
+                        </div>
+                    </div>
+                </div>
 
-      <div class="">
-        {{ form.phone|as_crispy_field }}
-      </div>
+        
+                <div class="form-group row ">
+					<!-- gender -->
+                    <div class="col-sm-5 my-2 mx-auto ">
+						<select class="form-control" id="exampleFormControlSelect1" name="gender" placeholder="Gender">
+							<option selected disabled>Gender</option>
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+							<option value="Others">Others</option>
+						</select>
+				
+                        <!-- <div class="input-group">
+                            <input type="text" class="form-control"  placeholder="Gender" name="gender">
+                        </div> -->
+					</div>
+					<!-- City -->
+                    <div class="col-sm-5 my-2 mx-auto ">
+                        <div class="input-group">
+                            <input type="text" class="form-control" min="0" placeholder="City" name="City">
+                        </div>
+                    </div>
+					
+                    
+                    
+                </div>
+                            
+                <div class="form-group row">
+                    <!-- phone -->
+                    <div class="col-sm-5 my-2 mx-auto">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">+91</div>
+                            </div>
+                            <input type="tel" class="form-control" pattern="[1-9]{1}[0-9]{9}" placeholder="Phone Number" name="phone">
+                        </div>
+                        <small>{{ form.phone.help_text }}</small>
+                    </div>
+                    <!-- aadhar number -->
+                    <div class="col-sm-5 my-2 mx-auto">
+                        <div class="input-group">
+                            <input type="tel" class="form-control" pattern="[0-9]{12}" placeholder="Aadhar Number" name="Aadhar_Number">
+                        </div>
+                        <small>{{ form.Aadhar_Number.help_text }}</small>
+                    </div>
+				</div>
 
-      <div class="">
-        {{ form.Specialisation|as_crispy_field }}
-      </div>
+				<!-- College -->
+				<div class="form-group row" >
+                    <div class="col-sm my-2 ">
+                        <div class="input-group" >
+                            <input type="text" class="form-control"  placeholder="College" name="College">
+                        </div>
+                    </div>
+                </div>
 
-      <div class="">
-        {{ form.City|as_crispy_field }}
-      </div>
+				 <!-- Degree -->
+				 <div class="form-group row" >
+                    <div class="col-sm my-2 ">
+                        <div class="input-group" >
+                            <input type="text" class="form-control"  placeholder="Degree" name="Degree">
+                        </div>
+                    </div>
+				</div>
+				
+				<div class="form-group row">
+                    <!-- Year_of_completion -->
+                    <div class="col-sm-5 my-2 mx-auto">
+                        <div class="input-group">
+                            <input type="number" class="form-control" min="1970" max="2020" placeholder="Year of Completion" name="Year_of_completion">
+                        </div>
+					</div>
+					<!-- Registration_year -->
+                    <div class="col-sm-5 my-2 mx-auto">
+                        <div class="input-group">
+                            <input type="number" class="form-control" min="1970" max="2020" placeholder="Registration year" name="Registration_year">
+                        </div>
+                    </div>
+                </div>
 
-      <div class="">
-        {{ form.Registration_Number|as_crispy_field }}
-      </div>
-      <div class="">
-        {{ form.Registration_Council|as_crispy_field }}
-      </div>
-      <div class="">
-        {{ form.Registration_year|as_crispy_field }}
-      </div>
-      <div class="">
-        {{ form.Degree|as_crispy_field }}
-      </div>
-      <div class="">
-        {{ form.College|as_crispy_field }}
-      </div>
-      <div class="">
-        {{ form.Current_place_of_work|as_crispy_field }}
-      </div>
-      <div class="">
-        {{ form.Aadhar_Number|as_crispy_field }}
-      </div>
-      <div class="">
-        {{ form.Year_of_completion|as_crispy_field }}
-      </div>
-      <div class="">
-        {{ form.Medical_registration_proof|as_crispy_field }}
-      </div>
-      <div class="">
-        {{ form.Profile_pic|as_crispy_field }}
-      </div>
+                <div class="form-group row">
+					<!-- Registration_Number -->
+					<div class="col-sm-auto my-2 mx-auto ">
+                        <div class="input-group" >
+                            <input type="text" class="form-control"  placeholder="Registration Number" name="Registration_Number">
+                        </div>
+					</div>
+					<!-- Specialisation -->
+                    <div class="col-sm-auto my-2 mx-auto">
+                        <div class="input-group">
+                            <input type="text" class="form-control"  placeholder="Specialisation" name="Specialisation">
+                        </div>
+					</div>
+					
+				</div>
+				
+				<!-- Current_place_of_work -->
+                <div class="form-group row">
+                    <div class="col-sm my-2 mx-auto">
+                        <div class="input-group">
+                            <input type="text" class="form-control"  placeholder="Current Place of Work" name="Current_place_of_work">
+                        </div>
+                    </div>
+				</div>
+				
+				 <!-- Registration_Council -->
+				 <div class="form-group row" >
+                    <div class="col-sm my-2 ">
+                        <div class="input-group" >
+                            <input type="text" class="form-control"  placeholder="Registration Council" name="Registration_Council">
+                        </div>
+                    </div>
+				</div>
 
+				
+				
+				 
 
-      <button type="submit">Save</button>
+				<!-- Medical_registration_proof -->
+                <div class="form-group row">
+                    <div class="col-sm my-2">
+                        <div class="custom-file ">
+                        <input type="file" class="custom-file-input" id="medicalproofinput" name="Medical_registration_proof" >
+                        <label class="custom-file-label" for="medicalproofinput">Medical Registration Proof</label>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    // Add the following code if you want the name of the file appear on select
+                    $(".custom-file-input").on("change", function() {
+                    var fileName = $(this).val().split("\\").pop();
+                    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+                    });
+				</script>
+				
 
-    </form>
-  </body>
-</html>
+                <!-- profile_pic -->
+                <div class="form-group row">
+                    <div class="col-sm my-2">
+                        <div class="custom-file ">
+                        <input type="file" class="custom-file-input" id="profilepicinput" name="profile_pic" >
+                        <label class="custom-file-label" for="profilepicinput">Profile Picture</label>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    // Add the following code if you want the name of the file appear on select
+                    $(".custom-file-input").on("change", function() {
+                    var fileName = $(this).val().split("\\").pop();
+                    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+                    });
+                </script>
+               
+
+                <button class="btn btn-success" type="submit">Save</button>
+                <button class="btn btn-success" type="reset">Reset</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
