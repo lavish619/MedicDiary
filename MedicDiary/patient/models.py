@@ -14,12 +14,12 @@ class PatientProfile(models.Model):
     name = models.CharField(max_length=30, blank=False)
     age = models.IntegerField(blank=False)
     address = models.TextField(max_length=500, blank=False)
-    phone = models.CharField(max_length=40, blank=False)
+    phone = models.CharField(max_length=40, blank=False, help_text='10 digit Mobile Number')
     emergency_contact = models.CharField(max_length=40, blank=False)
     profession = models.CharField(max_length=30)
     gender = models.CharField(max_length=30)
     profile_pic = models.ImageField(default = 'patients_profile_pictures/defaultprofilepic.jpg', upload_to = 'patients_profile_pictures')
-    Aadhar_Number= models.IntegerField(blank=False)
+    Aadhar_Number= models.IntegerField(blank=False, help_text='12 digit unique Aadhar Number')
     usertype = models.IntegerField(default = 1)
 
     def __str__(self):
@@ -28,11 +28,11 @@ class PatientProfile(models.Model):
 
 class PatientVitals(models.Model):
     patientv = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    Height_in_Centimeters = models.CharField(max_length=100, blank=False)
-    Weight_in_kilograms = models.CharField(max_length=100, blank=False)
+    Height_in_Centimeters = models.CharField(max_length=100, blank=False, help_text='Height in centimeters')
+    Weight_in_kilograms = models.CharField(max_length=100, blank=False, help_text='Weight in kilograms')
     Allergies = models.TextField(max_length=30)
     Smoker_or_not = models.CharField(max_length=30)
-    Chronic_conditions = models.CharField(max_length=30)
+    Chronic_conditions = models.CharField(max_length=30, help_text='Your current long term diseases. <br>Ex. High BP, Diabetes etc')
 
 class LabReports(models.Model):
     patientl = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)

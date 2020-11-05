@@ -5,10 +5,9 @@ from .models import PatientProfile, PatientVitals
 
 
 class PatientRegisterForm(UserCreationForm):                         # the form created by us is in a form of a class
-    email = forms.EmailField()
-    password2 = forms.CharField(label="Confirm Password",
-        widget=forms.PasswordInput,
-        help_text="Enter the same password as above, for verification.")
+    email = forms.EmailField(max_length=64)
+    password1 = forms.CharField(help_text='Password must contain atleast 8 characters.<br>Password should not be similar to username.<br>Password should not be entirely numeric.<br>Should not be too common.')
+    password2 = forms.CharField(help_text="Enter the same password as above, for verification.")
 
     class Meta:                                               # a meta class defines/builds upon the current class..
         model = User
@@ -17,18 +16,12 @@ class PatientRegisterForm(UserCreationForm):                         # the form 
 class PatientProfileForm(forms.ModelForm):
     class Meta:
         model = PatientProfile
-        widgets = {
-          'address': forms.Textarea(attrs={'rows':1, 'cols':25}),
-        }
         fields = ('name','age','gender','address','phone','emergency_contact','profession','profile_pic','Aadhar_Number')
 
 
 class PatientVitalsForm(forms.ModelForm):
     class Meta:
         model = PatientVitals
-        widgets = {
-          'Allergies': forms.Textarea(attrs={'rows':1, 'cols':25}),
-        }
         fields = ('Height_in_Centimeters','Weight_in_kilograms','Allergies','Smoker_or_not','Chronic_conditions')
 
 

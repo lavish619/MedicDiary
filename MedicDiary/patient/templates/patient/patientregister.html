@@ -3,51 +3,125 @@
 {% load crispy_forms_tags %}
 {% block patient_base %}
 
-<div class="formclass">
-<h1 style="font-family: Itim,cursive;" class="mb-3">Create Your Account</h1>
-
-  <form method="POST">
-    {% csrf_token %}
-
-    <!-- Version 1 -->
-    <!-- {% for field in form %}
-      <div class="form-group">
-        {{field.name}}<br>
-        {{field}}
-      </div>
-    {% endfor %} -->
-
-    <!-- Version 2 -->
-    <!-- {{ form|crispy }} -->
-
-    <!-- Version 3                                       ** BEST YET **   -->
-    {% for field in form %}
-        <div class="form-group">
+<div class="container-fluid py-4" style="background-image: url('{% static 'patient/Images/medical-backgrnd.jpg'%}');
+background-size: 100%">
+    <div class="card mx-auto" style="width:fit-content">
+        <div class="card-body">
             <div class="row">
+                <div class="col">
+                    <img src="{% static 'patient/Images/signup-img.jpg' %}" alt="" width=100% style="margin: auto;" >
+                </div>
                 <div class="col-sm-5">
-                    {{ field.label_tag }}
-                </div>
-                <div class="col-sm">
-                    {{ field }}
-                </div>
-            </div>
-            <div class="row pl-4">
-                
-                {% if field.help_text %}
-                <br>
-                <small style="color: grey">{{ field.help_text }}</small>
-                {% endif %}
-               
-            </div>
-            {% for error in field.errors %}
-            <p style="color: red">{{ error }}</p>
-            {% endfor %}
+                    <h1 style="font-family: Itim,cursive;" class="mb-3 card-title">Create Your Account</h1>
+
+                    <form method="POST" >
+                        {% csrf_token %}
+
+                        <!-- username -->
+                        <div class="form-group row">
+                            <div class="col-8">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="fa fa-user icon"></i>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control"  placeholder="Username" name="username">
+                                </div>
+                            </div>
+                        </div>
+                        {% for error in form.username.errors %}
+                            <p style="color: red">{{ error }}</p>
+                        {% endfor %}
+
+                        <!-- email -->
+                        <div class="form-group row">
+                            <div class="col-8">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="fa fa-envelope icon"></i>
+                                        </div>
+                                    </div>
+                                    <input type="email" class="form-control"  placeholder="Email" name="email">
+                                </div>
+                            </div>
+                        </div>
+                        {% for error in form.email.errors %}
+                            <p style="color: red">{{ error }}</p>
+                        {% endfor %}
+
+                        <!-- password1 -->
+                        <div class="form-group row">
+                            <div class="col-8">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="fa fa-key icon"></i>
+                                        </div>
+                                    </div>
+                                    <input type="password" class="form-control"  placeholder="Password" name="password1">
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                {% if form.password1.help_text %}
+                                <small style="color: grey">{{ form.password1.help_text|safe }}</small>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        {% for error in form.password1.errors %}
+                            <p style="color: red">{{ error }}</p>
+                        {% endfor %}
+
+                        <!-- password2 -->
+                        <div class="form-group row">
+                            <div class="col-8">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="fa fa-key icon"></i>
+                                        </div>
+                                    </div>
+                                    <input type="password" class="form-control"  placeholder="Confirm Password" name="password2">
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                {% if form.password2.help_text %}
+                                <small style="color: grey">{{ form.password2.help_text|safe }}</small>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% for error in form.password2.errors %}
+                            <p style="color: red">{{ error }}</p>
+                        {% endfor %}
+                    
+
+                            <!-- {% for field in form %}
+                            <div class="form-group">
+                                <div class="row" >
+                                    {{ field }}
+                                </div>
+                                <div class="row">
+                                    
+                                    {% if field.help_text %}
+                                    <br>
+                                    <small style="color: grey">{{ field.help_text|safe }}</small>
+                                    {% endif %}
+                                
+                                </div>
+                                {% for error in field.errors %}
+                                <p style="color: red">{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endfor %} -->
+
+                        <button class="btn btn-success ml-4" type="submit">SignUp</button>
+                    </form>
         </div>
-    {% endfor %}
-
-    <button class="btn btn-success ml-4" type="submit">SignUp</button>
-  </form>
+        </div>
+        </div> 
+    </div>
 </div>
-
-
+  
 {% endblock %}
