@@ -61,19 +61,48 @@ def PatientList(request):
     # if len(listed) ==0:
         # return HttpResponse("emply:(")
     # patientsl = PatientProfile.objects.getall()
+    pats=PatientDocConfig.objects.filter(doctor_id=request.user.id)
+    print(len(pats))
+
+    patient_l=[]
+    for p in pats:
+        print("hello")
+        patient_l.append(PatientProfile.objects.filter(access_code=p.access_code)[0])
+
     Patient_list=PatientProfile.objects.filter()
+    print(len(patient_l))
 
 
-    return render(request, 'doctor/patientList.html',{'patientl':Patient_list})
+    return render(request, 'doctor/patientList.html',{'patientl':patient_l})
 
 
 @login_required
 def pat_profile(request,p):
     print(p)
-    subject=PatientProfile.objects.filter(id=p)
+    subject=PatientProfile.objects.filter(id=p) 
     pat_vitals=PatientVitals.objects.filter(id=p)
+    all_reports=list(Records.objects.filter(patient_id=p).order_by('id').reverse())
+    count=0
+    rec=[]
+    for r in all_reports:
+        if count ==1:
+            break
+        rec.append(r)
+        count=count+1
 
-    return render(request,'doctor/patient_records_in_doc.html',{'subject':subject,"vitals":pat_vitals[0]})
+
+        for report in rec:
+            des=report.medication
+            med=des.split(":")
+            m_list=[]
+            for m in med:
+	            dosage=m.split("/")
+	            m_list.append(dosage)
+
+            report.medication=m_list
+
+
+    return render(request,'doctor/patient_records_in_doc.html',{'subject':subject,"vitals":pat_vitals[0],'Reports':rec})
 
 @login_required
 def newReport(request,p):
@@ -103,20 +132,26 @@ def addReport(request):
 
 @login_required
 def addPatient(request):
-    patient_id=request.POST['patient_id']
-    accesscode=request.POST['patient_id']
-    if len(PatientProfile.objects.filter(id=patient_id))==0:
+    print("entered1")
+    
+    accesscode=request.POST['accesscode']
+    print(accesscode)
+    print("entered")
+    if len(PatientProfile.objects.filter(access_code=accesscode))==0:
         return redirect('/PatientList/')
     else:
-        check_pat=PatientProfile.objects.filter(id=patient_id)[0]
-        if check_pat.access_code==accesscode:
-            new_config=PatientDocConfig()
-            new_config.patient_id=patient_id
-            new_config.doctor_id=request.user.id
-            new_config.access_code=accesscode
-            new_config.save()
-        else:
-            return redirect('/PatientList/')
+        print("heya")
+        check_pat=PatientProfile.objects.filter(access_code=accesscode)[0]
+        print(check_pat.access_code)
+        
+           
+        new_config=PatientDocConfig()
+            
+        new_config.doctor_id=request.user.id
+        new_config.access_code=accesscode
+        new_config.save()
+        return redirect('/PatientList/')
+        
 
 
 

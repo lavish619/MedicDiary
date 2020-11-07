@@ -37,7 +37,7 @@ class DoctorProfile(models.Model):
 #
 class PatientDocConfig(models.Model):
     doctor_id=models.IntegerField(blank=False)
-    patient_id=models.IntegerField(blank=False)
+    
     access_code=models.IntegerField(blank=False)
 
     # doctorp = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete= models.CASCADE)

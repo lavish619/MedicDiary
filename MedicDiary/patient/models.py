@@ -59,7 +59,7 @@ class Records(models.Model):
     additional_precautions=models.CharField(max_length=500,blank=False)
 
 
- 
+ #
 # @receiver(post_save, sender=User)
 # def update_profile_signal(sender, instance, created, **kwargs):
 #     if created:

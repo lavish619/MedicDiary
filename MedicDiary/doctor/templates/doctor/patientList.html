@@ -60,8 +60,7 @@
                 <!-- Input Fields -->
                 <form action="{% url 'doctor:addPatient' %}" method="POST">
                     {% csrf_token %}
-                    <input type="text" id="accessCode" class="form-control mb-2" placeholder="patient_id"
-                        name="patient_id">
+                   
                  <input type="text" id="accessCode" class="form-control mb-2" placeholder="Enter the access code"
                         name="accesscode">
                     <!-- Login Button -->
