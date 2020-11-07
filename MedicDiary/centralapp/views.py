@@ -49,14 +49,6 @@ def login(request):
 
 
 
-
-
-
-
-
-
-
-
 def About_us(request):
     return render(request,'centralapp/about_us.html')
 def Cancer(request):

@@ -52,14 +52,14 @@ def doctorProfile(request):
     profile = DoctorProfile.objects.get(doctor=request.user)
     return render(request, 'doctor/doctor_profile.html',{'profile':profile})
 
-@login_required
-def PatientList(request):
-    # listed = Mypatients.objects.get(doctorp = request.user).mypatientlist
-    # if len(listed) ==0:
-        # return HttpResponse("emply:(")
-    # patientsl = PatientProfile.objects.getall()
-
-    return render(request, 'doctor/mylist.html',{'patientl':patientl})
+# @login_required
+# def PatientList(request):
+#     # listed = Mypatients.objects.get(doctorp = request.user).mypatientlist
+#     # if len(listed) ==0:
+#         # return HttpResponse("emply:(")
+#     # patientsl = PatientProfile.objects.getall()
+#
+#     return render(request, 'doctor/mylist.html',{'patientl':patientl})
 
 
 
