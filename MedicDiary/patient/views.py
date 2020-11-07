@@ -72,7 +72,7 @@ def create_patientprofile(request):
             patient=PatientProfile.objects.filter(patient=request.user)[0]
             print(patient.address)
             print(hash(patient.address))
-            patient.access_code=hash(patient.address)
+            patient.access_code=hash( str(patient.id) +patient.address)
             patient.save()
             
             return redirect('patient:patientvitals_input')
@@ -94,7 +94,7 @@ def patientvitals_input(request):
         form = PatientVitalsForm()
     return render(request,'patient/patientvital_info.html',{'form':form})
 
-
+ 
 @login_required
 def patientProfile(request):
     profile = PatientProfile.objects.get(patient=request.user)
