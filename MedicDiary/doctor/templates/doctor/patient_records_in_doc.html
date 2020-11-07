@@ -2,8 +2,17 @@
 
 {% block patient_base %}
 {% load static %}
-
+<div>
+    
+</div>
 <div class="container" id="main-content">
+    <div class="row dashboard-content">
+        {%for i in subject %}
+        <h2>Patient_name:{{i.name}} </h2>
+        <button><a href="{% url 'doctor:newReport' p=i.id %}">Add Record</a></button>
+        {% endfor %}
+
+    </div> 
     <div class="row dashboard-content">
         <h2>Current Medication </h2>
         {% for report in Reports%}
@@ -47,6 +56,7 @@
                     <hr>
                     {%endfor%}
         
+
         <a href="#">View more</a>
 
     </div>
@@ -75,6 +85,8 @@ Chronic_conditions :      {{vitals.Chronic_conditions}}<br>
         <a href="{% url 'patient:editPatientVitals' %}">Edit info</a><br><br>
 
     </div>
+
+
 </div>
 
 {% endblock %}

@@ -9,83 +9,46 @@
         <div class="col" >
             <div style="width:fit-content; margin:auto; padding: 30px 20px; border-radius: 10px; border: solid 4px #838383; 
             background-color: #f5f1da; box-shadow:  1em 1em 1.75em -1.5em rgba(0,0,0,0.75);">
-            
+            {% for report in Reports%}
                 <div class="prescription" style="background: rgb(238, 201, 255);padding: 1em;">
                     <h5 style="background-color: #f7ec8d; width: fit-content;border-radius: 10px; padding: 2px 5px;
-                    font-family: 'Grandstander'; margin: auto;">Date: 22-09-2020</h5>
-                    <h5><b>Doctor:</b> Dr.Anderson</h5>
+                    font-family: 'Grandstander'; margin: auto;">Date: {{report.date}}</h5>
+                    
+                    
+                   
+                    <h5><b>Doctor:</b>{{report.doctor_name}}</h5>
                     <h5>Symptoms</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, asperiores.</p>
-                    <h5>Problems/Diseases</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate aut, voluptatem cumque 
-                        accusantium fuga corporis?</p>
+                    <p>{{report.Symptoms}}</p>
+                    <h5>Diagnosis</h5>
+                    <p>{{report.diagnosis}}</p>
                     <table class="table table-bordered table-sm">
                         <thead class="thead-dark">
                         <tr>
-                            <th>Sr. No.</th>
+                            <th>    </th>
                             <th>Medicine</th>
                             <th>Dosage</th>
                             <th>For</th>
                         </tr>
                         </thead>
                         <tbody>
+                            {%for med in report.medication%}
                         <tr>
-                            <td>1</td>
-                            <td>Disprin</td>
-                            <td>1/2 thrice a day</td>
-                            <td>Headache</td>
+                            <td>.</td>
+                            {%for each in med%}
+                            <td>{{each}}</td>
+                            {%endfor%}
+                           
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Zincovid</td>
-                            <td>1 twice a day</td>
-                            <td>Vitamin C</td>
-                        </tr>
+                        {%endfor%}
+                        
                         </tbody>
                     </table>
-                    <p><strong>Additional Precautions:</strong> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet dignissimos 
-                        odit quod labore minus illum!</p>
+                    <p><strong>Additional Precautions:</strong> {{report.additional_precautions}}</p>
                         
                 </div>
                     <hr>
-
-                <div class="prescription" style="background: rgb(238, 201, 255);padding: 1em;">
-                    <h5 style="background-color: #f7ec8d; width: fit-content;border-radius: 10px; padding: 2px 5px;
-                    font-family: 'Grandstander'; margin: auto;">Date: 22-09-2020</h5>
-                    <h5><b>Doctor:</b> Dr.Anderson</h5>
-                    <h5>Symptoms</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, asperiores.</p>
-                    <h5>Problems/Diseases</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate aut, voluptatem cumque 
-                        accusantium fuga corporis?</p>
-                    <table class="table table-bordered table-sm">
-                        <thead class="thead-dark">
-                        <tr>
-                            <th>Sr. No.</th>
-                            <th>Medicine</th>
-                            <th>Dosage</th>
-                            <th>For</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Disprin</td>
-                            <td>1/2 thrice a day</td>
-                            <td>Headache</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Zincovid</td>
-                            <td>1 twice a day</td>
-                            <td>Vitamin C</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <p><strong>Additional Precautions:</strong> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet dignissimos 
-                        odit quod labore minus illum!</p>
-                
-                </div>
+                    {%endfor%}
+              
                 <hr>
             </div>
         </div>

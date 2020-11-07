@@ -83,7 +83,14 @@
 				<li class="nav-item button2">
 					<a class="nav-link " href="{% url 'centralapp:Covid_19' %}" >Covid-19 Checkpoints </a>
 				</li>
-
+				{% if user.is_authenticated %}
+				<li class="nav-item active">
+					<a class="nav-link" href="{% url 'centralapp:logout' %}" style="color: rgb(0, 0, 0)"> Logout </a>
+				</li>
+				<li>
+					<a class = "nav-item nav-link" href="">My Account</a>
+				</li>
+				{% else %}
 				<li class="nav-item dropdown">
 					<a class="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
 						Sign Up
@@ -96,6 +103,9 @@
 				<li class="nav-item">
 					<a class="nav-link" href="{% url 'centralapp:login' %}">Login</a>
 				</li>
+
+				{% endif %}
+
 			</ul>
 		</div>
 	</nav>

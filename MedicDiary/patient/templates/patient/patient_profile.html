@@ -9,6 +9,7 @@
     <button class="edit-option-buttons" style="font-size: 18px; float: right;">
       <a href="{% url 'patient:editPatient' %}"> Edit your profile </a>
     </button>
+<<<<<<< HEAD
   </div>
 </div>
 <div class="container " style="margin-top: 8%; justify-content: center;">
@@ -68,6 +69,10 @@
 </div>
   
   <!-- <div style="display: flex;justify-content: center;">
+=======
+  </div> 
+  <div style="display: flex;justify-content: center;">
+>>>>>>> 2c52cf36392702191db27f4e8f66c4995fdffd2c
   <div class="row my-4 profile-box-info justify-content-around" style="width: fit-content">
     <div class="col-sm-2 p-2 col-lg-2 p-2" style="margin-right: 20px;">
       <img height="200px" width = "150px" src="{{ profile.profile_pic.url }}" alt="">
@@ -80,6 +85,8 @@
         <b>Email:</b> abc@gmail.com <br>
         <b>Age: </b>{{profile.age}} <br>
         <b>Gender: </b> {{profile.gender}} <br>
+        <b>Patient ID: </b> {{profile.id}} <br>
+        <b>Access Code: </b> {{profile.access_code}} <br>
       </div>
       
     </div>

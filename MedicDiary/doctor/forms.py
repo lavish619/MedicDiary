@@ -5,6 +5,7 @@ from .models import DoctorProfile
 
 class DoctorRegisterForm(UserCreationForm):                         # the form created by us is in a form of a class
     email = forms.EmailField()
+    password1 = forms.CharField(help_text='Your password can’t be too similar to your other personal information. <br>Your password must contain at least 8 characters.<br>Your password can’t be a commonly used password.<br>Your password can’t be entirely numeric.')
 
     class Meta:                                               # a meta class defines/builds upon the current class..
         model = User

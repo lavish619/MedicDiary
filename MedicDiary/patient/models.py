@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.conf import settings
+from doctor.models import *
 
 
 
@@ -23,6 +24,7 @@ class PatientProfile(models.Model):
     profile_pic = models.ImageField(default = 'patients_profile_pictures/defaultprofilepic.jpg', upload_to = 'patients_profile_pictures')
     Aadhar_Number= models.IntegerField(blank=False, help_text='12 digit unique Aadhar Number')
     usertype = models.IntegerField(default = 1)
+    access_code=models.IntegerField(default=1)
     # AccessCode = models.CharField(max_length=500)
 
     def __str__(self):
@@ -44,7 +46,20 @@ class LabReports(models.Model):
     upload_date = models.DateField(auto_now=True)
     labreportfile = models.FileField(upload_to = 'PatientLabReports')
 
-#
+
+class Records(models.Model):
+    date=models.CharField(max_length=100)
+    patient_id=models.IntegerField(blank=False)
+    doctor_id=models.IntegerField(blank=False)
+
+    doctor_name=models.CharField(max_length=100,blank=False)
+    diagnosis=models.CharField(max_length=500,blank=False)
+    Symptoms=models.CharField(max_length=500,blank=False)
+    medication=models.CharField(max_length=500,blank=False)
+    additional_precautions=models.CharField(max_length=500,blank=False)
+
+
+ #
 # @receiver(post_save, sender=User)
 # def update_profile_signal(sender, instance, created, **kwargs):
 #     if created:

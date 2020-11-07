@@ -7,8 +7,7 @@ from .models import PatientProfile, PatientVitals
 
 class PatientRegisterForm(UserCreationForm):                         # the form created by us is in a form of a class
     email = forms.EmailField(max_length=64)
-    password1 = forms.CharField(help_text='Password must contain atleast 8 characters.<br>Password should not be similar to username.<br>Password should not be entirely numeric.<br>Should not be too common.')
-    password2 = forms.CharField(help_text="Enter the same password as above, for verification.")
+    password1 = forms.CharField(help_text='Your password can’t be too similar to your other personal information. <br>Your password must contain at least 8 characters.<br>Your password can’t be a commonly used password.<br>Your password can’t be entirely numeric.')
 
     class Meta:                                               # a meta class defines/builds upon the current class..
         model = User

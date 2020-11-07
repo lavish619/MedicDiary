@@ -52,13 +52,19 @@
 					<a class="nav-link" href="#" style="color: rgb(0, 0, 0)"> Sign In </a>
 				</li> -->
 				<li class="nav-item active">
-					<a class="nav-link" href="{% url 'patient:logout' %}" style="color: rgb(0, 0, 0)"> Logout </a>
+					<a class="nav-link" href="{% url 'centralapp:logout' %}" style="color: rgb(0, 0, 0)"> Logout </a>
+				</li>
+				<li>
+					<a class = "nav-item nav-link" href="">My Account</a>
 				</li>
 			</ul>
 		</div>
 	</nav>
 
-	{% if not request.resolver_match.url_name == "patientRegister" and not request.resolver_match.url_name == "create_patientprofile" and not request.resolver_match.url_name == "patientvitals_input" %}
+
+	{% with 'create_patientprofile patientvitals_input patientRegister' as list%}
+		{% if request.resolver_match.url_name not in list.split %}
+
     <div id="sidebar" >
         <div class="toggle-btn" onclick="toggleSideBar()">
             <span style='font-size:20px;'>&#9776;</span>
@@ -73,7 +79,8 @@
         </ul>
 
 	</div>
-	{% endif%}
+	{% endif %}
+	{% endwith %}
 
   {% block patient_base %}
 

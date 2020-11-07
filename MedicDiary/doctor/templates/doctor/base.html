@@ -15,16 +15,11 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Grandstander" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Itim" >
 
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-		crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/032a738741.js" crossorigin="anonymous"></script>
 
 	<link rel="stylesheet" href="{% static 'doctor/css_files/style.css' %}">
@@ -55,27 +50,39 @@
 				<!-- <li class="nav-item active">
 					<a class="nav-link" href="#" style="color: rgb(0, 0, 0)"> Sign In </a>
 				</li> -->
+				<!-- <li class="nav-item active">
+					<a class="nav-link" href="{% url 'centralapp:logout' %}" style="color: rgb(0, 0, 0)"> Logout </a>
+				</li> -->
 				<li class="nav-item active">
-					<a class="nav-link" href="{% url 'doctor:logout' %}" style="color: rgb(0, 0, 0)"> Logout </a>
+					<a class="nav-link" href="{% url 'centralapp:logout' %}" style="color: rgb(0, 0, 0)"> Logout </a>
+				</li>
+				<li>
+					<a class = "nav-item nav-link" href="">My Account</a>
 				</li>
 			</ul>
 		</div>
 	</nav>
 
-	<div id="sidebar">
-		<div class="toggle-btn" onclick="toggleSideBar()">
-			<span style='font-size:20px;'>&#9776;</span>
-		</div>
+	{% with 'create_doctorprofile doctorRegister' as list%}
+		{% if request.resolver_match.url_name not in list.split %}
 
-		<ul>
-			<a class="tablinks" href="{% url 'doctor:PatientList' %}">
-				<li>My Patients</li>
-			</a>
-			<a class="tablinks" href="{% url 'doctor:doctorProfile' %}">
-				<li>My Profile</li>
-			</a>
-		</ul>
-	</div>
+		<div id="sidebar">
+			<div class="toggle-btn" onclick="toggleSideBar()">
+				<span style='font-size:20px;'>&#9776;</span>
+			</div>
+
+			<ul>
+				<a class="tablinks" href="{% url 'doctor:PatientList' %}">
+					<li>My Patients</li>
+				</a>
+				<a class="tablinks" href="{% url 'doctor:doctorProfile' %}">
+					<li>My Profile</li>
+				</a>
+			</ul>
+		</div>
+		{%endif%}
+		{% endwith%}
+
 	<!-- <div id="main-content">
 		<div class="tabcontent" id="myPatients">
 			Hey this is my patients page holla,aa,l,c
@@ -90,7 +97,7 @@
 
 	<!-- Footer -->
 	<footer class="page-footer footer font-small mdb-color" style="background:linear-gradient(90deg, #24a19c,#cedebd);">
-		<div class="row text-center ml-5 text-md-left mt-3">
+		<div class="row text-center ml-5 text-md-left">
 			<hr class="w-100 clearfix d-md-none">
 			<div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 footer-style">
 				<h6 class="text-uppercase mb-2 ">Know-hows</h6>

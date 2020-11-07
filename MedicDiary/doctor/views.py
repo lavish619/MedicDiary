@@ -6,8 +6,10 @@ from django.contrib import messages
 from .forms import DoctorRegisterForm, DoctorProfileForm
 from django.contrib.auth.decorators import login_required
 from .models import DoctorProfile
-
-
+# from django.views import View
+from .models import DoctorProfile,PatientDocConfig
+from patient.models import PatientProfile,PatientVitals,LabReports,Records
+import datetime
 def doctorRegister(request):
     if request.method =='POST':
         form = DoctorRegisterForm(request.POST)
@@ -49,7 +51,9 @@ def create_doctorprofile(request):
 @login_required
 def doctorProfile(request):
     profile = DoctorProfile.objects.get(doctor=request.user)
+
     return render(request, 'doctor/doctor_profile.html',{'profile':profile})
+
 
 @login_required
 def PatientList(request):
@@ -57,13 +61,104 @@ def PatientList(request):
     # if len(listed) ==0:
         # return HttpResponse("emply:(")
     # patientsl = PatientProfile.objects.getall()
+    pats=PatientDocConfig.objects.filter(doctor_id=request.user.id)
+    print(len(pats))
 
-    return render(request, 'doctor/mylist.html',{'patientl':patientl})
+    patient_l=[]
+    for p in pats:
+        print("hello")
+        patient_l.append(PatientProfile.objects.filter(access_code=p.access_code)[0])
+
+    Patient_list=PatientProfile.objects.filter()
+    print(len(patient_l))
+
+
+    return render(request, 'doctor/patientList.html',{'patientl':patient_l})
+
+
+@login_required
+def pat_profile(request,p):
+    print(p)
+    subject=PatientProfile.objects.filter(id=p) 
+    pat_vitals=PatientVitals.objects.filter(id=p)
+    all_reports=list(Records.objects.filter(patient_id=p).order_by('id').reverse())
+    count=0
+    rec=[]
+    for r in all_reports:
+        if count ==1:
+            break
+        rec.append(r)
+        count=count+1
+
+
+        for report in rec:
+            des=report.medication
+            med=des.split(":")
+            m_list=[]
+            for m in med:
+	            dosage=m.split("/")
+	            m_list.append(dosage)
+
+            report.medication=m_list
+
+
+    return render(request,'doctor/patient_records_in_doc.html',{'subject':subject,"vitals":pat_vitals[0],'Reports':rec})
+
+@login_required
+def newReport(request,p):
+    doctor=DoctorProfile.objects.filter(doctor=request.user)[0]
+    patient=PatientProfile.objects.filter(id=p)[0]
+    date=str(datetime.datetime.now()).split(" ")[0]
+
+    obj={'doctor_name':doctor.name,'patient_name':patient.name,'date':date,"docid":doctor.id,"patid":patient.id}
+    return render(request,'doctor/report.html',{'details':obj})
+
+@login_required
+def addReport(request):
+    if request.method=="POST":
+        new_record=Records()
+        new_record.date=str(datetime.datetime.now()).split(" ")[0]
+        new_record.diagnosis=request.POST['diagnosis']
+        new_record.doctor_name=request.POST['doctor_name']
+        new_record.Symptoms=request.POST['symptoms']
+        new_record.medication=request.POST['medication']
+        new_record.patient_id=request.POST['patid']
+        new_record.doctor_id=request.POST['docid']
+        new_record.additional_precautions=request.POST['additional_precautions']
+        new_record.save()
+        addr='doctor:pat_profile/'+ str(request.POST['patid'])
+
+        return redirect('/pat_profile/'+ str(request.POST['patid']))
+
+@login_required
+def addPatient(request):
+    print("entered1")
+    
+    accesscode=request.POST['accesscode']
+    print(accesscode)
+    print("entered")
+    if len(PatientProfile.objects.filter(access_code=accesscode))==0:
+        return redirect('/PatientList/')
+    else:
+        print("heya")
+        check_pat=PatientProfile.objects.filter(access_code=accesscode)[0]
+        print(check_pat.access_code)
+        
+           
+        new_config=PatientDocConfig()
+            
+        new_config.doctor_id=request.user.id
+        new_config.access_code=accesscode
+        new_config.save()
+        return redirect('/PatientList/')
+        
 
 
 
-
-
+# @login_required
+# class mypatients(View):
+#     def get(self,request):
+#         return render(request, 'doctor/temp.html',{})
 
 
 
