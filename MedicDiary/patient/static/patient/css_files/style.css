@@ -75,8 +75,8 @@
 #main-content{
 	transition: all 0.4s linear;
 	/* padding: 20px; */
-    overflow: hidden;
-	/* margin: auto; */
+    /* overflow: hidden; */
+	margin: auto;
 	width: "100%";
 }
 
@@ -121,10 +121,7 @@
 }
 
 .profile-box-info{
-	margin:-20px;
-	text-align: center;
-	padding: 30px 20px;
-	border-radius: 10px;
+	margin: 80px;
 	border: solid 4px #838383;
 	background-color: #f5f1da;
 	box-shadow:  1em 1em 2em -1em rgba(0,0,0,0.75);
@@ -132,6 +129,12 @@
 .profile-content p{
 	line-height: 150%;
 	font-size: 18px;
+}
+.profile-photo{
+	height: 200px;
+	width: 200px;
+	border: 5px solid #5eaaa8;
+	object-fit: cover;
 }
 .profile-content h3{
 	font-size: 2em;

@@ -67,7 +67,7 @@
   {% block body %}
 
   {% endblock %}
-	{% with 'About_us create_patientprofile patientvitals_input patientRegister' as list%}
+	{% with 'create_patientprofile patientvitals_input patientRegister' as list%}
 		{% if request.resolver_match.url_name not in list.split %}
 			<div class="col-sm-3 sidebar">
 				<ul class="list-group ">
@@ -78,7 +78,7 @@
 					</ul>
 					<li class="list-group-item  heads">For HealthCare Professionals</li>
 					<ul class="list-group">
-						<a class='list-group-item list-group-item-action {% if request.resolver_match.url_name == "doc_how_to_use" %}active{% endif %} ' href="{% url 'centralapp:doc_how_to_use' %}">How to use my health record </a>
+						<a class='list-group-item list-group-item-action {% if request.resolver_match.url_name == "doc_how_to_use" %}active{% endif %} ' href="{% url 'centralapp:doc_how_to_use' %}">How to use health records at MedicDiary</a>
 					</ul>
 					<li class="list-group-item  heads">Know more about diseases</li>
 					<ul class="list-group">
@@ -88,7 +88,7 @@
 						<a class='list-group-item list-group-item-action {% if request.resolver_match.url_name == "Hypertension" %}active{% endif %} ' href="{% url 'centralapp:Hypertension' %}">Hypertension</a>
 						<a class='list-group-item list-group-item-action {% if request.resolver_match.url_name == "Diabetes" %}active{% endif %} ' href="{% url 'centralapp:Diabetes' %}">Diabetes</a>
 					</ul>
-					<a class='list-group-item list-group-item-action heads {% if request.resolver_match.url_name == "About_us" %}active{% endif %} ' href="{% url 'centralapp:About_us' %}">About Us</a>
+					<!-- <a class='list-group-item list-group-item-action heads {% if request.resolver_match.url_name == "About_us" %}active{% endif %} ' href="{% url 'centralapp:About_us' %}">About Us</a> -->
 					<a class='list-group-item list-group-item-action heads {% if request.resolver_match.url_name == "FAQS" %}active{% endif %} ' href="{% url 'centralapp:FAQS' %}">FAQs</a>
 					<a class='list-group-item list-group-item-action heads {% if request.resolver_match.url_name == "Covid_19" %}active{% endif %} ' href="{% url 'centralapp:Covid_19' %}">Covid-19 Checkpoints</a>
 				</ul>
@@ -151,8 +151,6 @@
 						<li>Lavish Bansal<br></li>
 						<li>Shivangi Nayak</li>
 						</ul>
-						<a href="{% url 'centralapp:About_us' %}" class="useful_links" style="font-weight:bold">More about us</a>
-
 				</div>
 				<!-- Grid column -->
 				<hr class="w-100 clearfix d-md-none ">

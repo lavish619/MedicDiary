@@ -33,6 +33,31 @@ html{
 	background-image: url('../Images/mail_us.jpg');
 	min-height: 500px;
 }
+.img4{
+	min-height: 500px;
+	position: relative;
+	background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url('../Images/bhu.jpeg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.transparent{
+	margin-left: 100px;
+	margin-right: 100px;
+}
+.transparent p{
+	font-size: 25px;
+	font-family: 'Ubuntu';
+	color: white;
+	font-weight: bold;
+	z-index: 2;
+}
 .section{
 	text-align: center;
 	padding: 50px 80px;
@@ -89,7 +114,6 @@ html{
 	font-size: 25px;
 	margin:auto;
 	font-family: 'Ubuntu';
-
 }
 .team a{
 	text-decoration: none;
