@@ -5,10 +5,16 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from .forms import DoctorRegisterForm, DoctorProfileForm
 from django.contrib.auth.decorators import login_required
+<<<<<<< HEAD
 from .models import DoctorProfile
 from django.views import View
 
 
+=======
+from .models import DoctorProfile,PatientDocConfig
+from patient.models import PatientProfile,PatientVitals,LabReports,Records
+import datetime
+>>>>>>> bf7e68a06a7bf559c384b3a296ce250729715e75
 def doctorRegister(request):
     if request.method =='POST':
         form = DoctorRegisterForm(request.POST)
@@ -50,8 +56,10 @@ def create_doctorprofile(request):
 @login_required
 def doctorProfile(request):
     profile = DoctorProfile.objects.get(doctor=request.user)
+    
     return render(request, 'doctor/doctor_profile.html',{'profile':profile})
 
+<<<<<<< HEAD
 # @login_required
 # def PatientList(request):
 #     # listed = Mypatients.objects.get(doctorp = request.user).mypatientlist
@@ -60,6 +68,71 @@ def doctorProfile(request):
 #     # patientsl = PatientProfile.objects.getall()
 #
 #     return render(request, 'doctor/mylist.html',{'patientl':patientl})
+=======
+@login_required
+def PatientList(request):
+    # listed = Mypatients.objects.get(doctorp = request.user).mypatientlist
+    # if len(listed) ==0:
+        # return HttpResponse("emply:(")
+    # patientsl = PatientProfile.objects.getall()
+    Patient_list=PatientProfile.objects.filter()
+
+
+    return render(request, 'doctor/patientList.html',{'patientl':Patient_list})
+
+
+@login_required
+def pat_profile(request,p):
+    print(p)
+    subject=PatientProfile.objects.filter(id=p)
+    pat_vitals=PatientVitals.objects.filter(id=p)
+
+    return render(request,'doctor/patient_records_in_doc.html',{'subject':subject,"vitals":pat_vitals[0]})
+
+@login_required
+def newReport(request,p):
+    doctor=DoctorProfile.objects.filter(doctor=request.user)[0]
+    patient=PatientProfile.objects.filter(id=p)[0]
+    date=str(datetime.datetime.now()).split(" ")[0]
+    
+    obj={'doctor_name':doctor.name,'patient_name':patient.name,'date':date,"docid":doctor.id,"patid":patient.id}
+    return render(request,'doctor/report.html',{'details':obj})
+
+@login_required
+def addReport(request):
+    if request.method=="POST":
+        new_record=Records()
+        new_record.date=str(datetime.datetime.now()).split(" ")[0]
+        new_record.diagnosis=request.POST['diagnosis']
+        new_record.doctor_name=request.POST['doctor_name']
+        new_record.Symptoms=request.POST['symptoms']
+        new_record.medication=request.POST['medication']
+        new_record.patient_id=request.POST['patid']
+        new_record.doctor_id=request.POST['docid']
+        new_record.additional_precautions=request.POST['additional_precautions']
+        new_record.save()
+        addr='doctor:pat_profile/'+ str(request.POST['patid'])
+
+        return redirect('/pat_profile/'+ str(request.POST['patid']))
+
+@login_required
+def addPatient(request):
+    patient_id=request.POST['patient_id']
+    accesscode=request.POST['patient_id']
+    if len(PatientProfile.objects.filter(id=patient_id))==0:
+        return redirect('/PatientList/')
+    else:
+        check_pat=PatientProfile.objects.filter(id=patient_id)[0]
+        if check_pat.access_code==accesscode:
+            new_config=PatientDocConfig()
+            new_config.patient_id=patient_id
+            new_config.doctor_id=request.user.id
+            new_config.access_code=accesscode
+            new_config.save()
+        else:
+            return redirect('/PatientList/')
+
+>>>>>>> bf7e68a06a7bf559c384b3a296ce250729715e75
 
 
 

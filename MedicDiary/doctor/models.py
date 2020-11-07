@@ -29,6 +29,16 @@ class DoctorProfile(models.Model):
         return self.name
 
 # class Mypatients(models.Model):
+#
+#     doctorp = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete= models.CASCADE)
+#     # mypatientlist = models.ManyToManyField(PatientProfile)
+#     # patient.objecs.getall()
+#
+#
+class PatientDocConfig(models.Model):
+    doctor_id=models.IntegerField(blank=False)
+    patient_id=models.IntegerField(blank=False)
+    access_code=models.IntegerField(blank=False)
 
     # doctorp = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete= models.CASCADE)
     # mypatientlist = models.ManyToManyField(PatientProfile)
@@ -40,8 +50,6 @@ class DoctorProfile(models.Model):
 #
 #     class Meta:
 #         unique_together = ('patconfig', 'docconfig')
-
-
 
 
 

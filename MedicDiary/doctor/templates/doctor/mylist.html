@@ -6,10 +6,33 @@
   </head>
   <body>
 
-    {% for item in listed %}
+    
+<div>
 
-    {{item.name}}
+  <table>
+   <thead>
 
-    {% endfor %}
+    <tr>
+      <th>Patient Name</th>
+      <th>Phone Number</th>
+    </tr>
+   </thead>
+   <tbody>
+    {% for item in patientl %}
+     <tr>
+       <td> {{item.name}} </td> 
+       <td>{{item.phone}}</td>
+       <td>{{item.id}}</td>
+       <td><button><a href="{% url 'doctor:pat_profile' p=item.id %}">View Patient Profile</a></button></td>
+     </tr>
+  
+     <!-- {{item.patient}} -->
+    
+    {% endfor %}   </tbody>
+
+
+  </table>
+</div>
+
   </body>
 </html>

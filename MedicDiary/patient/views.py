@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from .forms import PatientRegisterForm,PatientProfileForm,PatientVitalsForm
 from django.contrib.auth.decorators import login_required
-from .models import PatientProfile,PatientVitals
+from .models import PatientProfile,PatientVitals,Records
 from django.contrib.auth import logout
 #
 # def auth(str):
@@ -69,6 +69,12 @@ def create_patientprofile(request):
             patient.save()
             # form.patient = request.user
             # form.save()
+            patient=PatientProfile.objects.filter(patient=request.user)[0]
+            print(patient.address)
+            print(hash(patient.address))
+            patient.access_code=hash(patient.address)
+            patient.save()
+            
             return redirect('patient:patientvitals_input')
     else:
         form = PatientProfileForm()
@@ -97,15 +103,53 @@ def patientProfile(request):
 @login_required
 def patientRecords(request):
     vitals = PatientVitals.objects.get(patientv=request.user)
-    return render(request, 'patient/patient_records.html',{'vitals':vitals})
+    patient=PatientProfile.objects.filter(patient=request.user)[0]
+    all_reports=list(Records.objects.filter(patient_id=patient.id).order_by('id').reverse())
+    count=0
+    rec=[]
+    for r in all_reports:
+        if count ==1:
+            break
+        rec.append(r)
+        count=count+1
 
-@login_required
+
+        for report in rec:
+            des=report.medication
+            med=des.split(":")
+            m_list=[]
+            for m in med:
+	            dosage=m.split("/")
+	            m_list.append(dosage)
+
+            report.medication=m_list
+
+
+
+    return render(request, 'patient/patient_records.html',{'vitals':vitals,'Reports':rec})
+
+@login_required 
 def labreports(request):
     return render(request, 'patient/labreports.html')
 
 @login_required
 def medications(request):
-    return render(request, 'patient/medications.html')
+    patient=PatientProfile.objects.filter(patient=request.user)[0]
+    all_reports=Records.objects.filter(patient_id=patient.id).order_by('id').reverse()
+    
+    print(len(all_reports.reverse()))
+    for report in all_reports:
+        des=report.medication
+        med=des.split(":")
+        m_list=[]
+        for m in med:
+	        dosage=m.split("/")
+	        m_list.append(dosage)
+
+        report.medication=m_list
+        
+
+    return render(request, 'patient/medications.html',{'Reports':all_reports})
 
 @login_required
 def editPatient(request):

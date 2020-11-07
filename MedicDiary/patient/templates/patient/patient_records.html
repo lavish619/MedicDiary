@@ -6,14 +6,47 @@
 <div class="container" id="main-content">
     <div class="row dashboard-content">
         <h2>Current Medication </h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        {% for report in Reports%}
+                <div class="prescription" style="background: rgb(238, 201, 255);padding: 1em;">
+                    <h5 style="background-color: #f7ec8d; width: fit-content;border-radius: 10px; padding: 2px 5px;
+                    font-family: 'Grandstander'; margin: auto;">Date: {{report.date}}</h5>
+                    
+                    
+                   
+                    <h5><b>Doctor:</b>{{report.doctor_name}}</h5>
+                    <h5>Symptoms</h5>
+                    <p>{{report.Symptoms}}</p>
+                    <h5>Diagnosis</h5>
+                    <p>{{report.diagnosis}}</p>
+                    <table class="table table-bordered table-sm">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th>    </th>
+                            <th>Medicine</th>
+                            <th>Dosage</th>
+                            <th>For</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {%for med in report.medication%}
+                        <tr>
+                            <td>.</td>
+                            {%for each in med%}
+                            <td>{{each}}</td>
+                            {%endfor%}
+                            
+                           
+                        </tr>
+                        {%endfor%}
+                        
+                        </tbody>
+                    </table>
+                    <p><strong>Additional Precautions:</strong> {{report.additional_precautions}}</p>
+                        
+                </div>
+                    <hr>
+                    {%endfor%}
+        
         <a href="#">View more</a>
 
     </div>
