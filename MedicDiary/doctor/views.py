@@ -5,16 +5,11 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from .forms import DoctorRegisterForm, DoctorProfileForm
 from django.contrib.auth.decorators import login_required
-<<<<<<< HEAD
 from .models import DoctorProfile
-from django.views import View
-
-
-=======
+# from django.views import View
 from .models import DoctorProfile,PatientDocConfig
 from patient.models import PatientProfile,PatientVitals,LabReports,Records
 import datetime
->>>>>>> bf7e68a06a7bf559c384b3a296ce250729715e75
 def doctorRegister(request):
     if request.method =='POST':
         form = DoctorRegisterForm(request.POST)
@@ -56,19 +51,10 @@ def create_doctorprofile(request):
 @login_required
 def doctorProfile(request):
     profile = DoctorProfile.objects.get(doctor=request.user)
-    
+
     return render(request, 'doctor/doctor_profile.html',{'profile':profile})
 
-<<<<<<< HEAD
-# @login_required
-# def PatientList(request):
-#     # listed = Mypatients.objects.get(doctorp = request.user).mypatientlist
-#     # if len(listed) ==0:
-#         # return HttpResponse("emply:(")
-#     # patientsl = PatientProfile.objects.getall()
-#
-#     return render(request, 'doctor/mylist.html',{'patientl':patientl})
-=======
+
 @login_required
 def PatientList(request):
     # listed = Mypatients.objects.get(doctorp = request.user).mypatientlist
@@ -94,7 +80,7 @@ def newReport(request,p):
     doctor=DoctorProfile.objects.filter(doctor=request.user)[0]
     patient=PatientProfile.objects.filter(id=p)[0]
     date=str(datetime.datetime.now()).split(" ")[0]
-    
+
     obj={'doctor_name':doctor.name,'patient_name':patient.name,'date':date,"docid":doctor.id,"patid":patient.id}
     return render(request,'doctor/report.html',{'details':obj})
 
@@ -131,8 +117,6 @@ def addPatient(request):
             new_config.save()
         else:
             return redirect('/PatientList/')
-
->>>>>>> bf7e68a06a7bf559c384b3a296ce250729715e75
 
 
 
