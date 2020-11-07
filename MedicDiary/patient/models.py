@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.conf import settings
+from doctor.models import *
 
 
 
@@ -43,6 +44,8 @@ class LabReports(models.Model):
     report_date = models.DateField()
     upload_date = models.DateField(auto_now=True)
     labreportfile = models.FileField(upload_to = 'PatientLabReports')
+
+
 
 #
 # @receiver(post_save, sender=User)

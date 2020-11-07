@@ -6,6 +6,7 @@ from django.contrib import messages
 from .forms import DoctorRegisterForm, DoctorProfileForm
 from django.contrib.auth.decorators import login_required
 from .models import DoctorProfile
+from django.views import View
 
 
 def doctorRegister(request):
@@ -62,8 +63,10 @@ def PatientList(request):
 
 
 
-
-
+# @login_required
+# class mypatients(View):
+#     def get(self,request):
+#         return render(request, 'doctor/temp.html',{})
 
 
 

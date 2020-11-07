@@ -5,8 +5,6 @@ from patient.models import PatientProfile
 
 class DoctorProfile(models.Model):
 
-
-
     doctor = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete= models.CASCADE)
     name = models.CharField(max_length=30, blank=False)
     Gender = models.CharField(max_length=30)
@@ -24,18 +22,24 @@ class DoctorProfile(models.Model):
     Current_place_of_work = models.CharField(max_length=30)
     Aadhar_Number= models.IntegerField(blank=False)
     usertype = models.IntegerField(default = 2)
+    # mypatients = models.ManyToManyField(PatientProfile,through = "pats", related_name = "mypat")
+    # mypatient = models.ManyToManyField(PatientProfile, related_name = "mypat")
 
     def __str__(self):
         return self.name
 
 # class Mypatients(models.Model):
-#
-#     doctorp = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete= models.CASCADE)
-#     # mypatientlist = models.ManyToManyField(PatientProfile)
-#     # patient.objecs.getall()
-#
-#
 
+    # doctorp = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete= models.CASCADE)
+    # mypatientlist = models.ManyToManyField(PatientProfile)
+    # patient.objecs.getall()
+# tablename.relationname.getall
+# class pats(models.Model):
+#     patconfig = models.ForeignKey(PatientProfile,on_delete= models.CASCADE)
+#     docconfig = models.ForeignKey(DoctorProfile,on_delete= models.CASCADE)
+#
+#     class Meta:
+#         unique_together = ('patconfig', 'docconfig')
 
 
 

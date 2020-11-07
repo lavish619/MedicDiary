@@ -139,7 +139,8 @@ def editPatientVitals(request):
     return render(request,'patient/patient-vitals-edit.html',{'form':form})
 
 
-# 
+
+#
 # def logout_view(request):
 #     logout(request)
 #     return render(r'^logout/$', 'django.contrib.auth.views.logout',
