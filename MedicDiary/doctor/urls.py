@@ -8,6 +8,11 @@ urlpatterns = [
     path('createDoctorProfile/',views.create_doctorprofile,name ='create_doctorprofile'),
     path('doctorRegister/',views.doctorRegister,name = 'doctorRegister'),
     path('PatientList/',views.PatientList,name = 'PatientList'),
+    path('pat_profile/<int:p>', views.pat_profile,name = 'pat_profile'),
+    path('newReport/<int:p>',views.newReport,name="newReport"),
+    path('addReport/',views.addReport,name="addReport"),
+    path('addPatient/',views.addPatient,name="addPatient"),
+    
     path('logout/', authentication_views.LogoutView.as_view(template_name='centralapp/logout.html'), name='logout'),
     # path('editDoctor/',views.editDoctor,name = 'editDoctor'),
 ]
@@ -15,7 +20,7 @@ urlpatterns = [
 
 
 
-
+ 
 
 
 

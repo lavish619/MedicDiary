@@ -5,8 +5,6 @@ from patient.models import PatientProfile
 
 class DoctorProfile(models.Model):
 
-
-
     doctor = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete= models.CASCADE)
     name = models.CharField(max_length=30, blank=False)
     Gender = models.CharField(max_length=30)
@@ -35,7 +33,10 @@ class DoctorProfile(models.Model):
 #     # patient.objecs.getall()
 #
 #
-
+class PatientDocConfig(models.Model):
+    doctor_id=models.IntegerField(blank=False)
+    patient_id=models.IntegerField(blank=False)
+    access_code=models.IntegerField(blank=False)
 
 
 

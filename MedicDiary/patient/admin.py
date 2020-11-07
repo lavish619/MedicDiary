@@ -1,10 +1,11 @@
 from django.contrib import admin
-from .models import PatientProfile,PatientVitals
+from .models import PatientProfile,PatientVitals,Records
 # from .models import Patient
 
 # admin.site.register(Patient)
 admin.site.register(PatientProfile)
 admin.site.register(PatientVitals)
+admin.site.register(Records)
 
 
 
