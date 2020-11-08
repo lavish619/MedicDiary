@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from .forms import PatientRegisterForm,PatientProfileForm,PatientVitalsForm
 from django.contrib.auth.decorators import login_required
-from .models import PatientProfile,PatientVitals,Records
+from .models import PatientProfile,PatientVitals,Records,LabReports
 from django.contrib.auth import logout
 #
 # def auth(str):
@@ -130,7 +130,27 @@ def patientRecords(request):
 
 @login_required 
 def labreports(request):
-    return render(request, 'patient/labreports.html')
+    all_lab=LabReports.objects.filter(patientl=request.user)
+
+    return render(request, 'patient/labreports.html',{"reports":all_lab})
+
+
+@login_required
+def addLabReports(request):
+    if request.method=="POST":
+        new_report=LabReports()
+        new_report.patientl=request.user
+        new_report.report_name=request.POST['report_name']
+        new_report.report_date=request.POST['report_date']
+        new_report.labreportfile=request.FILES['file']
+        new_report.save()
+
+        return redirect('patient:labreports')
+    else:
+        return redirect('patient:labreports')
+
+
+
 
 @login_required
 def medications(request):

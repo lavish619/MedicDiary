@@ -15,24 +15,32 @@
                     <tr>
                         <th>Report Name</th>
                         <th>Report Date</th>
-                        <th>Preview</th>
                         <th>Download</th>
-                        <th>Remove</th>
+                        <th>Preview</th> 
+                       
                     </tr>
                 </thead>
                 <tbody>
+                    {%for report in reports%}
                     <tr>
-                        <td>MRI</td>
-                        <td>dd-mm-yyyy</td>
-                        <td><a class="prev-download-btn" href="{% static 'patient/lorem.pdf'%}" target="_blank">Preview</a></td>
-                        <td><a class="prev-download-btn" href="{% static 'patient/lorem.pdf'%}" download>Download</a></td>
-                        <td><a class="prev-download-btn" href="#">Remove</a></td>
+                        <td>{{report.report_name}}</td>
+                        <td>{{report.report_date}}</td>
+                       
+                        <td><a class="prev-download-btn" href="{{report.labreportfile.url}}" download>Download</a></td>
+                        <td><a class="prev-download-btn" href="{{report.labreportfile.url}}" >Preview</a></td>
+                        
                     </tr>
+                    {%endfor%}
                 </tbody>
             </table>
-            <form>
+            <form method="POST" action="{% url 'patient:addLabReports' %}" enctype="multipart/form-data">
+                {% csrf_token %}
                 <div> 
                     <label><b>Add a new Report: </b></label>
+                    <label>Report Name:</label>
+                    <input type="text"  id="" name="report_name">
+                    <label>Report Date:</label>
+                    <input type="text"  id="" name="report_date">
                     <input class="prev-download-btn form-control-file"type="file" name="file"/>
                     <input class="prev-download-btn my-2" type="submit"/>
                 </div>

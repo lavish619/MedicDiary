@@ -71,11 +71,13 @@
         </div>
 
         <ul>
-            <a href="{% url 'patient:medications' %}"><li>Medication</li></a>
+					  <a href="{% url 'patient:patientRecords' %}"><li>Dashboard</li></a>
+            <a href="{% url 'patient:medications' %}"><li>Health Records</li></a>
             <a href="{% url 'patient:labreports' %}"><li>Lab Reports</li></a>
+						<a href="{% url 'patient:patientProfile' %}"><li>Profile page</li></a>
             <!-- <a href=""><li>Personal notes</li></a> -->
-            <a href="{% url 'patient:patientProfile' %}"><li>Edit your profile</li></a>
-            <a href="{% url 'patient:patientRecords' %}"><li>Back to homepage</li></a>
+
+
         </ul>
 
 	</div>

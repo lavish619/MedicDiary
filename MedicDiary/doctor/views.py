@@ -78,31 +78,32 @@ def PatientList(request):
 
 @login_required
 def pat_profile(request,p):
-    print(p)
-    subject=PatientProfile.objects.filter(id=p) 
+    
+    subject=PatientProfile.objects.filter(id=p)
+    
     pat_vitals=PatientVitals.objects.filter(id=p)
-    all_reports=list(Records.objects.filter(patient_id=p).order_by('id').reverse())
-    count=0
-    rec=[]
-    for r in all_reports:
-        if count ==1:
-            break
-        rec.append(r)
-        count=count+1
+    all_reports=Records.objects.filter(patient_id=p).order_by('id').reverse()
+    
+    all_lab=LabReports.objects.filter(id=p)
+    print(len(all_lab))
 
+    
+    for report in all_reports:
+        des=report.medication
+        med=des.split(":")
+        m_list=[]
+        for m in med:
+	        dosage=m.split("/")
+	        m_list.append(dosage)
 
-        for report in rec:
-            des=report.medication
-            med=des.split(":")
-            m_list=[]
-            for m in med:
-	            dosage=m.split("/")
-	            m_list.append(dosage)
+        report.medication=m_list
+        
 
-            report.medication=m_list
+    
 
-
-    return render(request,'doctor/patient_records_in_doc.html',{'subject':subject,"vitals":pat_vitals[0],'Reports':rec})
+    
+        
+    return render(request,'doctor/patient_records_in_doc.html',{'subject':subject,"vitals":pat_vitals[0],'Reports':all_reports,"labreports":all_lab})
 
 @login_required
 def newReport(request,p):
