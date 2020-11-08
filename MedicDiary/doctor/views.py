@@ -5,6 +5,8 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from .forms import DoctorRegisterForm, DoctorProfileForm
 from django.contrib.auth.decorators import login_required
+from .models import DoctorProfile
+# from django.views import View
 from .models import DoctorProfile,PatientDocConfig
 from patient.models import PatientProfile,PatientVitals,LabReports,Records
 import datetime
@@ -49,8 +51,9 @@ def create_doctorprofile(request):
 @login_required
 def doctorProfile(request):
     profile = DoctorProfile.objects.get(doctor=request.user)
-    
+
     return render(request, 'doctor/doctor_profile.html',{'profile':profile})
+
 
 @login_required
 def PatientList(request):
@@ -107,7 +110,7 @@ def newReport(request,p):
     doctor=DoctorProfile.objects.filter(doctor=request.user)[0]
     patient=PatientProfile.objects.filter(id=p)[0]
     date=str(datetime.datetime.now()).split(" ")[0]
-    
+
     obj={'doctor_name':doctor.name,'patient_name':patient.name,'date':date,"docid":doctor.id,"patid":patient.id}
     return render(request,'doctor/report.html',{'details':obj})
 
@@ -153,7 +156,10 @@ def addPatient(request):
 
 
 
-
+# @login_required
+# class mypatients(View):
+#     def get(self,request):
+#         return render(request, 'doctor/temp.html',{})
 
 
 

@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.conf import settings
+from doctor.models import *
 
 
 
@@ -50,7 +51,7 @@ class Records(models.Model):
     date=models.CharField(max_length=100)
     patient_id=models.IntegerField(blank=False)
     doctor_id=models.IntegerField(blank=False)
-    
+
     doctor_name=models.CharField(max_length=100,blank=False)
     diagnosis=models.CharField(max_length=500,blank=False)
     Symptoms=models.CharField(max_length=500,blank=False)
@@ -58,7 +59,7 @@ class Records(models.Model):
     additional_precautions=models.CharField(max_length=500,blank=False)
 
 
- 
+ #
 # @receiver(post_save, sender=User)
 # def update_profile_signal(sender, instance, created, **kwargs):
 #     if created:
