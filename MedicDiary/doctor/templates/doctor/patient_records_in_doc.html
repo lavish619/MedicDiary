@@ -7,10 +7,10 @@
 </div>
 <div class="container" id="main-content">
     <div class="row dashboard-content">
-        {%for i in subject %}
-        <h2>Patient_name:{{i.name}} </h2>
-        <button><a href="{% url 'doctor:newReport' p=i.id %}">Add Record</a></button>
-        {% endfor %}
+        
+        <h2>Patient_name:{{subject.name}} </h2>
+        <button><a href="{% url 'doctor:newReport' p=subject.id %}">Add Record</a></button>
+       
 
     </div> 
     <div class="row dashboard-content">
@@ -65,7 +65,7 @@
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>Report Name</th>
+                    <th>Report Name</th> 
                     <th>Report Date</th>
                     <th>Download</th>
                     <th>Preview</th> 
@@ -85,7 +85,7 @@
                 {%endfor%}
             </tbody>
         </table>
-        <a href="#">View more</a>
+        
 
     </div>
     <div class="row dashboard-content">
