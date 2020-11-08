@@ -43,7 +43,7 @@ class LabReports(models.Model):
     report_name = models.CharField(max_length=100, blank=False)
     report_date = models.DateField()
     upload_date = models.DateField(auto_now=True)
-    labreportfile = models.FileField(upload_to = 'PatientLabReports')
+    labreportfile = models.FileField( upload_to = 'lab_reports')
 
 
 class Records(models.Model):

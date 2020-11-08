@@ -13,6 +13,7 @@ urlpatterns = [
     path('patientRegister/',views.patientRegister,name = 'patientRegister'),
     path('editPatient/',views.editPatient,name = 'editPatient'),
     path('editPatientVitals/',views.editPatientVitals,name = 'editPatientVitals'),
+     path('addLabReports/',views.addLabReports,name = 'addLabReports'),
     path('logout/', authentication_views.LogoutView.as_view(template_name='centralapp/logout.html'), name='logout'),   
     # path('patLogin/', auth_views.login, {'template_name': 'patient/login.html'}, name = 'login'),
     # path('login/',authentication_views.LoginView.as_view(template_name='patient/patlogin.html'),name='patLogin'),
