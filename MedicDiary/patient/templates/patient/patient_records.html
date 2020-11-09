@@ -5,7 +5,7 @@
 
 <div class="container" id="main-content">
     <div class="row dashboard-content">
-        <h2>Current Medication </h2>
+        <h2 style="text-align: center;">Current Medication </h2>
         {% for report in Reports%}
                 <div class="prescription" style="background: rgb(238, 201, 255);padding: 1em;">
                     <h5 style="background-color: #f7ec8d; width: fit-content;border-radius: 10px; padding: 2px 5px;
@@ -45,36 +45,119 @@
                         
                 </div>
                     <hr>
+                    {% empty %}
+                    <div  style="margin-top:7%;">
+                        <p style="font-size: 20px;">
+                            <b>
+                                NO MEDICAL HISTORY !!
+                            </b>
+                        </p>
+                    </div>
                     {%endfor%}
         
-        <a href="#">View more</a>
+        <div class="container">
+            <button class="edit-option-buttons" style="font-size: 18px;">
+                <a href="{% url 'patient:medications' %}">View all prescriptions</a>
+            </button>
+        </div>
 
     </div>
     <div class="row dashboard-content">
         <h2>Recent Lab reports </h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <a href="#">View more</a>
-
+        <div class="container" id="main-content">
+        <div class="row my-4">
+            <div class="col">
+                
+        
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Report Name</th>
+                                <th>Report Date</th>
+                                <th>Preview</th>
+                                <th>Download</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>MRI</td>
+                                <td>dd-mm-yyyy</td>
+                                <td><a class="prev-download-btn" href="{% static 'patient/lorem.pdf'%}"
+                                        target="_blank">Preview</a></td>
+                                <td><a class="prev-download-btn" href="{% static 'patient/lorem.pdf'%}" download>Download</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                
+            </div>
+        </div>
+        </div>
+        <div class="container">
+            <button class="edit-option-buttons" style="font-size: 18px;">
+                <a href="{% url 'patient:labreports' %}">View reports</a>
+            </button>
+        </div>
     </div>
     <div class="row dashboard-content">
-        <h2>General Vitals </h2>
-        <p><br><br>
-height :      {{vitals.Height_in_Centimeters}}<br>
+       <div><h2>General Vitals </h2></div>
+       <div class="row my-5">
+           <div class="col-4 text-center" style="border:2px solid black;">
+            <div class="row my-3">
+                <div class="col-lg-6 profile-content">
+                    <b>HEIGHT: </b>
+                </div>
+                <div class="col-lg-6 profile-content">
+                    {{vitals.Height_in_Centimeters}}
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-lg-6 profile-content">
+                    <b>WEIGHT:</b>
+                </div>
+                <div class="col-lg-6 profile-content">
+                    {{vitals.Weight_in_kilograms}}
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-lg-6 profile-content">
+                    <b>SMOKER OR NOT:</b>
+                </div>
+                <div class="col-lg-6 profile-content">
+                    {{vitals.Smoker_or_not}}
+                </div>
+            </div>
+           </div>
+           <div class="col-8 text-center">
+                <div class="row my-3">
+                    <div class="col-lg-6 profile-content">
+                        <b>ALLERGIES:</b>
+                    </div>
+                    <div class="col-lg-6 profile-content">
+                    {{vitals.Allergies}}
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col-lg-6 profile-content">
+                        <b>CHRONIC CONDITIONS</b>
+                    </div>
+                    <div class="col-lg-6 profile-content">
+                        {{vitals.Chronic_conditions}}
+                    </div>
+                </div>
+           </div>
+       </div>
+<!-- height :      {{vitals.Height_in_Centimeters}}<br>
 Weight :      {{vitals.Weight_in_kilograms}}<br>
 Allergies :      {{vitals.Allergies}}<br>
 smoker or not :      {{vitals.Smoker_or_not}}<br>
-Chronic_conditions :      {{vitals.Chronic_conditions}}<br>
-        </p>
-        <a href="{% url 'patient:editPatientVitals' %}">Edit info</a><br><br>
-
-    </div>
+Chronic_conditions :      {{vitals.Chronic_conditions}}<br> -->
+       
+<div class="container">
+    <button class="edit-option-buttons" style="font-size: 18px; left: 50%;">
+        <a href="{% url 'patient:editPatientVitals' %}">Edit info</a>
+    </button>
+</div>
+</div>
 </div>
 
 {% endblock %}

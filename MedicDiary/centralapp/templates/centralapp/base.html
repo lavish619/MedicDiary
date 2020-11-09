@@ -94,11 +94,8 @@
   {% block body %}
 
   {% endblock %}
-<<<<<<< HEAD
 	{% with 'create_patientprofile patientvitals_input patientRegister' as list%}
-=======
-	{% with 'About_us Covid_19' as list%}
->>>>>>> 2c52cf36392702191db27f4e8f66c4995fdffd2c
+	
 		{% if request.resolver_match.url_name not in list.split %}
 			<div class="col-sm-3 sidebar">
 				<ul class="list-group ">

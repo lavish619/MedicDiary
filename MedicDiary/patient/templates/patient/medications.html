@@ -10,12 +10,10 @@
             <div style="width:fit-content; margin:auto; padding: 30px 20px; border-radius: 10px; border: solid 4px #838383; 
             background-color: #f5f1da; box-shadow:  1em 1em 1.75em -1.5em rgba(0,0,0,0.75);">
             {% for report in Reports%}
+            
                 <div class="prescription" style="background: rgb(238, 201, 255);padding: 1em;">
                     <h5 style="background-color: #f7ec8d; width: fit-content;border-radius: 10px; padding: 2px 5px;
                     font-family: 'Grandstander'; margin: auto;">Date: {{report.date}}</h5>
-                    
-                    
-                   
                     <h5><b>Doctor:</b>{{report.doctor_name}}</h5>
                     <h5>Symptoms</h5>
                     <p>{{report.Symptoms}}</p>
@@ -47,9 +45,14 @@
                         
                 </div>
                     <hr>
+                    {% empty %}
+                    <div>
+                        <p style="font-size: 24px;">
+                           <b> NO MEDICAL HISTORY !!</b>
+                        </p>
+                        
+                    </div>
                     {%endfor%}
-              
-                <hr>
             </div>
         </div>
     </div>
