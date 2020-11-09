@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from .forms import PatientRegisterForm,PatientProfileForm,PatientVitalsForm
 from django.contrib.auth.decorators import login_required
-from .models import PatientProfile,PatientVitals,Records
+from .models import PatientProfile,PatientVitals,Records,LabReports
 from django.contrib.auth import logout
 #
 # def auth(str):
@@ -73,6 +73,7 @@ def create_patientprofile(request):
             print(patient.address)
             print(hash(patient.address))
             patient.access_code=hash( str(patient.id) +patient.address)
+            patient.userid=request.user.id ##changed
             patient.save()
             
             return redirect('patient:patientvitals_input')
@@ -124,13 +125,45 @@ def patientRecords(request):
 
             report.medication=m_list
 
+    all_lab=LabReports.objects.filter(patientl=request.user).order_by('id').reverse()
+    count=0
+    current=[]
+    for lab in all_lab:
+        if count==1:
+            break
+        current.append(lab)
+        count=count+1
 
 
-    return render(request, 'patient/patient_records.html',{'vitals':vitals,'Reports':rec})
+
+
+
+    return render(request, 'patient/patient_records.html',{'vitals':vitals,'Reports':rec,"lab_rec":current})
 
 @login_required 
 def labreports(request):
-    return render(request, 'patient/labreports.html')
+    all_lab=LabReports.objects.filter(patientl=request.user)
+    print(request.user.id)
+
+    return render(request, 'patient/labreports.html',{"reports":all_lab})
+
+
+@login_required
+def addLabReports(request):
+    if request.method=="POST":
+        new_report=LabReports()
+        new_report.patientl=request.user
+        new_report.report_name=request.POST['report_name']
+        new_report.report_date=request.POST['report_date']
+        new_report.labreportfile=request.FILES['file']
+        new_report.save()
+
+        return redirect('patient:labreports')
+    else:
+        return redirect('patient:labreports')
+
+
+
 
 @login_required
 def medications(request):

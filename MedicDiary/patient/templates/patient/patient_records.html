@@ -3,7 +3,7 @@
 {% block patient_base %}
 {% load static %}
 
-<div class="container" id="main-content">
+<div class="container" id="main-content"> 
     <div class="row dashboard-content">
         <h2 style="text-align: center;">Current Medication </h2>
         {% for report in Reports%}
@@ -64,6 +64,7 @@
     </div>
     <div class="row dashboard-content">
         <h2>Recent Lab reports </h2>
+<<<<<<< HEAD
         <div class="container" id="main-content">
         <div class="row my-4">
             <div class="col">
@@ -147,6 +148,37 @@
            </div>
        </div>
 <!-- height :      {{vitals.Height_in_Centimeters}}<br>
+=======
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Report Name</th>
+                    <th>Report Date</th>
+                    <th>Download</th>
+                    <th>Preview</th> 
+                   
+                </tr>
+            </thead>
+            <tbody>
+                {%for report in lab_rec%}
+                <tr>
+                    <td>{{report.report_name}}</td>
+                    <td>{{report.report_date}}</td>
+                   
+                    <td><a class="prev-download-btn" href="{{report.labreportfile.url}}" download>Download</a></td>
+                    <td><a class="prev-download-btn" href="{{report.labreportfile.url}}" >Preview</a></td>
+                    
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+
+    </div>
+    <div class="row dashboard-content"> 
+        <h2>General Vitals </h2>
+        <p><br><br>
+height :      {{vitals.Height_in_Centimeters}}<br>
+>>>>>>> 67a094ed3de94acfed40c01ce7f2ba8497a57ad5
 Weight :      {{vitals.Weight_in_kilograms}}<br>
 Allergies :      {{vitals.Allergies}}<br>
 smoker or not :      {{vitals.Smoker_or_not}}<br>

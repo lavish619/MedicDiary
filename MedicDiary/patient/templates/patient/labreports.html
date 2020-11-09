@@ -3,11 +3,11 @@
 {% block patient_base %}
 
 <div class="container" id="main-content">
-  
+
     <h1 style="font-family:'Ubuntu';font-size: 3rem;text-align: center; color: rgb(92, 46, 13); ">Lab Reports</h1>
     <div class="row my-4" >
         <div class="col" >
-            <div style="width:fit-content; margin:auto; padding: 30px 20px; border-radius: 10px; border: solid 4px #838383; 
+            <div style="width:fit-content; margin:auto; padding: 30px 20px; border-radius: 10px; border: solid 4px #838383;
             background-color: #f5f1da; box-shadow:  1em 1em 2em -1em rgba(0,0,0,0.75);">
 
             <table class="table table-striped">
@@ -15,24 +15,32 @@
                     <tr>
                         <th>Report Name</th>
                         <th>Report Date</th>
-                        <th>Preview</th>
                         <th>Download</th>
-                        <th>Remove</th>
+                        <th>Preview</th>
+
                     </tr>
                 </thead>
                 <tbody>
+                    {%for report in reports%}
                     <tr>
-                        <td>MRI</td>
-                        <td>dd-mm-yyyy</td>
-                        <td><a class="prev-download-btn" href="{% static 'patient/lorem.pdf'%}" target="_blank">Preview</a></td>
-                        <td><a class="prev-download-btn" href="{% static 'patient/lorem.pdf'%}" download>Download</a></td>
-                        <td><a class="prev-download-btn" href="#">Remove</a></td>
+                        <td>{{report.report_name}}</td>
+                        <td>{{report.report_date}}</td>
+
+                        <td><a class="prev-download-btn" href="{{report.labreportfile.url}}" download>Download</a></td>
+                        <td><a class="prev-download-btn" href="{{report.labreportfile.url}}" >Preview</a></td>
+
                     </tr>
+                    {%endfor%}
                 </tbody>
             </table>
-            <form>
-                <div> 
+            <form method="POST" action="{% url 'patient:addLabReports' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div>
                     <label><b>Add a new Report: </b></label>
+                    <label>Report Name:</label>
+                    <input type="text"  id="" name="report_name">
+                    <label>Report Date:</label>
+                    <input type="date"class="my-2 mx-auto" placeholder="Date"  id="" name="report_date">
                     <input class="prev-download-btn form-control-file"type="file" name="file"/>
                     <input class="prev-download-btn my-2" type="submit"/>
                 </div>
@@ -41,6 +49,6 @@
         </div>
     </div>
 </div>
-  
-  
+
+
 {% endblock %}

@@ -10,6 +10,7 @@
       <a href="{% url 'patient:editPatient' %}"> Edit your profile </a>
     </button>
   </div>
+<<<<<<< HEAD
 </div>
 <div class="container-fluid " style="margin-top: 8%; margin-left: 80px; justify-content: center;">
   <div class="row my-5" style="margin-left: 80px;">
@@ -104,6 +105,9 @@
 </div>
   
   <!-- <div style="display: flex;justify-content: center;">
+=======
+  <div style="display: flex;justify-content: center;">
+>>>>>>> 67a094ed3de94acfed40c01ce7f2ba8497a57ad5
   <div class="row my-4 profile-box-info justify-content-around" style="width: fit-content">
     <div class="col-sm-2 p-2 col-lg-2 p-2" style="margin-right: 20px;">
       <img height="200px" width = "150px" src="{{ profile.profile_pic.url }}" alt="">
@@ -112,11 +116,11 @@
       <div class="profile-content">
       <h3 >General Info</h3>
         <b>Name:</b> {{profile.name }} <br>
-        <b>Username:</b> whatever <br>
-        <b>Email:</b> abc@gmail.com <br>
+        <!-- <b>Username:</b> whatever <br>
+        <b>Email:</b> abc@gmail.com <br> -->
         <b>Age: </b>{{profile.age}} <br>
         <b>Gender: </b> {{profile.gender}} <br>
-        <b>Patient ID: </b> {{profile.id}} <br>
+        <!-- <b>Patient ID: </b> {{profile.id}} <br> -->
         <b>Access Code: </b> {{profile.access_code}} <br>
       </div>
       
@@ -150,7 +154,12 @@
       </div>
     </div>
 
+<<<<<<< HEAD
   </div> -->
      
+=======
+  </div>
+  </div>
+>>>>>>> 67a094ed3de94acfed40c01ce7f2ba8497a57ad5
 
 {% endblock %}

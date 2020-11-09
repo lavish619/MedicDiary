@@ -14,6 +14,7 @@ class PatientProfile(models.Model):
 
     # patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     patient = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete= models.CASCADE)
+    userid=models.IntegerField(blank=False,default=0)##added
     name = models.CharField(max_length=30, blank=False)
     age = models.IntegerField(blank=False)
     address = models.TextField(max_length=500, blank=False)
@@ -33,6 +34,7 @@ class PatientProfile(models.Model):
 
 class PatientVitals(models.Model):
     patientv = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    
     Height_in_Centimeters = models.CharField(max_length=100, blank=False, help_text='Height in centimeters')
     Weight_in_kilograms = models.CharField(max_length=100, blank=False, help_text='Weight in kilograms')
     Allergies = models.TextField(max_length=30)
@@ -44,7 +46,7 @@ class LabReports(models.Model):
     report_name = models.CharField(max_length=100, blank=False)
     report_date = models.DateField()
     upload_date = models.DateField(auto_now=True)
-    labreportfile = models.FileField(upload_to = 'PatientLabReports')
+    labreportfile = models.FileField( upload_to = 'lab_reports')
 
 
 class Records(models.Model):

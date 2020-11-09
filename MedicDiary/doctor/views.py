@@ -36,6 +36,7 @@ def doctorRegister(request):
 def create_doctorprofile(request):
     if request.method =='POST':
         form = DoctorProfileForm(request.POST)
+        
         if form.is_valid():
             doctor = form.save(commit=False)
             doctor.doctor = request.user
@@ -43,7 +44,11 @@ def create_doctorprofile(request):
             # form.doctor = request.user
             # form.save()
             return redirect('doctor:doctorProfile')
+        else:
+            print("here1")
+            
     else:
+        print("here")
         form = DoctorProfileForm()
     return render(request,'doctor/doctor-profile-create.html',{'form':form})
 
@@ -79,30 +84,33 @@ def PatientList(request):
 @login_required
 def pat_profile(request,p):
     print(p)
-    subject=PatientProfile.objects.filter(id=p) 
-    pat_vitals=PatientVitals.objects.filter(id=p)
-    all_reports=list(Records.objects.filter(patient_id=p).order_by('id').reverse())
-    count=0
-    rec=[]
-    for r in all_reports:
-        if count ==1:
-            break
-        rec.append(r)
-        count=count+1
+    
+   
+   
+    subject=PatientProfile.objects.filter(id=p)[0]
+    pat_user=User.objects.get(id=subject.userid)
+    
+    pat_vitals=PatientVitals.objects.filter(patientv=pat_user)
+    all_reports=Records.objects.filter(patient_id=p).order_by('id').reverse()
+    
+    all_lab=LabReports.objects.filter(patientl=pat_user).order_by('id').reverse()
+    
+    print(len(all_lab))
+    print(len(pat_vitals))
 
-
-        for report in rec:
-            des=report.medication
-            med=des.split(":")
-            m_list=[]
-            for m in med:
-	            dosage=m.split("/")
-	            m_list.append(dosage)
-
-            report.medication=m_list
-
-
-    return render(request,'doctor/patient_records_in_doc.html',{'subject':subject,"vitals":pat_vitals[0],'Reports':rec})
+    
+    for report in all_reports:
+        des=report.medication
+        med=des.split(":")
+        m_list=[]
+        for m in med:
+	        dosage=m.split("/")
+	        m_list.append(dosage)
+ 
+        report.medication=m_list
+        
+        
+    return render(request,'doctor/patient_records_in_doc.html',{'subject':subject,"vitals":pat_vitals.first(),'Reports':all_reports,"labreports":all_lab})
 
 @login_required
 def newReport(request,p):

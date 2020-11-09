@@ -7,7 +7,7 @@ class DoctorProfile(models.Model):
 
     doctor = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete= models.CASCADE)
     name = models.CharField(max_length=30, blank=False)
-    Gender = models.CharField(max_length=30)
+    Gender = models.CharField(max_length=30,blank=True)
     Specialisation = models.CharField(max_length=30)
     phone = models.CharField(max_length=40, blank=False, help_text='10 digit Mobile Number')
     City = models.CharField(max_length=30)
@@ -20,7 +20,7 @@ class DoctorProfile(models.Model):
     Profile_pic = models.ImageField(default = 'doctors_profile_pictures/defaultprofilepic.jpg', upload_to = 'doctors_profile_pictures')
     Medical_registration_proof = models.FileField(upload_to = 'DoctorRegProofs',blank = True)
     Current_place_of_work = models.CharField(max_length=30)
-    Aadhar_Number= models.IntegerField(blank=False, help_text='12 digit unique Aadhar Number')
+    Aadhar_Number= models.IntegerField(blank=True, help_text='12 digit unique Aadhar Number')
     usertype = models.IntegerField(default = 2)
     # mypatients = models.ManyToManyField(PatientProfile,through = "pats", related_name = "mypat")
     # mypatient = models.ManyToManyField(PatientProfile, related_name = "mypat")
