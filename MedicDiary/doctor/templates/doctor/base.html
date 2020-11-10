@@ -55,8 +55,8 @@
 				</li> -->
 				{% if user.is_authenticated %}
 				<li class="nav-item dropdown">
-					<a class="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-						Hey {{request.user.username }}
+					<a class="nav-link " style="background:#3a8684;color:white;border-radius: 8px;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+						Hey {{request.user.username|title }}
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item nav-link active" href="" style="color: rgb(0, 0, 0)"> My Profile </a>

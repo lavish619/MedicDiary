@@ -10,9 +10,6 @@
                 <div class="prescription" style="background: rgb(238, 201, 255);padding: 1em;">
                     <h5 style="background-color: #f7ec8d; width: fit-content;border-radius: 10px; padding: 2px 5px;
                     font-family: 'Grandstander'; margin: auto;">Date: {{report.date}}</h5>
-                    
-                    
-                   
                     <h5><b>Doctor:</b>{{report.doctor_name}}</h5>
                     <h5>Symptoms</h5>
                     <p>{{report.Symptoms}}</p>
@@ -64,7 +61,6 @@
     </div>
     <div class="row dashboard-content">
         <h2>Recent Lab reports </h2>
-<<<<<<< HEAD
         <div class="container" id="main-content">
         <div class="row my-4">
             <div class="col">
@@ -101,54 +97,56 @@
     </div>
     <div class="row dashboard-content">
        <div><h2>General Vitals </h2></div>
-       <div class="row my-5">
-           <div class="col-4 text-center" style="border:2px solid black;">
-            <div class="row my-3">
-                <div class="col-lg-6 profile-content">
-                    <b>HEIGHT: </b>
+       <div class="container" style="width: 100%;">
+        <div class="row my-5">
+            <div class="col-5 text-center">
+                <div class="row my-3">
+                    <div class="col-lg-6 profile-content">
+                        <b>HEIGHT: </b>
+                    </div>
+                    <div class="col-lg-6 profile-content">
+                        {{vitals.Height_in_Centimeters}}
+                    </div>
                 </div>
-                <div class="col-lg-6 profile-content">
-                    {{vitals.Height_in_Centimeters}}
+                <div class="row my-3">
+                    <div class="col-lg-6 profile-content">
+                        <b>WEIGHT:</b>
+                    </div>
+                    <div class="col-lg-6 profile-content">
+                        {{vitals.Weight_in_kilograms}}
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col-lg-6 profile-content">
+                        <b>SMOKER OR NOT:</b>
+                    </div>
+                    <div class="col-lg-6 profile-content">
+                        {{vitals.Smoker_or_not}}
+                    </div>
                 </div>
             </div>
-            <div class="row my-3">
-                <div class="col-lg-6 profile-content">
-                    <b>WEIGHT:</b>
-                </div>
-                <div class="col-lg-6 profile-content">
-                    {{vitals.Weight_in_kilograms}}
-                </div>
-            </div>
-            <div class="row my-3">
-                <div class="col-lg-6 profile-content">
-                    <b>SMOKER OR NOT:</b>
-                </div>
-                <div class="col-lg-6 profile-content">
-                    {{vitals.Smoker_or_not}}
-                </div>
-            </div>
-           </div>
-           <div class="col-8 text-center">
+            <div class="col-7 text-center">
                 <div class="row my-3">
                     <div class="col-lg-6 profile-content">
                         <b>ALLERGIES:</b>
                     </div>
                     <div class="col-lg-6 profile-content">
-                    {{vitals.Allergies}}
+                        {{vitals.Allergies}}
                     </div>
                 </div>
                 <div class="row my-3">
                     <div class="col-lg-6 profile-content">
-                        <b>CHRONIC CONDITIONS</b>
+                        <b>CHRONIC CONDITIONS: </b>
                     </div>
                     <div class="col-lg-6 profile-content">
                         {{vitals.Chronic_conditions}}
                     </div>
                 </div>
-           </div>
+            </div>
+        </div>
        </div>
+       
 <!-- height :      {{vitals.Height_in_Centimeters}}<br>
-=======
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
@@ -178,7 +176,6 @@
         <h2>General Vitals </h2>
         <p><br><br>
 height :      {{vitals.Height_in_Centimeters}}<br>
->>>>>>> 67a094ed3de94acfed40c01ce7f2ba8497a57ad5
 Weight :      {{vitals.Weight_in_kilograms}}<br>
 Allergies :      {{vitals.Allergies}}<br>
 smoker or not :      {{vitals.Smoker_or_not}}<br>

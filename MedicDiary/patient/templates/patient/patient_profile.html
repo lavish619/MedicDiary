@@ -2,18 +2,16 @@
 {% load static %}
 {% block patient_base %}
 
-<div class="container" id="main-content">
 
-  <h1 style="font-family:'Ubuntu';font-size: 3rem;text-align: center; color: rgb(92, 46, 13); ">My Profile </h1>
-  <div class="container">
-    <button class="edit-option-buttons" style="font-size: 18px; float: right;">
-      <a href="{% url 'patient:editPatient' %}"> Edit your profile </a>
-    </button>
-  </div>
-<<<<<<< HEAD
+<div class="container">
+<h1 style="font-family:'Ubuntu';font-size: 3rem;text-align: center; color: rgb(92, 46, 13); ">My Profile </h1>
+
+<button class="edit-option-buttons" style="font-size: 18px; float: right;">
+  <a href="{% url 'patient:editPatient' %}"> Edit your profile </a>
+</button>
 </div>
-<div class="container-fluid " style="margin-top: 8%; margin-left: 80px; justify-content: center;">
-  <div class="row my-5" style="margin-left: 80px;">
+<div class="container" id="main-content" style="margin-top: 8%; width: 100%; ">
+  <div class="row my-5">
     <div class="col-4 text-center" style="border: 1px solid black; border-radius: 15px; background-color: #f5f1da;;">
       <img class="profile-photo" src="{{ profile.profile_pic.url }}" alt="">
       <div class="row my-3 align-items-center">
@@ -28,20 +26,18 @@
           </div>
         </div>
       </div>
-        <div class="row my-3 align-items-center">
-          <div class="col-6">
-            <div class="profile-content">
-              <b>USERNAME:</b> 
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="profile-content">
-              {{profile.username}} 
-            </div>
-          </div>
+      <div class="row my-3">
+        <div class="col-lg-6 profile-content">
+          <b>ACCESS CODE: </b>
         </div>
+        <div class="col-lg-6 profile-content">
+          {{profile.access_code}}
+        </div>
+      </div>
+        
     </div>
-    <div class="col-3 text-center" style="border: 1px solid black; border-radius: 15px; background-color:#f5f1da;;">
+    <div class="col-4 text-center" style="border: 1px solid black; border-radius: 15px; background-color:#f5f1da;;">
+      
       <div class="row my-3">
         <div class="col-lg-6 profile-content">
           <b>AGE: </b>
@@ -56,6 +52,18 @@
         </div>
         <div class="col-lg-6 profile-content">
           {{profile.gender}}
+        </div>
+      </div>
+      <div class="row my-3 ">
+        <div class="col-6">
+          <div class="profile-content">
+            <b>USERNAME:</b>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="profile-content">
+            {{profile.username}}
+          </div>
         </div>
       </div>
       <div class="row my-3">
@@ -74,8 +82,9 @@
           {{profile.address}}
         </div>
       </div>
+      
     </div>
-    <div class="col-3 text-center" style="border: 1px solid black; border-radius: 15px;  background-color:#f5f1da;">
+    <div class="col-4 text-center" style="border: 1px solid black; border-radius: 15px;  background-color:#f5f1da;">
     <div class="row my-3">
       <div class="col-lg-6 profile-content">
         <b>EMERGENCY CONTACT:</b>
@@ -100,14 +109,14 @@
         {{profile.Aadhar_Number}}
       </div>
     </div>
+    
   </div>
 </div>
 </div>
+
   
   <!-- <div style="display: flex;justify-content: center;">
-=======
   <div style="display: flex;justify-content: center;">
->>>>>>> 67a094ed3de94acfed40c01ce7f2ba8497a57ad5
   <div class="row my-4 profile-box-info justify-content-around" style="width: fit-content">
     <div class="col-sm-2 p-2 col-lg-2 p-2" style="margin-right: 20px;">
       <img height="200px" width = "150px" src="{{ profile.profile_pic.url }}" alt="">
@@ -116,11 +125,11 @@
       <div class="profile-content">
       <h3 >General Info</h3>
         <b>Name:</b> {{profile.name }} <br>
-        <!-- <b>Username:</b> whatever <br>
-        <b>Email:</b> abc@gmail.com <br> -->
+         <b>Username:</b> whatever <br>
+        <b>Email:</b> abc@gmail.com <br>
         <b>Age: </b>{{profile.age}} <br>
         <b>Gender: </b> {{profile.gender}} <br>
-        <!-- <b>Patient ID: </b> {{profile.id}} <br> -->
+        <b>Patient ID: </b> {{profile.id}} <br>
         <b>Access Code: </b> {{profile.access_code}} <br>
       </div>
       
@@ -154,12 +163,6 @@
       </div>
     </div>
 
-<<<<<<< HEAD
   </div> -->
-     
-=======
-  </div>
-  </div>
->>>>>>> 67a094ed3de94acfed40c01ce7f2ba8497a57ad5
 
 {% endblock %}

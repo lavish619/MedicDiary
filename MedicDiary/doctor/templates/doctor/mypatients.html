@@ -24,6 +24,14 @@
                 <td>{{i.patient_username}}</td>
                 <td><button class="edit-option-buttons"><a href="{% url 'doctor:doctorRecords' p_username=i.patient_username%}">Edit</a></button></td>
             </tr>
+            {% empty %}
+            <div style="margin-top:7%;">
+                <p style="font-size: 20px;">
+                    <b>
+                        You currently don't have any patients !!
+                    </b>
+                </p>
+            </div>
            {%endfor%}
           
         </tbody>

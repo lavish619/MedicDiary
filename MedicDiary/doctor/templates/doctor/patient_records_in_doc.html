@@ -1,27 +1,24 @@
-{% extends 'patient/base.html' %}
+{% extends 'doctor/base.html' %}
 
-{% block patient_base %}
+{% block doctorbase %}
 {% load static %}
 <div>
     
 </div>
 <div class="container" id="main-content">
-    <div class="row dashboard-content">
+    <div style="margin-top: 5%; text-align: center;">
+        <h2>{{subject.name|upper}} </h2>
+        <button class="edit-option-buttons" style="font-size: 18px;">
+            <a href="{% url 'doctor:newReport' p=subject.id %}">Add a record</a>
+        </button>
+    </div>
         
-        <h2>Patient_name:{{subject.name}} </h2>
-        <button><a href="{% url 'doctor:newReport' p=subject.id %}">Add Record</a></button>
-       
-
-    </div> 
     <div class="row dashboard-content">
         <h2>Current Medication </h2>
         {% for report in Reports%}
                 <div class="prescription" style="background: rgb(238, 201, 255);padding: 1em;">
                     <h5 style="background-color: #f7ec8d; width: fit-content;border-radius: 10px; padding: 2px 5px;
                     font-family: 'Grandstander'; margin: auto;">Date: {{report.date}}</h5>
-                    
-                    
-                   
                     <h5><b>Doctor:</b>{{report.doctor_name}}</h5>
                     <h5>Symptoms</h5>
                     <p>{{report.Symptoms}}</p>
@@ -54,14 +51,26 @@
                         
                 </div>
                     <hr>
-                    {%endfor%} 
-        
-
-        <a href="#">View more</a>
+                    {% empty %}
+                    <div style="margin-top:7%;">
+                        <p style="font-size: 20px;">
+                            <b>
+                                NO MEDICAL HISTORY !!
+                            </b>
+                        </p>
+                    </div>
+                    {%endfor%}
+        <!-- <button class="accordion">
+            FIRST RECORD
+        </button>
+        <div class="panel">
+            HERE COPY PASTE THE CONTENTS OF THE REST OF THE RECORDS
+        </div> -->
 
     </div>
     <div class="row dashboard-content">
         <h2>Recent Lab reports </h2>
+        {%for report in labreports%}
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
@@ -73,7 +82,7 @@
                 </tr>
             </thead>
             <tbody>
-                {%for report in labreports%}
+                
                 <tr>
                     <td>{{report.report_name}}</td>
                     <td>{{report.report_date}}</td>
@@ -82,6 +91,14 @@
                     <td><a class="prev-download-btn" href="{{report.labreportfile.url}}" >Preview</a></td>
                     
                 </tr>
+                {% empty %}
+                <div style="margin-top:7%;">
+                    <p style="font-size: 20px;">
+                        <b>
+                            NO LAB REPORTS ADDED!!
+                        </b>
+                    </p>
+                </div>
                 {%endfor%}
             </tbody>
         </table>
@@ -90,18 +107,55 @@
     </div>
     <div class="row dashboard-content">
         <h2>General Vitals </h2>
-        <p><br><br>
-height :      {{vitals.Height_in_Centimeters}}<br>
-Weight :      {{vitals.Weight_in_kilograms}}<br>
-Allergies :      {{vitals.Allergies}}<br>
-smoker or not :      {{vitals.Smoker_or_not}}<br>
-Chronic_conditions :      {{vitals.Chronic_conditions}}<br>
-        </p>
-        <a href="{% url 'patient:editPatientVitals' %}">Edit info</a><br><br>
-
+        <div class="container" style="width: 100%;">
+            <div class="row my-5">
+                <div class="col-5 text-center">
+                    <div class="row my-3">
+                        <div class="col-lg-6 profile-content">
+                            <b>HEIGHT: </b>
+                        </div>
+                        <div class="col-lg-6 profile-content">
+                            {{vitals.Height_in_Centimeters}}
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-lg-6 profile-content">
+                            <b>WEIGHT:</b>
+                        </div>
+                        <div class="col-lg-6 profile-content">
+                            {{vitals.Weight_in_kilograms}}
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-lg-6 profile-content">
+                            <b>SMOKER OR NOT:</b>
+                        </div>
+                        <div class="col-lg-6 profile-content">
+                            {{vitals.Smoker_or_not}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7 text-center">
+                    <div class="row my-3">
+                        <div class="col-lg-6 profile-content">
+                            <b>ALLERGIES:</b>
+                        </div>
+                        <div class="col-lg-6 profile-content">
+                            {{vitals.Allergies}}
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-lg-6 profile-content">
+                            <b>CHRONIC CONDITIONS:</b>
+                        </div>
+                        <div class="col-lg-6 profile-content">
+                            {{vitals.Chronic_conditions}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-
 </div>
 
 {% endblock %}

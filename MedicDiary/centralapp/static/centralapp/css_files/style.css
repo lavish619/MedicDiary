@@ -13,6 +13,12 @@ html{
 	padding: 0;
 	box-sizing: border-box;
 }
+.covidButton{
+	background-color:#ed6663 ;
+}
+.covidButton:hover{
+	background-color: #b43634 ;
+}
 .img1, .img2, .img3{
 	position: relative;
 	opacity: 0.90;

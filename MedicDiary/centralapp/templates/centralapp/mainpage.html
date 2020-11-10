@@ -80,8 +80,8 @@
 				<li class="nav-item">
 					<a class="nav-link"  href="#about_us">About us</a>
 				</li>
-				<li class="nav-item button2">
-					<a class="nav-link " href="{% url 'centralapp:Covid_19' %}" >Covid-19 Checkpoints </a>
+				<li class="nav-item covidButton">
+					<a class="nav-link" href="{% url 'centralapp:Covid_19' %}" >Covid-19 Checkpoints </a>
 				</li>
 				{% if user.is_authenticated %}
 				<li class="nav-item dropdown">
@@ -193,7 +193,7 @@
 					<h2> The Backend Team</h2>
 					<ul>
 						<li><img class="team_img" src="{% static 'centralapp/Images/madhav.jpeg' %}" alt=""><a href="#"> Madhav Mittal </a></li>
-						<li><img class="team_img" src="{% static 'centralapp/Images/harsh2.jpeg' %}" alt=""><a href="#"> Harshdeep Singh Kohli </a></li>
+						<li><img class="team_img" src="{% static 'centralapp/Images/harsh2.jpeg' %}" alt=""><a href="#"> Harshdeep Singh Kohli</a></li>
 					</ul>
 				</div>
 			</div>
