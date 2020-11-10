@@ -27,16 +27,20 @@ def login(request):
         user=auth.authenticate(username=username,password=password)
         if user is not None:
             auth.login(request, user)
+            usert =3
             # if request.user.patient.usertype=="1":
             if PatientProfile.objects.filter(patient = request.user):
                 isuser = PatientProfile.objects.filter(patient = request.user)
+                usert = [int(each.usertype) for each in isuser][0]
             elif DoctorProfile.objects.filter(doctor=request.user):
                 isuser = DoctorProfile.objects.filter(doctor=request.user)
-            usertype = [int(each.usertype) for each in isuser][0]
-
-            if usertype==1:
+                usert = [int(each.usertype) for each in isuser][0]
+            # usertype = [int(each.usertype) for each in isuser][0]
+            # usertype = [int(each.usertype) for each in isuser]
+            if usert==1:
+                # return render(request,'centralapp/temp.html',{'isuser':isuser,'usert':usert})
                 return redirect('patient:patientProfile')
-            elif usertype==2:
+            elif usert==2:
                 return redirect('doctor:doctorProfile')
             # return render(request,'centralapp/temp.html', {'isuser':isuser,'usertype':usertype})
         # elif request.user.doctor.usertype=="2":
