@@ -19,4 +19,5 @@ urlpatterns = [
     path('Inside_health_records/',views.Inside_health_records,name ='Inside_health_records'),
     path('login/',views.login,name='login'),
     path('logout/', authentication_views.LogoutView.as_view(template_name='centralapp/logout.html'), name='logout'),
+     path('searchBar/',views.searchBar,name='searchBar'),
 ]

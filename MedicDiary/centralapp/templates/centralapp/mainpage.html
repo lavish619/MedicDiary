@@ -144,7 +144,11 @@
 		<div class="mainpage-text" style="color: white; top: 30%;">
 				Search for a particular disease.
 				<br>
-				<input class="search-field" type="text" placeholder="Type in the name of a disease..">
+				<form method="POST" action="{% url 'centralapp:searchBar' %}"> 
+					{% csrf_token %}	
+				<input class="search-field" name="searchBar" type="text" placeholder="Type in the name of a disease..">
+				<button type="submit">search</button>
+			   </form>
 		</div>
 	</div>
 	<section class="section section-light" id="about_us">

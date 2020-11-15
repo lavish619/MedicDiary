@@ -5,9 +5,13 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from patient.models import PatientProfile
 from doctor.models import DoctorProfile
+import pandas as pd
+
+
 # from patient.models import PatientProfile
 # import requests
 # from bs4 import BeautifulSoup
+
 
 
 def mainpage(request):
@@ -75,3 +79,14 @@ def Inside_health_records(request):
     return render(request,'centralapp/inside_health_records.html')
 def Aids(request):
     return render(request,'centralapp/aids.html')
+
+
+def searchBar(request):
+    query=request.POST['searchBar']
+
+    part_dis=disease_data[disease_data['name']==query]
+    about=part_dis['about'][1]
+    symptom=part_dis['symptom'][1]
+    treatment=part_dis['treatment'][1]
+
+    return render(request,'centralapp/search_result.html')
