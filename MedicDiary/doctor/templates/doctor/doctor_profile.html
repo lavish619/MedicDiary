@@ -92,7 +92,7 @@
   <h1 style="font-family:'Ubuntu';font-size: 3rem;text-align: center; color: rgb(92, 46, 13); ">My Profile </h1>
   
     <button class="edit-option-buttons" style="font-size: 18px; float: right;">
-      <a href="{% url 'patient:editPatient' %}"> Edit your profile </a>
+      <a href="{% url 'doctor:editdoctorprofile' %}"> Edit your profile </a>
     </button>
 </div>
     <div class="container"  id="main-content" style=" width: 100%;">
@@ -155,7 +155,7 @@
           <b>CITY: </b>
         </div>
         <div class="col-lg-6 profile-content">
-          {{profile.city}}
+          {{profile.City}}
         </div>
       </div>
       <div class="row my-3">

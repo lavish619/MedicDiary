@@ -1,33 +1,24 @@
 {% extends 'doctor/base.html' %}
-
 {% block doctorbase %}
 {% load static %}
-<div>
-    
-</div>
 <div class="container" id="main-content">
-    <div style="margin-top: 5%; text-align: center;">
-        <h2>{{subject.name|upper}} </h2>
-        <button class="edit-option-buttons" style="font-size: 18px;">
-            <a href="{% url 'doctor:newReport' p=subject.id %}">Add a record</a>
-        </button>
+    <div class="container">
+        <p style="text-align: center;font-family:'Ubuntu';font-size: 3rem;text-align: center; color: rgb(92, 46, 13); ">{{subject.name|upper}}</p>
     </div>
-        
+
     <div class="row dashboard-content">
+        <div class="col">
         <h2>Current Medication </h2>
         {% for report in Reports%}
-                <div class="prescription" style="background: rgb(238, 201, 255);padding: 1em;">
-                    <h5 style="background-color: #f7ec8d; width: fit-content;border-radius: 10px; padding: 2px 5px;
-                    font-family: 'Grandstander'; margin: auto;">Date: {{report.date}}</h5>
-                    <h5><b>Doctor:</b>{{report.doctor_name}}</h5>
-                    <h5>Symptoms</h5>
-                    <p>{{report.Symptoms}}</p>
-                    <h5>Diagnosis</h5>
-                    <p>{{report.diagnosis}}</p>
+        <div class="prescription" style="background: #fff7c8 ;padding: 1em;">
+            <p style="font-size: x-large;"><span><b>Doctor: </b> {{report.doctor_name}}</span>
+            <span style="float: right;"><b>Date: </b>{{report.date}}</span></p>
+
+            <p><b>Symptoms: </b>{{report.Symptoms}}</p>
+            <p><b>Diagnosis: </b>{{report.diagnosis}}</p>
                     <table class="table table-bordered table-sm">
                         <thead class="thead-dark">
                         <tr>
-                            <th>    </th>
                             <th>Medicine</th>
                             <th>Dosage</th>
                             <th>For</th>
@@ -36,7 +27,6 @@
                         <tbody>
                             {%for med in report.medication%}
                         <tr>
-                            <td>.</td>
                             {%for each in med%}
                             <td>{{each}}</td>
                             {%endfor%}
@@ -66,11 +56,15 @@
         <div class="panel">
             HERE COPY PASTE THE CONTENTS OF THE REST OF THE RECORDS
         </div> -->
-
+    
+    <span style="float:right"> <button class="edit-option-buttons" style="font-size: 18px;">
+        <a href="{% url 'doctor:newReport' p=subject.id %}">Add a record</a></button></span>
     </div>
+    </div>
+
     <div class="row dashboard-content">
         <h2>Recent Lab reports </h2>
-        {%for report in labreports%}
+        
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
@@ -82,7 +76,7 @@
                 </tr>
             </thead>
             <tbody>
-                
+                {%for report in labreports%}
                 <tr>
                     <td>{{report.report_name}}</td>
                     <td>{{report.report_date}}</td>

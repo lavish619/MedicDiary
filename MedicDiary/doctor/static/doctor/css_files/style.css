@@ -93,7 +93,7 @@ html{
 	transition: margin-left 0.4s linear;
 	padding: 20px;
     overflow: hidden;
-    margin: 200px 200px auto 3fr;
+    margin: auto 200px auto 3fr;
 }
 
 .dashboard-content{
@@ -287,3 +287,15 @@ html{
   .active-2:after {
 	content: "\2212";
   }
+
+  .prev-download-btn{
+	padding: 7px;
+	background:  #24a19c;
+	color:white;
+	border-radius: 8px;
+}
+.prev-download-btn:hover{
+	background: #a3a3a3;
+	color: black;
+	text-decoration: none;;
+}

@@ -2,26 +2,19 @@
 {% block doctorbase %}
 <div class="tabcontent" id="myPatients">
 <div id="main-content">
-<div>
-    <h1 style="text-align: center;">Patient's List</h2>
-        <button class="edit-option-buttons" style="float:right">
-            <a href="#" data-toggle="modal" data-target="#accessmodal" > Add a new patient </a>
-        </button>
+<div class="container">
+    <p style="text-align: center;font-family:'Ubuntu';font-size: 3rem;text-align: center; color: rgb(92, 46, 13); ">Patient's List</p>
 </div>
 <div class="container" style="margin: auto;">
     <table class="table">
         <thead class="thead-dark">
             <tr>
-                
                 <th scope="col">Patient Name</th>
-             
                 <th scope="col">Contact Number</th>
                 <th scope="col">Patient Profile</th>
-                
             </tr>
         </thead>
         <tbody>
-            
             {% for item in patientl %}
             <tr>
                 <td>{{item.name}}</td>
@@ -29,15 +22,10 @@
                 <td><button class="edit-option-buttons"><a href="{% url 'doctor:pat_profile' p=item.id %}">Patient Profile</a></button></td>
             </tr> 
             {% empty %}
-            <td>Do this in empty condition</td> 
-           {%endfor%}
+            <tr><td style="font-size: 20px;"><b> No Patients Added.</b></td></tr>
 
-           
-
-          
-
-          
-          
+                
+            {%endfor%}
         </tbody>
     </table>
     <div>
@@ -45,8 +33,11 @@
         <h3>{{message}}</h3>
         {% endfor %}
     </div>
-
+    <span style="float:right"> <button class="edit-option-buttons" >
+        <a href="#" data-toggle="modal" data-target="#accessmodal" > Add a new patient </a>
+    </button></span>
 </div>
+
 <div class="modal fade" id="accessmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-notify modal-warning" role="document">
         <!--Content-->

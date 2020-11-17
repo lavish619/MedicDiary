@@ -160,8 +160,22 @@ def addPatient(request):
         new_config.save()
         return redirect('/PatientList/')
         
+@login_required
+def editdoctorprofile(request):
+    doctor = get_object_or_404(DoctorProfile, doctor=request.user)
+    # patient = PatientProfile.objects.get(patient=request.user)
+    # if request.method == 'POST':
+    form = DoctorProfileForm(request.POST, request.FILES, instance=doctor)
+    # if request.method == 'POST':
 
-
+    if form.is_valid():
+        doctor = form.save(commit=False)
+        doctor.doctor = request.user
+        doctor.save()
+        return redirect('doctor:doctorProfile')
+    # else:
+    #     form = PatientProfileForm()
+    return render(request,'doctor/doctor_profile_edit.html',{'form':form})
 
 # @login_required
 # class mypatients(View):

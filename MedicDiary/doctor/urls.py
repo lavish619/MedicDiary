@@ -12,6 +12,7 @@ urlpatterns = [
     path('newReport/<int:p>',views.newReport,name="newReport"),
     path('addReport/',views.addReport,name="addReport"),
     path('addPatient/',views.addPatient,name="addPatient"),
+    path('editdocprofile/',views.editdoctorprofile,name="editdoctorprofile"),
 
     # path('logout/', authentication_views.LogoutView.as_view(template_name='centralapp/logout.html'), name='logout'),
     # path('mypatients',views.mypatients,name = "mypatients"),

@@ -7,22 +7,19 @@
     <h1 style="font-family:'Ubuntu';font-size: 3rem;text-align: center; color: rgb(92, 46, 13); ">Medications</h1>
     <div class="row my-4" >
         <div class="col" >
-            <div style="width:fit-content; margin:auto; padding: 30px 20px; border-radius: 10px; border: solid 4px #838383; 
+            <div style=" margin:auto; padding: 30px 20px; border-radius: 10px; border: solid 4px #838383; 
             background-color: #f5f1da; box-shadow:  1em 1em 1.75em -1.5em rgba(0,0,0,0.75);">
             {% for report in Reports%}
             
-                <div class="prescription" style="background: rgb(238, 201, 255);padding: 1em;">
-                    <h5 style="background-color: #f7ec8d; width: fit-content;border-radius: 10px; padding: 2px 5px;
-                    font-family: 'Grandstander'; margin: auto;">Date: {{report.date}}</h5>
-                    <h5><b>Doctor:</b>{{report.doctor_name}}</h5>
-                    <h5>Symptoms</h5>
-                    <p>{{report.Symptoms}}</p>
-                    <h5>Diagnosis</h5>
-                    <p>{{report.diagnosis}}</p>
+                <div class="prescription" style="background: #fff7c8 ;padding: 1em;">
+                    <p style="font-size: x-large;"><span><b>Doctor: </b> {{report.doctor_name}}</span>
+                    <span style="float: right;"><b>Date: </b>{{report.date}}</span></p>
+
+                    <p><b>Symptoms: </b>{{report.Symptoms}}</p>
+                    <p><b>Diagnosis: </b>{{report.diagnosis}}</p>
                     <table class="table table-bordered table-sm">
                         <thead class="thead-dark">
                         <tr>
-                            <th>    </th>
                             <th>Medicine</th>
                             <th>Dosage</th>
                             <th>For</th>
@@ -31,7 +28,6 @@
                         <tbody>
                             {%for med in report.medication%}
                         <tr>
-                            <td>.</td>
                             {%for each in med%}
                             <td>{{each}}</td>
                             {%endfor%}
@@ -44,15 +40,15 @@
                     <p><strong>Additional Precautions:</strong> {{report.additional_precautions}}</p>
                         
                 </div>
-                    <hr>
-                    {% empty %}
-                    <div>
-                        <p style="font-size: 24px;">
-                           <b> NO MEDICAL HISTORY !!</b>
-                        </p>
-                        
-                    </div>
-                    {%endfor%}
+                <hr>
+                {% empty %}
+                <div>
+                    <p style="font-size: 24px;">
+                        <b> NO MEDICAL HISTORY !!</b>
+                    </p>
+                    
+                </div>
+            {%endfor%}
             </div>
         </div>
     </div>

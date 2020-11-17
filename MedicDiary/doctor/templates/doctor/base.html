@@ -59,8 +59,8 @@
 						Hey {{request.user.username|title }}
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item nav-link active" href="" style="color: rgb(0, 0, 0)"> My Profile </a>
-						<a class="dropdown-item nav-link active" href="{% url 'centralapp:logout' %}" style="color: rgb(0, 0, 0)"> Logout </a>
+						<a class="dropdown-item nav-link" href="" style="color: rgb(0, 0, 0)"> My Profile </a>
+						<a class="dropdown-item nav-link" href="{% url 'centralapp:logout' %}" style="color: rgb(0, 0, 0)"> Logout </a>
 					</div>
 				</li>
 				{% endif %}

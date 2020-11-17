@@ -5,59 +5,54 @@
 
 <div class="container" id="main-content"> 
     <div class="row dashboard-content">
-        <h2 style="text-align: center;">Current Medication </h2>
+        <div class="col">
+        <h2 style="display: block;">Current Medication </h2>
         {% for report in Reports%}
-                <div class="prescription" style="background: rgb(238, 201, 255);padding: 1em;">
-                    <h5 style="background-color: #f7ec8d; width: fit-content;border-radius: 10px; padding: 2px 5px;
-                    font-family: 'Grandstander'; margin: auto;">Date: {{report.date}}</h5>
-                    <h5><b>Doctor:</b>{{report.doctor_name}}</h5>
-                    <h5>Symptoms</h5>
-                    <p>{{report.Symptoms}}</p>
-                    <h5>Diagnosis</h5>
-                    <p>{{report.diagnosis}}</p>
-                    <table class="table table-bordered table-sm">
-                        <thead class="thead-dark">
-                        <tr>
-                            <th>    </th>
-                            <th>Medicine</th>
-                            <th>Dosage</th>
-                            <th>For</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            {%for med in report.medication%}
-                        <tr>
-                            <td>.</td>
-                            {%for each in med%}
-                            <td>{{each}}</td>
-                            {%endfor%}
-                            
-                           
-                        </tr>
-                        {%endfor%}
-                        
-                        </tbody>
-                    </table>
-                    <p><strong>Additional Precautions:</strong> {{report.additional_precautions}}</p>
-                        
-                </div>
-                    <hr>
-                    {% empty %}
-                    <div  style="margin-top:7%;">
-                        <p style="font-size: 20px;">
-                            <b>
-                                NO MEDICAL HISTORY !!
-                            </b>
-                        </p>
-                    </div>
+
+        <div class="prescription" style="background: #fff7c8 ;padding: 1em;">
+            <p style="font-size: x-large;"><span><b>Doctor: </b> {{report.doctor_name}}</span>
+            <span style="float: right;"><b>Date: </b>{{report.date}}</span></p>
+
+            <p><b>Symptoms: </b>{{report.Symptoms}}</p>
+            <p><b>Diagnosis: </b>{{report.diagnosis}}</p>
+            <table class="table table-bordered table-sm">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Medicine</th>
+                    <th>Dosage</th>
+                    <th>For</th>
+                </tr>
+                </thead>
+                <tbody>
+                {%for med in report.medication%}
+                <tr>
+                    {%for each in med%}
+                    <td>{{each}}</td>
                     {%endfor%}
+                </tr>
+                {%endfor%}
+                
+                </tbody>
+            </table>
+            <p><strong>Additional Precautions:</strong> {{report.additional_precautions}}</p>     
+        </div>
+        <hr>
+        {% empty %}
+        <div  style="margin-top:7%;">
+            <p style="font-size: 20px;">
+                <b>
+                    NO MEDICAL HISTORY !!
+                </b>
+            </p>
+        </div>
+        {%endfor%}
         
         <div class="container">
             <button class="edit-option-buttons" style="font-size: 18px;">
                 <a href="{% url 'patient:medications' %}">View all prescriptions</a>
             </button>
         </div>
-
+    </div>
     </div>
     <div class="row dashboard-content">
         <h2>Recent Lab reports </h2>
@@ -76,13 +71,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>MRI</td>
-                                <td>dd-mm-yyyy</td>
-                                <td><a class="prev-download-btn" href="{% static 'patient/lorem.pdf'%}"
-                                        target="_blank">Preview</a></td>
-                                <td><a class="prev-download-btn" href="{% static 'patient/lorem.pdf'%}" download>Download</a></td>
-                            </tr>
+                            {%for report in lab_rec %}
+                                <tr>
+                                    <td>{{report.report_name}}</td>
+                                    <td>{{report.report_date}}</td>
+                                    <td><a class="prev-download-btn" href="{{report.labreportfile.url}}" target="_blank" >Preview</a></td>
+                                    <td><a class="prev-download-btn" href="{{report.labreportfile.url}}" download>Download</a></td>
+                                    
+
+                                </tr>
+                            {%endfor%}
                         </tbody>
                     </table>
                 
