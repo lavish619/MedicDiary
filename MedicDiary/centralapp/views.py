@@ -6,6 +6,8 @@ from django.contrib import messages
 from patient.models import PatientProfile
 from doctor.models import DoctorProfile
 import pandas as pd
+from .models import Diseases
+from django.contrib import messages
 
 
 # from patient.models import PatientProfile
@@ -84,9 +86,10 @@ def Aids(request):
 def searchBar(request):
     query=request.POST['searchBar']
 
-    part_dis=disease_data[disease_data['name']==query]
-    about=part_dis['about'][1]
-    symptom=part_dis['symptom'][1]
-    treatment=part_dis['treatment'][1]
-
-    return render(request,'centralapp/search_result.html')
+    try:
+        dis=Diseases.objects.get(name=query)
+        return render(request,'centralapp/search_result.html',{"disease":dis})
+    
+    except :
+        messages.error(request, "Sorry the disease doesnot exist in our dataset")
+        return redirect('/')

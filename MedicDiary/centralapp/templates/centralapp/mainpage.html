@@ -140,6 +140,15 @@
 		</p>
 		
 	</section>
+	{% if messages %}
+        {% for message in messages %}
+		  <!-- <script>M.toast({html: "{{message}}", classes: 'blue rounded', displayLength:2000});</script> -->
+		  <div class='alert alert-danger' role="alert">
+			  {{message}}
+
+		  </div>
+        {% endfor %}
+    {% endif %}
 	<div class="img2" >
 		<div class="mainpage-text" style="color: white; top: 30%;">
 				Search for a particular disease.
@@ -150,6 +159,7 @@
 				<button type="submit">search</button>
 			   </form>
 		</div>
+		
 	</div>
 	<section class="section section-light" id="about_us">
 		<h1 class="display" data-aos="fade-down" data-aos-duration="1000">Why Us</h1>
