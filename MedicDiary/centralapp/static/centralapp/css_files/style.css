@@ -320,11 +320,11 @@ body{
 #scrollDown{
 	color: black;
 	position: fixed;
-	bottom: 80px;
-	right: 30px;
+	bottom: 20px;
+	right: 20px;
 	font-size: 30px;
-	width: 60px;
-	height: 60px;
+	width: 50px;
+	height: 50px;
 	border-radius: 50px;
 	background: #5eaaa8;
 	border:none;
@@ -340,11 +340,11 @@ body{
 #scrollUp{
 	color: black;
 	position: fixed;
-	bottom: 140px;
-	right: 30px;
+	bottom: 75px;
+	right: 20px;
 	font-size: 30px;
-	width: 60px;
-	height: 60px;
+	width: 50px;
+	height: 50px;
 	border-radius: 50px;
 	background: #5eaaa8;
 	border:none;

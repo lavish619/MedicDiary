@@ -41,7 +41,8 @@
 	   $(function () {
 			$('[data-toggle="tooltip"]').tooltip()
 		})
-    </script>
+	</script>
+	<div id="startOfPage"></div>
 	<nav class="navbar navbar-expand-lg navbar-light nav-bg" id="navstyle" >
 		<a class="navbar-brand" href="{% url 'centralapp:mainpage' %}" style="font-family: Cinzel; font-size: 40px !important; color: white;" >
 			<img src="{% static 'centralapp/Images/icon.png' %}" width="50" height="50" class="d-inline-block align-top" alt="" loading="lazy">
@@ -60,7 +61,7 @@
 					<a class="nav-link" href="#" style="color: rgb(0, 0, 0)"> Sign Up </a> -->
 					{% if user.is_authenticated %}
 					<li class="nav-item dropdown">
-						<a class="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+						<a class="nav-link" style="background:#3a8684;color:white;border-radius: 8px;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
 							Hey {{request.user.username }}
 						</a>
 						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -70,7 +71,7 @@
 					</li>
 					{% else %}
 					<li class="nav-item dropdown">
-						<a class="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+						<a class="nav-link mx-2" style="background:#3a8684;color:white;border-radius: 8px;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
 							Sign Up
 						</a>
 						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -79,7 +80,7 @@
 						</div>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{% url 'centralapp:login' %}">Login</a>
+						<a class="nav-link mx-2" style="background:#3a8684;color:white;border-radius: 8px;" href="{% url 'centralapp:login' %}">Login</a>
 					</li>
 
 					{% endif %}
@@ -89,7 +90,7 @@
 
 
 	</nav>
-	<div id="startOfPage"></div>
+	
 	<!-- <button id="scrollDown" onclick="topFunction()"><i class="fas fa-chevron-down"></i></button> -->
 	<a href="#startOfPage" data-toggle="tooltip" data-placement="left" title="Scroll Up" id="scrollUp"><span><i class="fas fa-chevron-up"></i></span></a>
 	<a href="#endOfPage" data-toggle="tooltip" data-placement="left" title="Scroll Down" id="scrollDown"><span><i class="fas fa-chevron-down"></i></span></a>
@@ -109,7 +110,7 @@
 					</ul>
 					<li class="list-group-item  heads">For HealthCare Professionals</li>
 					<ul class="list-group">
-						<a class='list-group-item list-group-item-action {% if request.resolver_match.url_name == "doc_how_to_use" %}active{% endif %} ' href="{% url 'centralapp:doc_how_to_use' %}">How to use health records at MedicDiary</a>
+						<a class='list-group-item list-group-item-action {% if request.resolver_match.url_name == "doc_how_to_use" %}active{% endif %} ' href="{% url 'centralapp:doc_how_to_use' %}">Maintaining health records </a>
 					</ul>
 					<li class="list-group-item  heads">Know more about diseases</li>
 					<ul class="list-group">

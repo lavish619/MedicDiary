@@ -1,26 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <label>Topic::</label>
-    {{disease.name}}<br>
-    <hr>
-    <hr>
-    <label>About the disease::</label>
-    {{disease.about}}<br>
-    <hr>
-    <hr>
-    <label>Symptoms::</label>
-    {{disease.symptoms}}<br>
-    <hr>
-    <hr>
-    <label>Treatment::</label>
-    {{disease.treatment}}<br>
+{% extends 'centralapp/base.html' %}
+{% block body %}
+{% load static %}
 
+<div class="container-fluid">
+    <div class="row my-4">
+        <div class="col-sm-8 p-2 ml-auto" >
 
-</body>
-</html>
+        <h1 style="text-align:center;">{{disease.name}}</h1>
+        <br>
+
+        <div class="section-divs">
+            <h3>About the disease</h3>
+            {{disease.about}}<br><br>
+        </div>
+            
+        <br>
+
+        <div class="section-divs">   
+            <h3>Symptoms</h3>
+            {{disease.symptoms}}<br><br>
+        </div>
+        <br>
+        <div class="section-divs">
+            <h3>Treatment</h3>
+            {{disease.treatment}}<br><br>
+        </div>
+        <br>
+    </div>
+
+{% endblock %}
