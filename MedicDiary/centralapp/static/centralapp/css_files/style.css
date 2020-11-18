@@ -284,6 +284,13 @@ body{
 	width: 60em;
 	margin: auto;
 }
+.card{
+	background-color: transparent;
+	/* background-color: rgb(248, 250, 251); */
+	/* border: solid 2px rgb(21, 22, 22);
+	border-radius: 20px; */
+	/* box-shadow: 0 0 3em -0.5em  rgb(3, 121, 111); */
+}
 #cardhead{
 	border-radius: 1em;
 	width: fit-content;

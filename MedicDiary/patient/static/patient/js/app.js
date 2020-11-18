@@ -7,8 +7,8 @@ $(document).ready(function(){
 function toggleSideBar(){
 	var x = document.getElementById("sidebar").style.marginLeft;
 	if(x=="200px"){
-		document.getElementById("sidebar").style.marginLeft='0';
-		document.getElementById("main-content").style.marginLeft='50px';
+		document.getElementById("sidebar").style.marginLeft='0px';
+		document.getElementById("main-content").style.marginLeft='170px';
 	}
 	else{
 		document.getElementById("sidebar").style.marginLeft='200px';

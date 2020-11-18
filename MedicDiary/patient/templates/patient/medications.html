@@ -2,7 +2,7 @@
 {% load static %}
 {% block patient_base %}
 
-<div class="container" id="main-content">
+<div class="container" id="main-content" style="min-height: 97vh;">
   
     <h1 style="font-family:'Ubuntu';font-size: 3rem;text-align: center; color: rgb(92, 46, 13); ">Medications</h1>
     <div class="row my-4" >
@@ -42,7 +42,7 @@
                 </div>
                 <hr>
                 {% empty %}
-                <div>
+                <div style="margin: auto;">
                     <p style="font-size: 24px;">
                         <b> NO MEDICAL HISTORY !!</b>
                     </p>
