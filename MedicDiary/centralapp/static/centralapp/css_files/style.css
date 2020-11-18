@@ -327,7 +327,7 @@ body{
 #scrollDown{
 	color: black;
 	position: fixed;
-	bottom: 20px;
+	bottom: 115px;
 	right: 20px;
 	font-size: 30px;
 	width: 50px;
@@ -347,7 +347,7 @@ body{
 #scrollUp{
 	color: black;
 	position: fixed;
-	bottom: 75px;
+	bottom: 170px;
 	right: 20px;
 	font-size: 30px;
 	width: 50px;
