@@ -111,6 +111,14 @@
 			</ul>
 		</div>
 	</nav>
+	{% if messages %}
+				{% for message in messages %}
+			<!-- <script>M.toast({html: "{{message}}", classes: 'blue rounded', displayLength:2000});</script> -->
+			<div class='alert alert-danger' role="alert">
+				{{message}}
+			</div>
+				{% endfor %}
+	{% endif %}
 	<div class="img1">
 		<div class="mainpage-head" style="top: 55%;">
 			MEDICDIARY
@@ -120,59 +128,51 @@
 		</div>
 	</div>
 	<section class="section section-light">
-		<h2 style="font-family: 'Oswald'; font-size: 30px;">
+		<h2 style="font-family: 'Oswald'; font-size: 33px;">
 			Why a digital health record? <br>
 		</h2>
 		<p style="font-size: 20px;">
-			Have you ever found it cumbersome to carry all your health records to every doctor that you visit? <br>
-			If yes, then here's the answer. <br>
+			<!-- Have you ever found it cumbersome to carry all your health records to every doctor that you visit? <br>
+			If yes, then here's the answer. <br> -->
 			A digital health record system lets you control and keep track of your records in an online setting,
-			without having you to carry all the paperwork around. 
+			without having you to carry all the cumbersome paperwork aroundto every doctor that you visit.
 			With digitalisation rapidly transforming our environment, it is important that our health systems evolve with the changes around.
-			
+
 		</p>
-		<h2 style="font-family: 'Oswald'; font-size: 30px;">
+		<h2 style="font-family: 'Oswald'; font-size: 33px;">
 			Providing a hassle-free environment to manage your health records. <br>
 		</h2>
 		<p style="font-size: 20px;">
 			With MedicDiary, you'll be able to manage your health records at your fingerprints. At MedicDiary, we've turned the process of health record management entirely database-driven, making
 			management of these records totally effortless.
 		</p>
-		
-	</section>
-	{% if messages %}
-        {% for message in messages %}
-		  <!-- <script>M.toast({html: "{{message}}", classes: 'blue rounded', displayLength:2000});</script> -->
-		  <div class='alert alert-danger' role="alert">
-			  {{message}}
 
-		  </div>
-        {% endfor %}
-    {% endif %}
+	</section>
+
 	<div class="img2" >
 		<div class="mainpage-text" style="color: white; top: 30%;">
 				Search for a particular disease.
 				<br>
-				<form method="POST" action="{% url 'centralapp:searchBar' %}"> 
-					{% csrf_token %}	
+				<form method="POST" action="{% url 'centralapp:searchBar' %}">
+					{% csrf_token %}
 				<input class="search-field" name="searchBar" type="text" placeholder="Type in the name of a disease..">
 				<button style="padding: 5px; border-radius: 15px;font-family: 'Ubuntu'; font-size: 30px; background-color: rgb(68, 65, 65); color: white;" type="submit">GO !!</button>
 			   </form>
 		</div>
-		
+
 	</div>
 	<section class="section section-light" id="about_us">
 		<h1 class="display" data-aos="fade-down" data-aos-duration="1000">Why Us</h1>
 		<div class="main_container row" data-aos="fade-down" data-aos-duration="1500">
 			<div class="col-lg-6 paragraph features" data-aos="fade-left" data-aos-duration="1000">
 				<ul>
-					<li>1) Upload your lab test results</li>
+					<li>1) Upload your lab test results</li><br>
 					<li>2) Keep a track of your past and current medication</li>
 				</ul>
 			</div>
 			<div class="col-lg-6 paragraph features" data-aos="fade-right" data-aos-duration="1000">
 				<ul>
-					<li>3) Enhanced security</li>
+					<li>3) Enhanced security</li><br>
 					<li>4) Get more information on the symptoms and causes of any disease</li>
 				</ul>
 			</div>
@@ -190,13 +190,13 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<section class="section section-dark">
 		<div style="text-align: center;">
 			<h1 class="display" data-aos="fade-down" data-aos-duration="1000">Our Team</h1>
 			<div class="row my-4">
 				<div class="team col-lg-6" data-aos="fade-down" data-aos-duration="1200">
-					<h2> The Frontend Team</h2>
+					<h2 style="font-size: 45px;">The Frontend Team</h2><br>
 					<ul>
 						<li><img class="team_img" src="{% static 'centralapp/Images/lavish.jpg' %}" alt=""><a href="#"> Lavish Bansal </a></li>
 						<li><img class="team_img" src="{% static 'centralapp/Images/ShivangiNayak.jpeg' %}" alt=""><a href="#"> Shivangi Nayak </a></li>
@@ -204,7 +204,7 @@
 				</div>
 
 				<div class="team col-lg-6" data-aos="fade-down" data-aos-duration="1200">
-					<h2> The Backend Team</h2>
+					<h2 style="font-size: 45px;">The Backend Team</h2><br>
 					<ul>
 						<li><img class="team_img" src="{% static 'centralapp/Images/madhav.jpeg' %}" alt=""><a href="#"> Madhav Mittal </a></li>
 						<li><img class="team_img" src="{% static 'centralapp/Images/harsh2.jpeg' %}" alt=""><a href="#"> Harshdeep Singh Kohli</a></li>
@@ -215,7 +215,7 @@
 	</section>
 	<div class="img3">
 		<div class="mainpage-text" style="top: 30%;">
-			Drop us a message or a feedback. <br>
+			Drop us a message or a feedback. <br><br>
 			<textarea style="background-color:#eeeeee; border-radius: 15px;padding: 20px ;font-family: 'Grandstander';font-size: 20px;text-align: left;" rows="4" cols="40"
 				name="description">
 						 </textarea>

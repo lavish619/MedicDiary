@@ -87,9 +87,9 @@ def searchBar(request):
     query=request.POST['searchBar']
 
     try:
-        dis=Diseases.objects.get(name=query)
+        dis=Diseases.objects.get(name__icontains=query)
         return render(request,'centralapp/search_result.html',{"disease":dis})
-    
+
     except :
-        messages.error(request, "Sorry the disease doesnot exist in our dataset")
+        messages.error(request, f"Sorry! '{query}' does not exist in our Health Conditions dataset")
         return redirect('/')
