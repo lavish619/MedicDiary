@@ -59,6 +59,9 @@
 				</li>
 				<li class="nav-item active">
 					<a class="nav-link" href="#" style="color: rgb(0, 0, 0)"> Sign Up </a> -->
+					{% with 'login' as list%}
+					
+					{% if request.resolver_match.url_name not in list.split %}
 					{% if user.is_authenticated %}
 					<li class="nav-item dropdown">
 						<a class="nav-link" style="background:#3a8684;color:white;border-radius: 8px;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
@@ -82,8 +85,9 @@
 					<li class="nav-item">
 						<a class="nav-link mx-2" style="background:#3a8684;color:white;border-radius: 8px;" href="{% url 'centralapp:login' %}">Login</a>
 					</li>
-
 					{% endif %}
+					{% endif %}
+					{%endwith%}
 				</li>
 			</ul>
 		</div>
@@ -92,13 +96,15 @@
 	</nav>
 	
 	<!-- <button id="scrollDown" onclick="topFunction()"><i class="fas fa-chevron-down"></i></button> -->
-	<a href="#startOfPage" data-toggle="tooltip" data-placement="left" title="Scroll Up" id="scrollUp"><span><i class="fas fa-chevron-up"></i></span></a>
-	<a href="#endOfPage" data-toggle="tooltip" data-placement="left" title="Scroll Down" id="scrollDown"><span><i class="fas fa-chevron-down"></i></span></a>
+	<a href="#startOfPage" data-toggle="tooltip" data-placement="left" title="Scroll Up" id="scrollUp"><span><i
+				class="fas fa-chevron-up"></i></span></a>
+	<a href="#endOfPage" data-toggle="tooltip" data-placement="left" title="Scroll Down" id="scrollDown"><span><i
+				class="fas fa-chevron-down"></i></span></a>
 
   {% block body %}
 
   {% endblock %}
-	{% with 'create_patientprofile patientvitals_input patientRegister' as list%}
+	{% with 'create_patientprofile patientvitals_input patientRegister login' as list%}
 	
 		{% if request.resolver_match.url_name not in list.split %}
 			<div class="col-sm-3 sidebar">
@@ -131,7 +137,10 @@
 	{%endwith%}
 
 	<!-- Footer -->
-	<footer class="page-footer footer font-small mdb-color" id="endOfPage" style="background:linear-gradient(90deg, #24a19c,#cedebd);">
+	<div id="endOfPage" >
+
+	</div>
+	<footer class="page-footer footer font-small mdb-color" style="background:linear-gradient(90deg, #24a19c,#cedebd);">
 
 		<!-- Footer Links -->
 

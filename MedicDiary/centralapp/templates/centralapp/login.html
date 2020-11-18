@@ -1,4 +1,5 @@
-<html>
+{% extends 'centralapp/base.html' %}
+<!-- <html>
     <head>
         <title>Login</title>
         <style>
@@ -46,4 +47,66 @@
         </form>
     </center>
     </body>
-</html>
+</html> -->
+
+{% load static %}
+{% load crispy_forms_tags %}
+{% block body %}
+    <div class="container-fluid py-4" style="background: url('{% static 'centralapp/Images/medbg2.PNG'%}') no-repeat center center ; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; min-height:100vh;">
+                <div class="card" style=" width: fit-content; left:50%; margin-top: 3%; padding:20px 10px; text-align: center; border-radius: 15px; border: 1px solid black; box-shadow: 0 0 0.6em -0.2em  rgb(34, 46, 45);
+;">
+                    <div class="card-body">
+                        <h1 style="font-family: Itim,cursive;" class="mb-3 card-title">Sign in to your account</h1>
+                        <form method='POST'>
+                            {% csrf_token %}
+                            <!-- <input type="text" placeholder="Username" name="username"><br>
+                            <input type="password" placeholder="Password" name="password"><br><br> -->
+                                <div class="form-group row">
+                                    <div class="col-auto">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">
+                                                    <i class="fa fa-user icon"></i>
+                                                </div>
+                                            </div>
+                                            <input type="text" class="form-control form-control-lg" placeholder="Username" name="username">
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="form-group row">
+                                <div class="col-auto">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-key icon"></i>
+                                            </div>
+                                        </div>
+                                        <input type="password" class="form-control form-control-lg" placeholder="Password" name="password">
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            {% for m in messages %}
+                            <div style="border: 1px solid red; text-align:center;padding: 10px; background-color: rgb(255, 137, 137); color: red; font-size: 20px;">
+                                {{m}}
+                            </div>
+                            
+                            {% endfor %}
+                            <div style="margin-top: 10px;">
+                                <button class="btn btn-success ml-4" style="font-size: 20px;" type="submit" value="Login">Sign In</button>
+                            </div>
+                            
+                            <!-- <input type="submit"
+                                style="background-color: green;color: white;border: none;border-radius: 25px;font-weight: bold;" value="Login"> -->
+                        
+                        </form>
+                    </div>
+                </div>
+    
+    </div>
+    {% endblock %}
+
+   

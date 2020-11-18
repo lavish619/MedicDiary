@@ -10,9 +10,9 @@
   <a href="{% url 'patient:editPatient' %}"> Edit your profile </a>
 </button>
 </div>
-<div class="container" id="main-content" style="margin-top: 8%; width: 100%; ">
+<div class="container" id="main-content" style="margin-left: 170px; margin-top: 8%; width: 100%;margin-bottom: 10%;">
   <div class="row my-5">
-    <div class="col-4 text-center" style="border-radius: 15px; background-color: #f5f1da;;"><br>
+    <div class="col-4 text-center" style="background-color: #f5f1da;"><br>
       <img class="profile-photo" src="{{ profile.profile_pic.url }}" alt=""><br><br>
       <div class="row my-3 align-items-center">
         <div class="col-6">
@@ -36,7 +36,7 @@
       </div><br>
 
     </div>
-    <div class="col-4 text-center" style=" border-radius: 15px; background-color:#f5f1da;;"><br>
+    <div class="col-4 text-center" style=" background-color:#f5f1da;;"><br>
 
       
       <div class="row my-3 ">
@@ -85,7 +85,7 @@
       </div><br>
 
     </div>
-    <div class="col-4 text-center" style=" border-radius: 15px;  background-color:#f5f1da;"><br>
+    <div class="col-4 text-center" style="background-color:#f5f1da;"><br>
       <div class="row my-3">
         <div class="col-lg-6 profile-content">
           <b>CONTACT NUMBER</b>
@@ -94,6 +94,7 @@
           {{profile.phone}}
         </div>
       </div><br>
+    <!-- <div class="col-4 text-center" style="background-color:#f5f1da;"><br> -->
     <div class="row my-3">
       <div class="col-lg-6 profile-content">
         <b>EMERGENCY CONTACT:</b>

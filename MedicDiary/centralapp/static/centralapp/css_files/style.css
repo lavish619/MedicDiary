@@ -244,9 +244,9 @@ position: relative;
 	background-color: rgb(255, 246, 241);
 }
 .form-control:focus {
-	border: 3px #0ab421;
+	
 	background-color: rgb(252, 250, 233);
-	box-shadow: 7px 7px 5px rgb(14, 192, 59);
+	
 }
 .custom-control-input:checked ~.custom-control-label::before {
 	background-color: rgb(14, 192, 59);
@@ -283,6 +283,13 @@ body{
 	padding: 0em 2em 0em 2em;
 	width: 60em;
 	margin: auto;
+}
+.card{
+	background-color: transparent;
+	/* background-color: rgb(248, 250, 251); */
+	/* border: solid 2px rgb(21, 22, 22);
+	border-radius: 20px; */
+	/* box-shadow: 0 0 3em -0.5em  rgb(3, 121, 111); */
 }
 #cardhead{
 	border-radius: 1em;

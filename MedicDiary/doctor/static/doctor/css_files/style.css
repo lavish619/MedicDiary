@@ -90,10 +90,10 @@ html{
 }
 
 #main-content{
-	transition: margin-left 0.4s linear;
-	padding: 20px;
-    overflow: hidden;
-    margin: auto 200px auto 3fr;
+	transition: all 0.4s linear;
+	/* padding: 20px;
+    overflow: hidden; */
+    margin: auto 170px auto 3fr;
 }
 
 .dashboard-content{

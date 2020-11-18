@@ -33,7 +33,7 @@
 	position: absolute;
 	top:88px;
 	width: 200px;
-	height: 100%;
+	height: 100vh;
 	background: #24a19c;
 	left: -200px;
 	transition: all 300ms linear;
@@ -76,8 +76,9 @@
 	transition: all 0.4s linear;
 	/* padding: 20px; */
     /* overflow: hidden; */
-	margin: auto;
+	/* margin: auto; */
 	width: "100%";
+	margin: auto 170px auto 3fr;
 }
 
 .dashboard-content{
