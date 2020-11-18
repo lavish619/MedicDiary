@@ -96,7 +96,10 @@
 	</nav>
 	
 	<!-- <button id="scrollDown" onclick="topFunction()"><i class="fas fa-chevron-down"></i></button> -->
-	
+	<a href="#startOfPage" data-toggle="tooltip" data-placement="left" title="Scroll Up" id="scrollUp"><span><i
+				class="fas fa-chevron-up"></i></span></a>
+	<a href="#endOfPage" data-toggle="tooltip" data-placement="left" title="Scroll Down" id="scrollDown"><span><i
+				class="fas fa-chevron-down"></i></span></a>
 
   {% block body %}
 
@@ -134,7 +137,10 @@
 	{%endwith%}
 
 	<!-- Footer -->
-	<footer class="page-footer footer font-small mdb-color" id="endOfPage" style="background:linear-gradient(90deg, #24a19c,#cedebd);">
+	<div id="endOfPage" >
+
+	</div>
+	<footer class="page-footer footer font-small mdb-color" style="background:linear-gradient(90deg, #24a19c,#cedebd);">
 
 		<!-- Footer Links -->
 
