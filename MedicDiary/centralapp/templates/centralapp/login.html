@@ -56,7 +56,8 @@
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover; min-height:100vh;">
-                <div class="card" style=" width: fit-content; left:50%; margin-top: 3%; padding:20px 10px; text-align: center; ">
+                <div class="card" style=" width: fit-content; left:50%; margin-top: 3%; padding:20px 10px; text-align: center; border-radius: 15px; border: 1px solid black; box-shadow: 0 0 0.6em -0.2em  rgb(34, 46, 45);
+;">
                     <div class="card-body">
                         <h1 style="font-family: Itim,cursive;" class="mb-3 card-title">Sign in to your account</h1>
                         <form method='POST'>
@@ -89,9 +90,15 @@
                                 
                             </div>
                             {% for m in messages %}
-                            <p style="color: white;width: 250px;background-color: red;">{{m}}</p>
+                            <div style="border: 1px solid red; text-align:center;padding: 10px; background-color: rgb(255, 137, 137); color: red; font-size: 20px;">
+                                {{m}}
+                            </div>
+                            
                             {% endfor %}
-                            <button class="btn btn-success ml-4" style="font-size: 20px;" type="submit" value="Login">Sign In</button>
+                            <div style="margin-top: 10px;">
+                                <button class="btn btn-success ml-4" style="font-size: 20px;" type="submit" value="Login">Sign In</button>
+                            </div>
+                            
                             <!-- <input type="submit"
                                 style="background-color: green;color: white;border: none;border-radius: 25px;font-weight: bold;" value="Login"> -->
                         

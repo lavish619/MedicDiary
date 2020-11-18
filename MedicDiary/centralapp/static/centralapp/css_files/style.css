@@ -244,9 +244,9 @@ position: relative;
 	background-color: rgb(255, 246, 241);
 }
 .form-control:focus {
-	border: 3px #0ab421;
+	
 	background-color: rgb(252, 250, 233);
-	box-shadow: 7px 7px 5px rgb(14, 192, 59);
+	
 }
 .custom-control-input:checked ~.custom-control-label::before {
 	background-color: rgb(14, 192, 59);
