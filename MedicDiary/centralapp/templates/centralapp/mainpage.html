@@ -85,7 +85,7 @@
 				</li>
 				{% if user.is_authenticated %}
 				<li class="nav-item dropdown">
-					<a class="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+					<a class="nav-link " style="background:#3a8684;color:white;border-radius: 8px;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
 						Hey {{request.user.username }}
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -161,7 +161,7 @@
 		</div>
 
 	</div>
-	<section class="section section-light" id="about_us">
+	<section class="section section-light" >
 		<h1 class="display" data-aos="fade-down" data-aos-duration="1000">Why Us</h1>
 		<div class="main_container row" data-aos="fade-down" data-aos-duration="1500">
 			<div class="col-lg-6 paragraph features" data-aos="fade-left" data-aos-duration="1000">
@@ -178,14 +178,14 @@
 			</div>
 		</div>
 	</section>
-	<div class="img4">
+	<div class="img4" id="about_us">
 		<div class="mainpage-head" style="color: white; top: 30%;">
 			About Us
 			<div class="transparent" style="font-size: 20px;">
 				<p>
-					We are a group of enthusiatic undergrads studying at IIT(BHU), pursuing Mathematics and Computing as our
+					We are a group of enthusiatic undergrads studying at IIT(BHU), pursuing Mathematics and Computing<br> as our
 					major
-					field of study. We aim to provide a very user friendly platform to manage one's medical records.<br>
+					field of study. We aim to provide a very user friendly platform to<br> manage one's medical records.<br>
 				</p>
 			</div>
 		</div>
