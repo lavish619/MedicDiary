@@ -12,8 +12,8 @@
 </div>
 <div class="container" id="main-content" style="margin-top: 8%; width: 100%; ">
   <div class="row my-5">
-    <div class="col-4 text-center" style="border: 1px solid black; border-radius: 15px; background-color: #f5f1da;;">
-      <img class="profile-photo" src="{{ profile.profile_pic.url }}" alt="">
+    <div class="col-4 text-center" style="border-radius: 15px; background-color: #f5f1da;;"><br>
+      <img class="profile-photo" src="{{ profile.profile_pic.url }}" alt=""><br><br>
       <div class="row my-3 align-items-center">
         <div class="col-6">
           <div class="profile-field">
@@ -22,10 +22,10 @@
         </div>
         <div class="col-6">
           <div class="profile-content">
-            {{profile.name }} 
+            {{profile.name }}
           </div>
         </div>
-      </div>
+      </div><br>
       <div class="row my-3">
         <div class="col-lg-6 profile-content">
           <b>ACCESS CODE: </b>
@@ -33,11 +33,11 @@
         <div class="col-lg-6 profile-content">
           {{profile.access_code}}
         </div>
-      </div>
-        
+      </div><br>
+
     </div>
-    <div class="col-4 text-center" style="border: 1px solid black; border-radius: 15px; background-color:#f5f1da;;">
-      
+    <div class="col-4 text-center" style=" border-radius: 15px; background-color:#f5f1da;;"><br>
+
       <div class="row my-3">
         <div class="col-lg-6 profile-content">
           <b>AGE: </b>
@@ -45,7 +45,7 @@
         <div class="col-lg-6 profile-content">
         {{profile.age}}
         </div>
-      </div>
+      </div><br>
       <div class="row my-3">
         <div class="col-lg-6 profile-content">
           <b>GENDER:</b>
@@ -53,7 +53,7 @@
         <div class="col-lg-6 profile-content">
           {{profile.gender}}
         </div>
-      </div>
+      </div><br>
       <div class="row my-3 ">
         <div class="col-6">
           <div class="profile-content">
@@ -62,18 +62,18 @@
         </div>
         <div class="col-6">
           <div class="profile-content">
-            {{profile.username}}
+            {{request.user.username}}
           </div>
         </div>
-      </div>
+      </div><br>
       <div class="row my-3">
         <div class="col-lg-6 profile-content">
           <b>EMAIL:</b>
         </div>
         <div class="col-lg-6 profile-content">
-          {{profile.email}}
+          {{request.user.email}}
         </div>
-      </div>
+      </div><br>
       <div class="row my-3">
         <div class="col-lg-6 profile-content">
           <b>ADDRESS:</b>
@@ -81,10 +81,10 @@
         <div class="col-lg-6 profile-content">
           {{profile.address}}
         </div>
-      </div>
-      
+      </div><br>
+
     </div>
-    <div class="col-4 text-center" style="border: 1px solid black; border-radius: 15px;  background-color:#f5f1da;">
+    <div class="col-4 text-center" style=" border-radius: 15px;  background-color:#f5f1da;"><br>
     <div class="row my-3">
       <div class="col-lg-6 profile-content">
         <b>EMERGENCY CONTACT:</b>
@@ -92,7 +92,7 @@
       <div class="col-lg-6 profile-content">
         {{profile.emergency_contact}}
       </div>
-    </div>
+    </div><br>
     <div class="row my-3">
       <div class="col-lg-6 profile-content">
         <b>PROFESSION:</b>
@@ -100,7 +100,7 @@
       <div class="col-lg-6 profile-content">
         {{profile.profession}}
       </div>
-    </div>
+    </div><br>
     <div class="row my-3">
       <div class="col-lg-6 profile-content">
         <b>AADHAR NUMBER:</b>
@@ -109,12 +109,12 @@
         {{profile.Aadhar_Number}}
       </div>
     </div>
-    
+
   </div>
 </div>
 </div>
 
-  
+
   <!-- <div style="display: flex;justify-content: center;">
   <div style="display: flex;justify-content: center;">
   <div class="row my-4 profile-box-info justify-content-around" style="width: fit-content">
@@ -132,7 +132,7 @@
         <b>Patient ID: </b> {{profile.id}} <br>
         <b>Access Code: </b> {{profile.access_code}} <br>
       </div>
-      
+
     </div>
   </div>
   </div> -->
