@@ -16,8 +16,25 @@ In our present day scenario, everytime a patient visits a new doctor or a new ho
 * Secure flow of electronic information between patients and other clinicians, while avoiding the cumbersome process of maintaining written documents.
 * Reduction of costs through decreased paperwork, improved safety, reduced duplication of testing, and improved health.
 * Making patients aware by providing them information details on several diseases including the possible symptoms and the necessary precautions.
+## Setting up the project
+Clone the repository.
+Then in the command prompt type:
+(after entering the project..)
+```
+pip install -r requirements.txt
+```
+to install required packages and dependencies.  
+Now, go to MedicDiary directory by typing command
+```
+cd MedicDiary
+```
+Then to run the project, type the command:
+```
+py manage.py runserver
+```
+then copy the local url and run it on your browser..
 
-## Team:
+## Our Team:
 <table>
 <tr>
       <td align="center"><a href="https://github.com/lavish619"><img src="https://github.com/lavish619.png" width="100px;" height="100px;" alt="Lavish Bansal"/><br /><sub><b>Lavish Bansal</b></sub></a></td>
