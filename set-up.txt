@@ -1,7 +1,10 @@
-in the command prompt type:
+In the command prompt type:
 (after entering the project..)
 pip install -r requirements.txt
 
-to run the project in the prompt type:
+Go to MedicDiary directory by typing command 
+cd MedicDiary
+
+Then to run the project in the prompt, type:
 py manage.py runserver
 then copy the local url and run it on your browser..
