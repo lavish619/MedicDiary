@@ -2,7 +2,7 @@
 A digital medical records system.<br/>
 
 <p align = "center">
-<img src="https://github.com/lavish619/MedicDiary/blob/master/MedicDiary/doctor/static/doctor/Images/icon.png" width="100px;" alt="MedicDiary Logo" />
+<img src="https://github.com/lavish619/MedicDiary/blob/master/logo.png" width="400px;" alt="MedicDiary Logo" />
 </p>
 <br/>
 
