@@ -37,8 +37,8 @@ then copy the local url and run it on your browser..
 ## Our Team:
 <table>
 <tr>
-      <td align="center"><a href="https://github.com/lavish619"><img src="https://github.com/lavish619.png" width="100px;" height="100px;" alt="Lavish Bansal"/><br /><sub><b>Lavish Bansal</b></sub></a></td>
       <td align="center"><a href="https://github.com/Madhav2310"><img src="https://github.com/Madhav2310.png" width="100px;" height="100px;" alt="Madhav Mittal"/><br /><sub><b>Madhav Mittal</b></a></td>
+      <td align="center"><a href="https://github.com/lavish619"><img src="https://github.com/lavish619.png" width="100px;" height="100px;" alt="Lavish Bansal"/><br /><sub><b>Lavish Bansal</b></sub></a></td>
       <td align="center"><a href="https://github.com/sHiVaNgI821"><img src="https://github.com/sHiVaNgI821.png" width="100px;" height="100px;" alt="Shivangi Nayak"/><br /><sub><b>Shivangi Nayak</b></sub></a></td>
       <td align="center"><a href="https://github.com/harsh0015"><img src="https://github.com/harsh0015.png" width="100px;" height="100px;" alt="Harshdeep Singh"/><br /><sub><b>Harshdeep Singh</b></sub></a></td>
   
